@@ -1,0 +1,186 @@
+# Differential Activity QC
+
+
+
+```{r, echo=FALSE}
+library(png)
+library(grid)
+```
+
+```{r, echo=FALSE}
+working_dir="/home/labs/davidgo/Collaboration/MPRA_QC_pipeline/diff_activity/plots/"
+output_dir=sprintf("%s/test_QC",working_dir)
+```
+
+## Correlation of Activity between allelic pairs
+
+
+
+
+```{r,echo=FALSE}
+bad_example <- readPNG(sprintf("%s/activity_by_allele_humanMPRA_L1a1_neurons.png",working_dir),native = T)
+good_example <- readPNG(sprintf("%s/activity_by_allele_humanMPRA_L3a2_chondrocytes.png",working_dir),native = T)
+
+
+# Start new page and define layout
+grid.newpage()
+pushViewport(viewport(layout = grid.layout(1, 2)))
+
+# Helper to specify location in layout
+vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col)
+
+# Draw both images in the layout without using print()
+pushViewport(vplayout(1, 2))
+grid.raster(bad_example, interpolate = FALSE)
+popViewport()
+
+pushViewport(vplayout(1, 1))
+grid.raster(good_example, interpolate = FALSE)
+popViewport()
+
+```
+
+
+
+## Correlation of Activity between allelic pairs - only active
+
+
+
+
+```{r,echo=FALSE}
+
+
+bad_example <- readPNG(sprintf("%s/activity_by_allele_humanMPRA_only_active_L1a1_neurons.png",working_dir),native = T)
+good_example <- readPNG(sprintf("%s/activity_by_allele_humanMPRA_only_active_L3a2_chondrocytes.png",working_dir),native = T)
+
+
+# Start new page and define layout
+grid.newpage()
+pushViewport(viewport(layout = grid.layout(1, 2)))
+
+# Helper to specify location in layout
+vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col)
+
+# Draw both images in the layout without using print()
+pushViewport(vplayout(1, 2))
+grid.raster(bad_example, interpolate = FALSE)
+popViewport()
+
+pushViewport(vplayout(1, 1))
+grid.raster(good_example, interpolate = FALSE)
+popViewport()
+```
+
+
+
+
+## Correlation of differential activity between cell types 
+
+```{r,echo=FALSE}
+
+
+bad_example <- readPNG(sprintf("%s/LFC_corrlation_cell_types_humanMPRA_L1a1.png",working_dir),native = T)
+good_example <- readPNG(sprintf("%s/LFC_corrlation_cell_types_methMPRA.png",working_dir),native = T)
+
+
+# Start new page and define layout
+grid.newpage()
+pushViewport(viewport(layout = grid.layout(1, 2)))
+
+# Helper to specify location in layout
+vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col)
+
+# Draw both images in the layout without using print()
+pushViewport(vplayout(1, 2))
+grid.raster(bad_example, interpolate = FALSE)
+popViewport()
+
+pushViewport(vplayout(1, 1))
+grid.raster(good_example, interpolate = FALSE)
+popViewport()
+```
+
+## overlapping tiles - diff activity 
+
+```{r,echo=FALSE}
+
+
+bps_overlap = 10
+bad_example <- readPNG(sprintf("%s/LFC_corrlation_overlapping_tiles_%d_methMPRA.png",working_dir,bps_overlap),native = T)
+bps_overlap = 100
+good_example <- readPNG(sprintf("%s/LFC_corrlation_overlapping_tiles_%d_methMPRA.png",working_dir,bps_overlap),native = T)
+
+# Start new page and define layout
+grid.newpage()
+pushViewport(viewport(layout = grid.layout(1, 2)))
+
+# Helper to specify location in layout
+vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col)
+
+# Draw both images in the layout without using print()
+pushViewport(vplayout(1, 1))
+grid.raster(bad_example, interpolate = FALSE)
+popViewport()
+
+pushViewport(vplayout(1, 2))
+grid.raster(good_example, interpolate = FALSE)
+popViewport()
+```
+
+
+## Correlation between adjacent positions 
+
+
+### autocorrelation
+
+```{r,echo=FALSE}
+
+
+bad_example <- readPNG(sprintf("%s/Autocorrelation_satmut4.png",working_dir),native = T)
+good_example <- readPNG(sprintf("%s/Autocorrelation_satmut1.png",working_dir),native = T)
+
+
+# Start new page and define layout
+grid.newpage()
+pushViewport(viewport(layout = grid.layout(1, 2)))
+
+# Helper to specify location in layout
+vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col)
+
+# Draw both images in the layout without using print()
+pushViewport(vplayout(1, 2))
+grid.raster(bad_example, interpolate = FALSE)
+popViewport()
+
+pushViewport(vplayout(1, 1))
+grid.raster(good_example, interpolate = FALSE)
+popViewport()
+```
+
+### runs test - clustering
+
+```{r,echo=FALSE}
+clustering_example <- readPNG(sprintf("%s/runs_test_satmut1.png",working_dir),native = T)
+saturation_example <- readPNG(sprintf("%s/satmut1_LFC.png",working_dir),native = T)
+grid.newpage()
+pushViewport(viewport(layout = grid.layout(2, 1)))
+
+# Helper to specify location in layout
+vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col)
+
+# Draw both images in the layout without using print()
+pushViewport(vplayout(2, 1))
+grid.raster(clustering_example, interpolate = FALSE)
+popViewport()
+
+pushViewport(vplayout(1, 1))
+grid.raster(saturation_example, interpolate = FALSE)
+popViewport()
+```
+
+
+
+
+
+
+

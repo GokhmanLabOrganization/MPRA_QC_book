@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Differential Activity QC | A Minimal Book Example</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Differential Activity QC | A Minimal Book Example" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Differential Activity QC | A Minimal Book Example" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  
+
+<meta name="author" content="John Doe" />
+
+
+<meta name="date" content="2025-07-17" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="activity-qc.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#usage"><i class="fa fa-check"></i><b>1.1</b> Usage</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#scripts"><i class="fa fa-check"></i><b>1.2</b> Scripts</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="associations-qc.html"><a href="associations-qc.html"><i class="fa fa-check"></i><b>2</b> Associations QC</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="associations-qc.html"><a href="associations-qc.html#barcode-count-per-oligo"><i class="fa fa-check"></i><b>2.1</b> Barcode count per oligo</a></li>
+<li class="chapter" data-level="2.2" data-path="associations-qc.html"><a href="associations-qc.html#pcr-analysis-bias---gc-content"><i class="fa fa-check"></i><b>2.2</b> PCR analysis bias - GC content</a></li>
+<li class="chapter" data-level="2.3" data-path="associations-qc.html"><a href="associations-qc.html#pcr-bias-analysis---g-stretches"><i class="fa fa-check"></i><b>2.3</b> PCR bias analysis - G-stretches</a></li>
+<li class="chapter" data-level="2.4" data-path="associations-qc.html"><a href="associations-qc.html#oligo-barcode-molecule-count"><i class="fa fa-check"></i><b>2.4</b> Oligo-barcode molecule count</a></li>
+<li class="chapter" data-level="2.5" data-path="associations-qc.html"><a href="associations-qc.html#oligo-coverage-after-minimum-barcode-filtering"><i class="fa fa-check"></i><b>2.5</b> Oligo coverage after minimum barcode filtering</a></li>
+<li class="chapter" data-level="2.6" data-path="associations-qc.html"><a href="associations-qc.html#down-sampling-analysis"><i class="fa fa-check"></i><b>2.6</b> Down-sampling analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="activity-qc.html"><a href="activity-qc.html"><i class="fa fa-check"></i><b>3</b> Activity QC</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="activity-qc.html"><a href="activity-qc.html#activity-of-controls"><i class="fa fa-check"></i><b>3.1</b> Activity of controls</a></li>
+<li class="chapter" data-level="3.2" data-path="activity-qc.html"><a href="activity-qc.html#rnadna-ratio-correlation-between-replicates---subgroup"><i class="fa fa-check"></i><b>3.2</b> RNA/DNA ratio correlation between replicates - subgroup</a></li>
+<li class="chapter" data-level="3.3" data-path="activity-qc.html"><a href="activity-qc.html#rna-vs.-dna-scatter-plot"><i class="fa fa-check"></i><b>3.3</b> RNA vs. DNA scatter plot</a></li>
+<li class="chapter" data-level="3.4" data-path="activity-qc.html"><a href="activity-qc.html#rna-vs.-dna-scatter-plot---group-of-interest---controls"><i class="fa fa-check"></i><b>3.4</b> RNA vs. DNA scatter plot - group of interest - Controls</a></li>
+<li class="chapter" data-level="3.5" data-path="activity-qc.html"><a href="activity-qc.html#rna-vs.-dna-scatter-plot---group-of-interest---active-vs-non-active"><i class="fa fa-check"></i><b>3.5</b> RNA vs. DNA scatter plot - group of interest - Active vs Non-active</a></li>
+<li class="chapter" data-level="3.6" data-path="activity-qc.html"><a href="activity-qc.html#rna-vs.-dna-scatter-plot---bcs-level"><i class="fa fa-check"></i><b>3.6</b> RNA vs. DNA scatter plot - bcs level</a></li>
+<li class="chapter" data-level="3.7" data-path="activity-qc.html"><a href="activity-qc.html#gc-content-bias-in-dna-counts"><i class="fa fa-check"></i><b>3.7</b> GC content bias in DNA counts</a></li>
+<li class="chapter" data-level="3.8" data-path="activity-qc.html"><a href="activity-qc.html#rnadna-ratio-correlation-between-replicates"><i class="fa fa-check"></i><b>3.8</b> RNA/DNA ratio correlation between replicates</a></li>
+<li class="chapter" data-level="3.9" data-path="activity-qc.html"><a href="activity-qc.html#rnadna-ratio-correlation-between-replicates---ctrls"><i class="fa fa-check"></i><b>3.9</b> RNA/DNA ratio correlation between replicates - ctrls</a></li>
+<li class="chapter" data-level="3.10" data-path="activity-qc.html"><a href="activity-qc.html#rnadna-ratio-correlation-between-replicates---active-vs-not-active"><i class="fa fa-check"></i><b>3.10</b> RNA/DNA ratio correlation between replicates - active vs not active</a></li>
+<li class="chapter" data-level="3.11" data-path="activity-qc.html"><a href="activity-qc.html#rnadna-ratio-correlation-between-replicates---subgroup-1"><i class="fa fa-check"></i><b>3.11</b> RNA/DNA ratio correlation between replicates - subgroup</a></li>
+<li class="chapter" data-level="3.12" data-path="activity-qc.html"><a href="activity-qc.html#rnadna-ratio-correlation-with-previous-experiments-same-cell-type"><i class="fa fa-check"></i><b>3.12</b> RNA/DNA ratio correlation with previous experiments (same cell type)</a></li>
+<li class="chapter" data-level="3.13" data-path="activity-qc.html"><a href="activity-qc.html#rnadna-ratio-correlation-with-previous-experiments-allelic-pairs"><i class="fa fa-check"></i><b>3.13</b> RNA/DNA ratio correlation with previous experiments (allelic pairs)</a></li>
+<li class="chapter" data-level="3.14" data-path="activity-qc.html"><a href="activity-qc.html#rnadna-ratio-correlation-with-previous-experiments-allelic-pairs-1"><i class="fa fa-check"></i><b>3.14</b> RNA/DNA ratio correlation with previous experiments (allelic pairs)</a></li>
+<li class="chapter" data-level="3.15" data-path="activity-qc.html"><a href="activity-qc.html#rnadna-ratio-correlation-between-cell-types-ryders-graphcarlys-data"><i class="fa fa-check"></i><b>3.15</b> RNA/DNA ratio correlation between cell types (Ryder’s graph)Carly’s data</a></li>
+<li class="chapter" data-level="3.16" data-path="activity-qc.html"><a href="activity-qc.html#activity-statistic-vs.-rnadna"><i class="fa fa-check"></i><b>3.16</b> Activity statistic vs. RNA/DNA</a></li>
+<li class="chapter" data-level="3.17" data-path="activity-qc.html"><a href="activity-qc.html#how-to-measure-the-droplet-shape"><i class="fa fa-check"></i><b>3.17</b> How to measure the droplet shape?</a></li>
+<li class="chapter" data-level="3.18" data-path="activity-qc.html"><a href="activity-qc.html#increasing-mindna-threshold-to-decrease-noise"><i class="fa fa-check"></i><b>3.18</b> Increasing min(DNA) threshold to decrease noise</a></li>
+<li class="chapter" data-level="3.19" data-path="activity-qc.html"><a href="activity-qc.html#umi-complexity"><i class="fa fa-check"></i><b>3.19</b> UMI complexity</a></li>
+<li class="chapter" data-level="3.20" data-path="activity-qc.html"><a href="activity-qc.html#activity-histogram"><i class="fa fa-check"></i><b>3.20</b> Activity histogram</a></li>
+<li class="chapter" data-level="3.21" data-path="activity-qc.html"><a href="activity-qc.html#cumulative-rna-reads"><i class="fa fa-check"></i><b>3.21</b> Cumulative RNA reads</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="differential-activity-qc.html"><a href="differential-activity-qc.html"><i class="fa fa-check"></i><b>4</b> Differential Activity QC</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="differential-activity-qc.html"><a href="differential-activity-qc.html#correlation-of-activity-between-allelic-pairs"><i class="fa fa-check"></i><b>4.1</b> Correlation of Activity between allelic pairs</a></li>
+<li class="chapter" data-level="4.2" data-path="differential-activity-qc.html"><a href="differential-activity-qc.html#correlation-of-activity-between-allelic-pairs---only-active"><i class="fa fa-check"></i><b>4.2</b> Correlation of Activity between allelic pairs - only active</a></li>
+<li class="chapter" data-level="4.3" data-path="differential-activity-qc.html"><a href="differential-activity-qc.html#correlation-of-differential-activity-between-cell-types"><i class="fa fa-check"></i><b>4.3</b> Correlation of differential activity between cell types</a></li>
+<li class="chapter" data-level="4.4" data-path="differential-activity-qc.html"><a href="differential-activity-qc.html#overlapping-tiles---diff-activity"><i class="fa fa-check"></i><b>4.4</b> overlapping tiles - diff activity</a></li>
+<li class="chapter" data-level="4.5" data-path="differential-activity-qc.html"><a href="differential-activity-qc.html#correlation-between-adjacent-positions"><i class="fa fa-check"></i><b>4.5</b> Correlation between adjacent positions</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="differential-activity-qc.html"><a href="differential-activity-qc.html#autocorrelation"><i class="fa fa-check"></i><b>4.5.1</b> autocorrelation</a></li>
+<li class="chapter" data-level="4.5.2" data-path="differential-activity-qc.html"><a href="differential-activity-qc.html#runs-test---clustering"><i class="fa fa-check"></i><b>4.5.2</b> runs test - clustering</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Minimal Book Example</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="differential-activity-qc" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Differential Activity QC<a href="differential-activity-qc.html#differential-activity-qc" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="correlation-of-activity-between-allelic-pairs" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Correlation of Activity between allelic pairs<a href="differential-activity-qc.html#correlation-of-activity-between-allelic-pairs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><img src="_main_files/figure-html/unnamed-chunk-37-1.png" width="672" /></p>
+</div>
+<div id="correlation-of-activity-between-allelic-pairs---only-active" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Correlation of Activity between allelic pairs - only active<a href="differential-activity-qc.html#correlation-of-activity-between-allelic-pairs---only-active" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><img src="_main_files/figure-html/unnamed-chunk-38-1.png" width="672" /></p>
+</div>
+<div id="correlation-of-differential-activity-between-cell-types" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Correlation of differential activity between cell types<a href="differential-activity-qc.html#correlation-of-differential-activity-between-cell-types" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><img src="_main_files/figure-html/unnamed-chunk-39-1.png" width="672" /></p>
+</div>
+<div id="overlapping-tiles---diff-activity" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> overlapping tiles - diff activity<a href="differential-activity-qc.html#overlapping-tiles---diff-activity" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><img src="_main_files/figure-html/unnamed-chunk-40-1.png" width="672" /></p>
+</div>
+<div id="correlation-between-adjacent-positions" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> Correlation between adjacent positions<a href="differential-activity-qc.html#correlation-between-adjacent-positions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="autocorrelation" class="section level3 hasAnchor" number="4.5.1">
+<h3><span class="header-section-number">4.5.1</span> autocorrelation<a href="differential-activity-qc.html#autocorrelation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><img src="_main_files/figure-html/unnamed-chunk-41-1.png" width="672" /></p>
+</div>
+<div id="runs-test---clustering" class="section level3 hasAnchor" number="4.5.2">
+<h3><span class="header-section-number">4.5.2</span> runs test - clustering<a href="differential-activity-qc.html#runs-test---clustering" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><img src="_main_files/figure-html/unnamed-chunk-42-1.png" width="672" /></p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="activity-qc.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/USERNAME/REPO/edit/BRANCH/13-only_figs_diff_activity.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["_main.pdf", "_main.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+</body>
+
+</html>

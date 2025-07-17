@@ -1,0 +1,22 @@
+# Un-ignore figure folders inside docs/
+!docs/_main_files/
+!docs/_main_files/**
+.Rproj.user/
+*.Rproj
+.Rhistory
+.RData
+*.aux
+*.log
+*.out
+*.toc
+*.lot
+*.lof
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+_book/
+_cache/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
