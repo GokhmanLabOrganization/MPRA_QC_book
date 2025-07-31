@@ -1,6 +1,13 @@
 about
 usage
 scripts
+a-guide-for-running-the-analyses-notebook
+associations
+input
+activity
+input-1
+differential-activity
+input-2
 associations-qc
 barcode-count-per-oligo
 pcr-analysis-bias---gc-content
