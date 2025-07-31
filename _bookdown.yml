@@ -3,5 +3,5 @@ language:
   ui:
     chapter_name: "Chapter "
     
-rmd_files: ["index.Rmd","11-only_figs_associations.Rmd","12-only_figs_activity.Rmd","13-only_figs_diff_activity.Rmd"]
+rmd_files: ["index.Rmd","14-analysis_notebook.Rmd","11-only_figs_associations.Rmd","12-only_figs_activity.Rmd","13-only_figs_diff_activity.Rmd"]
 output_dir: "docs/"
