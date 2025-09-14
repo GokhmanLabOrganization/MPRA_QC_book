@@ -8,47 +8,20 @@ library(grid)
 ```
 
 ```{r, echo=FALSE}
-working_dir="/home/labs/davidgo/Collaboration/L4_MPRA"
+working_dir="/home/labs/davidgo/Collaboration/L4_MPRA/"
 output_dir=sprintf("%s/test_QC",working_dir)
 ```
 
 
-## Barcode count per oligo
+## Barcodes per cCRE
 
 This is a placeholder for an explanation on the analysis
 
 ```{r,echo=FALSE}
 
 
-bad_example <- readPNG("/home/labs/davidgo/Collaboration/L4_MPRA/test_QC/satmutMPRA_L4a4/barcode count per oligo with zero.png",native = T)
-good_example <- readPNG("/home/labs/davidgo/Collaboration/L4_MPRA/test_QC/humanMPRA_L3a2/barcode count per oligo with zero.png",native = T)
-
-
-# Start new page and define layout
-grid.newpage()
-pushViewport(viewport(layout = grid.layout(1, 2)))
-
-# Helper to specify location in layout
-vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col)
-
-# Draw both images in the layout without using print()
-pushViewport(vplayout(1, 2))
-grid.raster(bad_example, interpolate = FALSE)
-popViewport()
-
-pushViewport(vplayout(1, 1))
-grid.raster(good_example, interpolate = FALSE)
-popViewport()
-```
-
-## PCR analysis bias - GC content
-
-```{r,echo=FALSE}
-
-
-bad_example <- readPNG("/home/labs/davidgo/Collaboration/L4_MPRA/test_QC/humanMPRA_L3a1/reads per oligo by gc.png",native = T)
-good_example <- readPNG("/home/labs/davidgo/Collaboration/L4_MPRA/test_QC/satmutMPRA_L4a3/reads per oligo by gc.png",native = T)
-
+bad_example <- readPNG("/home/labs/davidgo/Collaboration/MPRA_QC_pipeline/associations/output/Max_MPRA_run2/Barcodes per cCRE.png",native = T)
+good_example <- readPNG("/home/labs/davidgo/Collaboration/MPRA_QC_pipeline/associations/output/PMID_38766054_Reilly/Barcodes per cCRE.png",native = T)
 
 # Start new page and define layout
 grid.newpage()
@@ -67,39 +40,13 @@ grid.raster(good_example, interpolate = FALSE)
 popViewport()
 ```
 
-## PCR bias analysis - G-stretches
-
-```{r,echo=FALSE}
-
-
-bad_example <- readPNG("/home/labs/davidgo/Collaboration/L4_MPRA/test_QC/satmutMPRA_L4a3/barcodes per oligo by G strech.png",native = T)
-good_example <- readPNG("/home/labs/davidgo/Collaboration/L4_MPRA/test_QC/humanMPRA_L3a1/barcodes per oligo by G strech.png",native = T)
-
-
-# Start new page and define layout
-grid.newpage()
-pushViewport(viewport(layout = grid.layout(1, 2)))
-
-# Helper to specify location in layout
-vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col)
-
-# Draw both images in the layout without using print()
-pushViewport(vplayout(1, 2))
-grid.raster(bad_example, interpolate = FALSE)
-popViewport()
-
-pushViewport(vplayout(1, 1))
-grid.raster(good_example, interpolate = FALSE)
-popViewport()
-```
-
-## Oligo-barcode molecule count
+## PCR bias - GC content
 
 ```{r,echo=FALSE}
 
 
 bad_example <- readPNG("/home/labs/davidgo/Collaboration/MPRA_QC_pipeline/placeholder.png",native = T)
-good_example <- readPNG("/home/labs/davidgo/Collaboration/MPRA_QC_pipeline/associations/satmutMPRA_L4a3/reads per oligo-barcode association.png",native = T)
+good_example <- readPNG("/home/labs/davidgo/Collaboration/MPRA_QC_pipeline/placeholder.png",native = T)
 
 
 # Start new page and define layout
@@ -119,13 +66,13 @@ grid.raster(good_example, interpolate = FALSE)
 popViewport()
 ```
 
-## Oligo coverage after minimum barcode filtering
 
 ```{r,echo=FALSE}
 
 
-bad_example <- readPNG("/home/labs/davidgo/Collaboration/MPRA_QC_pipeline/associations/Max_MPRA_run2/Retrieved oligos by barcode threshold.png",native = T)
-good_example <- readPNG("/home/labs/davidgo/Collaboration/MPRA_QC_pipeline/associations/humanMPRA_L3a2/Retrieved oligos by barcode threshold.png",native = T)
+bad_example <- readPNG("/home/labs/davidgo/Collaboration/MPRA_QC_pipeline/placeholder.png",native = T)
+good_example <- readPNG("/home/labs/davidgo/Collaboration/MPRA_QC_pipeline/placeholder.png",native = T)
+
 
 # Start new page and define layout
 grid.newpage()
@@ -143,13 +90,95 @@ pushViewport(vplayout(1, 1))
 grid.raster(good_example, interpolate = FALSE)
 popViewport()
 ```
+
+
+
+
+```{r,echo=FALSE}
+
+
+bad_example <- readPNG("/home/labs/davidgo/Collaboration/MPRA_QC_pipeline/placeholder.png",native = T)
+good_example <- readPNG("/home/labs/davidgo/Collaboration/MPRA_QC_pipeline/placeholder.png",native = T)
+
+
+# Start new page and define layout
+grid.newpage()
+pushViewport(viewport(layout = grid.layout(1, 2)))
+
+# Helper to specify location in layout
+vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col)
+
+# Draw both images in the layout without using print()
+pushViewport(vplayout(1, 2))
+grid.raster(bad_example, interpolate = FALSE)
+popViewport()
+
+pushViewport(vplayout(1, 1))
+grid.raster(good_example, interpolate = FALSE)
+popViewport()
+```
+
+
+
+
+## cCRE-barcode observations
+
+```{r,echo=FALSE}
+
+
+bad_example <- readPNG("/home/labs/davidgo/Collaboration/MPRA_QC_pipeline/associations/output/Max_MPRA_run2/cCRE-barcode observations.png",native = T)
+good_example <- readPNG("/home/labs/davidgo/Collaboration/MPRA_QC_pipeline/associations/output/PMID_38766054_Reilly/cCRE-barcode observations.png",native = T)
+
+
+# Start new page and define layout
+grid.newpage()
+pushViewport(viewport(layout = grid.layout(1, 2)))
+
+# Helper to specify location in layout
+vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col)
+
+# Draw both images in the layout without using print()
+pushViewport(vplayout(1, 2))
+grid.raster(bad_example, interpolate = FALSE)
+popViewport()
+
+pushViewport(vplayout(1, 1))
+grid.raster(good_example, interpolate = FALSE)
+popViewport()
+```
+
+## Retained cCREs
+
+```{r,echo=FALSE}
+
+
+bad_example <- readPNG("/home/labs/davidgo/Collaboration/MPRA_QC_pipeline/associations/output/Max_MPRA_run2/Retained cCREs.png",native = T)
+good_example <- readPNG("/home/labs/davidgo/Collaboration/MPRA_QC_pipeline/associations/output/PMID_38766054_Reilly/Retained cCREs.png",native = T)
+
+# Start new page and define layout
+grid.newpage()
+pushViewport(viewport(layout = grid.layout(1, 2)))
+
+# Helper to specify location in layout
+vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col)
+
+# Draw both images in the layout without using print()
+pushViewport(vplayout(1, 2))
+grid.raster(bad_example, interpolate = FALSE)
+popViewport()
+
+pushViewport(vplayout(1, 1))
+grid.raster(good_example, interpolate = FALSE)
+popViewport()
+```
+
 ## Barcode promiscuity
 
 ```{r,echo=FALSE}
 
 
 bad_example <- readPNG("/home/labs/davidgo/Collaboration/MPRA_QC_pipeline/placeholder.png",native = T)
-good_example <- readPNG("/home/labs/davidgo/Collaboration/MPRA_QC_pipeline/associations/satmutMPRA_L4a3/oligos per barcode.png"
+good_example <- readPNG("/home/labs/davidgo/Collaboration/MPRA_QC_pipeline/associations/output/PMID_38766054_Reilly/Barcode promiscuity.png"
 ,native = T)
 
 # Start new page and define layout
@@ -169,14 +198,14 @@ grid.raster(good_example, interpolate = FALSE)
 popViewport()
 ```
 
-## Down-sampling analysis
+## Downsampling - Retained cCREs
 
 ```{r,echo=FALSE}
 
 
 
 bad_example <- readPNG("/home/labs/davidgo/Collaboration/MPRA_QC_pipeline/placeholder.png",native = T)
-good_example <- readPNG("/home/labs/davidgo/Collaboration/MPRA_QC_pipeline/associations/satmutMPRA_L4a3/downsampling_analysis.png",native = T)
+good_example <- readPNG("/home/labs/davidgo/Collaboration/MPRA_QC_pipeline/associations/output/L2a1_281122/Downsampling - Retained cCREs.png",native = T)
 
 # Start new page and define layout
 grid.newpage()
@@ -196,12 +225,14 @@ popViewport()
 ```
 
 
+## Downsampling - Barcodes per cCRE
+
 ```{r,echo=FALSE}
 
 
-bad_example <- readPNG("/home/labs/davidgo/Collaboration/MPRA_QC_pipeline/placeholder.png",native = T)
-good_example <- readPNG("/home/labs/davidgo/Collaboration/MPRA_QC_pipeline/associations/satmutMPRA_L4a3/model_comparison_hill.png",native = T)
 
+bad_example <- readPNG("/home/labs/davidgo/Collaboration/MPRA_QC_pipeline/placeholder.png",native = T)
+good_example <- readPNG("/home/labs/davidgo/Collaboration/MPRA_QC_pipeline/associations/output/L2a1_281122/Downsampling - Barcodes per cCRE.png" ,native = T)
 
 # Start new page and define layout
 grid.newpage()
