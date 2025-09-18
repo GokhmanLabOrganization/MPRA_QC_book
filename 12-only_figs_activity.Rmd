@@ -9,58 +9,20 @@ library(grid)
 ```
 
 ```{r, echo=FALSE}
-working_dir="/home/labs/davidgo/Collaboration/MPRA_QC_pipeline/activity/output/"
+working_dir="/home/labs/davidgo/Collaboration/MPRA_QC_pipeline/activity/output"
 output_dir=sprintf("%s/test_QC",working_dir)
 ```
 
-## Activity of controls
 
-Lorem Ipsum
+## Evaluating DNA and RNA complexity
 
-
-```{r,echo=FALSE}
-
-grid.newpage()
-
-good_example <- readPNG(file.path(working_dir, "humanMPRA_L3a2", "Control_activity_boxplots.png"),native = T)
-
-bad_example_1 <- readPNG(file.path(working_dir, "humanMPRA_L1a1_Neurons", "Control_activity_boxplots.png"),native = T)
-bad_example_2 <- readPNG(file.path(working_dir, "archaic_MPRA", "Control_activity_boxplots.png"),native = T)
-
-
-# Start new page and define layout
-grid.newpage()
-pushViewport(viewport(layout = grid.layout(1, 3)))
-
-# Helper to specify location in layout
-vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col)
-
-# Draw both images in the layout without using print()
-pushViewport(vplayout(1, 1))
-grid.raster(good_example, interpolate = FALSE)
-popViewport()
-
-pushViewport(vplayout(1, 2))
-grid.raster(bad_example_1, interpolate = FALSE)
-popViewport()
-
-pushViewport(vplayout(1, 3))
-grid.raster(bad_example_2, interpolate = FALSE)
-popViewport()
-```
-
-## RNA/DNA ratio correlation between replicates - subgroup
-
-Lorem Ipsum
-
-
+### Retained cCREs and barcodes
 ```{r,echo=FALSE}
 
 grid.newpage()
 
 good_example <- readPNG(file.path(working_dir,"placeholder.png"),native = T)
-bad_example <- readPNG(file.path(working_dir,"placeholder.png"),native = T)
-
+bad_example <- readPNG(file.path(working_dir, "Max_MPRA_run2", "UMI_complexity_histogram.png"),native = T)
 
 # Start new page and define layout
 grid.newpage()
@@ -80,23 +42,18 @@ popViewport()
 
 ```
 
-## RNA vs. DNA scatter plot
 
-Lorem Ipsum
-
-
+### Activity distribution
 ```{r,echo=FALSE}
 
 grid.newpage()
 
-good_example <- readPNG(file.path(working_dir, "humanMPRA_L3a2", "RNA_DNA_ratio.png"),native = T)
-bad_example_1 <- readPNG(file.path(working_dir, "humanMPRA_L1a1", "RNA_DNA_ratio.png"),native = T)
-bad_example_2 <- readPNG(file.path(working_dir, "humanMPRA_L1a1_Neurons", "RNA_DNA_ratio.png"),native = T)
-
+good_example <- readPNG(file.path(working_dir, "modern_humanMPRA_NPC", "activity_distribution.png"),native = T)
+bad_example <- readPNG(file.path(working_dir, "humanMPRA_L1a1_Neurons", "activity_distribution.png"),native = T)
 
 # Start new page and define layout
 grid.newpage()
-pushViewport(viewport(layout = grid.layout(1, 3)))
+pushViewport(viewport(layout = grid.layout(1, 2)))
 
 # Helper to specify location in layout
 vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col)
@@ -107,32 +64,23 @@ grid.raster(good_example, interpolate = FALSE)
 popViewport()
 
 pushViewport(vplayout(1, 2))
-grid.raster(bad_example_1, interpolate = FALSE)
-popViewport()
-
-pushViewport(vplayout(1, 3))
-grid.raster(bad_example_2, interpolate = FALSE)
+grid.raster(bad_example, interpolate = FALSE)
 popViewport()
 
 ```
 
 
-## RNA vs. DNA scatter plot - group of interest - Controls
-
-Lorem Ipsum
-
+### P-value distribution
 ```{r,echo=FALSE}
 
 grid.newpage()
 
-good_example <- readPNG(file.path(working_dir, "humanMPRA_L3a2", "RNA_DNA_ratio_w_controls_highlighted.png"),native = T)
-bad_example_1 <- readPNG(file.path(working_dir, "humanMPRA_L1a1", "RNA_DNA_ratio_w_controls_highlighted.png"),native = T)
-bad_example_2 <- readPNG(file.path(working_dir, "humanMPRA_L1a1_Neurons", "RNA_DNA_ratio_w_controls_highlighted.png"),native = T)
-
+good_example <- readPNG(file.path(working_dir, "PMID_38766054_Reilly", "P_value_distribution.png"),native = T)
+bad_example <- readPNG(file.path(working_dir, "Max_MPRA_run2", "P_value_distribution.png"),native = T)
 
 # Start new page and define layout
 grid.newpage()
-pushViewport(viewport(layout = grid.layout(1, 3)))
+pushViewport(viewport(layout = grid.layout(1, 2)))
 
 # Helper to specify location in layout
 vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col)
@@ -143,58 +91,13 @@ grid.raster(good_example, interpolate = FALSE)
 popViewport()
 
 pushViewport(vplayout(1, 2))
-grid.raster(bad_example_1, interpolate = FALSE)
-popViewport()
-
-pushViewport(vplayout(1, 3))
-grid.raster(bad_example_2, interpolate = FALSE)
+grid.raster(bad_example, interpolate = FALSE)
 popViewport()
 
 ```
 
 
-## RNA vs. DNA scatter plot - group of interest - Active vs Non-active
-
-Lorem Ipsum
-
-
-```{r,echo=FALSE}
-
-grid.newpage()
-
-good_example <- readPNG(file.path(working_dir, "humanMPRA_L3a2", "RNA_DNA_ratio_active_oligos_highlighted.png"),native = T)
-bad_example_1 <- readPNG(file.path(working_dir, "humanMPRA_L1a1", "RNA_DNA_ratio_active_oligos_highlighted.png"),native = T)
-bad_example_2 <- readPNG(file.path(working_dir, "humanMPRA_L1a1_Neurons", "RNA_DNA_ratio_active_oligos_highlighted.png"),native = T)
-
-
-# Start new page and define layout
-grid.newpage()
-pushViewport(viewport(layout = grid.layout(1, 3)))
-
-# Helper to specify location in layout
-vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col)
-
-# Draw both images in the layout without using print()
-pushViewport(vplayout(1, 1))
-grid.raster(good_example, interpolate = FALSE)
-popViewport()
-
-pushViewport(vplayout(1, 2))
-grid.raster(bad_example_1, interpolate = FALSE)
-popViewport()
-
-pushViewport(vplayout(1, 3))
-grid.raster(bad_example_2, interpolate = FALSE)
-popViewport()
-
-```
-
-
-## RNA vs. DNA scatter plot - bcs level
-
-Lorem Ipsum
-
-
+### Downsampling analysis - active cCREs
 ```{r,echo=FALSE}
 
 grid.newpage()
@@ -214,25 +117,20 @@ pushViewport(vplayout(1, 1))
 grid.raster(good_example, interpolate = FALSE)
 popViewport()
 
-# Draw both images in the layout without using print()
 pushViewport(vplayout(1, 2))
 grid.raster(bad_example, interpolate = FALSE)
 popViewport()
 
 ```
 
-## GC content bias in DNA counts
 
-Lorem Ipsum
-
-
+### Cumulative RNA reads
 ```{r,echo=FALSE}
 
 grid.newpage()
 
-good_example <- readPNG(file.path(working_dir, "humanMPRA_L4a1", "GC_content_bias_in_DNA.png"),native = T)
-bad_example <- readPNG(file.path(working_dir, "humanMPRA_L3a2", "GC_content_bias_in_DNA.png"),native = T)
-
+good_example <- readPNG(file.path(working_dir, "PMID_38766054_Reilly", "cumulative_RNA_reads.png"),native = T)
+bad_example <- readPNG(file.path(working_dir, "Max_MPRA_run2", "cumulative_RNA_reads.png"),native = T)
 
 # Start new page and define layout
 grid.newpage()
@@ -252,122 +150,9 @@ popViewport()
 
 ```
 
-## RNA/DNA ratio correlation between replicates
 
-Lorem Ipsum
-
-
-
-```{r,echo=FALSE}
-
-grid.newpage()
-
-good_example <- readPNG(file.path(working_dir, "humanMPRA_L3a2", "RNA_DNA_ratio_correlation_between_replicates.png"),native = T)
-bad_example_1 <- readPNG(file.path(working_dir, "humanMPRA_L1a1", "RNA_DNA_ratio_correlation_between_replicates.png"),native = T)
-bad_example_2 <- readPNG(file.path(working_dir, "humanMPRA_L1a1_Neurons", "RNA_DNA_ratio_correlation_between_replicates.png"),native = T)
-
-
-# Start new page and define layout
-grid.newpage()
-pushViewport(viewport(layout = grid.layout(1, 3)))
-
-# Helper to specify location in layout
-vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col)
-
-# Draw both images in the layout without using print()
-pushViewport(vplayout(1, 1))
-grid.raster(good_example, interpolate = FALSE)
-popViewport()
-
-pushViewport(vplayout(1, 2))
-grid.raster(bad_example_1, interpolate = FALSE)
-popViewport()
-
-pushViewport(vplayout(1, 3))
-grid.raster(bad_example_2, interpolate = FALSE)
-popViewport()
-
-```
-
-
-
-## RNA/DNA ratio correlation between replicates - ctrls
-
-Lorem Ipsum
-
-
-```{r,echo=FALSE}
-
-grid.newpage()
-
-good_example <- readPNG(file.path(working_dir, "humanMPRA_L3a2", "RNA_DNA_ratio_correlation_between_replicates_with_controls.png"),native = T)
-bad_example_1 <- readPNG(file.path(working_dir, "humanMPRA_L1a1", "RNA_DNA_ratio_correlation_between_replicates_with_controls.png"),native = T)
-bad_example_2 <- readPNG(file.path(working_dir, "humanMPRA_L1a1_Neurons", "RNA_DNA_ratio_correlation_between_replicates_with_controls.png"),native = T)
-
-
-# Start new page and define layout
-grid.newpage()
-pushViewport(viewport(layout = grid.layout(1, 3)))
-
-# Helper to specify location in layout
-vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col)
-
-# Draw both images in the layout without using print()
-pushViewport(vplayout(1, 1))
-grid.raster(good_example, interpolate = FALSE)
-popViewport()
-
-pushViewport(vplayout(1, 2))
-grid.raster(bad_example_1, interpolate = FALSE)
-popViewport()
-
-pushViewport(vplayout(1, 3))
-grid.raster(bad_example_2, interpolate = FALSE)
-popViewport()
-
-```
-
-## RNA/DNA ratio correlation between replicates - active vs not active
-
-Lorem Ipsum
-
-
-```{r,echo=FALSE}
-
-grid.newpage()
-
-good_example <- readPNG(file.path(working_dir, "humanMPRA_L3a2", "RNA_DNA_ratio_correlation_between_replicates_with_highlighted_oligos.png"),native = T)
-bad_example_1 <- readPNG(file.path(working_dir, "humanMPRA_L1a1", "RNA_DNA_ratio_correlation_between_replicates_with_highlighted_oligos.png"),native = T)
-bad_example_2 <- readPNG(file.path(working_dir, "humanMPRA_L1a1_Neurons", "RNA_DNA_ratio_correlation_between_replicates_with_highlighted_oligos.png"),native = T)
-
-
-# Start new page and define layout
-grid.newpage()
-pushViewport(viewport(layout = grid.layout(1, 3)))
-
-# Helper to specify location in layout
-vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col)
-
-# Draw both images in the layout without using print()
-pushViewport(vplayout(1, 1))
-grid.raster(good_example, interpolate = FALSE)
-popViewport()
-
-pushViewport(vplayout(1, 2))
-grid.raster(bad_example_1, interpolate = FALSE)
-popViewport()
-
-pushViewport(vplayout(1, 3))
-grid.raster(bad_example_2, interpolate = FALSE)
-popViewport()
-
-```
-
-## RNA/DNA ratio correlation between replicates - subgroup
-
-Lorem Ipsum
-
-
+## Evaluating reproducibility
+### Similarity between samples (PCA)
 ```{r,echo=FALSE}
 
 grid.newpage()
@@ -375,6 +160,32 @@ grid.newpage()
 good_example <- readPNG(file.path(working_dir,"placeholder.png"),native = T)
 bad_example <- readPNG(file.path(working_dir,"placeholder.png"),native = T)
 
+# Start new page and define layout
+grid.newpage()
+pushViewport(viewport(layout = grid.layout(1, 2)))
+
+# Helper to specify location in layout
+vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col)
+
+# Draw both images in the layout without using print()
+pushViewport(vplayout(1, 1))
+grid.raster(good_example, interpolate = FALSE)
+popViewport()
+
+pushViewport(vplayout(1, 2))
+grid.raster(bad_example, interpolate = FALSE)
+popViewport()
+
+```
+
+### Correlation between replicates
+```{r,echo=FALSE}
+
+grid.newpage()
+
+good_example <- readPNG(file.path(working_dir, "PMID_38766054_Reilly", "RNA_DNA_ratio_correlation_between_replicates.png"),native = T)
+bad_example <- readPNG(file.path(working_dir, "humanMPRA_L1a1", "RNA_DNA_ratio_correlation_between_replicates.png"),native = T)
+
 
 # Start new page and define layout
 grid.newpage()
@@ -394,11 +205,10 @@ popViewport()
 
 ```
 
-## RNA/DNA ratio correlation with previous experiments (same cell type)
-
-Lorem Ipsum
 
 
+
+### Variation at various activity levels
 ```{r,echo=FALSE}
 
 grid.newpage()
@@ -406,7 +216,6 @@ grid.newpage()
 good_example <- readPNG(file.path(working_dir,"placeholder.png"),native = T)
 bad_example <- readPNG(file.path(working_dir,"placeholder.png"),native = T)
 
-
 # Start new page and define layout
 grid.newpage()
 pushViewport(viewport(layout = grid.layout(1, 2)))
@@ -427,12 +236,61 @@ popViewport()
 
 
 
+### Correlation between replicates (controls)
+```{r,echo=FALSE}
 
-## RNA/DNA ratio correlation with previous experiments (allelic pairs)
+grid.newpage()
 
-Lorem Ipsum
+good_example <- readPNG(file.path(working_dir, "PMID_38766054_Reilly", "RNA_DNA_ratio_correlation_between_replicates_with_controls.png"),native = T)
+bad_example <- readPNG(file.path(working_dir, "humanMPRA_L1a1", "RNA_DNA_ratio_correlation_between_replicates_with_controls.png"),native = T)
 
 
+# Start new page and define layout
+grid.newpage()
+pushViewport(viewport(layout = grid.layout(1, 2)))
+
+# Helper to specify location in layout
+vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col)
+
+# Draw both images in the layout without using print()
+pushViewport(vplayout(1, 1))
+grid.raster(good_example, interpolate = FALSE)
+popViewport()
+
+pushViewport(vplayout(1, 2))
+grid.raster(bad_example, interpolate = FALSE)
+popViewport()
+
+```
+
+
+### Activity of controls - sample comparison
+```{r,echo=FALSE}
+
+grid.newpage()
+
+good_example <- readPNG(file.path(working_dir, "PMID_38766054_Reilly", "Control_activity_boxplots.png"),native = T)
+bad_example <- readPNG(file.path(working_dir, "Max_MPRA_run2", "Control_activity_boxplots.png"),native = T)
+
+# Start new page and define layout
+grid.newpage()
+pushViewport(viewport(layout = grid.layout(1, 2)))
+
+# Helper to specify location in layout
+vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col)
+
+# Draw both images in the layout without using print()
+pushViewport(vplayout(1, 1))
+grid.raster(good_example, interpolate = FALSE)
+popViewport()
+
+pushViewport(vplayout(1, 2))
+grid.raster(bad_example, interpolate = FALSE)
+popViewport()
+
+```
+
+### Outlier barcodes + min(DNA)
 ```{r,echo=FALSE}
 
 grid.newpage()
@@ -440,7 +298,6 @@ grid.newpage()
 good_example <- readPNG(file.path(working_dir,"placeholder.png"),native = T)
 bad_example <- readPNG(file.path(working_dir,"placeholder.png"),native = T)
 
-
 # Start new page and define layout
 grid.newpage()
 pushViewport(viewport(layout = grid.layout(1, 2)))
@@ -460,52 +317,7 @@ popViewport()
 ```
 
 
-
-
-## RNA/DNA ratio correlation with previous experiments (allelic pairs)
-
-Lorem Ipsum
-
-
-```{r,echo=FALSE}
-
-grid.newpage()
-
-good_example <- readPNG(file.path(working_dir, "humanMPRA_L3a2", "allelic_pairs_correlation.png"),native = T)
-bad_example_1 <- readPNG(file.path(working_dir, "humanMPRA_L1a1", "allelic_pairs_correlation.png"),native = T)
-bad_example_2 <- readPNG(file.path(working_dir, "humanMPRA_L1a1_Neurons", "allelic_pairs_correlation.png"),native = T)
-
-
-# Start new page and define layout
-grid.newpage()
-pushViewport(viewport(layout = grid.layout(1, 3)))
-
-# Helper to specify location in layout
-vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col)
-
-# Draw both images in the layout without using print()
-pushViewport(vplayout(1, 1))
-grid.raster(good_example, interpolate = FALSE)
-popViewport()
-
-pushViewport(vplayout(1, 2))
-grid.raster(bad_example_1, interpolate = FALSE)
-popViewport()
-
-pushViewport(vplayout(1, 3))
-grid.raster(bad_example_2, interpolate = FALSE)
-popViewport()
-
-```
-
-
-
-
-## RNA/DNA ratio correlation between cell types (Ryder’s graph)Carly’s data
-
-Lorem Ipsum
-
-
+### Outlier barcodes
 ```{r,echo=FALSE}
 
 grid.newpage()
@@ -513,7 +325,6 @@ grid.newpage()
 good_example <- readPNG(file.path(working_dir,"placeholder.png"),native = T)
 bad_example <- readPNG(file.path(working_dir,"placeholder.png"),native = T)
 
-
 # Start new page and define layout
 grid.newpage()
 pushViewport(viewport(layout = grid.layout(1, 2)))
@@ -535,206 +346,725 @@ popViewport()
 
 
 
-## Activity statistic vs. RNA/DNA
+<!-- ############################ -->
 
-Lorem Ipsum
+<!-- ```{r,echo=FALSE} -->
 
-```{r,echo=FALSE}
+<!-- grid.newpage() -->
 
-grid.newpage()
+<!-- good_example <- readPNG(file.path(working_dir, "humanMPRA_L3a2", "Control_activity_boxplots.png"),native = T) -->
 
-good_example <- readPNG(file.path(working_dir, "humanMPRA_L3a2", "activity_statistic_vs_RNA_DNA_ratio.png"),native = T)
-bad_example_1 <- readPNG(file.path(working_dir, "humanMPRA_L1a1", "activity_statistic_vs_RNA_DNA_ratio.png"),native = T)
-bad_example_2 <- readPNG(file.path(working_dir, "humanMPRA_L1a1_Neurons", "activity_statistic_vs_RNA_DNA_ratio.png"),native = T)
+<!-- bad_example_1 <- readPNG(file.path(working_dir, "humanMPRA_L1a1_Neurons", "Control_activity_boxplots.png"),native = T) -->
+<!-- bad_example_2 <- readPNG(file.path(working_dir, "archaic_MPRA", "Control_activity_boxplots.png"),native = T) -->
 
 
-# Start new page and define layout
-grid.newpage()
-pushViewport(viewport(layout = grid.layout(1, 3)))
+<!-- # Start new page and define layout -->
+<!-- grid.newpage() -->
+<!-- pushViewport(viewport(layout = grid.layout(1, 3))) -->
 
-# Helper to specify location in layout
-vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col)
+<!-- # Helper to specify location in layout -->
+<!-- vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col) -->
 
-# Draw both images in the layout without using print()
-pushViewport(vplayout(1, 1))
-grid.raster(good_example, interpolate = FALSE)
-popViewport()
+<!-- # Draw both images in the layout without using print() -->
+<!-- pushViewport(vplayout(1, 1)) -->
+<!-- grid.raster(good_example, interpolate = FALSE) -->
+<!-- popViewport() -->
 
-pushViewport(vplayout(1, 2))
-grid.raster(bad_example_1, interpolate = FALSE)
-popViewport()
+<!-- pushViewport(vplayout(1, 2)) -->
+<!-- grid.raster(bad_example_1, interpolate = FALSE) -->
+<!-- popViewport() -->
 
-pushViewport(vplayout(1, 3))
-grid.raster(bad_example_2, interpolate = FALSE)
-popViewport()
+<!-- pushViewport(vplayout(1, 3)) -->
+<!-- grid.raster(bad_example_2, interpolate = FALSE) -->
+<!-- popViewport() -->
+<!-- ``` -->
 
-```
+<!-- ## RNA/DNA ratio correlation between replicates - subgroup -->
 
+<!-- Lorem Ipsum -->
 
 
+<!-- ```{r,echo=FALSE} -->
 
-## How to measure the droplet shape?
+<!-- grid.newpage() -->
 
-Lorem Ipsum
+<!-- good_example <- readPNG(file.path(working_dir,"placeholder.png"),native = T) -->
+<!-- bad_example <- readPNG(file.path(working_dir,"placeholder.png"),native = T) -->
 
 
-```{r,echo=FALSE}
+<!-- # Start new page and define layout -->
+<!-- grid.newpage() -->
+<!-- pushViewport(viewport(layout = grid.layout(1, 2))) -->
 
-grid.newpage()
+<!-- # Helper to specify location in layout -->
+<!-- vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col) -->
 
-good_example <- readPNG(file.path(working_dir,"placeholder.png"),native = T)
-bad_example <- readPNG(file.path(working_dir,"placeholder.png"),native = T)
+<!-- # Draw both images in the layout without using print() -->
+<!-- pushViewport(vplayout(1, 1)) -->
+<!-- grid.raster(good_example, interpolate = FALSE) -->
+<!-- popViewport() -->
 
+<!-- pushViewport(vplayout(1, 2)) -->
+<!-- grid.raster(bad_example, interpolate = FALSE) -->
+<!-- popViewport() -->
 
-# Start new page and define layout
-grid.newpage()
-pushViewport(viewport(layout = grid.layout(1, 2)))
+<!-- ``` -->
 
-# Helper to specify location in layout
-vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col)
+<!-- ## RNA vs. DNA scatter plot -->
 
-# Draw both images in the layout without using print()
-pushViewport(vplayout(1, 1))
-grid.raster(good_example, interpolate = FALSE)
-popViewport()
+<!-- Lorem Ipsum -->
 
-pushViewport(vplayout(1, 2))
-grid.raster(bad_example, interpolate = FALSE)
-popViewport()
 
-```
+<!-- ```{r,echo=FALSE} -->
 
+<!-- grid.newpage() -->
 
+<!-- good_example <- readPNG(file.path(working_dir, "humanMPRA_L3a2", "RNA_DNA_ratio.png"),native = T) -->
+<!-- bad_example_1 <- readPNG(file.path(working_dir, "humanMPRA_L1a1", "RNA_DNA_ratio.png"),native = T) -->
+<!-- bad_example_2 <- readPNG(file.path(working_dir, "humanMPRA_L1a1_Neurons", "RNA_DNA_ratio.png"),native = T) -->
 
-## Increasing min(DNA) threshold to decrease noise
 
-Lorem Ipsum
+<!-- # Start new page and define layout -->
+<!-- grid.newpage() -->
+<!-- pushViewport(viewport(layout = grid.layout(1, 3))) -->
 
+<!-- # Helper to specify location in layout -->
+<!-- vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col) -->
 
-```{r,echo=FALSE}
+<!-- # Draw both images in the layout without using print() -->
+<!-- pushViewport(vplayout(1, 1)) -->
+<!-- grid.raster(good_example, interpolate = FALSE) -->
+<!-- popViewport() -->
 
-grid.newpage()
+<!-- pushViewport(vplayout(1, 2)) -->
+<!-- grid.raster(bad_example_1, interpolate = FALSE) -->
+<!-- popViewport() -->
 
-example <- readPNG(file.path(working_dir, "humanMPRA_L3a2", "min_DNA_threshold_noise_analysis.png"),native = T)
+<!-- pushViewport(vplayout(1, 3)) -->
+<!-- grid.raster(bad_example_2, interpolate = FALSE) -->
+<!-- popViewport() -->
 
+<!-- ``` -->
 
-# Start new page and define layout
-grid.newpage()
-pushViewport(viewport(layout = grid.layout(1, 1)))
 
-# Helper to specify location in layout
-vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col)
+<!-- ## RNA vs. DNA scatter plot - group of interest - Controls -->
 
-# Draw both images in the layout without using print()
-pushViewport(vplayout(1, 1))
-grid.raster(example, interpolate = FALSE)
-popViewport()
+<!-- Lorem Ipsum -->
 
-```
+<!-- ```{r,echo=FALSE} -->
 
+<!-- grid.newpage() -->
 
+<!-- good_example <- readPNG(file.path(working_dir, "humanMPRA_L3a2", "RNA_DNA_ratio_w_controls_highlighted.png"),native = T) -->
+<!-- bad_example_1 <- readPNG(file.path(working_dir, "humanMPRA_L1a1", "RNA_DNA_ratio_w_controls_highlighted.png"),native = T) -->
+<!-- bad_example_2 <- readPNG(file.path(working_dir, "humanMPRA_L1a1_Neurons", "RNA_DNA_ratio_w_controls_highlighted.png"),native = T) -->
 
-## UMI complexity
 
+<!-- # Start new page and define layout -->
+<!-- grid.newpage() -->
+<!-- pushViewport(viewport(layout = grid.layout(1, 3))) -->
 
-Lorem Ipsum
+<!-- # Helper to specify location in layout -->
+<!-- vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col) -->
 
-```{r,echo=FALSE}
+<!-- # Draw both images in the layout without using print() -->
+<!-- pushViewport(vplayout(1, 1)) -->
+<!-- grid.raster(good_example, interpolate = FALSE) -->
+<!-- popViewport() -->
 
-grid.newpage()
+<!-- pushViewport(vplayout(1, 2)) -->
+<!-- grid.raster(bad_example_1, interpolate = FALSE) -->
+<!-- popViewport() -->
 
-good_example <- readPNG(file.path(working_dir, "humanMPRA_L3a2", "UMI_complexity_histogram.png"),native = T)
-bad_example <- readPNG(file.path(working_dir, "humanMPRA_L1a1", "UMI_complexity_histogram.png"),native = T)
+<!-- pushViewport(vplayout(1, 3)) -->
+<!-- grid.raster(bad_example_2, interpolate = FALSE) -->
+<!-- popViewport() -->
 
+<!-- ``` -->
 
-# Start new page and define layout
-grid.newpage()
-pushViewport(viewport(layout = grid.layout(1, 2)))
 
-# Helper to specify location in layout
-vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col)
+<!-- ## RNA vs. DNA scatter plot - group of interest - Active vs Non-active -->
 
-# Draw both images in the layout without using print()
-pushViewport(vplayout(1, 1))
-grid.raster(good_example, interpolate = FALSE)
-popViewport()
+<!-- Lorem Ipsum -->
 
-pushViewport(vplayout(1, 2))
-grid.raster(bad_example, interpolate = FALSE)
-popViewport()
 
+<!-- ```{r,echo=FALSE} -->
 
-```
+<!-- grid.newpage() -->
 
+<!-- good_example <- readPNG(file.path(working_dir, "humanMPRA_L3a2", "RNA_DNA_ratio_active_oligos_highlighted.png"),native = T) -->
+<!-- bad_example_1 <- readPNG(file.path(working_dir, "humanMPRA_L1a1", "RNA_DNA_ratio_active_oligos_highlighted.png"),native = T) -->
+<!-- bad_example_2 <- readPNG(file.path(working_dir, "humanMPRA_L1a1_Neurons", "RNA_DNA_ratio_active_oligos_highlighted.png"),native = T) -->
 
-## Activity histogram
 
-Lorem Ipsum
+<!-- # Start new page and define layout -->
+<!-- grid.newpage() -->
+<!-- pushViewport(viewport(layout = grid.layout(1, 3))) -->
 
-```{r,echo=FALSE}
+<!-- # Helper to specify location in layout -->
+<!-- vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col) -->
 
-grid.newpage()
+<!-- # Draw both images in the layout without using print() -->
+<!-- pushViewport(vplayout(1, 1)) -->
+<!-- grid.raster(good_example, interpolate = FALSE) -->
+<!-- popViewport() -->
 
-good_example <- readPNG(file.path(working_dir, "humanMPRA_L3a2", "power_analysis_activity_histogram.png"),native = T)
-bad_example_1 <- readPNG(file.path(working_dir, "humanMPRA_L1a1", "power_analysis_activity_histogram.png"),native = T)
-bad_example_2 <- readPNG(file.path(working_dir, "humanMPRA_L1a1_Neurons", "power_analysis_activity_histogram.png"),native = T)
+<!-- pushViewport(vplayout(1, 2)) -->
+<!-- grid.raster(bad_example_1, interpolate = FALSE) -->
+<!-- popViewport() -->
 
+<!-- pushViewport(vplayout(1, 3)) -->
+<!-- grid.raster(bad_example_2, interpolate = FALSE) -->
+<!-- popViewport() -->
 
-# Start new page and define layout
-grid.newpage()
-pushViewport(viewport(layout = grid.layout(1, 3)))
+<!-- ``` -->
 
-# Helper to specify location in layout
-vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col)
 
-# Draw both images in the layout without using print()
-pushViewport(vplayout(1, 1))
-grid.raster(good_example, interpolate = FALSE)
-popViewport()
+<!-- ## RNA vs. DNA scatter plot - bcs level -->
 
-pushViewport(vplayout(1, 2))
-grid.raster(bad_example_1, interpolate = FALSE)
-popViewport()
+<!-- Lorem Ipsum -->
 
-pushViewport(vplayout(1, 3))
-grid.raster(bad_example_2, interpolate = FALSE)
-popViewport()
 
-```
+<!-- ```{r,echo=FALSE} -->
 
+<!-- grid.newpage() -->
 
+<!-- good_example <- readPNG(file.path(working_dir,"placeholder.png"),native = T) -->
+<!-- bad_example <- readPNG(file.path(working_dir,"placeholder.png"),native = T) -->
 
+<!-- # Start new page and define layout -->
+<!-- grid.newpage() -->
+<!-- pushViewport(viewport(layout = grid.layout(1, 2))) -->
 
-## Cumulative RNA reads
+<!-- # Helper to specify location in layout -->
+<!-- vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col) -->
 
-Lorem Ipsum
+<!-- # Draw both images in the layout without using print() -->
+<!-- pushViewport(vplayout(1, 1)) -->
+<!-- grid.raster(good_example, interpolate = FALSE) -->
+<!-- popViewport() -->
 
+<!-- # Draw both images in the layout without using print() -->
+<!-- pushViewport(vplayout(1, 2)) -->
+<!-- grid.raster(bad_example, interpolate = FALSE) -->
+<!-- popViewport() -->
 
-```{r,echo=FALSE}
+<!-- ``` -->
 
-grid.newpage()
+<!-- ## GC content bias in DNA counts -->
 
-good_example <- readPNG(file.path(working_dir, "humanMPRA_L3a2", "Cumulative RNA reads.png"),native = T)
-bad_example <- readPNG(file.path(working_dir, "methMPRA", "Cumulative RNA reads.png"),native = T)
+<!-- Lorem Ipsum -->
 
 
-# Start new page and define layout
-grid.newpage()
-pushViewport(viewport(layout = grid.layout(1, 2)))
+<!-- ```{r,echo=FALSE} -->
 
-# Helper to specify location in layout
-vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col)
+<!-- grid.newpage() -->
 
-# Draw both images in the layout without using print()
-pushViewport(vplayout(1, 1))
-grid.raster(good_example, interpolate = FALSE)
-popViewport()
+<!-- good_example <- readPNG(file.path(working_dir, "humanMPRA_L4a1", "GC_content_bias_in_DNA.png"),native = T) -->
+<!-- bad_example <- readPNG(file.path(working_dir, "humanMPRA_L3a2", "GC_content_bias_in_DNA.png"),native = T) -->
 
-pushViewport(vplayout(1, 2))
-grid.raster(bad_example, interpolate = FALSE)
-popViewport()
 
-```
+<!-- # Start new page and define layout -->
+<!-- grid.newpage() -->
+<!-- pushViewport(viewport(layout = grid.layout(1, 2))) -->
+
+<!-- # Helper to specify location in layout -->
+<!-- vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col) -->
+
+<!-- # Draw both images in the layout without using print() -->
+<!-- pushViewport(vplayout(1, 1)) -->
+<!-- grid.raster(good_example, interpolate = FALSE) -->
+<!-- popViewport() -->
+
+<!-- pushViewport(vplayout(1, 2)) -->
+<!-- grid.raster(bad_example, interpolate = FALSE) -->
+<!-- popViewport() -->
+
+<!-- ``` -->
+
+<!-- ## RNA/DNA ratio correlation between replicates -->
+
+<!-- Lorem Ipsum -->
+
+
+
+<!-- ```{r,echo=FALSE} -->
+
+<!-- grid.newpage() -->
+
+<!-- good_example <- readPNG(file.path(working_dir, "humanMPRA_L3a2", "RNA_DNA_ratio_correlation_between_replicates.png"),native = T) -->
+<!-- bad_example_1 <- readPNG(file.path(working_dir, "humanMPRA_L1a1", "RNA_DNA_ratio_correlation_between_replicates.png"),native = T) -->
+<!-- bad_example_2 <- readPNG(file.path(working_dir, "humanMPRA_L1a1_Neurons", "RNA_DNA_ratio_correlation_between_replicates.png"),native = T) -->
+
+
+<!-- # Start new page and define layout -->
+<!-- grid.newpage() -->
+<!-- pushViewport(viewport(layout = grid.layout(1, 3))) -->
+
+<!-- # Helper to specify location in layout -->
+<!-- vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col) -->
+
+<!-- # Draw both images in the layout without using print() -->
+<!-- pushViewport(vplayout(1, 1)) -->
+<!-- grid.raster(good_example, interpolate = FALSE) -->
+<!-- popViewport() -->
+
+<!-- pushViewport(vplayout(1, 2)) -->
+<!-- grid.raster(bad_example_1, interpolate = FALSE) -->
+<!-- popViewport() -->
+
+<!-- pushViewport(vplayout(1, 3)) -->
+<!-- grid.raster(bad_example_2, interpolate = FALSE) -->
+<!-- popViewport() -->
+
+<!-- ``` -->
+
+
+
+<!-- ## RNA/DNA ratio correlation between replicates - ctrls -->
+
+<!-- Lorem Ipsum -->
+
+
+<!-- ```{r,echo=FALSE} -->
+
+<!-- grid.newpage() -->
+
+<!-- good_example <- readPNG(file.path(working_dir, "humanMPRA_L3a2", "RNA_DNA_ratio_correlation_between_replicates_with_controls.png"),native = T) -->
+<!-- bad_example_1 <- readPNG(file.path(working_dir, "humanMPRA_L1a1", "RNA_DNA_ratio_correlation_between_replicates_with_controls.png"),native = T) -->
+<!-- bad_example_2 <- readPNG(file.path(working_dir, "humanMPRA_L1a1_Neurons", "RNA_DNA_ratio_correlation_between_replicates_with_controls.png"),native = T) -->
+
+
+<!-- # Start new page and define layout -->
+<!-- grid.newpage() -->
+<!-- pushViewport(viewport(layout = grid.layout(1, 3))) -->
+
+<!-- # Helper to specify location in layout -->
+<!-- vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col) -->
+
+<!-- # Draw both images in the layout without using print() -->
+<!-- pushViewport(vplayout(1, 1)) -->
+<!-- grid.raster(good_example, interpolate = FALSE) -->
+<!-- popViewport() -->
+
+<!-- pushViewport(vplayout(1, 2)) -->
+<!-- grid.raster(bad_example_1, interpolate = FALSE) -->
+<!-- popViewport() -->
+
+<!-- pushViewport(vplayout(1, 3)) -->
+<!-- grid.raster(bad_example_2, interpolate = FALSE) -->
+<!-- popViewport() -->
+
+<!-- ``` -->
+
+<!-- ## RNA/DNA ratio correlation between replicates - active vs not active -->
+
+<!-- Lorem Ipsum -->
+
+
+<!-- ```{r,echo=FALSE} -->
+
+<!-- grid.newpage() -->
+
+<!-- good_example <- readPNG(file.path(working_dir, "humanMPRA_L3a2", "RNA_DNA_ratio_correlation_between_replicates_with_highlighted_oligos.png"),native = T) -->
+<!-- bad_example_1 <- readPNG(file.path(working_dir, "humanMPRA_L1a1", "RNA_DNA_ratio_correlation_between_replicates_with_highlighted_oligos.png"),native = T) -->
+<!-- bad_example_2 <- readPNG(file.path(working_dir, "humanMPRA_L1a1_Neurons", "RNA_DNA_ratio_correlation_between_replicates_with_highlighted_oligos.png"),native = T) -->
+
+
+<!-- # Start new page and define layout -->
+<!-- grid.newpage() -->
+<!-- pushViewport(viewport(layout = grid.layout(1, 3))) -->
+
+<!-- # Helper to specify location in layout -->
+<!-- vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col) -->
+
+<!-- # Draw both images in the layout without using print() -->
+<!-- pushViewport(vplayout(1, 1)) -->
+<!-- grid.raster(good_example, interpolate = FALSE) -->
+<!-- popViewport() -->
+
+<!-- pushViewport(vplayout(1, 2)) -->
+<!-- grid.raster(bad_example_1, interpolate = FALSE) -->
+<!-- popViewport() -->
+
+<!-- pushViewport(vplayout(1, 3)) -->
+<!-- grid.raster(bad_example_2, interpolate = FALSE) -->
+<!-- popViewport() -->
+
+<!-- ``` -->
+
+<!-- ## RNA/DNA ratio correlation between replicates - subgroup -->
+
+<!-- Lorem Ipsum -->
+
+
+<!-- ```{r,echo=FALSE} -->
+
+<!-- grid.newpage() -->
+
+<!-- good_example <- readPNG(file.path(working_dir,"placeholder.png"),native = T) -->
+<!-- bad_example <- readPNG(file.path(working_dir,"placeholder.png"),native = T) -->
+
+
+<!-- # Start new page and define layout -->
+<!-- grid.newpage() -->
+<!-- pushViewport(viewport(layout = grid.layout(1, 2))) -->
+
+<!-- # Helper to specify location in layout -->
+<!-- vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col) -->
+
+<!-- # Draw both images in the layout without using print() -->
+<!-- pushViewport(vplayout(1, 1)) -->
+<!-- grid.raster(good_example, interpolate = FALSE) -->
+<!-- popViewport() -->
+
+<!-- pushViewport(vplayout(1, 2)) -->
+<!-- grid.raster(bad_example, interpolate = FALSE) -->
+<!-- popViewport() -->
+
+<!-- ``` -->
+
+<!-- ## RNA/DNA ratio correlation with previous experiments (same cell type) -->
+
+<!-- Lorem Ipsum -->
+
+
+<!-- ```{r,echo=FALSE} -->
+
+<!-- grid.newpage() -->
+
+<!-- good_example <- readPNG(file.path(working_dir,"placeholder.png"),native = T) -->
+<!-- bad_example <- readPNG(file.path(working_dir,"placeholder.png"),native = T) -->
+
+
+<!-- # Start new page and define layout -->
+<!-- grid.newpage() -->
+<!-- pushViewport(viewport(layout = grid.layout(1, 2))) -->
+
+<!-- # Helper to specify location in layout -->
+<!-- vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col) -->
+
+<!-- # Draw both images in the layout without using print() -->
+<!-- pushViewport(vplayout(1, 1)) -->
+<!-- grid.raster(good_example, interpolate = FALSE) -->
+<!-- popViewport() -->
+
+<!-- pushViewport(vplayout(1, 2)) -->
+<!-- grid.raster(bad_example, interpolate = FALSE) -->
+<!-- popViewport() -->
+
+<!-- ``` -->
+
+
+
+
+<!-- ## RNA/DNA ratio correlation with previous experiments (allelic pairs) -->
+
+<!-- Lorem Ipsum -->
+
+
+<!-- ```{r,echo=FALSE} -->
+
+<!-- grid.newpage() -->
+
+<!-- good_example <- readPNG(file.path(working_dir,"placeholder.png"),native = T) -->
+<!-- bad_example <- readPNG(file.path(working_dir,"placeholder.png"),native = T) -->
+
+
+<!-- # Start new page and define layout -->
+<!-- grid.newpage() -->
+<!-- pushViewport(viewport(layout = grid.layout(1, 2))) -->
+
+<!-- # Helper to specify location in layout -->
+<!-- vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col) -->
+
+<!-- # Draw both images in the layout without using print() -->
+<!-- pushViewport(vplayout(1, 1)) -->
+<!-- grid.raster(good_example, interpolate = FALSE) -->
+<!-- popViewport() -->
+
+<!-- pushViewport(vplayout(1, 2)) -->
+<!-- grid.raster(bad_example, interpolate = FALSE) -->
+<!-- popViewport() -->
+
+<!-- ``` -->
+
+
+
+
+<!-- ## RNA/DNA ratio correlation with previous experiments (allelic pairs) -->
+
+<!-- Lorem Ipsum -->
+
+
+<!-- ```{r,echo=FALSE} -->
+
+<!-- grid.newpage() -->
+
+<!-- good_example <- readPNG(file.path(working_dir, "humanMPRA_L3a2", "allelic_pairs_correlation.png"),native = T) -->
+<!-- bad_example_1 <- readPNG(file.path(working_dir, "humanMPRA_L1a1", "allelic_pairs_correlation.png"),native = T) -->
+<!-- bad_example_2 <- readPNG(file.path(working_dir, "humanMPRA_L1a1_Neurons", "allelic_pairs_correlation.png"),native = T) -->
+
+
+<!-- # Start new page and define layout -->
+<!-- grid.newpage() -->
+<!-- pushViewport(viewport(layout = grid.layout(1, 3))) -->
+
+<!-- # Helper to specify location in layout -->
+<!-- vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col) -->
+
+<!-- # Draw both images in the layout without using print() -->
+<!-- pushViewport(vplayout(1, 1)) -->
+<!-- grid.raster(good_example, interpolate = FALSE) -->
+<!-- popViewport() -->
+
+<!-- pushViewport(vplayout(1, 2)) -->
+<!-- grid.raster(bad_example_1, interpolate = FALSE) -->
+<!-- popViewport() -->
+
+<!-- pushViewport(vplayout(1, 3)) -->
+<!-- grid.raster(bad_example_2, interpolate = FALSE) -->
+<!-- popViewport() -->
+
+<!-- ``` -->
+
+
+
+
+<!-- ## RNA/DNA ratio correlation between cell types (Ryder’s graph)Carly’s data -->
+
+<!-- Lorem Ipsum -->
+
+
+<!-- ```{r,echo=FALSE} -->
+
+<!-- grid.newpage() -->
+
+<!-- good_example <- readPNG(file.path(working_dir,"placeholder.png"),native = T) -->
+<!-- bad_example <- readPNG(file.path(working_dir,"placeholder.png"),native = T) -->
+
+
+<!-- # Start new page and define layout -->
+<!-- grid.newpage() -->
+<!-- pushViewport(viewport(layout = grid.layout(1, 2))) -->
+
+<!-- # Helper to specify location in layout -->
+<!-- vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col) -->
+
+<!-- # Draw both images in the layout without using print() -->
+<!-- pushViewport(vplayout(1, 1)) -->
+<!-- grid.raster(good_example, interpolate = FALSE) -->
+<!-- popViewport() -->
+
+<!-- pushViewport(vplayout(1, 2)) -->
+<!-- grid.raster(bad_example, interpolate = FALSE) -->
+<!-- popViewport() -->
+
+<!-- ``` -->
+
+
+
+
+<!-- ## Activity statistic vs. RNA/DNA -->
+
+<!-- Lorem Ipsum -->
+
+<!-- ```{r,echo=FALSE} -->
+
+<!-- grid.newpage() -->
+
+<!-- good_example <- readPNG(file.path(working_dir, "humanMPRA_L3a2", "activity_statistic_vs_RNA_DNA_ratio.png"),native = T) -->
+<!-- bad_example_1 <- readPNG(file.path(working_dir, "humanMPRA_L1a1", "activity_statistic_vs_RNA_DNA_ratio.png"),native = T) -->
+<!-- bad_example_2 <- readPNG(file.path(working_dir, "humanMPRA_L1a1_Neurons", "activity_statistic_vs_RNA_DNA_ratio.png"),native = T) -->
+
+
+<!-- # Start new page and define layout -->
+<!-- grid.newpage() -->
+<!-- pushViewport(viewport(layout = grid.layout(1, 3))) -->
+
+<!-- # Helper to specify location in layout -->
+<!-- vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col) -->
+
+<!-- # Draw both images in the layout without using print() -->
+<!-- pushViewport(vplayout(1, 1)) -->
+<!-- grid.raster(good_example, interpolate = FALSE) -->
+<!-- popViewport() -->
+
+<!-- pushViewport(vplayout(1, 2)) -->
+<!-- grid.raster(bad_example_1, interpolate = FALSE) -->
+<!-- popViewport() -->
+
+<!-- pushViewport(vplayout(1, 3)) -->
+<!-- grid.raster(bad_example_2, interpolate = FALSE) -->
+<!-- popViewport() -->
+
+<!-- ``` -->
+
+
+
+
+<!-- ## How to measure the droplet shape? -->
+
+<!-- Lorem Ipsum -->
+
+
+<!-- ```{r,echo=FALSE} -->
+
+<!-- grid.newpage() -->
+
+<!-- good_example <- readPNG(file.path(working_dir,"placeholder.png"),native = T) -->
+<!-- bad_example <- readPNG(file.path(working_dir,"placeholder.png"),native = T) -->
+
+
+<!-- # Start new page and define layout -->
+<!-- grid.newpage() -->
+<!-- pushViewport(viewport(layout = grid.layout(1, 2))) -->
+
+<!-- # Helper to specify location in layout -->
+<!-- vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col) -->
+
+<!-- # Draw both images in the layout without using print() -->
+<!-- pushViewport(vplayout(1, 1)) -->
+<!-- grid.raster(good_example, interpolate = FALSE) -->
+<!-- popViewport() -->
+
+<!-- pushViewport(vplayout(1, 2)) -->
+<!-- grid.raster(bad_example, interpolate = FALSE) -->
+<!-- popViewport() -->
+
+<!-- ``` -->
+
+
+
+<!-- ## Increasing min(DNA) threshold to decrease noise -->
+
+<!-- Lorem Ipsum -->
+
+
+<!-- ```{r,echo=FALSE} -->
+
+<!-- grid.newpage() -->
+
+<!-- example <- readPNG(file.path(working_dir, "humanMPRA_L3a2", "min_DNA_threshold_noise_analysis.png"),native = T) -->
+
+
+<!-- # Start new page and define layout -->
+<!-- grid.newpage() -->
+<!-- pushViewport(viewport(layout = grid.layout(1, 1))) -->
+
+<!-- # Helper to specify location in layout -->
+<!-- vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col) -->
+
+<!-- # Draw both images in the layout without using print() -->
+<!-- pushViewport(vplayout(1, 1)) -->
+<!-- grid.raster(example, interpolate = FALSE) -->
+<!-- popViewport() -->
+
+<!-- ``` -->
+
+
+
+<!-- ## UMI complexity -->
+
+
+<!-- Lorem Ipsum -->
+
+<!-- ```{r,echo=FALSE} -->
+
+<!-- grid.newpage() -->
+
+<!-- good_example <- readPNG(file.path(working_dir, "humanMPRA_L3a2", "UMI_complexity_histogram.png"),native = T) -->
+<!-- bad_example <- readPNG(file.path(working_dir, "humanMPRA_L1a1", "UMI_complexity_histogram.png"),native = T) -->
+
+
+<!-- # Start new page and define layout -->
+<!-- grid.newpage() -->
+<!-- pushViewport(viewport(layout = grid.layout(1, 2))) -->
+
+<!-- # Helper to specify location in layout -->
+<!-- vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col) -->
+
+<!-- # Draw both images in the layout without using print() -->
+<!-- pushViewport(vplayout(1, 1)) -->
+<!-- grid.raster(good_example, interpolate = FALSE) -->
+<!-- popViewport() -->
+
+<!-- pushViewport(vplayout(1, 2)) -->
+<!-- grid.raster(bad_example, interpolate = FALSE) -->
+<!-- popViewport() -->
+
+
+<!-- ``` -->
+
+
+<!-- ## Activity histogram -->
+
+<!-- Lorem Ipsum -->
+
+<!-- ```{r,echo=FALSE} -->
+
+<!-- grid.newpage() -->
+
+<!-- good_example <- readPNG(file.path(working_dir, "humanMPRA_L3a2", "power_analysis_activity_histogram.png"),native = T) -->
+<!-- bad_example_1 <- readPNG(file.path(working_dir, "humanMPRA_L1a1", "power_analysis_activity_histogram.png"),native = T) -->
+<!-- bad_example_2 <- readPNG(file.path(working_dir, "humanMPRA_L1a1_Neurons", "power_analysis_activity_histogram.png"),native = T) -->
+
+
+<!-- # Start new page and define layout -->
+<!-- grid.newpage() -->
+<!-- pushViewport(viewport(layout = grid.layout(1, 3))) -->
+
+<!-- # Helper to specify location in layout -->
+<!-- vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col) -->
+
+<!-- # Draw both images in the layout without using print() -->
+<!-- pushViewport(vplayout(1, 1)) -->
+<!-- grid.raster(good_example, interpolate = FALSE) -->
+<!-- popViewport() -->
+
+<!-- pushViewport(vplayout(1, 2)) -->
+<!-- grid.raster(bad_example_1, interpolate = FALSE) -->
+<!-- popViewport() -->
+
+<!-- pushViewport(vplayout(1, 3)) -->
+<!-- grid.raster(bad_example_2, interpolate = FALSE) -->
+<!-- popViewport() -->
+
+<!-- ``` -->
+
+
+
+
+<!-- ## Cumulative RNA reads -->
+
+<!-- Lorem Ipsum -->
+
+
+<!-- ```{r,echo=FALSE} -->
+
+<!-- grid.newpage() -->
+
+<!-- good_example <- readPNG(file.path(working_dir, "humanMPRA_L3a2", "Cumulative RNA reads.png"),native = T) -->
+<!-- bad_example <- readPNG(file.path(working_dir, "methMPRA", "Cumulative RNA reads.png"),native = T) -->
+
+
+<!-- # Start new page and define layout -->
+<!-- grid.newpage() -->
+<!-- pushViewport(viewport(layout = grid.layout(1, 2))) -->
+
+<!-- # Helper to specify location in layout -->
+<!-- vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col) -->
+
+<!-- # Draw both images in the layout without using print() -->
+<!-- pushViewport(vplayout(1, 1)) -->
+<!-- grid.raster(good_example, interpolate = FALSE) -->
+<!-- popViewport() -->
+
+<!-- pushViewport(vplayout(1, 2)) -->
+<!-- grid.raster(bad_example, interpolate = FALSE) -->
+<!-- popViewport() -->
+
+<!-- ``` -->
 
 
 
