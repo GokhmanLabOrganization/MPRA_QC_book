@@ -8,7 +8,11 @@ input-2
 associations-qc
 barcodes-per-ccre
 pcr-bias---gc-content
+reads-per-gc-bin
+ccre-counts
 pcr-bias---g-stretch
+reads-per-g-stretch-bin
+ccre-counts-1
 ccre-barcode-observations
 retained-ccres
 barcode-promiscuity

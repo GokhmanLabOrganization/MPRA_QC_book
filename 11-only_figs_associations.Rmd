@@ -14,8 +14,9 @@ output_dir=sprintf("%s/test_QC",working_dir)
 
 
 ## Barcodes per cCRE
-
-This is a placeholder for an explanation on the analysis
+**Goal:** <br>
+**Input file:**<br>
+**Evaluated metrics**:<br>
 
 ```{r,echo=FALSE}
 
@@ -40,8 +41,15 @@ grid.raster(good_example, interpolate = FALSE)
 popViewport()
 ```
 
-## PCR bias - GC content
+**Legend:** <br>
+**Interpretation:**<br>
 
+
+## PCR bias - GC content
+### Reads per GC bin 
+**Goal:** <br>
+**Input file:**<br>
+**Evaluated metrics**:<br>
 ```{r,echo=FALSE}
 
 
@@ -66,7 +74,14 @@ grid.raster(good_example, interpolate = FALSE)
 popViewport()
 ```
 
+**Legend:** <br>
+**Interpretation:**<br>
 
+
+### cCRE counts 
+**Goal:** <br>
+**Input file:**<br>
+**Evaluated metrics**:<br>
 
 ```{r,echo=FALSE}
 
@@ -92,9 +107,15 @@ grid.raster(good_example, interpolate = FALSE)
 popViewport()
 ```
 
+**Legend:** <br>
+**Interpretation:**<br>
+
+
 ## PCR bias - G Stretch
-
-
+### Reads per G stretch bin
+**Goal:** <br>
+**Input file:**<br>
+**Evaluated metrics**:<br>
 
 ```{r,echo=FALSE}
 
@@ -120,6 +141,15 @@ grid.raster(good_example, interpolate = FALSE)
 popViewport()
 ```
 
+**Legend:** <br>
+**Interpretation:**<br>
+
+
+### cCRE counts 
+
+**Goal:** <br>
+**Input file:**<br>
+**Evaluated metrics**:<br>
 ```{r,echo=FALSE}
 
 
@@ -144,9 +174,14 @@ grid.raster(good_example, interpolate = FALSE)
 popViewport()
 ```
 
+**Legend:** <br>
+**Interpretation:**<br>
+
 
 ## cCRE-barcode observations
-
+**Goal:** <br>
+**Input file:**<br>
+**Evaluated metrics**:<br>
 ```{r,echo=FALSE}
 
 
@@ -171,8 +206,14 @@ grid.raster(good_example, interpolate = FALSE)
 popViewport()
 ```
 
-## Retained cCREs
+**Legend:** <br>
+**Interpretation:**<br>
 
+
+## Retained cCREs
+**Goal:** <br>
+**Input file:**<br>
+**Evaluated metrics**:<br>
 ```{r,echo=FALSE}
 
 
@@ -196,8 +237,14 @@ grid.raster(good_example, interpolate = FALSE)
 popViewport()
 ```
 
-## Barcode promiscuity
+**Legend:** <br>
+**Interpretation:**<br>
 
+
+## Barcode promiscuity
+**Goal:** <br>
+**Input file:**<br>
+**Evaluated metrics**:<br>
 ```{r,echo=FALSE}
 
 
@@ -222,8 +269,14 @@ grid.raster(good_example, interpolate = FALSE)
 popViewport()
 ```
 
-## Downsampling - Retained cCREs
+**Legend:** <br>
+**Interpretation:**<br>
 
+
+## Downsampling - Retained cCREs
+**Goal:** <br>
+**Input file:**<br>
+**Evaluated metrics**:<br>
 ```{r,echo=FALSE}
 
 
@@ -248,12 +301,15 @@ grid.raster(good_example, interpolate = FALSE)
 popViewport()
 ```
 
+**Legend:** <br>
+**Interpretation:**<br>
+
 
 ## Downsampling - Barcodes per cCRE
-
+**Goal:** <br>
+**Input file:**<br>
+**Evaluated metrics**:<br>
 ```{r,echo=FALSE}
-
-
 
 bad_example <- readPNG("/home/labs/davidgo/Collaboration/MPRA_QC_pipeline/associations/output/Max_MPRA_run2/Downsampling - Barcodes per cCRE.png",native = T)
 good_example <- readPNG("/home/labs/davidgo/Collaboration/MPRA_QC_pipeline/associations/output/L3a2_281122/Downsampling - Barcodes per cCRE.png" ,native = T)
@@ -274,3 +330,6 @@ pushViewport(vplayout(1, 1))
 grid.raster(good_example, interpolate = FALSE)
 popViewport()
 ```
+
+**Legend:** <br>
+**Interpretation:**<br>
