@@ -1,6 +1,3 @@
-overview
-usage
-scripts
 a-guide-for-running-the-analyses-notebook
 associations
 input
