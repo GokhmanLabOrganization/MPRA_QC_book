@@ -11,61 +11,101 @@ library(grid)
 ```{r, echo=FALSE}
 working_dir="/home/labs/davidgo/Collaboration/MPRA_QC_pipeline/activity/output"
 output_dir=sprintf("%s/test_QC",working_dir)
+verbose = TRUE
+
+print_examples <- function(good_example, bad_example, bad_example2 = NULL) {
+  if (exists("verbose", envir = .GlobalEnv) && get("verbose", envir = .GlobalEnv)) {
+    cat("Good example:", good_example, "\n")
+    cat("Bad example:", bad_example, "\n")
+    if (!is.null(bad_example2)) {
+      cat("Bad example 2:", bad_example2, "\n")
+    }
+  }
+}
+
+plot_single <- function(example) {
+  # Start new page
+  grid::grid.newpage()
+  
+  # Draw the image directly (no layout needed for one plot)
+  grid::grid.raster(example, interpolate = FALSE)
+}
+
+
+plot_side_by_side <- function(good_example, bad_example) {
+  # Start new page and define layout
+  grid::grid.newpage()
+  grid::pushViewport(grid::viewport(layout = grid::grid.layout(1, 2)))
+  
+  # Helper to specify location in layout
+  vplayout <- function(row, col) grid::viewport(layout.pos.row = row, layout.pos.col = col)
+  
+  # Draw both images in the layout without using print()
+  grid::pushViewport(vplayout(1, 1))
+  grid::grid.raster(good_example, interpolate = FALSE)
+  grid::popViewport()
+  
+  grid::pushViewport(vplayout(1, 2))
+  grid::grid.raster(bad_example, interpolate = FALSE)
+  grid::popViewport()
+}
+
+
+plot_three_side_by_side <- function(good_example, bad_example1, bad_example2) {
+  # Start new page and define layout
+  grid::grid.newpage()
+  grid::pushViewport(grid::viewport(layout = grid::grid.layout(1, 3)))
+  
+  # Helper to specify location in layout
+  vplayout <- function(row, col) grid::viewport(layout.pos.row = row, layout.pos.col = col)
+  
+  # Draw images in the layout without using print()
+  grid::pushViewport(vplayout(1, 1))
+  grid::grid.raster(good_example, interpolate = FALSE)
+  grid::popViewport()
+  
+  grid::pushViewport(vplayout(1, 2))
+  grid::grid.raster(bad_example1, interpolate = FALSE)
+  grid::popViewport()
+  
+  grid::pushViewport(vplayout(1, 3))
+  grid::grid.raster(bad_example2, interpolate = FALSE)
+  grid::popViewport()
+}
+
+
 ```
 
 
 ## Evaluating DNA and RNA complexity
-
 ### Retained cCREs and barcodes
 ```{r,echo=FALSE}
+good_example_MPRA = "PMID_38766054_Reilly"
+bad_example_MPRA = "Max_MPRA_run2"
+analysis_name = 'activity_distribution.png'
+print_examples(good_example_MPRA, bad_example_MPRA)
 
-grid.newpage()
+good_example <- readPNG(file.path(working_dir,good_example_MPRA,analysis_name),native = T)
+bad_example <- readPNG(file.path(working_dir, bad_example_MPRA, analysis_name),native = T)
+plot_side_by_side(good_example,bad_example)
 
-good_example <- readPNG(file.path(working_dir,"placeholder.png"),native = T)
-bad_example <- readPNG(file.path(working_dir, "Max_MPRA_run2", "UMI_complexity_histogram.png"),native = T)
-
-# Start new page and define layout
-grid.newpage()
-pushViewport(viewport(layout = grid.layout(1, 2)))
-
-# Helper to specify location in layout
-vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col)
-
-# Draw both images in the layout without using print()
-pushViewport(vplayout(1, 1))
-grid.raster(good_example, interpolate = FALSE)
-popViewport()
-
-pushViewport(vplayout(1, 2))
-grid.raster(bad_example, interpolate = FALSE)
-popViewport()
-
+rm(good_example_MPRA,bad_example_MPRA,analysis_name)
 ```
 
 
 ### Activity distribution
 ```{r,echo=FALSE}
 
-grid.newpage()
+good_example_MPRA = "modern_humanMPRA_NPC"
+bad_example_MPRA = "humanMPRA_L1a1_Neurons"
+analysis_name = 'activity_distribution.png'
+print_examples(good_example_MPRA, bad_example_MPRA)
 
-good_example <- readPNG(file.path(working_dir, "modern_humanMPRA_NPC", "activity_distribution.png"),native = T)
-bad_example <- readPNG(file.path(working_dir, "humanMPRA_L1a1_Neurons", "activity_distribution.png"),native = T)
+good_example <- readPNG(file.path(working_dir,good_example_MPRA,analysis_name),native = T)
+bad_example <- readPNG(file.path(working_dir, bad_example_MPRA, analysis_name),native = T)
+plot_side_by_side(good_example,bad_example)
 
-# Start new page and define layout
-grid.newpage()
-pushViewport(viewport(layout = grid.layout(1, 2)))
-
-# Helper to specify location in layout
-vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col)
-
-# Draw both images in the layout without using print()
-pushViewport(vplayout(1, 1))
-grid.raster(good_example, interpolate = FALSE)
-popViewport()
-
-pushViewport(vplayout(1, 2))
-grid.raster(bad_example, interpolate = FALSE)
-popViewport()
+rm(good_example_MPRA,bad_example_MPRA,analysis_name)
 
 ```
 
@@ -73,27 +113,16 @@ popViewport()
 ### P-value distribution
 ```{r,echo=FALSE}
 
-grid.newpage()
+good_example_MPRA = "PMID_38766054_Reilly"
+bad_example_MPRA = "Max_MPRA_run2"
+analysis_name = 'P_value_distribution.png'
+print_examples(good_example_MPRA, bad_example_MPRA)
 
-good_example <- readPNG(file.path(working_dir, "PMID_38766054_Reilly", "P_value_distribution.png"),native = T)
-bad_example <- readPNG(file.path(working_dir, "Max_MPRA_run2", "P_value_distribution.png"),native = T)
+good_example <- readPNG(file.path(working_dir,good_example_MPRA,analysis_name),native = T)
+bad_example <- readPNG(file.path(working_dir, bad_example_MPRA, analysis_name),native = T)
+plot_side_by_side(good_example,bad_example)
 
-# Start new page and define layout
-grid.newpage()
-pushViewport(viewport(layout = grid.layout(1, 2)))
-
-# Helper to specify location in layout
-vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col)
-
-# Draw both images in the layout without using print()
-pushViewport(vplayout(1, 1))
-grid.raster(good_example, interpolate = FALSE)
-popViewport()
-
-pushViewport(vplayout(1, 2))
-grid.raster(bad_example, interpolate = FALSE)
-popViewport()
-
+rm(good_example_MPRA,bad_example_MPRA,analysis_name)
 ```
 
 
@@ -126,27 +155,16 @@ popViewport()
 
 ### Cumulative RNA reads
 ```{r,echo=FALSE}
+good_example_MPRA = "PMID_38766054_Reilly"
+bad_example_MPRA = "Max_MPRA_run2"
+analysis_name = 'cumulative_RNA_reads.png'
+print_examples(good_example_MPRA, bad_example_MPRA)
 
-grid.newpage()
+good_example <- readPNG(file.path(working_dir,good_example_MPRA,analysis_name),native = T)
+bad_example <- readPNG(file.path(working_dir, bad_example_MPRA, analysis_name),native = T)
+plot_side_by_side(good_example,bad_example)
 
-good_example <- readPNG(file.path(working_dir, "PMID_38766054_Reilly", "cumulative_RNA_reads.png"),native = T)
-bad_example <- readPNG(file.path(working_dir, "Max_MPRA_run2", "cumulative_RNA_reads.png"),native = T)
-
-# Start new page and define layout
-grid.newpage()
-pushViewport(viewport(layout = grid.layout(1, 2)))
-
-# Helper to specify location in layout
-vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col)
-
-# Draw both images in the layout without using print()
-pushViewport(vplayout(1, 1))
-grid.raster(good_example, interpolate = FALSE)
-popViewport()
-
-pushViewport(vplayout(1, 2))
-grid.raster(bad_example, interpolate = FALSE)
-popViewport()
+rm(good_example_MPRA,bad_example_MPRA,analysis_name)
 
 ```
 
@@ -181,28 +199,18 @@ popViewport()
 ### Correlation between replicates
 ```{r,echo=FALSE}
 
-grid.newpage()
+good_example_MPRA = "PMID_38766054_Reilly"
+bad_example_MPRA = "humanMPRA_L1a1"
+bad_example_MPRA_2 = "humanMPRA_L1a1_Neurons"
+analysis_name = 'RNA_DNA_ratio_correlation_between_replicates.png'
+print_examples(good_example_MPRA, bad_example_MPRA,bad_example_MPRA_2)
 
-good_example <- readPNG(file.path(working_dir, "PMID_38766054_Reilly", "RNA_DNA_ratio_correlation_between_replicates.png"),native = T)
-bad_example <- readPNG(file.path(working_dir, "humanMPRA_L1a1", "RNA_DNA_ratio_correlation_between_replicates.png"),native = T)
+good_example <- readPNG(file.path(working_dir,good_example_MPRA,analysis_name),native = T)
+bad_example <- readPNG(file.path(working_dir, bad_example_MPRA, analysis_name),native = T)
+bad_example_2 <- readPNG(file.path(working_dir, bad_example_MPRA_2, analysis_name),native = T)
+plot_three_side_by_side(good_example,bad_example,bad_example_2)
 
-
-# Start new page and define layout
-grid.newpage()
-pushViewport(viewport(layout = grid.layout(1, 2)))
-
-# Helper to specify location in layout
-vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col)
-
-# Draw both images in the layout without using print()
-pushViewport(vplayout(1, 1))
-grid.raster(good_example, interpolate = FALSE)
-popViewport()
-
-pushViewport(vplayout(1, 2))
-grid.raster(bad_example, interpolate = FALSE)
-popViewport()
-
+rm(good_example_MPRA,bad_example_MPRA,bad_example_MPRA_2,analysis_name)
 ```
 
 
@@ -210,7 +218,6 @@ popViewport()
 
 ### Variation at various activity levels
 ```{r,echo=FALSE}
-
 grid.newpage()
 
 good_example <- readPNG(file.path(working_dir,"placeholder.png"),native = T)
@@ -238,55 +245,52 @@ popViewport()
 
 ### Correlation between replicates (controls)
 ```{r,echo=FALSE}
+good_example_MPRA = "PMID_38766054_Reilly"
+bad_example_MPRA = "humanMPRA_L1a1"
+bad_example_MPRA_2 = "humanMPRA_L1a1_Neurons"
+analysis_name = 'RNA_DNA_ratio_correlation_between_replicates_with_controls.png'
+print_examples(good_example_MPRA, bad_example_MPRA,bad_example_MPRA_2)
 
-grid.newpage()
+good_example <- readPNG(file.path(working_dir,good_example_MPRA,analysis_name),native = T)
+bad_example <- readPNG(file.path(working_dir, bad_example_MPRA, analysis_name),native = T)
+bad_example_2 <- readPNG(file.path(working_dir, bad_example_MPRA_2, analysis_name),native = T)
+plot_three_side_by_side(good_example,bad_example,bad_example_2)
 
-good_example <- readPNG(file.path(working_dir, "PMID_38766054_Reilly", "RNA_DNA_ratio_correlation_between_replicates_with_controls.png"),native = T)
-bad_example <- readPNG(file.path(working_dir, "humanMPRA_L1a1", "RNA_DNA_ratio_correlation_between_replicates_with_controls.png"),native = T)
-
-
-# Start new page and define layout
-grid.newpage()
-pushViewport(viewport(layout = grid.layout(1, 2)))
-
-# Helper to specify location in layout
-vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col)
-
-# Draw both images in the layout without using print()
-pushViewport(vplayout(1, 1))
-grid.raster(good_example, interpolate = FALSE)
-popViewport()
-
-pushViewport(vplayout(1, 2))
-grid.raster(bad_example, interpolate = FALSE)
-popViewport()
-
+rm(good_example_MPRA,bad_example_MPRA,bad_example_MPRA_2,analysis_name)
 ```
-
 
 ### Activity of controls - sample comparison
 ```{r,echo=FALSE}
 
-grid.newpage()
+example_MPRA = "humanMPRA_L3a2"
+analysis_name = 'positive_controls_corr_between_libs_hMPRA.png'
+example <- readPNG(file.path(working_dir,example_MPRA,analysis_name),native = T)
 
-good_example <- readPNG(file.path(working_dir, "PMID_38766054_Reilly", "Control_activity_boxplots.png"),native = T)
-bad_example <- readPNG(file.path(working_dir, "Max_MPRA_run2", "Control_activity_boxplots.png"),native = T)
 
-# Start new page and define layout
-grid.newpage()
-pushViewport(viewport(layout = grid.layout(1, 2)))
+plot_single(example)
+print(example_MPRA)
+rm(example_MPRA,analysis_name)
+```
 
-# Helper to specify location in layout
-vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col)
 
-# Draw both images in the layout without using print()
-pushViewport(vplayout(1, 1))
-grid.raster(good_example, interpolate = FALSE)
-popViewport()
 
-pushViewport(vplayout(1, 2))
-grid.raster(bad_example, interpolate = FALSE)
-popViewport()
+
+
+
+
+
+### Activity of controls - sample comparison
+```{r,echo=FALSE}
+good_example_MPRA = "PMID_38766054_Reilly"
+bad_example_MPRA = "Max_MPRA_run2"
+analysis_name = 'Control_activity_boxplots.png'
+print_examples(good_example_MPRA, bad_example_MPRA)
+
+good_example <- readPNG(file.path(working_dir,good_example_MPRA,analysis_name),native = T)
+bad_example <- readPNG(file.path(working_dir, bad_example_MPRA, analysis_name),native = T)
+plot_side_by_side(good_example,bad_example)
+
+rm(good_example_MPRA,bad_example_MPRA,analysis_name)
 
 ```
 
