@@ -79,7 +79,7 @@
 
 \title{Quality Control Pipeline for Massively Parallel Reporter Assays (MPRAs)}
 \author{Omer Ronen}
-\date{2025-09-18}
+\date{2025-09-19}
 
 \begin{document}
 \maketitle
@@ -176,41 +176,110 @@ Input files
 
 \section{Barcodes per cCRE}\label{barcodes-per-ccre}
 
-This is a placeholder for an explanation on the analysis
+\textbf{Goal:}
+\textbf{Input file:}
+\textbf{Evaluated metrics}:
 
-\pandocbounded{\includegraphics[keepaspectratio]{_main_files/figure-latex/unnamed-chunk-4-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio]{11-only_figs_associations_files/figure-latex/unnamed-chunk-3-1.pdf}}
+
+\textbf{Legend:}
+\textbf{Interpretation:}
 
 \section{PCR bias - GC content}\label{pcr-bias---gc-content}
 
-\pandocbounded{\includegraphics[keepaspectratio]{_main_files/figure-latex/unnamed-chunk-5-1.pdf}}
+\subsection{Reads per GC bin}\label{reads-per-gc-bin}
 
-\pandocbounded{\includegraphics[keepaspectratio]{_main_files/figure-latex/unnamed-chunk-6-1.pdf}}
+\textbf{Goal:}
+\textbf{Input file:}
+\textbf{Evaluated metrics}:
+\pandocbounded{\includegraphics[keepaspectratio]{11-only_figs_associations_files/figure-latex/unnamed-chunk-4-1.pdf}}
+
+\textbf{Legend:}
+\textbf{Interpretation:}
+
+\subsection{cCRE counts}\label{ccre-counts}
+
+\textbf{Goal:}
+\textbf{Input file:}
+\textbf{Evaluated metrics}:
+
+\pandocbounded{\includegraphics[keepaspectratio]{11-only_figs_associations_files/figure-latex/unnamed-chunk-5-1.pdf}}
+
+\textbf{Legend:}
+\textbf{Interpretation:}
 
 \section{PCR bias - G Stretch}\label{pcr-bias---g-stretch}
 
-\pandocbounded{\includegraphics[keepaspectratio]{_main_files/figure-latex/unnamed-chunk-7-1.pdf}}
+\subsection{Reads per G stretch bin}\label{reads-per-g-stretch-bin}
 
-\pandocbounded{\includegraphics[keepaspectratio]{_main_files/figure-latex/unnamed-chunk-8-1.pdf}}
+\textbf{Goal:}
+\textbf{Input file:}
+\textbf{Evaluated metrics}:
+
+\pandocbounded{\includegraphics[keepaspectratio]{11-only_figs_associations_files/figure-latex/unnamed-chunk-6-1.pdf}}
+
+\textbf{Legend:}
+\textbf{Interpretation:}
+
+\subsection{cCRE counts}\label{ccre-counts-1}
+
+\textbf{Goal:}
+\textbf{Input file:}
+\textbf{Evaluated metrics}:
+\pandocbounded{\includegraphics[keepaspectratio]{11-only_figs_associations_files/figure-latex/unnamed-chunk-7-1.pdf}}
+
+\textbf{Legend:}
+\textbf{Interpretation:}
 
 \section{cCRE-barcode observations}\label{ccre-barcode-observations}
 
-\pandocbounded{\includegraphics[keepaspectratio]{_main_files/figure-latex/unnamed-chunk-9-1.pdf}}
+\textbf{Goal:}
+\textbf{Input file:}
+\textbf{Evaluated metrics}:
+\pandocbounded{\includegraphics[keepaspectratio]{11-only_figs_associations_files/figure-latex/unnamed-chunk-8-1.pdf}}
+
+\textbf{Legend:}
+\textbf{Interpretation:}
 
 \section{Retained cCREs}\label{retained-ccres}
 
-\pandocbounded{\includegraphics[keepaspectratio]{_main_files/figure-latex/unnamed-chunk-10-1.pdf}}
+\textbf{Goal:}
+\textbf{Input file:}
+\textbf{Evaluated metrics}:
+\pandocbounded{\includegraphics[keepaspectratio]{11-only_figs_associations_files/figure-latex/unnamed-chunk-9-1.pdf}}
+
+\textbf{Legend:}
+\textbf{Interpretation:}
 
 \section{Barcode promiscuity}\label{barcode-promiscuity}
 
-\pandocbounded{\includegraphics[keepaspectratio]{_main_files/figure-latex/unnamed-chunk-11-1.pdf}}
+\textbf{Goal:}
+\textbf{Input file:}
+\textbf{Evaluated metrics}:
+\pandocbounded{\includegraphics[keepaspectratio]{11-only_figs_associations_files/figure-latex/unnamed-chunk-10-1.pdf}}
+
+\textbf{Legend:}
+\textbf{Interpretation:}
 
 \section{Downsampling - Retained cCREs}\label{downsampling---retained-ccres}
 
-\pandocbounded{\includegraphics[keepaspectratio]{_main_files/figure-latex/unnamed-chunk-12-1.pdf}}
+\textbf{Goal:}
+\textbf{Input file:}
+\textbf{Evaluated metrics}:
+\pandocbounded{\includegraphics[keepaspectratio]{11-only_figs_associations_files/figure-latex/unnamed-chunk-11-1.pdf}}
+
+\textbf{Legend:}
+\textbf{Interpretation:}
 
 \section{Downsampling - Barcodes per cCRE}\label{downsampling---barcodes-per-ccre}
 
-\pandocbounded{\includegraphics[keepaspectratio]{_main_files/figure-latex/unnamed-chunk-13-1.pdf}}
+\textbf{Goal:}
+\textbf{Input file:}
+\textbf{Evaluated metrics}:
+\pandocbounded{\includegraphics[keepaspectratio]{11-only_figs_associations_files/figure-latex/unnamed-chunk-12-1.pdf}}
+
+\textbf{Legend:}
+\textbf{Interpretation:}
 
 \chapter{Activity QC}\label{activity-qc}
 
@@ -218,53 +287,58 @@ This is a placeholder for an explanation on the analysis
 
 \subsection{Retained cCREs and barcodes}\label{retained-ccres-and-barcodes}
 
-\pandocbounded{\includegraphics[keepaspectratio]{_main_files/figure-latex/unnamed-chunk-16-1.pdf}}
+\begin{verbatim}
+## Good example: PMID_38766054_Reilly 
+## Bad example: Max_MPRA_run2
+\end{verbatim}
+
+\pandocbounded{\includegraphics[keepaspectratio]{12-only_figs_activity_files/figure-latex/unnamed-chunk-3-1.pdf}}
 
 \subsection{Activity distribution}\label{activity-distribution}
 
-\pandocbounded{\includegraphics[keepaspectratio]{_main_files/figure-latex/unnamed-chunk-17-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio]{12-only_figs_activity_files/figure-latex/unnamed-chunk-4-1.pdf}}
 
 \subsection{P-value distribution}\label{p-value-distribution}
 
-\pandocbounded{\includegraphics[keepaspectratio]{_main_files/figure-latex/unnamed-chunk-18-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio]{12-only_figs_activity_files/figure-latex/unnamed-chunk-5-1.pdf}}
 
 \subsection{Downsampling analysis - active cCREs}\label{downsampling-analysis---active-ccres}
 
-\pandocbounded{\includegraphics[keepaspectratio]{_main_files/figure-latex/unnamed-chunk-19-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio]{12-only_figs_activity_files/figure-latex/unnamed-chunk-6-1.pdf}}
 
 \subsection{Cumulative RNA reads}\label{cumulative-rna-reads}
 
-\pandocbounded{\includegraphics[keepaspectratio]{_main_files/figure-latex/unnamed-chunk-20-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio]{12-only_figs_activity_files/figure-latex/unnamed-chunk-7-1.pdf}}
 
 \section{Evaluating reproducibility}\label{evaluating-reproducibility}
 
 \subsection{Similarity between samples (PCA)}\label{similarity-between-samples-pca}
 
-\pandocbounded{\includegraphics[keepaspectratio]{_main_files/figure-latex/unnamed-chunk-21-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio]{12-only_figs_activity_files/figure-latex/unnamed-chunk-8-1.pdf}}
 
 \subsection{Correlation between replicates}\label{correlation-between-replicates}
 
-\pandocbounded{\includegraphics[keepaspectratio]{_main_files/figure-latex/unnamed-chunk-22-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio]{12-only_figs_activity_files/figure-latex/unnamed-chunk-9-1.pdf}}
 
 \subsection{Variation at various activity levels}\label{variation-at-various-activity-levels}
 
-\pandocbounded{\includegraphics[keepaspectratio]{_main_files/figure-latex/unnamed-chunk-23-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio]{12-only_figs_activity_files/figure-latex/unnamed-chunk-10-1.pdf}}
 
 \subsection{Correlation between replicates (controls)}\label{correlation-between-replicates-controls}
 
-\pandocbounded{\includegraphics[keepaspectratio]{_main_files/figure-latex/unnamed-chunk-24-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio]{12-only_figs_activity_files/figure-latex/unnamed-chunk-11-1.pdf}}
 
 \subsection{Activity of controls - sample comparison}\label{activity-of-controls---sample-comparison}
 
-\pandocbounded{\includegraphics[keepaspectratio]{_main_files/figure-latex/unnamed-chunk-25-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio]{12-only_figs_activity_files/figure-latex/unnamed-chunk-12-1.pdf}}
 
 \subsection{Outlier barcodes + min(DNA)}\label{outlier-barcodes-mindna}
 
-\pandocbounded{\includegraphics[keepaspectratio]{_main_files/figure-latex/unnamed-chunk-26-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio]{12-only_figs_activity_files/figure-latex/unnamed-chunk-13-1.pdf}}
 
 \subsection{Outlier barcodes}\label{outlier-barcodes}
 
-\pandocbounded{\includegraphics[keepaspectratio]{_main_files/figure-latex/unnamed-chunk-27-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio]{12-only_figs_activity_files/figure-latex/unnamed-chunk-14-1.pdf}}
 
   \bibliography{book.bib,packages.bib}
 
