@@ -100,7 +100,14 @@
 ```
 
 
+### RNA_DNA_ratio
 
+```
+## Good example: PMID_38766054_Reilly 
+## Bad example: humanMPRA_L4a2
+```
+
+![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-13-1.png)<!-- -->![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-13-2.png)<!-- -->
 
 
 
@@ -113,14 +120,14 @@
 ## Bad example: Max_MPRA_run2
 ```
 
-![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-13-1.png)<!-- -->![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-13-2.png)<!-- -->
+![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-14-1.png)<!-- -->![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-14-2.png)<!-- -->
 
 ### Outlier barcodes + min(DNA)
-![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-14-1.png)<!-- -->
+![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-15-1.png)<!-- -->
 
 
 ### Outlier barcodes
-![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-15-1.png)<!-- -->
+![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-16-1.png)<!-- -->
 
 
 

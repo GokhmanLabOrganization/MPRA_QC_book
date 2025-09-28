@@ -31,6 +31,7 @@ correlation-between-replicates
 variation-at-various-activity-levels
 correlation-between-replicates-controls
 activity-of-controls---sample-comparison
+rna_dna_ratio
 activity-of-controls---sample-comparison-1
 outlier-barcodes-mindna
 outlier-barcodes

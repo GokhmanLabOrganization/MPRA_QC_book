@@ -330,7 +330,23 @@ rm(example_MPRA,analysis_name)
 ```
 
 
+### RNA_DNA_ratio
+```{r,echo=FALSE}
+good_example_MPRA = "PMID_38766054_Reilly"
+bad_example_MPRA = "humanMPRA_L4a2"
+analysis_name = 'RNA_DNA_ratio.png'
+print_examples(good_example_MPRA, bad_example_MPRA)
 
+good_example <- readPNG(file.path(working_dir,good_example_MPRA,analysis_name),native = T)
+bad_example <- readPNG(file.path(working_dir, bad_example_MPRA, analysis_name),native = T)
+plot_side_by_side(good_example,bad_example)
+
+plot_all_MPRA(working_dir, analysis_name, ncol = 3)
+
+
+rm(good_example_MPRA,bad_example_MPRA,analysis_name)
+
+```
 
 
 
