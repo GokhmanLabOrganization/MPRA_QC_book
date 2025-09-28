@@ -79,7 +79,7 @@
 
 \title{Quality Control Pipeline for Massively Parallel Reporter Assays (MPRAs)}
 \author{Omer Ronen}
-\date{2025-09-19}
+\date{2025-09-28}
 
 \begin{document}
 \maketitle
@@ -292,15 +292,25 @@ Input files
 ## Bad example: Max_MPRA_run2
 \end{verbatim}
 
-\pandocbounded{\includegraphics[keepaspectratio]{12-only_figs_activity_files/figure-latex/unnamed-chunk-3-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio]{12-only_figs_activity_files/figure-latex/unnamed-chunk-3-1.pdf}} \pandocbounded{\includegraphics[keepaspectratio]{12-only_figs_activity_files/figure-latex/unnamed-chunk-3-2.pdf}}
 
 \subsection{Activity distribution}\label{activity-distribution}
 
-\pandocbounded{\includegraphics[keepaspectratio]{12-only_figs_activity_files/figure-latex/unnamed-chunk-4-1.pdf}}
+\begin{verbatim}
+## Good example: modern_humanMPRA_NPC 
+## Bad example: humanMPRA_L1a1_Neurons
+\end{verbatim}
+
+\pandocbounded{\includegraphics[keepaspectratio]{12-only_figs_activity_files/figure-latex/unnamed-chunk-4-1.pdf}} \pandocbounded{\includegraphics[keepaspectratio]{12-only_figs_activity_files/figure-latex/unnamed-chunk-4-2.pdf}}
 
 \subsection{P-value distribution}\label{p-value-distribution}
 
-\pandocbounded{\includegraphics[keepaspectratio]{12-only_figs_activity_files/figure-latex/unnamed-chunk-5-1.pdf}}
+\begin{verbatim}
+## Good example: PMID_38766054_Reilly 
+## Bad example: Max_MPRA_run2
+\end{verbatim}
+
+\pandocbounded{\includegraphics[keepaspectratio]{12-only_figs_activity_files/figure-latex/unnamed-chunk-5-1.pdf}} \pandocbounded{\includegraphics[keepaspectratio]{12-only_figs_activity_files/figure-latex/unnamed-chunk-5-2.pdf}}
 
 \subsection{Downsampling analysis - active cCREs}\label{downsampling-analysis---active-ccres}
 
@@ -308,17 +318,33 @@ Input files
 
 \subsection{Cumulative RNA reads}\label{cumulative-rna-reads}
 
-\pandocbounded{\includegraphics[keepaspectratio]{12-only_figs_activity_files/figure-latex/unnamed-chunk-7-1.pdf}}
+\begin{verbatim}
+## Good example: PMID_38766054_Reilly 
+## Bad example: Max_MPRA_run2
+\end{verbatim}
+
+\pandocbounded{\includegraphics[keepaspectratio]{12-only_figs_activity_files/figure-latex/unnamed-chunk-7-1.pdf}} \pandocbounded{\includegraphics[keepaspectratio]{12-only_figs_activity_files/figure-latex/unnamed-chunk-7-2.pdf}}
 
 \section{Evaluating reproducibility}\label{evaluating-reproducibility}
 
 \subsection{Similarity between samples (PCA)}\label{similarity-between-samples-pca}
 
-\pandocbounded{\includegraphics[keepaspectratio]{12-only_figs_activity_files/figure-latex/unnamed-chunk-8-1.pdf}}
+\begin{verbatim}
+## Good example: PMID_38766054_Reilly 
+## Bad example: thylacine_biorxiv_Gallego_Romero
+\end{verbatim}
+
+\pandocbounded{\includegraphics[keepaspectratio]{12-only_figs_activity_files/figure-latex/unnamed-chunk-8-1.pdf}} \pandocbounded{\includegraphics[keepaspectratio]{12-only_figs_activity_files/figure-latex/unnamed-chunk-8-2.pdf}}
 
 \subsection{Correlation between replicates}\label{correlation-between-replicates}
 
-\pandocbounded{\includegraphics[keepaspectratio]{12-only_figs_activity_files/figure-latex/unnamed-chunk-9-1.pdf}}
+\begin{verbatim}
+## Good example: PMID_38766054_Reilly 
+## Bad example: humanMPRA_L1a1 
+## Bad example 2: humanMPRA_L1a1_Neurons
+\end{verbatim}
+
+\pandocbounded{\includegraphics[keepaspectratio]{12-only_figs_activity_files/figure-latex/unnamed-chunk-9-1.pdf}} \pandocbounded{\includegraphics[keepaspectratio]{12-only_figs_activity_files/figure-latex/unnamed-chunk-9-2.pdf}}
 
 \subsection{Variation at various activity levels}\label{variation-at-various-activity-levels}
 
@@ -326,19 +352,38 @@ Input files
 
 \subsection{Correlation between replicates (controls)}\label{correlation-between-replicates-controls}
 
-\pandocbounded{\includegraphics[keepaspectratio]{12-only_figs_activity_files/figure-latex/unnamed-chunk-11-1.pdf}}
+\begin{verbatim}
+## Good example: PMID_38766054_Reilly 
+## Bad example: humanMPRA_L1a1 
+## Bad example 2: humanMPRA_L1a1_Neurons
+\end{verbatim}
+
+\pandocbounded{\includegraphics[keepaspectratio]{12-only_figs_activity_files/figure-latex/unnamed-chunk-11-1.pdf}} \pandocbounded{\includegraphics[keepaspectratio]{12-only_figs_activity_files/figure-latex/unnamed-chunk-11-2.pdf}}
 
 \subsection{Activity of controls - sample comparison}\label{activity-of-controls---sample-comparison}
 
 \pandocbounded{\includegraphics[keepaspectratio]{12-only_figs_activity_files/figure-latex/unnamed-chunk-12-1.pdf}}
 
+\begin{verbatim}
+## [1] "humanMPRA_L3a2"
+\end{verbatim}
+
+\subsection{Activity of controls - sample comparison}\label{activity-of-controls---sample-comparison-1}
+
+\begin{verbatim}
+## Good example: PMID_38766054_Reilly 
+## Bad example: Max_MPRA_run2
+\end{verbatim}
+
+\pandocbounded{\includegraphics[keepaspectratio]{12-only_figs_activity_files/figure-latex/unnamed-chunk-13-1.pdf}} \pandocbounded{\includegraphics[keepaspectratio]{12-only_figs_activity_files/figure-latex/unnamed-chunk-13-2.pdf}}
+
 \subsection{Outlier barcodes + min(DNA)}\label{outlier-barcodes-mindna}
 
-\pandocbounded{\includegraphics[keepaspectratio]{12-only_figs_activity_files/figure-latex/unnamed-chunk-13-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio]{12-only_figs_activity_files/figure-latex/unnamed-chunk-14-1.pdf}}
 
 \subsection{Outlier barcodes}\label{outlier-barcodes}
 
-\pandocbounded{\includegraphics[keepaspectratio]{12-only_figs_activity_files/figure-latex/unnamed-chunk-14-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio]{12-only_figs_activity_files/figure-latex/unnamed-chunk-15-1.pdf}}
 
   \bibliography{book.bib,packages.bib}
 

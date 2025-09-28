@@ -73,8 +73,53 @@ plot_three_side_by_side <- function(good_example, bad_example1, bad_example2) {
   grid::popViewport()
 }
 
+library(png)
+library(grid)
+
+plot_all_MPRA <- function(working_dir, analysis_name, ncol = 3) {
+  # working_dir: path where all MPRA folders are located
+  # analysis_name: file name of the PNG image to plot (e.g. "PCA_similarity_between_samples.png")
+  # ncol: how many figures per row
+  
+  # list all MPRA library folders
+  mpra_libraries <- list.dirs(working_dir, recursive = FALSE, full.names = FALSE)
+  
+  # collect available images
+  images <- list()
+  for (lib in mpra_libraries) {
+    img_path <- file.path(working_dir, lib, analysis_name)
+    if (file.exists(img_path)) {
+      images[[lib]] <- readPNG(img_path, native = TRUE)
+    }
+  }
+  
+  if (length(images) == 0) {
+    message("No images found for ", analysis_name)
+    return(NULL)
+  }
+  
+  n <- length(images)
+  nrow <- ceiling(n / ncol)
+  
+  grid.newpage()
+  pushViewport(viewport(layout = grid.layout(nrow, ncol)))
+  
+  i <- 1
+  for (lib in names(images)) {
+    row <- ceiling(i / ncol)
+    col <- i - (row - 1) * ncol
+    pushViewport(viewport(layout.pos.row = row, layout.pos.col = col))
+    grid.raster(images[[lib]], interpolate = FALSE)
+    grid.text(lib, y = unit(0.05, "npc"), gp = gpar(col = "black", fontsize = 10))
+    popViewport()
+    i <- i + 1
+  }
+}
+
 
 ```
+
+
 
 
 ## Evaluating DNA and RNA complexity
@@ -82,12 +127,14 @@ plot_three_side_by_side <- function(good_example, bad_example1, bad_example2) {
 ```{r,echo=FALSE}
 good_example_MPRA = "PMID_38766054_Reilly"
 bad_example_MPRA = "Max_MPRA_run2"
-analysis_name = 'activity_distribution.png'
+analysis_name = 'retained_cCREs_and_barcodes.png'
 print_examples(good_example_MPRA, bad_example_MPRA)
 
 good_example <- readPNG(file.path(working_dir,good_example_MPRA,analysis_name),native = T)
 bad_example <- readPNG(file.path(working_dir, bad_example_MPRA, analysis_name),native = T)
 plot_side_by_side(good_example,bad_example)
+
+plot_all_MPRA(working_dir, analysis_name, ncol = 3)
 
 rm(good_example_MPRA,bad_example_MPRA,analysis_name)
 ```
@@ -105,6 +152,9 @@ good_example <- readPNG(file.path(working_dir,good_example_MPRA,analysis_name),n
 bad_example <- readPNG(file.path(working_dir, bad_example_MPRA, analysis_name),native = T)
 plot_side_by_side(good_example,bad_example)
 
+plot_all_MPRA(working_dir, analysis_name, ncol = 3)
+
+
 rm(good_example_MPRA,bad_example_MPRA,analysis_name)
 
 ```
@@ -121,6 +171,10 @@ print_examples(good_example_MPRA, bad_example_MPRA)
 good_example <- readPNG(file.path(working_dir,good_example_MPRA,analysis_name),native = T)
 bad_example <- readPNG(file.path(working_dir, bad_example_MPRA, analysis_name),native = T)
 plot_side_by_side(good_example,bad_example)
+
+
+plot_all_MPRA(working_dir, analysis_name, ncol = 3)
+
 
 rm(good_example_MPRA,bad_example_MPRA,analysis_name)
 ```
@@ -164,6 +218,10 @@ good_example <- readPNG(file.path(working_dir,good_example_MPRA,analysis_name),n
 bad_example <- readPNG(file.path(working_dir, bad_example_MPRA, analysis_name),native = T)
 plot_side_by_side(good_example,bad_example)
 
+
+plot_all_MPRA(working_dir, analysis_name, ncol = 3)
+
+
 rm(good_example_MPRA,bad_example_MPRA,analysis_name)
 
 ```
@@ -173,26 +231,19 @@ rm(good_example_MPRA,bad_example_MPRA,analysis_name)
 ### Similarity between samples (PCA)
 ```{r,echo=FALSE}
 
-grid.newpage()
+good_example_MPRA = "PMID_38766054_Reilly"
+bad_example_MPRA = "thylacine_biorxiv_Gallego_Romero"
+analysis_name = 'PCA_similarity_between_samples.png'
+print_examples(good_example_MPRA, bad_example_MPRA)
 
-good_example <- readPNG(file.path(working_dir,"placeholder.png"),native = T)
-bad_example <- readPNG(file.path(working_dir,"placeholder.png"),native = T)
+good_example <- readPNG(file.path(working_dir,good_example_MPRA,analysis_name),native = T)
+bad_example <- readPNG(file.path(working_dir, bad_example_MPRA, analysis_name),native = T)
+plot_side_by_side(good_example,bad_example)
 
-# Start new page and define layout
-grid.newpage()
-pushViewport(viewport(layout = grid.layout(1, 2)))
+plot_all_MPRA(working_dir, analysis_name, ncol = 3)
 
-# Helper to specify location in layout
-vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col)
 
-# Draw both images in the layout without using print()
-pushViewport(vplayout(1, 1))
-grid.raster(good_example, interpolate = FALSE)
-popViewport()
-
-pushViewport(vplayout(1, 2))
-grid.raster(bad_example, interpolate = FALSE)
-popViewport()
+rm(good_example_MPRA,bad_example_MPRA,analysis_name)
 
 ```
 
@@ -209,6 +260,9 @@ good_example <- readPNG(file.path(working_dir,good_example_MPRA,analysis_name),n
 bad_example <- readPNG(file.path(working_dir, bad_example_MPRA, analysis_name),native = T)
 bad_example_2 <- readPNG(file.path(working_dir, bad_example_MPRA_2, analysis_name),native = T)
 plot_three_side_by_side(good_example,bad_example,bad_example_2)
+
+plot_all_MPRA(working_dir, analysis_name, ncol = 3)
+
 
 rm(good_example_MPRA,bad_example_MPRA,bad_example_MPRA_2,analysis_name)
 ```
@@ -256,6 +310,9 @@ bad_example <- readPNG(file.path(working_dir, bad_example_MPRA, analysis_name),n
 bad_example_2 <- readPNG(file.path(working_dir, bad_example_MPRA_2, analysis_name),native = T)
 plot_three_side_by_side(good_example,bad_example,bad_example_2)
 
+plot_all_MPRA(working_dir, analysis_name, ncol = 3)
+
+
 rm(good_example_MPRA,bad_example_MPRA,bad_example_MPRA_2,analysis_name)
 ```
 
@@ -289,6 +346,9 @@ print_examples(good_example_MPRA, bad_example_MPRA)
 good_example <- readPNG(file.path(working_dir,good_example_MPRA,analysis_name),native = T)
 bad_example <- readPNG(file.path(working_dir, bad_example_MPRA, analysis_name),native = T)
 plot_side_by_side(good_example,bad_example)
+
+plot_all_MPRA(working_dir, analysis_name, ncol = 3)
+
 
 rm(good_example_MPRA,bad_example_MPRA,analysis_name)
 

@@ -7,6 +7,8 @@
 
 
 
+
+
 ## Evaluating DNA and RNA complexity
 ### Retained cCREs and barcodes
 
@@ -15,7 +17,7 @@
 ## Bad example: Max_MPRA_run2
 ```
 
-<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-3-1.png" width="672" />
+![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-3-1.png)<!-- -->![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-3-2.png)<!-- -->
 
 
 ### Activity distribution
@@ -25,7 +27,7 @@
 ## Bad example: humanMPRA_L1a1_Neurons
 ```
 
-<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-4-1.png" width="672" />
+![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-4-1.png)<!-- -->![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-4-2.png)<!-- -->
 
 
 ### P-value distribution
@@ -35,11 +37,11 @@
 ## Bad example: Max_MPRA_run2
 ```
 
-<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-5-1.png" width="672" />
+![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-5-1.png)<!-- -->![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-5-2.png)<!-- -->
 
 
 ### Downsampling analysis - active cCREs
-<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-6-1.png" width="672" />
+![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-6-1.png)<!-- -->
 
 
 ### Cumulative RNA reads
@@ -49,12 +51,18 @@
 ## Bad example: Max_MPRA_run2
 ```
 
-<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-7-1.png" width="672" />
+![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-7-1.png)<!-- -->![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-7-2.png)<!-- -->
 
 
 ## Evaluating reproducibility
 ### Similarity between samples (PCA)
-<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-8-1.png" width="672" />
+
+```
+## Good example: PMID_38766054_Reilly 
+## Bad example: thylacine_biorxiv_Gallego_Romero
+```
+
+![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-8-1.png)<!-- -->![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-8-2.png)<!-- -->
 
 ### Correlation between replicates
 
@@ -64,13 +72,13 @@
 ## Bad example 2: humanMPRA_L1a1_Neurons
 ```
 
-<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-9-1.png" width="672" />
+![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-9-1.png)<!-- -->![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-9-2.png)<!-- -->
 
 
 
 
 ### Variation at various activity levels
-<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-10-1.png" width="672" />
+![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-10-1.png)<!-- -->
 
 
 
@@ -82,10 +90,10 @@
 ## Bad example 2: humanMPRA_L1a1_Neurons
 ```
 
-<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-11-1.png" width="672" />
+![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-11-1.png)<!-- -->![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-11-2.png)<!-- -->
 
 ### Activity of controls - sample comparison
-<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-12-1.png" width="672" />
+![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-12-1.png)<!-- -->
 
 ```
 ## [1] "humanMPRA_L3a2"
@@ -105,14 +113,14 @@
 ## Bad example: Max_MPRA_run2
 ```
 
-<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-13-1.png" width="672" />
+![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-13-1.png)<!-- -->![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-13-2.png)<!-- -->
 
 ### Outlier barcodes + min(DNA)
-<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-14-1.png" width="672" />
+![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-14-1.png)<!-- -->
 
 
 ### Outlier barcodes
-<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-15-1.png" width="672" />
+![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-15-1.png)<!-- -->
 
 
 
