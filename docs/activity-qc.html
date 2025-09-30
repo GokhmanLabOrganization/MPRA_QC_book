@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Omer Ronen" />
 
 
-<meta name="date" content="2025-09-28" />
+<meta name="date" content="2025-09-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -137,11 +137,10 @@ set in the _output.yml file.</p>" />
 <li class="chapter" data-level="3.2.2" data-path="activity-qc.html"><a href="activity-qc.html#correlation-between-replicates"><i class="fa fa-check"></i><b>3.2.2</b> Correlation between replicates</a></li>
 <li class="chapter" data-level="3.2.3" data-path="activity-qc.html"><a href="activity-qc.html#variation-at-various-activity-levels"><i class="fa fa-check"></i><b>3.2.3</b> Variation at various activity levels</a></li>
 <li class="chapter" data-level="3.2.4" data-path="activity-qc.html"><a href="activity-qc.html#correlation-between-replicates-controls"><i class="fa fa-check"></i><b>3.2.4</b> Correlation between replicates (controls)</a></li>
-<li class="chapter" data-level="3.2.5" data-path="activity-qc.html"><a href="activity-qc.html#activity-of-controls---sample-comparison"><i class="fa fa-check"></i><b>3.2.5</b> Activity of controls - sample comparison</a></li>
-<li class="chapter" data-level="3.2.6" data-path="activity-qc.html"><a href="activity-qc.html#rna_dna_ratio"><i class="fa fa-check"></i><b>3.2.6</b> RNA_DNA_ratio</a></li>
-<li class="chapter" data-level="3.2.7" data-path="activity-qc.html"><a href="activity-qc.html#activity-of-controls---sample-comparison-1"><i class="fa fa-check"></i><b>3.2.7</b> Activity of controls - sample comparison</a></li>
-<li class="chapter" data-level="3.2.8" data-path="activity-qc.html"><a href="activity-qc.html#outlier-barcodes-mindna"><i class="fa fa-check"></i><b>3.2.8</b> Outlier barcodes + min(DNA)</a></li>
-<li class="chapter" data-level="3.2.9" data-path="activity-qc.html"><a href="activity-qc.html#outlier-barcodes"><i class="fa fa-check"></i><b>3.2.9</b> Outlier barcodes</a></li>
+<li class="chapter" data-level="3.2.5" data-path="activity-qc.html"><a href="activity-qc.html#rna_dna_ratio"><i class="fa fa-check"></i><b>3.2.5</b> RNA_DNA_ratio</a></li>
+<li class="chapter" data-level="3.2.6" data-path="activity-qc.html"><a href="activity-qc.html#activity-of-controls---sample-comparison"><i class="fa fa-check"></i><b>3.2.6</b> Activity of controls - sample comparison</a></li>
+<li class="chapter" data-level="3.2.7" data-path="activity-qc.html"><a href="activity-qc.html#minimizing-noise-outlier-barcodes-mindna---use-the-mhmpra-data"><i class="fa fa-check"></i><b>3.2.7</b> Minimizing noise [Outlier barcodes + min(DNA)] - use the mhMPRA data</a></li>
+<li class="chapter" data-level="3.2.8" data-path="activity-qc.html"><a href="activity-qc.html#outlier-barcodes"><i class="fa fa-check"></i><b>3.2.8</b> Outlier barcodes</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -170,83 +169,151 @@ set in the _output.yml file.</p>" />
 <h2><span class="header-section-number">3.1</span> Evaluating DNA and RNA complexity<a href="activity-qc.html#evaluating-dna-and-rna-complexity" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="retained-ccres-and-barcodes" class="section level3 hasAnchor" number="3.1.1">
 <h3><span class="header-section-number">3.1.1</span> Retained cCREs and barcodes<a href="activity-qc.html#retained-ccres-and-barcodes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Goal:</strong> <br>
+<strong>Input file:</strong><br>
+<strong>Evaluated metrics</strong>:<br></p>
 <pre><code>## Good example: PMID_38766054_Reilly 
 ## Bad example: Max_MPRA_run2</code></pre>
-<p><img src="12-only_figs_activity_files/figure-html/unnamed-chunk-3-1.png" width="672" /><img src="12-only_figs_activity_files/figure-html/unnamed-chunk-3-2.png" width="672" /></p>
+<p><img src="12-only_figs_activity_files/figure-html/unnamed-chunk-3-1.png" width="672" />
+<strong>Legend:</strong> <br>
+<strong>Interpretation:</strong><br></p>
 </div>
 <div id="activity-distribution" class="section level3 hasAnchor" number="3.1.2">
 <h3><span class="header-section-number">3.1.2</span> Activity distribution<a href="activity-qc.html#activity-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<pre><code>## Good example: modern_humanMPRA_NPC 
-## Bad example: humanMPRA_L1a1_Neurons</code></pre>
-<p><img src="12-only_figs_activity_files/figure-html/unnamed-chunk-4-1.png" width="672" /><img src="12-only_figs_activity_files/figure-html/unnamed-chunk-4-2.png" width="672" /></p>
+<p><strong>Goal:</strong> <br>
+<strong>Input file:</strong><br>
+<strong>Evaluated metrics</strong>:<br></p>
+<pre><code>## Good example: PMID_38766054_Reilly 
+## Bad example: humanMPRA_L4a2 
+## Bad example 2: humanMPRA_L1a1_Neurons</code></pre>
+<p><img src="12-only_figs_activity_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<pre><code>## [1] &quot;add arrows that indicate right tail, symmetry, or no activity detected&quot;</code></pre>
+<p><strong>Legend:</strong> <br>
+<strong>Interpretation:</strong><br></p>
 </div>
 <div id="p-value-distribution" class="section level3 hasAnchor" number="3.1.3">
 <h3><span class="header-section-number">3.1.3</span> P-value distribution<a href="activity-qc.html#p-value-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Goal:</strong> <br>
+<strong>Input file:</strong><br>
+<strong>Evaluated metrics</strong>:<br></p>
+<p>Problem: nothitng looks mildly bad, max looks too bad.</p>
 <pre><code>## Good example: PMID_38766054_Reilly 
-## Bad example: Max_MPRA_run2</code></pre>
-<p><img src="12-only_figs_activity_files/figure-html/unnamed-chunk-5-1.png" width="672" /><img src="12-only_figs_activity_files/figure-html/unnamed-chunk-5-2.png" width="672" /></p>
+## Bad example: humanMPRA_L4a2</code></pre>
+<p><img src="12-only_figs_activity_files/figure-html/unnamed-chunk-5-1.png" width="672" />
+<strong>Legend:</strong> <br>
+<strong>Interpretation:</strong><br></p>
 </div>
 <div id="downsampling-analysis---active-ccres" class="section level3 hasAnchor" number="3.1.4">
 <h3><span class="header-section-number">3.1.4</span> Downsampling analysis - active cCREs<a href="activity-qc.html#downsampling-analysis---active-ccres" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><img src="12-only_figs_activity_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><strong>Goal:</strong> <br>
+<strong>Input file:</strong><br>
+<strong>Evaluated metrics</strong>:<br></p>
+<p>we should use a real downsampling - Omer is in charge of that. In the bookdown we need to mention Max’s script.
+for Max’s script - we should ask why there’s a jump between the last and one-before-last downsampling. send him an email.
+Also ask what does “LP complexity” mean in his script.</p>
+<p><img src="12-only_figs_activity_files/figure-html/unnamed-chunk-6-1.png" width="672" />
+<strong>Legend:</strong> <br>
+<strong>Interpretation:</strong><br></p>
 </div>
 <div id="cumulative-rna-reads" class="section level3 hasAnchor" number="3.1.5">
 <h3><span class="header-section-number">3.1.5</span> Cumulative RNA reads<a href="activity-qc.html#cumulative-rna-reads" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Goal:</strong> <br>
+<strong>Input file:</strong><br>
+<strong>Evaluated metrics</strong>:<br></p>
+<p>Add arrows in the x axis and below it “decreasing RNA reads” in illustrator.</p>
 <pre><code>## Good example: PMID_38766054_Reilly 
-## Bad example: Max_MPRA_run2</code></pre>
-<p><img src="12-only_figs_activity_files/figure-html/unnamed-chunk-7-1.png" width="672" /><img src="12-only_figs_activity_files/figure-html/unnamed-chunk-7-2.png" width="672" /></p>
+## Bad example: d2Osteoblast_spiking_oligos</code></pre>
+<p><img src="12-only_figs_activity_files/figure-html/unnamed-chunk-7-1.png" width="672" />
+<strong>Legend:</strong> <br>
+<strong>Interpretation:</strong><br></p>
 </div>
 </div>
 <div id="evaluating-reproducibility" class="section level2 hasAnchor" number="3.2">
 <h2><span class="header-section-number">3.2</span> Evaluating reproducibility<a href="activity-qc.html#evaluating-reproducibility" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="similarity-between-samples-pca" class="section level3 hasAnchor" number="3.2.1">
 <h3><span class="header-section-number">3.2.1</span> Similarity between samples (PCA)<a href="activity-qc.html#similarity-between-samples-pca" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Goal:</strong> <br>
+<strong>Input file:</strong><br>
+<strong>Evaluated metrics</strong>:<br></p>
+<p>mention in the bookdown: the importance of the percentage explained by the 1st and 2nd PCs.</p>
 <pre><code>## Good example: PMID_38766054_Reilly 
 ## Bad example: thylacine_biorxiv_Gallego_Romero</code></pre>
-<p><img src="12-only_figs_activity_files/figure-html/unnamed-chunk-8-1.png" width="672" /><img src="12-only_figs_activity_files/figure-html/unnamed-chunk-8-2.png" width="672" /></p>
+<p><img src="12-only_figs_activity_files/figure-html/unnamed-chunk-8-1.png" width="672" />
+<strong>Legend:</strong> <br>
+<strong>Interpretation:</strong><br></p>
 </div>
 <div id="correlation-between-replicates" class="section level3 hasAnchor" number="3.2.2">
 <h3><span class="header-section-number">3.2.2</span> Correlation between replicates<a href="activity-qc.html#correlation-between-replicates" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<pre><code>## Good example: PMID_38766054_Reilly 
-## Bad example: humanMPRA_L1a1 
-## Bad example 2: humanMPRA_L1a1_Neurons</code></pre>
-<p><img src="12-only_figs_activity_files/figure-html/unnamed-chunk-9-1.png" width="672" /><img src="12-only_figs_activity_files/figure-html/unnamed-chunk-9-2.png" width="672" /></p>
+<p><strong>Goal:</strong> <br>
+<strong>Input file:</strong><br>
+<strong>Evaluated metrics</strong>:<br></p>
+<pre><code>## Good example: thylacine_biorxiv_Gallego_Romero 
+## Bad example: humanMPRA_L4a2</code></pre>
+<p><img src="12-only_figs_activity_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<pre><code>## Warning in rm(good_example_MPRA, bad_example_MPRA, bad_example_MPRA_2,
+## analysis_name): object &#39;bad_example_MPRA_2&#39; not found</code></pre>
+<p><strong>Legend:</strong> <br>
+<strong>Interpretation:</strong><br></p>
 </div>
 <div id="variation-at-various-activity-levels" class="section level3 hasAnchor" number="3.2.3">
 <h3><span class="header-section-number">3.2.3</span> Variation at various activity levels<a href="activity-qc.html#variation-at-various-activity-levels" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><img src="12-only_figs_activity_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><strong>Goal:</strong> <br>
+<strong>Input file:</strong><br>
+<strong>Evaluated metrics</strong>:<br></p>
+<p>Omer is in charge of this part.</p>
+<p><img src="12-only_figs_activity_files/figure-html/unnamed-chunk-10-1.png" width="672" />
+<strong>Legend:</strong> <br>
+<strong>Interpretation:</strong><br></p>
 </div>
 <div id="correlation-between-replicates-controls" class="section level3 hasAnchor" number="3.2.4">
 <h3><span class="header-section-number">3.2.4</span> Correlation between replicates (controls)<a href="activity-qc.html#correlation-between-replicates-controls" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<pre><code>## Good example: PMID_38766054_Reilly 
-## Bad example: humanMPRA_L1a1 
-## Bad example 2: humanMPRA_L1a1_Neurons</code></pre>
-<p><img src="12-only_figs_activity_files/figure-html/unnamed-chunk-11-1.png" width="672" /><img src="12-only_figs_activity_files/figure-html/unnamed-chunk-11-2.png" width="672" /></p>
-</div>
-<div id="activity-of-controls---sample-comparison" class="section level3 hasAnchor" number="3.2.5">
-<h3><span class="header-section-number">3.2.5</span> Activity of controls - sample comparison<a href="activity-qc.html#activity-of-controls---sample-comparison" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><img src="12-only_figs_activity_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
-<pre><code>## [1] &quot;humanMPRA_L3a2&quot;</code></pre>
-</div>
-<div id="rna_dna_ratio" class="section level3 hasAnchor" number="3.2.6">
-<h3><span class="header-section-number">3.2.6</span> RNA_DNA_ratio<a href="activity-qc.html#rna_dna_ratio" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<pre><code>## Good example: PMID_38766054_Reilly 
-## Bad example: humanMPRA_L4a2</code></pre>
-<p><img src="12-only_figs_activity_files/figure-html/unnamed-chunk-13-1.png" width="672" /><img src="12-only_figs_activity_files/figure-html/unnamed-chunk-13-2.png" width="672" /></p>
-</div>
-<div id="activity-of-controls---sample-comparison-1" class="section level3 hasAnchor" number="3.2.7">
-<h3><span class="header-section-number">3.2.7</span> Activity of controls - sample comparison<a href="activity-qc.html#activity-of-controls---sample-comparison-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Goal:</strong> <br>
+<strong>Input file:</strong><br>
+<strong>Evaluated metrics</strong>:<br></p>
 <pre><code>## Good example: PMID_38766054_Reilly 
 ## Bad example: Max_MPRA_run2</code></pre>
-<p><img src="12-only_figs_activity_files/figure-html/unnamed-chunk-14-1.png" width="672" /><img src="12-only_figs_activity_files/figure-html/unnamed-chunk-14-2.png" width="672" /></p>
+<p><img src="12-only_figs_activity_files/figure-html/unnamed-chunk-11-1.png" width="672" />
+<strong>Legend:</strong> <br>
+<strong>Interpretation:</strong><br></p>
 </div>
-<div id="outlier-barcodes-mindna" class="section level3 hasAnchor" number="3.2.8">
-<h3><span class="header-section-number">3.2.8</span> Outlier barcodes + min(DNA)<a href="activity-qc.html#outlier-barcodes-mindna" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="rna_dna_ratio" class="section level3 hasAnchor" number="3.2.5">
+<h3><span class="header-section-number">3.2.5</span> RNA_DNA_ratio<a href="activity-qc.html#rna_dna_ratio" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Goal:</strong> <br>
+<strong>Input file:</strong><br>
+<strong>Evaluated metrics</strong>:<br></p>
+<pre><code>## Good example: PMID_38766054_Reilly 
+## Bad example: humanMPRA_L4a2 
+## Bad example 2: humanMPRA_L1a1_Neurons</code></pre>
+<p><img src="12-only_figs_activity_files/figure-html/unnamed-chunk-12-1.png" width="672" />
+<strong>Legend:</strong> <br>
+<strong>Interpretation:</strong><br></p>
+</div>
+<div id="activity-of-controls---sample-comparison" class="section level3 hasAnchor" number="3.2.6">
+<h3><span class="header-section-number">3.2.6</span> Activity of controls - sample comparison<a href="activity-qc.html#activity-of-controls---sample-comparison" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Goal:</strong> <br>
+<strong>Input file:</strong><br>
+<strong>Evaluated metrics</strong>:<br></p>
+<pre><code>## Good example: PMID_38766054_Reilly 
+## Bad example: Max_MPRA_run2</code></pre>
+<p><img src="12-only_figs_activity_files/figure-html/unnamed-chunk-13-1.png" width="672" />
+<strong>Legend:</strong> <br>
+<strong>Interpretation:</strong><br></p>
+</div>
+<div id="minimizing-noise-outlier-barcodes-mindna---use-the-mhmpra-data" class="section level3 hasAnchor" number="3.2.7">
+<h3><span class="header-section-number">3.2.7</span> Minimizing noise [Outlier barcodes + min(DNA)] - use the mhMPRA data<a href="activity-qc.html#minimizing-noise-outlier-barcodes-mindna---use-the-mhmpra-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Goal:</strong> <br>
+<strong>Input file:</strong><br>
+<strong>Evaluated metrics</strong>:<br></p>
+<p><img src="12-only_figs_activity_files/figure-html/unnamed-chunk-14-1.png" width="672" />
+<strong>Legend:</strong> <br>
+<strong>Interpretation:</strong><br></p>
+</div>
+<div id="outlier-barcodes" class="section level3 hasAnchor" number="3.2.8">
+<h3><span class="header-section-number">3.2.8</span> Outlier barcodes<a href="activity-qc.html#outlier-barcodes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Goal:</strong> <br>
+<strong>Input file:</strong><br>
+<strong>Evaluated metrics</strong>:<br></p>
 <p><img src="12-only_figs_activity_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
-</div>
-<div id="outlier-barcodes" class="section level3 hasAnchor" number="3.2.9">
-<h3><span class="header-section-number">3.2.9</span> Outlier barcodes<a href="activity-qc.html#outlier-barcodes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><img src="12-only_figs_activity_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
 <!-- ############################ -->
 <!-- ```{r,echo=FALSE} -->
 <!-- grid.newpage() -->

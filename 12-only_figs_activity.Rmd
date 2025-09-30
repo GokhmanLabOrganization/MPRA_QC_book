@@ -124,6 +124,10 @@ plot_all_MPRA <- function(working_dir, analysis_name, ncol = 3) {
 
 ## Evaluating DNA and RNA complexity
 ### Retained cCREs and barcodes
+**Goal:** <br>
+**Input file:**<br>
+**Evaluated metrics**:<br>
+
 ```{r,echo=FALSE}
 good_example_MPRA = "PMID_38766054_Reilly"
 bad_example_MPRA = "Max_MPRA_run2"
@@ -134,37 +138,56 @@ good_example <- readPNG(file.path(working_dir,good_example_MPRA,analysis_name),n
 bad_example <- readPNG(file.path(working_dir, bad_example_MPRA, analysis_name),native = T)
 plot_side_by_side(good_example,bad_example)
 
-plot_all_MPRA(working_dir, analysis_name, ncol = 3)
+#plot_all_MPRA(working_dir, analysis_name, ncol = 3)
 
 rm(good_example_MPRA,bad_example_MPRA,analysis_name)
 ```
+**Legend:** <br>
+**Interpretation:**<br>
+
 
 
 ### Activity distribution
-```{r,echo=FALSE}
+**Goal:** <br>
+**Input file:**<br>
+**Evaluated metrics**:<br>
 
-good_example_MPRA = "modern_humanMPRA_NPC"
-bad_example_MPRA = "humanMPRA_L1a1_Neurons"
-analysis_name = 'activity_distribution.png'
-print_examples(good_example_MPRA, bad_example_MPRA)
-
-good_example <- readPNG(file.path(working_dir,good_example_MPRA,analysis_name),native = T)
-bad_example <- readPNG(file.path(working_dir, bad_example_MPRA, analysis_name),native = T)
-plot_side_by_side(good_example,bad_example)
-
-plot_all_MPRA(working_dir, analysis_name, ncol = 3)
-
-
-rm(good_example_MPRA,bad_example_MPRA,analysis_name)
-
-```
-
-
-### P-value distribution
 ```{r,echo=FALSE}
 
 good_example_MPRA = "PMID_38766054_Reilly"
-bad_example_MPRA = "Max_MPRA_run2"
+bad_example_MPRA = "humanMPRA_L4a2"
+bad_example_MPRA_2 = "humanMPRA_L1a1_Neurons"
+analysis_name = 'activity_distribution.png'
+print_examples(good_example_MPRA, bad_example_MPRA,bad_example_MPRA_2)
+
+good_example <- readPNG(file.path(working_dir,good_example_MPRA,analysis_name),native = T)
+bad_example <- readPNG(file.path(working_dir, bad_example_MPRA, analysis_name),native = T)
+bad_example_2 <- readPNG(file.path(working_dir, bad_example_MPRA_2, analysis_name),native = T)
+plot_three_side_by_side(good_example,bad_example,bad_example_2)
+
+#plot_all_MPRA(working_dir, analysis_name, ncol = 3)
+
+print('add arrows that indicate right tail, symmetry, or no activity detected')
+
+rm(good_example_MPRA,bad_example_MPRA,bad_example_MPRA_2,analysis_name)
+
+```
+**Legend:** <br>
+**Interpretation:**<br>
+
+
+
+### P-value distribution
+**Goal:** <br>
+**Input file:**<br>
+**Evaluated metrics**:<br>
+
+Problem: nothitng looks mildly bad, max looks too bad. 
+
+```{r,echo=FALSE}
+
+good_example_MPRA = "PMID_38766054_Reilly"
+bad_example_MPRA = "humanMPRA_L4a2"
 analysis_name = 'P_value_distribution.png'
 print_examples(good_example_MPRA, bad_example_MPRA)
 
@@ -173,14 +196,25 @@ bad_example <- readPNG(file.path(working_dir, bad_example_MPRA, analysis_name),n
 plot_side_by_side(good_example,bad_example)
 
 
-plot_all_MPRA(working_dir, analysis_name, ncol = 3)
+#plot_all_MPRA(working_dir, analysis_name, ncol = 3)
 
 
 rm(good_example_MPRA,bad_example_MPRA,analysis_name)
 ```
+**Legend:** <br>
+**Interpretation:**<br>
+
 
 
 ### Downsampling analysis - active cCREs
+**Goal:** <br>
+**Input file:**<br>
+**Evaluated metrics**:<br>
+
+we should use a real downsampling - Omer is in charge of that. In the bookdown we need to mention  Max's script. 
+for Max's script - we should ask why there's a jump between the last and one-before-last downsampling. send him an email. 
+Also ask what does "LP complexity" mean in his script. 
+
 ```{r,echo=FALSE}
 
 grid.newpage()
@@ -205,12 +239,21 @@ grid.raster(bad_example, interpolate = FALSE)
 popViewport()
 
 ```
+**Legend:** <br>
+**Interpretation:**<br>
+
 
 
 ### Cumulative RNA reads
+**Goal:** <br>
+**Input file:**<br>
+**Evaluated metrics**:<br>
+
+
+Add arrows in the x axis and below it "decreasing RNA reads" in illustrator.
 ```{r,echo=FALSE}
 good_example_MPRA = "PMID_38766054_Reilly"
-bad_example_MPRA = "Max_MPRA_run2"
+bad_example_MPRA = "d2Osteoblast_spiking_oligos"
 analysis_name = 'cumulative_RNA_reads.png'
 print_examples(good_example_MPRA, bad_example_MPRA)
 
@@ -219,16 +262,24 @@ bad_example <- readPNG(file.path(working_dir, bad_example_MPRA, analysis_name),n
 plot_side_by_side(good_example,bad_example)
 
 
-plot_all_MPRA(working_dir, analysis_name, ncol = 3)
+#plot_all_MPRA(working_dir, analysis_name, ncol = 3)
 
 
 rm(good_example_MPRA,bad_example_MPRA,analysis_name)
 
 ```
+**Legend:** <br>
+**Interpretation:**<br>
+
 
 
 ## Evaluating reproducibility
 ### Similarity between samples (PCA)
+**Goal:** <br>
+**Input file:**<br>
+**Evaluated metrics**:<br>
+
+mention in the bookdown: the importance of the percentage explained by the 1st and 2nd PCs. 
 ```{r,echo=FALSE}
 
 good_example_MPRA = "PMID_38766054_Reilly"
@@ -240,37 +291,49 @@ good_example <- readPNG(file.path(working_dir,good_example_MPRA,analysis_name),n
 bad_example <- readPNG(file.path(working_dir, bad_example_MPRA, analysis_name),native = T)
 plot_side_by_side(good_example,bad_example)
 
-plot_all_MPRA(working_dir, analysis_name, ncol = 3)
+#plot_all_MPRA(working_dir, analysis_name, ncol = 3)
 
 
 rm(good_example_MPRA,bad_example_MPRA,analysis_name)
 
 ```
+**Legend:** <br>
+**Interpretation:**<br>
+
+
 
 ### Correlation between replicates
-```{r,echo=FALSE}
+**Goal:** <br>
+**Input file:**<br>
+**Evaluated metrics**:<br>
 
-good_example_MPRA = "PMID_38766054_Reilly"
-bad_example_MPRA = "humanMPRA_L1a1"
-bad_example_MPRA_2 = "humanMPRA_L1a1_Neurons"
+```{r,echo=FALSE}
+good_example_MPRA = "thylacine_biorxiv_Gallego_Romero"
+bad_example_MPRA = "humanMPRA_L4a2"
 analysis_name = 'RNA_DNA_ratio_correlation_between_replicates.png'
-print_examples(good_example_MPRA, bad_example_MPRA,bad_example_MPRA_2)
+print_examples(good_example_MPRA, bad_example_MPRA)
 
 good_example <- readPNG(file.path(working_dir,good_example_MPRA,analysis_name),native = T)
 bad_example <- readPNG(file.path(working_dir, bad_example_MPRA, analysis_name),native = T)
-bad_example_2 <- readPNG(file.path(working_dir, bad_example_MPRA_2, analysis_name),native = T)
-plot_three_side_by_side(good_example,bad_example,bad_example_2)
+plot_side_by_side(good_example,bad_example)
 
-plot_all_MPRA(working_dir, analysis_name, ncol = 3)
+#plot_all_MPRA(working_dir, analysis_name, ncol = 3)
 
 
 rm(good_example_MPRA,bad_example_MPRA,bad_example_MPRA_2,analysis_name)
 ```
-
+**Legend:** <br>
+**Interpretation:**<br>
 
 
 
 ### Variation at various activity levels
+**Goal:** <br>
+**Input file:**<br>
+**Evaluated metrics**:<br>
+
+Omer is in charge of this part.
+
 ```{r,echo=FALSE}
 grid.newpage()
 
@@ -294,15 +357,43 @@ grid.raster(bad_example, interpolate = FALSE)
 popViewport()
 
 ```
-
+**Legend:** <br>
+**Interpretation:**<br>
 
 
 ### Correlation between replicates (controls)
+**Goal:** <br>
+**Input file:**<br>
+**Evaluated metrics**:<br>
+
 ```{r,echo=FALSE}
 good_example_MPRA = "PMID_38766054_Reilly"
-bad_example_MPRA = "humanMPRA_L1a1"
-bad_example_MPRA_2 = "humanMPRA_L1a1_Neurons"
+bad_example_MPRA = "Max_MPRA_run2"
 analysis_name = 'RNA_DNA_ratio_correlation_between_replicates_with_controls.png'
+print_examples(good_example_MPRA, bad_example_MPRA)
+
+good_example <- readPNG(file.path(working_dir,good_example_MPRA,analysis_name),native = T)
+bad_example <- readPNG(file.path(working_dir, bad_example_MPRA, analysis_name),native = T)
+plot_side_by_side(good_example,bad_example)
+
+#plot_all_MPRA(working_dir, analysis_name, ncol = 3)
+
+
+rm(good_example_MPRA,bad_example_MPRA,analysis_name)
+```
+**Legend:** <br>
+**Interpretation:**<br>
+
+### RNA_DNA_ratio
+**Goal:** <br>
+**Input file:**<br>
+**Evaluated metrics**:<br>
+
+```{r,echo=FALSE}
+good_example_MPRA = "PMID_38766054_Reilly"
+bad_example_MPRA = "humanMPRA_L4a2"
+bad_example_MPRA_2 = "humanMPRA_L1a1_Neurons"
+analysis_name = 'RNA_DNA_ratio.png'
 print_examples(good_example_MPRA, bad_example_MPRA,bad_example_MPRA_2)
 
 good_example <- readPNG(file.path(working_dir,good_example_MPRA,analysis_name),native = T)
@@ -310,49 +401,22 @@ bad_example <- readPNG(file.path(working_dir, bad_example_MPRA, analysis_name),n
 bad_example_2 <- readPNG(file.path(working_dir, bad_example_MPRA_2, analysis_name),native = T)
 plot_three_side_by_side(good_example,bad_example,bad_example_2)
 
-plot_all_MPRA(working_dir, analysis_name, ncol = 3)
-
+#plot_all_MPRA(working_dir, analysis_name, ncol = 3)
 
 rm(good_example_MPRA,bad_example_MPRA,bad_example_MPRA_2,analysis_name)
-```
-
-### Activity of controls - sample comparison
-```{r,echo=FALSE}
-
-example_MPRA = "humanMPRA_L3a2"
-analysis_name = 'positive_controls_corr_between_libs_hMPRA.png'
-example <- readPNG(file.path(working_dir,example_MPRA,analysis_name),native = T)
-
-
-plot_single(example)
-print(example_MPRA)
-rm(example_MPRA,analysis_name)
-```
-
-
-### RNA_DNA_ratio
-```{r,echo=FALSE}
-good_example_MPRA = "PMID_38766054_Reilly"
-bad_example_MPRA = "humanMPRA_L4a2"
-analysis_name = 'RNA_DNA_ratio.png'
-print_examples(good_example_MPRA, bad_example_MPRA)
-
-good_example <- readPNG(file.path(working_dir,good_example_MPRA,analysis_name),native = T)
-bad_example <- readPNG(file.path(working_dir, bad_example_MPRA, analysis_name),native = T)
-plot_side_by_side(good_example,bad_example)
-
-plot_all_MPRA(working_dir, analysis_name, ncol = 3)
-
-
-rm(good_example_MPRA,bad_example_MPRA,analysis_name)
 
 ```
-
+**Legend:** <br>
+**Interpretation:**<br>
 
 
 
 
 ### Activity of controls - sample comparison
+**Goal:** <br>
+**Input file:**<br>
+**Evaluated metrics**:<br>
+
 ```{r,echo=FALSE}
 good_example_MPRA = "PMID_38766054_Reilly"
 bad_example_MPRA = "Max_MPRA_run2"
@@ -363,14 +427,22 @@ good_example <- readPNG(file.path(working_dir,good_example_MPRA,analysis_name),n
 bad_example <- readPNG(file.path(working_dir, bad_example_MPRA, analysis_name),native = T)
 plot_side_by_side(good_example,bad_example)
 
-plot_all_MPRA(working_dir, analysis_name, ncol = 3)
+#plot_all_MPRA(working_dir, analysis_name, ncol = 3)
 
 
 rm(good_example_MPRA,bad_example_MPRA,analysis_name)
 
 ```
+**Legend:** <br>
+**Interpretation:**<br>
 
-### Outlier barcodes + min(DNA)
+
+
+### Minimizing noise [Outlier barcodes + min(DNA)] - use the mhMPRA data
+**Goal:** <br>
+**Input file:**<br>
+**Evaluated metrics**:<br>
+
 ```{r,echo=FALSE}
 
 grid.newpage()
@@ -395,9 +467,16 @@ grid.raster(bad_example, interpolate = FALSE)
 popViewport()
 
 ```
+**Legend:** <br>
+**Interpretation:**<br>
+
 
 
 ### Outlier barcodes
+**Goal:** <br>
+**Input file:**<br>
+**Evaluated metrics**:<br>
+
 ```{r,echo=FALSE}
 
 grid.newpage()

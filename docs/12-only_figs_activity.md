@@ -11,123 +11,218 @@
 
 ## Evaluating DNA and RNA complexity
 ### Retained cCREs and barcodes
+**Goal:** <br>
+**Input file:**<br>
+**Evaluated metrics**:<br>
+
 
 ```
 ## Good example: PMID_38766054_Reilly 
 ## Bad example: Max_MPRA_run2
 ```
 
-![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-3-1.png)<!-- -->![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-3-2.png)<!-- -->
+![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-3-1.png)<!-- -->
+**Legend:** <br>
+**Interpretation:**<br>
+
 
 
 ### Activity distribution
+**Goal:** <br>
+**Input file:**<br>
+**Evaluated metrics**:<br>
+
 
 ```
-## Good example: modern_humanMPRA_NPC 
-## Bad example: humanMPRA_L1a1_Neurons
+## Good example: PMID_38766054_Reilly 
+## Bad example: humanMPRA_L4a2 
+## Bad example 2: humanMPRA_L1a1_Neurons
 ```
 
-![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-4-1.png)<!-- -->![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-4-2.png)<!-- -->
+![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-4-1.png)<!-- -->
+
+```
+## [1] "add arrows that indicate right tail, symmetry, or no activity detected"
+```
+**Legend:** <br>
+**Interpretation:**<br>
+
 
 
 ### P-value distribution
+**Goal:** <br>
+**Input file:**<br>
+**Evaluated metrics**:<br>
 
-```
-## Good example: PMID_38766054_Reilly 
-## Bad example: Max_MPRA_run2
-```
+Problem: nothitng looks mildly bad, max looks too bad. 
 
-![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-5-1.png)<!-- -->![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-5-2.png)<!-- -->
-
-
-### Downsampling analysis - active cCREs
-![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-6-1.png)<!-- -->
-
-
-### Cumulative RNA reads
-
-```
-## Good example: PMID_38766054_Reilly 
-## Bad example: Max_MPRA_run2
-```
-
-![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-7-1.png)<!-- -->![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-7-2.png)<!-- -->
-
-
-## Evaluating reproducibility
-### Similarity between samples (PCA)
-
-```
-## Good example: PMID_38766054_Reilly 
-## Bad example: thylacine_biorxiv_Gallego_Romero
-```
-
-![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-8-1.png)<!-- -->![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-8-2.png)<!-- -->
-
-### Correlation between replicates
-
-```
-## Good example: PMID_38766054_Reilly 
-## Bad example: humanMPRA_L1a1 
-## Bad example 2: humanMPRA_L1a1_Neurons
-```
-
-![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-9-1.png)<!-- -->![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-9-2.png)<!-- -->
-
-
-
-
-### Variation at various activity levels
-![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-10-1.png)<!-- -->
-
-
-
-### Correlation between replicates (controls)
-
-```
-## Good example: PMID_38766054_Reilly 
-## Bad example: humanMPRA_L1a1 
-## Bad example 2: humanMPRA_L1a1_Neurons
-```
-
-![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-11-1.png)<!-- -->![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-11-2.png)<!-- -->
-
-### Activity of controls - sample comparison
-![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-12-1.png)<!-- -->
-
-```
-## [1] "humanMPRA_L3a2"
-```
-
-
-### RNA_DNA_ratio
 
 ```
 ## Good example: PMID_38766054_Reilly 
 ## Bad example: humanMPRA_L4a2
 ```
 
-![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-13-1.png)<!-- -->![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-13-2.png)<!-- -->
+![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-5-1.png)<!-- -->
+**Legend:** <br>
+**Interpretation:**<br>
 
 
 
+### Downsampling analysis - active cCREs
+**Goal:** <br>
+**Input file:**<br>
+**Evaluated metrics**:<br>
+
+we should use a real downsampling - Omer is in charge of that. In the bookdown we need to mention  Max's script. 
+for Max's script - we should ask why there's a jump between the last and one-before-last downsampling. send him an email. 
+Also ask what does "LP complexity" mean in his script. 
+
+![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-6-1.png)<!-- -->
+**Legend:** <br>
+**Interpretation:**<br>
 
 
-### Activity of controls - sample comparison
+
+### Cumulative RNA reads
+**Goal:** <br>
+**Input file:**<br>
+**Evaluated metrics**:<br>
+
+
+Add arrows in the x axis and below it "decreasing RNA reads" in illustrator.
+
+```
+## Good example: PMID_38766054_Reilly 
+## Bad example: d2Osteoblast_spiking_oligos
+```
+
+![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-7-1.png)<!-- -->
+**Legend:** <br>
+**Interpretation:**<br>
+
+
+
+## Evaluating reproducibility
+### Similarity between samples (PCA)
+**Goal:** <br>
+**Input file:**<br>
+**Evaluated metrics**:<br>
+
+mention in the bookdown: the importance of the percentage explained by the 1st and 2nd PCs. 
+
+```
+## Good example: PMID_38766054_Reilly 
+## Bad example: thylacine_biorxiv_Gallego_Romero
+```
+
+![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-8-1.png)<!-- -->
+**Legend:** <br>
+**Interpretation:**<br>
+
+
+
+### Correlation between replicates
+**Goal:** <br>
+**Input file:**<br>
+**Evaluated metrics**:<br>
+
+
+```
+## Good example: thylacine_biorxiv_Gallego_Romero 
+## Bad example: humanMPRA_L4a2
+```
+
+![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-9-1.png)<!-- -->
+
+```
+## Warning in rm(good_example_MPRA, bad_example_MPRA, bad_example_MPRA_2,
+## analysis_name): object 'bad_example_MPRA_2' not found
+```
+**Legend:** <br>
+**Interpretation:**<br>
+
+
+
+### Variation at various activity levels
+**Goal:** <br>
+**Input file:**<br>
+**Evaluated metrics**:<br>
+
+Omer is in charge of this part.
+
+![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-10-1.png)<!-- -->
+**Legend:** <br>
+**Interpretation:**<br>
+
+
+### Correlation between replicates (controls)
+**Goal:** <br>
+**Input file:**<br>
+**Evaluated metrics**:<br>
+
 
 ```
 ## Good example: PMID_38766054_Reilly 
 ## Bad example: Max_MPRA_run2
 ```
 
-![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-14-1.png)<!-- -->![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-14-2.png)<!-- -->
+![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-11-1.png)<!-- -->
+**Legend:** <br>
+**Interpretation:**<br>
 
-### Outlier barcodes + min(DNA)
-![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-15-1.png)<!-- -->
+### RNA_DNA_ratio
+**Goal:** <br>
+**Input file:**<br>
+**Evaluated metrics**:<br>
+
+
+```
+## Good example: PMID_38766054_Reilly 
+## Bad example: humanMPRA_L4a2 
+## Bad example 2: humanMPRA_L1a1_Neurons
+```
+
+![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-12-1.png)<!-- -->
+**Legend:** <br>
+**Interpretation:**<br>
+
+
+
+
+### Activity of controls - sample comparison
+**Goal:** <br>
+**Input file:**<br>
+**Evaluated metrics**:<br>
+
+
+```
+## Good example: PMID_38766054_Reilly 
+## Bad example: Max_MPRA_run2
+```
+
+![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-13-1.png)<!-- -->
+**Legend:** <br>
+**Interpretation:**<br>
+
+
+
+### Minimizing noise [Outlier barcodes + min(DNA)] - use the mhMPRA data
+**Goal:** <br>
+**Input file:**<br>
+**Evaluated metrics**:<br>
+
+![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-14-1.png)<!-- -->
+**Legend:** <br>
+**Interpretation:**<br>
+
 
 
 ### Outlier barcodes
-![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-16-1.png)<!-- -->
+**Goal:** <br>
+**Input file:**<br>
+**Evaluated metrics**:<br>
+
+![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-15-1.png)<!-- -->
 
 
 
