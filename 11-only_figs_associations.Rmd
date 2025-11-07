@@ -18,6 +18,7 @@ output_dir=sprintf("%s/test_QC",working_dir)
 **Input file:**<br>
 **Evaluated metrics**:<br>
 
+
 ```{r,echo=FALSE}
 
 
@@ -53,7 +54,7 @@ popViewport()
 ```{r,echo=FALSE}
 
 
-bad_example <- readPNG("/home/labs/davidgo/Collaboration/MPRA_QC_pipeline/placeholder.png",native = T)
+bad_example <- readPNG("/home/labs/davidgo/Collaboration/MPRA_QC_pipeline/associations/output/Max_MPRA_run2/PCR bias - GC content.png",native = T)
 good_example <- readPNG("/home/labs/davidgo/Collaboration/MPRA_QC_pipeline/associations/output/PMID_38766054_Reilly/PCR bias - GC content.png",native = T)
 
 
@@ -78,37 +79,7 @@ popViewport()
 **Interpretation:**<br>
 
 
-### cCRE counts 
-**Goal:** <br>
-**Input file:**<br>
-**Evaluated metrics**:<br>
 
-```{r,echo=FALSE}
-
-
-bad_example <- readPNG("/home/labs/davidgo/Collaboration/MPRA_QC_pipeline/placeholder.png",native = T)
-good_example <- readPNG("/home/labs/davidgo/Collaboration/MPRA_QC_pipeline/associations/output/Max_MPRA_run2/PCR bias - GC content summary.png",native = T)
-
-
-# Start new page and define layout
-grid.newpage()
-pushViewport(viewport(layout = grid.layout(1, 2)))
-
-# Helper to specify location in layout
-vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col)
-
-# Draw both images in the layout without using print()
-pushViewport(vplayout(1, 2))
-grid.raster(bad_example, interpolate = FALSE)
-popViewport()
-
-pushViewport(vplayout(1, 1))
-grid.raster(good_example, interpolate = FALSE)
-popViewport()
-```
-
-**Legend:** <br>
-**Interpretation:**<br>
 
 
 ## PCR bias - G Stretch
@@ -118,10 +89,8 @@ popViewport()
 **Evaluated metrics**:<br>
 
 ```{r,echo=FALSE}
-
-
 bad_example <- readPNG("/home/labs/davidgo/Collaboration/MPRA_QC_pipeline/placeholder.png",native = T)
-good_example <- readPNG("/home/labs/davidgo/Collaboration/MPRA_QC_pipeline/associations/output/thylacine biorxiv Gallego Romero/PCR bias - G-stretches.png",native = T)
+good_example <- readPNG("/home/labs/davidgo/Collaboration/MPRA_QC_pipeline/associations/output/thylacine_biorxiv_Gallego_Romero/PCR bias - G-stretches.png",native = T)
 
 
 # Start new page and define layout
@@ -144,38 +113,6 @@ popViewport()
 **Legend:** <br>
 **Interpretation:**<br>
 
-
-### cCRE counts 
-
-**Goal:** <br>
-**Input file:**<br>
-**Evaluated metrics**:<br>
-```{r,echo=FALSE}
-
-
-bad_example <- readPNG("/home/labs/davidgo/Collaboration/MPRA_QC_pipeline/placeholder.png",native = T)
-good_example <- readPNG("/home/labs/davidgo/Collaboration/MPRA_QC_pipeline/associations/output/Max_MPRA_run2/PCR bias - G-stretches summary.png",native = T)
-
-
-# Start new page and define layout
-grid.newpage()
-pushViewport(viewport(layout = grid.layout(1, 2)))
-
-# Helper to specify location in layout
-vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col)
-
-# Draw both images in the layout without using print()
-pushViewport(vplayout(1, 2))
-grid.raster(bad_example, interpolate = FALSE)
-popViewport()
-
-pushViewport(vplayout(1, 1))
-grid.raster(good_example, interpolate = FALSE)
-popViewport()
-```
-
-**Legend:** <br>
-**Interpretation:**<br>
 
 
 ## cCRE-barcode observations
@@ -248,7 +185,7 @@ popViewport()
 ```{r,echo=FALSE}
 
 
-bad_example <- readPNG("/home/labs/davidgo/Collaboration/MPRA_QC_pipeline/associations/output/thylacine biorxiv Gallego Romero/Barcode promiscuity.png",native = T)
+bad_example <- readPNG("/home/labs/davidgo/Collaboration/MPRA_QC_pipeline/associations/output/Max_MPRA_run2/Barcode promiscuity_shuffled.png",native = T)
 good_example <- readPNG("/home/labs/davidgo/Collaboration/MPRA_QC_pipeline/associations/output/PMID_38766054_Reilly/Barcode promiscuity.png"
 ,native = T)
 
