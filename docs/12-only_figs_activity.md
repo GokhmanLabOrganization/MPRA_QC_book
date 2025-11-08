@@ -59,7 +59,7 @@ Problem: nothitng looks mildly bad, max looks too bad.
 
 ```
 ## Good example: PMID_38766054_Reilly 
-## Bad example: humanMPRA_L4a2
+## Bad example: Max_MPRA_run2
 ```
 
 <img src="12-only_figs_activity_files/figure-html/unnamed-chunk-5-1.png" width="672" />
@@ -216,6 +216,12 @@ Omer is in charge of this part.
 **Goal:** <br>
 **Input file:**<br>
 **Evaluated metrics**:<br>
+
+
+```
+## Good example: modern_humanMPRA_Hob 
+## Bad example: NA
+```
 
 <img src="12-only_figs_activity_files/figure-html/unnamed-chunk-14-1.png" width="672" />
 **Legend:** <br>
