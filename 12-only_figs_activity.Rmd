@@ -187,7 +187,7 @@ Problem: nothitng looks mildly bad, max looks too bad.
 ```{r,echo=FALSE}
 
 good_example_MPRA = "PMID_38766054_Reilly"
-bad_example_MPRA = "humanMPRA_L4a2"
+bad_example_MPRA = "Max_MPRA_run2"
 analysis_name = 'P_value_distribution.png'
 print_examples(good_example_MPRA, bad_example_MPRA)
 
@@ -335,26 +335,19 @@ rm(good_example_MPRA,bad_example_MPRA,bad_example_MPRA_2,analysis_name)
 Omer is in charge of this part.
 
 ```{r,echo=FALSE}
-grid.newpage()
+good_example_MPRA = "PMID_38766054_Reilly"
+bad_example_MPRA = "humanMPRA_L4a2"
+analysis_name = 'variation_at_various_activity_levels.png'
+print_examples(good_example_MPRA, bad_example_MPRA)
 
-good_example <- readPNG(file.path(working_dir,"placeholder.png"),native = T)
-bad_example <- readPNG(file.path(working_dir,"placeholder.png"),native = T)
+good_example <- readPNG(file.path(working_dir,good_example_MPRA,analysis_name),native = T)
+bad_example <- readPNG(file.path(working_dir, bad_example_MPRA, analysis_name),native = T)
+plot_side_by_side(good_example,bad_example)
 
-# Start new page and define layout
-grid.newpage()
-pushViewport(viewport(layout = grid.layout(1, 2)))
+#plot_all_MPRA(working_dir, analysis_name, ncol = 3)
 
-# Helper to specify location in layout
-vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col)
 
-# Draw both images in the layout without using print()
-pushViewport(vplayout(1, 1))
-grid.raster(good_example, interpolate = FALSE)
-popViewport()
-
-pushViewport(vplayout(1, 2))
-grid.raster(bad_example, interpolate = FALSE)
-popViewport()
+rm(good_example_MPRA,bad_example_MPRA,analysis_name)
 
 ```
 **Legend:** <br>
@@ -445,26 +438,17 @@ rm(good_example_MPRA,bad_example_MPRA,analysis_name)
 
 ```{r,echo=FALSE}
 
-grid.newpage()
+good_example_MPRA = "modern_humanMPRA_Hob"
+analysis_name = 'minimizing_noise.png'
+print_examples(good_example_MPRA, 'NA')
 
-good_example <- readPNG(file.path(working_dir,"placeholder.png"),native = T)
-bad_example <- readPNG(file.path(working_dir,"placeholder.png"),native = T)
+good_example <- readPNG(file.path(working_dir,good_example_MPRA,analysis_name),native = T)
+plot_single(good_example)
 
-# Start new page and define layout
-grid.newpage()
-pushViewport(viewport(layout = grid.layout(1, 2)))
+#plot_all_MPRA(working_dir, analysis_name, ncol = 3)
 
-# Helper to specify location in layout
-vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col)
 
-# Draw both images in the layout without using print()
-pushViewport(vplayout(1, 1))
-grid.raster(good_example, interpolate = FALSE)
-popViewport()
-
-pushViewport(vplayout(1, 2))
-grid.raster(bad_example, interpolate = FALSE)
-popViewport()
+rm(good_example_MPRA,analysis_name)
 
 ```
 **Legend:** <br>

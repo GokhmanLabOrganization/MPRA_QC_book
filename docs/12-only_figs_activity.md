@@ -21,7 +21,7 @@
 ## Bad example: Max_MPRA_run2
 ```
 
-![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-3-1.png)<!-- -->
+<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-3-1.png" width="672" />
 **Legend:** <br>
 **Interpretation:**<br>
 
@@ -39,7 +39,7 @@
 ## Bad example 2: humanMPRA_L1a1_Neurons
 ```
 
-![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-4-1.png)<!-- -->
+<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-4-1.png" width="672" />
 
 ```
 ## [1] "add arrows that indicate right tail, symmetry, or no activity detected"
@@ -59,10 +59,10 @@ Problem: nothitng looks mildly bad, max looks too bad.
 
 ```
 ## Good example: PMID_38766054_Reilly 
-## Bad example: humanMPRA_L4a2
+## Bad example: Max_MPRA_run2
 ```
 
-![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-5-1.png)<!-- -->
+<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-5-1.png" width="672" />
 **Legend:** <br>
 **Interpretation:**<br>
 
@@ -77,7 +77,7 @@ we should use a real downsampling - Omer is in charge of that. In the bookdown w
 for Max's script - we should ask why there's a jump between the last and one-before-last downsampling. send him an email. 
 Also ask what does "LP complexity" mean in his script. 
 
-![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-6-1.png)<!-- -->
+<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-6-1.png" width="672" />
 **Legend:** <br>
 **Interpretation:**<br>
 
@@ -96,7 +96,7 @@ Add arrows in the x axis and below it "decreasing RNA reads" in illustrator.
 ## Bad example: d2Osteoblast_spiking_oligos
 ```
 
-![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-7-1.png)<!-- -->
+<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-7-1.png" width="672" />
 **Legend:** <br>
 **Interpretation:**<br>
 
@@ -115,7 +115,7 @@ mention in the bookdown: the importance of the percentage explained by the 1st a
 ## Bad example: thylacine_biorxiv_Gallego_Romero
 ```
 
-![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-8-1.png)<!-- -->
+<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-8-1.png" width="672" />
 **Legend:** <br>
 **Interpretation:**<br>
 
@@ -132,7 +132,7 @@ mention in the bookdown: the importance of the percentage explained by the 1st a
 ## Bad example: humanMPRA_L4a2
 ```
 
-![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-9-1.png)<!-- -->
+<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-9-1.png" width="672" />
 
 ```
 ## Warning in rm(good_example_MPRA, bad_example_MPRA, bad_example_MPRA_2,
@@ -150,7 +150,13 @@ mention in the bookdown: the importance of the percentage explained by the 1st a
 
 Omer is in charge of this part.
 
-![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-10-1.png)<!-- -->
+
+```
+## Good example: PMID_38766054_Reilly 
+## Bad example: humanMPRA_L4a2
+```
+
+<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-10-1.png" width="672" />
 **Legend:** <br>
 **Interpretation:**<br>
 
@@ -166,7 +172,7 @@ Omer is in charge of this part.
 ## Bad example: Max_MPRA_run2
 ```
 
-![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-11-1.png)<!-- -->
+<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-11-1.png" width="672" />
 **Legend:** <br>
 **Interpretation:**<br>
 
@@ -182,7 +188,7 @@ Omer is in charge of this part.
 ## Bad example 2: humanMPRA_L1a1_Neurons
 ```
 
-![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-12-1.png)<!-- -->
+<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-12-1.png" width="672" />
 **Legend:** <br>
 **Interpretation:**<br>
 
@@ -200,7 +206,7 @@ Omer is in charge of this part.
 ## Bad example: Max_MPRA_run2
 ```
 
-![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-13-1.png)<!-- -->
+<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-13-1.png" width="672" />
 **Legend:** <br>
 **Interpretation:**<br>
 
@@ -211,7 +217,13 @@ Omer is in charge of this part.
 **Input file:**<br>
 **Evaluated metrics**:<br>
 
-![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-14-1.png)<!-- -->
+
+```
+## Good example: modern_humanMPRA_Hob 
+## Bad example: NA
+```
+
+<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-14-1.png" width="672" />
 **Legend:** <br>
 **Interpretation:**<br>
 
@@ -222,7 +234,7 @@ Omer is in charge of this part.
 **Input file:**<br>
 **Evaluated metrics**:<br>
 
-![](12-only_figs_activity_files/figure-epub3/unnamed-chunk-15-1.png)<!-- -->
+<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-15-1.png" width="672" />
 
 
 
