@@ -100,6 +100,21 @@ Add arrows in the x axis and below it "decreasing RNA reads" in illustrator.
 **Legend:** <br>
 **Interpretation:**<br>
 
+### Activity by sequencing depth
+
+
+
+**Goal: This analysis uses downsampling of sequencing reads to assess if sequencing depth is sufficient** <br>
+**Input file: Activity down sampling files** <br>
+**Evaluated metrics: RNA and DNA complexity** <br>
+
+
+
+
+<img src="external_figures/modern_humanMPRA_Hob/Activity_by_sequencing_depth.svg" width="49%" /><img src="external_figures/modern_humanMPRA_NPC/Activity_by_sequencing_depth.svg" width="49%" />
+
+**Legend:** <br>
+**Interpretation:**<br>
 
 
 ## Evaluating reproducibility
@@ -115,7 +130,7 @@ mention in the bookdown: the importance of the percentage explained by the 1st a
 ## Bad example: thylacine_biorxiv_Gallego_Romero
 ```
 
-<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-8-1.png" width="672" />
+<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-9-1.png" width="672" />
 **Legend:** <br>
 **Interpretation:**<br>
 
@@ -132,7 +147,7 @@ mention in the bookdown: the importance of the percentage explained by the 1st a
 ## Bad example: humanMPRA_L4a2
 ```
 
-<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-9-1.png" width="672" />
+<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-10-1.png" width="672" />
 
 ```
 ## Warning in rm(good_example_MPRA, bad_example_MPRA, bad_example_MPRA_2,
@@ -156,7 +171,7 @@ Omer is in charge of this part.
 ## Bad example: humanMPRA_L4a2
 ```
 
-<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-10-1.png" width="672" />
+<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-11-1.png" width="672" />
 **Legend:** <br>
 **Interpretation:**<br>
 
@@ -172,7 +187,7 @@ Omer is in charge of this part.
 ## Bad example: Max_MPRA_run2
 ```
 
-<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-11-1.png" width="672" />
+<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-12-1.png" width="672" />
 **Legend:** <br>
 **Interpretation:**<br>
 
@@ -188,7 +203,7 @@ Omer is in charge of this part.
 ## Bad example 2: humanMPRA_L1a1_Neurons
 ```
 
-<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-12-1.png" width="672" />
+<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-13-1.png" width="672" />
 **Legend:** <br>
 **Interpretation:**<br>
 
@@ -206,7 +221,7 @@ Omer is in charge of this part.
 ## Bad example: Max_MPRA_run2
 ```
 
-<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-13-1.png" width="672" />
+<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-14-1.png" width="672" />
 **Legend:** <br>
 **Interpretation:**<br>
 
@@ -223,7 +238,7 @@ Omer is in charge of this part.
 ## Bad example: NA
 ```
 
-<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-14-1.png" width="672" />
+<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-15-1.png" width="672" />
 **Legend:** <br>
 **Interpretation:**<br>
 
@@ -234,7 +249,98 @@ Omer is in charge of this part.
 **Input file:**<br>
 **Evaluated metrics**:<br>
 
-<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-15-1.png" width="672" />
+<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-16-1.png" width="672" />
+
+### Reproducibility by sequencing depth
+
+
+
+**Goal: This analysis assesses whether additional sequencing will improve reproducibility between replicates** <br>
+**Input file: Activity down sampling files** <br>
+**Evaluated metrics: Replicability** <br>
+
+
+
+
+<img src="external_figures/modern_humanMPRA_Hob/Reproducibility_by_sequencing_depth.svg" width="49%" /><img src="external_figures/modern_humanMPRA_NPC/Reproducibility_by_sequencing_depth.svg" width="49%" />
+
+**Legend:** <br>
+**Interpretation:**<br>
+
+
+
+### Replicability by activity
+
+
+
+**Goal: This analysis assesses the correlation in activity between replicates in active vs non-active cCREs** <br>
+**Input file: Activity file** <br>
+**Evaluated metrics: Replicability** <br>
+
+
+
+
+<img src="external_figures/modern_humanMPRA_Hob/Activity_by_sequencing_depth.svg" width="49%" /><img src="external_figures/modern_humanMPRA_NPC/Activity_by_sequencing_depth.svg" width="49%" />
+
+**Legend:** <br>
+**Interpretation:**<br>
+
+
+## Evaluating Dynamic Range
+
+
+
+### Genomic annotations
+
+
+
+**Goal: This analysis assesses concordance with endogenous signals of active chromatin marks** <br>
+**Input file: Genomic annotation file** <br>
+**Evaluated metrics: Dynamic Range** <br>
+
+
+
+
+<img src="external_figures/humanMPRA_L1a1_Neurons/Genomic_annotations.svg" width="49%" /><img src="external_figures/PMID_38766054_Reilly/Genomic_annotations.svg" width="49%" />
+
+**Legend:** <br>
+**Interpretation:**<br>
+
+### Proximity to TSS
+
+
+
+**Goal: his analysis assesses concordance with endogenous locations of cCREs** <br>
+**Input file: Distance to TSS file** <br>
+**Evaluated metrics: Dynamic Range** <br>
+
+
+
+
+<img src="external_figures/humanMPRA_L1a1_Neurons/Proximity_to_TSS.svg" width="49%" /><img src="external_figures/PMID_38766054_Reilly/Proximity_to_TSS.svg" width="49%" />
+
+**Legend:** <br>
+**Interpretation:**<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
