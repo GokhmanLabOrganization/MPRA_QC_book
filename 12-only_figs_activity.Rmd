@@ -271,6 +271,24 @@ rm(good_example_MPRA,bad_example_MPRA,analysis_name)
 **Legend:** <br>
 **Interpretation:**<br>
 
+### Activity by sequencing depth
+
+
+
+**Goal: This analysis uses downsampling of sequencing reads to assess if sequencing depth is sufficient** <br>
+**Input file: Activity down sampling files** <br>
+**Evaluated metrics: RNA and DNA complexity** <br>
+
+
+
+
+```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
+knitr::include_graphics(c("external_figures/modern_humanMPRA_Hob/Activity_by_sequencing_depth.svg",
+                          "external_figures/modern_humanMPRA_NPC/Activity_by_sequencing_depth.svg"))
+```
+
+**Legend:** <br>
+**Interpretation:**<br>
 
 
 ## Evaluating reproducibility
@@ -485,6 +503,109 @@ grid.raster(bad_example, interpolate = FALSE)
 popViewport()
 
 ```
+
+### Reproducibility by sequencing depth
+
+
+
+**Goal: This analysis assesses whether additional sequencing will improve reproducibility between replicates** <br>
+**Input file: Activity down sampling files** <br>
+**Evaluated metrics: Replicability** <br>
+
+
+
+
+```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
+knitr::include_graphics(c("external_figures/modern_humanMPRA_Hob/Reproducibility_by_sequencing_depth.svg",
+                          "external_figures/modern_humanMPRA_NPC/Reproducibility_by_sequencing_depth.svg"))
+```
+
+**Legend:** <br>
+**Interpretation:**<br>
+
+
+
+### Replicability by activity
+
+
+
+**Goal: This analysis assesses the correlation in activity between replicates in active vs non-active cCREs** <br>
+**Input file: Activity file** <br>
+**Evaluated metrics: Replicability** <br>
+
+
+
+
+```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
+knitr::include_graphics(c("external_figures/modern_humanMPRA_Hob/Activity_by_sequencing_depth.svg",
+                          "external_figures/modern_humanMPRA_NPC/Activity_by_sequencing_depth.svg"))
+```
+
+**Legend:** <br>
+**Interpretation:**<br>
+
+
+## Evaluating Dynamic Range
+
+
+
+### Genomic annotations
+
+
+
+**Goal: This analysis assesses concordance with endogenous signals of active chromatin marks** <br>
+**Input file: Genomic annotation file** <br>
+**Evaluated metrics: Dynamic Range** <br>
+
+
+
+
+```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
+knitr::include_graphics(c("external_figures/humanMPRA_L1a1_Neurons/Genomic_annotations.svg",
+                          "external_figures/PMID_38766054_Reilly/Genomic_annotations.svg"))
+```
+
+**Legend:** <br>
+**Interpretation:**<br>
+
+### Proximity to TSS
+
+
+
+**Goal: his analysis assesses concordance with endogenous locations of cCREs** <br>
+**Input file: Distance to TSS file** <br>
+**Evaluated metrics: Dynamic Range** <br>
+
+
+
+
+```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
+knitr::include_graphics(c("external_figures/humanMPRA_L1a1_Neurons/Proximity_to_TSS.svg",
+                          "external_figures/PMID_38766054_Reilly/Proximity_to_TSS.svg"))
+```
+
+**Legend:** <br>
+**Interpretation:**<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
