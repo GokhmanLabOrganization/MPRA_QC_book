@@ -1,0 +1,487 @@
+---
+title: "GrandEnrichWrap"
+author: "Nadav"
+date: "2024-12-27"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+```
+
+# Initialize
+
+```{r}
+#lapply(paste('package:',names(sessionInfo()$otherPkgs),sep=""),detach,character.only=TRUE,unload=TRUE)
+
+library('dplyr')
+library('tidyr')
+library('ggplot2')
+library('stringr')
+
+```
+
+
+
+## Define parameters
+
+```{r}
+base_dir = "/home/labs/davidgo/Collaboration/humanMPRA/enrichment"
+
+parameters = list()
+parameters$name = 'final_analysis_v7'
+
+parameters$GrandEnrich_dbs = c('KEGG','GAD_Disease','GO_BP')  #
+
+parameters$comp = "Standard with HPO filtering of skeletal"
+parameters$locORser = "ser"
+parameters$minGenes = 20                            
+parameters$uniq = T
+
+parameters$TYPorALL = "ALL"
+  parameters$HPO_dbVer = "HPO 2024-04-26 Release"
+parameters$systems = "skeleton"
+parameters$bodyparts = "all"
+parameters$enrORdep = "enr"
+parameters$directional = F
+
+#ORGANizer specific
+parameters$curationLevel = "confident"
+parameters$FreqOfPheno = "all"
+parameters$DBversion = parameters$HPO_dbVer
+parameters$onlySkel = T
+
+parameters$diff_threshold = 1.25 #before log2()
+parameters$compare_threshold = 1.25 #before log2()
+
+parameters$min_dna_counts_compare = 100                   # Original: 50
+parameters$min_dna_counts_diff_vs_active = 100             # Original: 50
+
+# save parameters
+lines <- paste(names(parameters), parameters, sep=",")
+writeLines(lines, paste0(base_dir,'/',parameters$name,'/ parameters.csv'))
+
+
+```
+
+
+## Source GrandEnrich
+```{r}
+grandEnrichDir <- "/home/labs/davidgo/Collaboration/backup/Lab_tools/Gokhman_Enrich/final_scripts"
+
+source(paste(grandEnrichDir,'/TheGrandEnrich_enrich.R',sep=''))
+source(paste(grandEnrichDir,'/ORGANizer_ORGANize.R',sep=''))
+source(paste(grandEnrichDir,'/HPO_enrich.R',sep=''))
+source(paste(grandEnrichDir,'/ORGANizer_compare.R',sep=''))
+source(paste(grandEnrichDir,'/TheGrandEnrich_compare.R',sep=''))
+source(paste(grandEnrichDir,'/HPO_compare.R',sep=''))
+
+filter_elite_associations <- function(num_str, string_str,within_promoter,num_associations) {
+  num_str = str_split(num_str, ";")[[1]]
+  within_promoter = str_split(within_promoter, ";")[[1]]
+  bool_vec <-(num_str >= num_associations) | (within_promoter == 'T')
+  gene_list <- str_split(string_str, ";")[[1]]
+  filtered_genes <- gene_list[bool_vec]
+  paste(filtered_genes, collapse = ";")
+}
+
+filter_promoters_only <- function(string_str,within_promoter,num_associations) {
+  within_promoter = str_split(within_promoter, ";")[[1]]
+  bool_vec <-(within_promoter == 'T')
+  gene_list <- str_split(string_str, ";")[[1]]
+  filtered_genes <- gene_list[bool_vec]
+  paste(filtered_genes, collapse = ";")
+}
+
+```
+
+## Load raw data for enrichment analysis
+```{r}
+
+data = 'hMPRA'
+if (data == 'ASE'){
+  data_dir = "/home/labs/davidgo/Collaboration/USEFUL_DATASETS/Expression/Hybrids/human_chimp/ExpLBM/outputs/ExpLBM_polarization_results.tsv"
+  
+  data <- read.csv(data_dir,sep = '\t')
+  
+  diff_vs_active_background = data%>%
+    filter(ExpLBM_gene_ase_type %in% c('ASE','nonASE'))%>%
+    pull(Gene)
+  
+  unique_diff_active = data%>%
+    filter(ExpLBM_gene_ase_type %in% c('ASE'))%>%
+    filter(derived == 'human-derived')%>%
+    pull(Gene)
+  
+  HPO_results = HPO_enrich(genelist = unique_diff_active,background = diff_vs_active_background,outpath =base_dir,uniq = T) 
+
+}else if(data == 'hMPRA'){
+  data_dir = "/home/labs/davidgo/Collaboration/humanMPRA/top_candidates/chondrocytes/humanMPRA_annotations_v3.csv"
+  #Load data and keep only elite gene associations
+  data <- read.csv(data_dir)%>%
+    #filter(abs(ATACseq_peaks_fetal_chondrocytes)<300)%>%
+    rowwise()%>%
+    mutate(Gene_symbol = filter_elite_associations(num_sources_linking_gene,Gene_symbol, within_promoter ,2))
+
+}
+
+
+```
+
+
+# Data processing
+
+## Compare filterings
+
+```{r}
+
+filterinng_description = 'Filter the humanMPRA for cCREs with at least 50 DNA counts in both alleles. Gene associations - elite'
+
+compare_data = data%>%
+  filter(DNA_counts_raw_ancestral>parameters$min_dna_counts_compare)%>%
+  filter(DNA_counts_raw_derived>parameters$min_dna_counts_compare)%>%
+  filter(differential_activity %in% c("True", "False"))
+
+
+compare_background <- compare_data %>%
+  pull(Gene_symbol) %>%
+  paste(collapse = ";") %>%
+  strsplit(split = ";") %>%
+  .[[1]] %>%
+  .[. != ""]
+
+if (parameters$uniq == TRUE){
+  compare_background = compare_background%>%
+  unique()
+}
+
+
+
+
+save(compare_background, file = paste0(base_dir,'/',parameters$name,'/compare/compare_background.Rdata'))
+write.csv(compare_background, file = paste0(base_dir,'/',parameters$name,'/compare/compare_background.csv'))
+```
+
+# Define groups of comapre enrichment
+```{r}
+unique_diff_active_up <- compare_data %>%
+  filter(differential_activity == "True")%>%
+  filter(logFC_derived_vs_ancestral > log2(parameters$compare_threshold)) %>%
+  pull(Gene_symbol)%>%
+  paste(collapse = ";") %>%
+  strsplit(split = ";") %>%
+  .[[1]] %>%
+  .[. != ""]
+
+if (parameters$uniq == TRUE){
+  unique_diff_active_up = unique_diff_active_up%>%
+  unique()
+}
+
+
+unique_diff_active_down <- compare_data %>%
+  filter(differential_activity == "True")%>%
+  filter(logFC_derived_vs_ancestral < -log2(parameters$compare_threshold)) %>%
+  pull(Gene_symbol)%>%
+  paste(collapse = ";") %>%
+  strsplit(split = ";") %>%
+  .[[1]] %>%
+  .[. != ""]
+
+if (parameters$uniq == TRUE){
+  unique_diff_active_down = unique_diff_active_down%>%
+  unique()
+}
+
+
+# Save the genes into the log file
+save(unique_diff_active_up, file = paste0(base_dir,'/',parameters$name,'/compare/diff_active_up_genes.Rdata'))
+save(unique_diff_active_down, file = paste0(base_dir,'/',parameters$name,'/compare/diff_active_down_genes.Rdata'))
+
+write(unique_diff_active_up, file = paste0(base_dir,'/',parameters$name,'/compare/diff_active_up_genes.txt'), ncolumns = 1)
+write(unique_diff_active_down, file = paste0(base_dir,'/',parameters$name,'/compare/diff_active_down_genes.txt'), ncolumns = 1)
+```
+
+
+
+
+
+## Define background
+
+```{r}
+
+diff_vs_active_data <- data %>%
+  filter(DNA_counts_raw_ancestral > parameters$min_dna_counts_diff_vs_active) %>%
+  filter(DNA_counts_raw_derived   > parameters$min_dna_counts_diff_vs_active) %>%
+  filter(differential_activity %in% c("True", "False")) 
+
+diff_vs_active_background <- diff_vs_active_data %>%
+  pull(Gene_symbol) %>%
+  paste(collapse = ";") %>%
+  strsplit(split = ";") %>%
+  .[[1]] %>%
+  .[. != ""]
+
+if (parameters$uniq == TRUE){
+  diff_vs_active_background = diff_vs_active_background%>%
+  unique()
+}
+
+save(diff_vs_active_background, file = paste0(base_dir,'/',parameters$name,'/diff_vs_active/diff_vs_active_background.Rdata'))
+write(diff_vs_active_background, file = paste0(base_dir,'/',parameters$name,'/diff_vs_active/diff_vs_active_background.txt'), ncolumns = 1)
+
+
+```
+
+## Define group for enrichment
+
+```{r}
+
+unique_diff_active = diff_vs_active_data%>%
+  filter(differential_activity=='True')%>%
+  filter(abs(logFC_derived_vs_ancestral)>log2(parameters$diff_threshold))%>%
+  pull(Gene_symbol)%>%
+  paste(collapse = ";") %>%
+  strsplit(split = ";") %>%
+  .[[1]] %>%
+  .[. != ""]
+
+if (parameters$uniq == TRUE){
+  unique_diff_active = unique_diff_active%>%
+  unique()
+}
+
+title = paste('background:', length(diff_vs_active_background), 'list:',length(unique_diff_active))
+write(unique_diff_active, file = paste0(base_dir,'/',parameters$name,'/diff_vs_active/diff_active_genes.txt'), ncolumns = 1)
+
+```
+
+
+# Run Enrichment
+
+```{r}
+GrandEnrich_results = list()
+for(db in parameters$GrandEnrich_dbs){
+  GrandEnrich_results[[db]] = TheGrandEnrich_enrich(db = db,
+                      genelist = unique_diff_active,
+                      background = diff_vs_active_background,
+                      locORser = parameters$locORser,
+                      minGenes = parameters$minGenes,
+                      enrORdep = parameters$enrORdep,
+                      comp = parameters$comp,
+                      uniq = parameters$uniq,
+                      outdir = paste0(base_dir,'/',parameters$name,'/diff_vs_active'))
+}
+
+print('TheGrandEnrich is done!')
+
+HPO_results = HPO_enrich(genelist = unique_diff_active,
+           background = diff_vs_active_background,
+           minGenes = parameters$minGenes,
+           TYPorALL = parameters$TYPorALL,
+           HPO_dbVer = parameters$HPO_dbVer,
+           systems = parameters$systems,
+           bodyparts = parameters$bodyparts,
+           directional = parameters$directional,
+           enrORdep = parameters$enrORdep,
+           comp = parameters$comp,
+           locORser = parameters$locORser,
+           uniq = parameters$uniq,
+           outpath = paste0(base_dir,'/',parameters$name,'/diff_vs_active'))
+
+print('HPO enrich is done is done!')
+
+
+ORGANizer_results = ORGANizer_Organize(genelist = unique_diff_active,
+                   background = diff_vs_active_background,
+                   outpath = paste0(base_dir,'/',parameters$name,'/diff_vs_active'),
+                   curationLevel = parameters$curationLevel,
+                   FreqOfPheno = parameters$FreqOfPheno,
+                   DBversion = parameters$DBversion,
+                   minGenes = parameters$minGenes,
+                   onlySkel = parameters$onlySkel,
+                   enrORdep = parameters$enrORdep,
+                   locORser = parameters$locORser,
+                   comp = parameters$comp,
+                   uniq = parameters$uniq)
+
+print('ORGANizer enrich is done is done!')
+
+write.csv(GrandEnrich_results$KEGG, file = paste0(base_dir,'/',parameters$name,'/diff_vs_active/kegg_raw_output.csv'))
+write.csv(GrandEnrich_results$GAD_Disease, file = paste0(base_dir,'/',parameters$name,'/diff_vs_active/GAD_disease_raw_output.csv'))
+write.csv(GrandEnrich_results$GO_BP, file = paste0(base_dir,'/',parameters$name,'/diff_vs_active/GO_raw_output.csv'))
+write.csv(HPO_results, file = paste0(base_dir,'/',parameters$name,'/diff_vs_active/HPO_raw_output.csv'))
+write.csv(ORGANizer_results, file = paste0(base_dir,'/',parameters$name,'/diff_vs_active/ORGANizer_raw_output.csv'))   
+
+```
+# Process results
+
+
+```{r}
+
+HPO_clean = HPO_results %>%
+  dplyr::rename(FoldChange = Enrichment)%>%
+  dplyr::rename(Term = Pheno)%>%
+  select(Term,FoldChange,`P-value`,FDR)
+
+HPO_clean$database = "HPO"
+
+ORGANizer_clean = ORGANizer_results %>%
+  dplyr::rename(FoldChange = Enrichment)%>%
+  dplyr::rename(Term = `Body Part`)%>%
+  select(Term,FoldChange,`P-value`,FDR)
+
+ORGANizer_clean$database = "geneORGANizer"
+
+
+# Add origin column and combine
+combined_GrandEnrich_results <- bind_rows(list(
+  GO_BP = GrandEnrich_results$GO_BP,
+  KEGG = GrandEnrich_results$KEGG,
+  GAD_Disease = GrandEnrich_results$GAD_Disease,
+  HPO = HPO_clean,
+  ORGANizer = ORGANizer_clean),
+  .id = "database")
+
+  
+  
+final_results = combined_GrandEnrich_results%>%
+  select(database,Term,FoldChange,`P-value`,FDR)%>%
+  mutate(Term = paste(database,Term),.keep = 'unused')%>%
+  arrange(FDR)%>%
+  arrange(desc(FoldChange))%>%
+  filter(FDR<0.05)%>%
+  distinct(Term,.keep_all = TRUE)
+
+write.csv(final_results,paste0(base_dir,'/',parameters$name,'/diff_vs_active/diff_vs_active_processed_results.csv'),row.names=F,col.names = FALSE)
+
+```
+
+
+
+# Run compare test
+```{r}
+
+# compare test
+
+compare_title = paste("up genes:",length(unique_diff_active_up), 'down genes:',length(unique_diff_active_down),' background:', length(compare_background))
+ 
+ GrandEnrich_compare_results = list()
+ 
+ for(db in parameters$GrandEnrich_dbs){
+   print(db)
+   GrandEnrich_compare_results[[db]] = TheGrandEnrich_compare(db = db,
+                       genelist1 = unique_diff_active_up,
+                       genelist2 = unique_diff_active_down,
+                       background = compare_background,
+                       locORser = parameters$locORser,
+                       minGenes = parameters$minGenes,
+                       enrORdep = parameters$enrORdep,
+                       comp_main = parameters$comp,
+                       comp1 = 'up',
+                       comp2 = 'down',
+                       uniq = parameters$uniq,
+                       outdir = paste0(base_dir,'/',parameters$name,'/compare'))
+ }
+   
+
+  print('TheGrandEnrich is done!')
+
+  HPO_compare_results = HPO_compare(
+             genelist1 = unique_diff_active_up,
+             genelist2 = unique_diff_active_down,
+             background = compare_background,
+             minGenes = parameters$minGenes,
+             TYPorALL = parameters$TYPorALL,
+             HPO_dbVer = parameters$HPO_dbVer,
+             systems = parameters$systems,
+             bodyparts = parameters$bodyparts,
+             directional = parameters$directional,
+             enrORdep = parameters$enrORdep,
+             comp_main = parameters$comp,
+             comp1 = 'up',
+             comp2 = 'down',
+             locORser = parameters$locORser,
+             uniq = parameters$uniq,
+             outpath = paste0(base_dir,'/',parameters$name,'/compare'))
+  
+  print('HPO enrich is done is done!')
+
+  ORGANizer_compare_results = ORGANizer_compare(
+             genelist1 = unique_diff_active_up,
+             genelist2 = unique_diff_active_down,
+             background = compare_background,
+             curationLevel = parameters$curationLevel,
+             FreqOfPheno = parameters$FreqOfPheno,
+             DBversion = parameters$DBversion,
+             minGenes = parameters$minGenes,
+             onlySkel = parameters$onlySkel,
+             enrORdep = parameters$enrORdep,
+             locORser = parameters$locORser,
+             comp1 = 'up',
+             comp2 = 'down',
+             uniq = parameters$uniq,
+             outpath = paste0(base_dir,'/',parameters$name,'/compare'))
+
+  
+  print('ORGANizer enrich is done is done!')
+
+
+
+```
+
+```{r}
+
+write.csv(GrandEnrich_compare_results$KEGG, file = paste0(base_dir,'/',parameters$name,'/compare/kegg_raw_output.csv'))
+write.csv(GrandEnrich_compare_results$GAD_Disease, file = paste0(base_dir,'/',parameters$name,'/compare/GAD_disease_raw_output.csv'))
+write.csv(GrandEnrich_compare_results$GO_BP, file = paste0(base_dir,'/',parameters$name,'/compare/GO_raw_output.csv'))
+write.csv(HPO_compare_results, file = paste0(base_dir,'/',parameters$name,'/compare/HPO_raw_output.csv'))
+write.csv(ORGANizer_compare_results$GO, file = paste0(base_dir,'/',parameters$name,'/compare/ORGANizer_raw_output.csv'))
+
+```
+
+# Process compare results
+```{r}
+
+HPO_compare_clean = HPO_compare_results %>%
+  dplyr::rename(FoldChange = Ratio)%>%
+  dplyr::rename(Term = Pheno)%>%
+  select(-c(HPO_ID))
+
+ORGANizer_compare_clean = ORGANizer_compare_results %>%
+  dplyr::rename(FoldChange = Ratio)%>%
+  dplyr::rename(Term = `Body Part`)%>%
+  select(-c(Type))
+
+HPO_compare_clean$database = "HPO"
+ORGANizer_compare_clean$database = "geneORGANizer"
+
+
+
+colnames(GrandEnrich_compare_results$GO_BP)[colnames(GrandEnrich_compare_results$GO_BP) == "Ratio"] <- "FoldChange"
+colnames(GrandEnrich_compare_results$KEGG)[colnames(GrandEnrich_compare_results$KEGG) == "Ratio"] <- "FoldChange"
+colnames(GrandEnrich_compare_results$GAD_Disease)[colnames(GrandEnrich_compare_results$GAD_Disease) == "Ratio"] <- "FoldChange"
+
+
+# Add origin column and combine
+combined_compare_GrandEnrich_results <- bind_rows(list(
+  GO_BP = GrandEnrich_compare_results$GO_BP,
+  KEGG = GrandEnrich_compare_results$KEGG,
+  GAD_Disease = GrandEnrich_compare_results$GAD_Disease,
+  HPO = HPO_compare_clean,
+  ORGANizer = ORGANizer_compare_clean),
+  .id = "database")
+  
+
+final_compare_results = combined_compare_GrandEnrich_results%>%
+  #select(database,Term,FoldChange,`P-value`,FDR)%>%
+  mutate(Term = paste(database,Term),.keep = 'unused')%>%
+  arrange(FDR)%>%
+  arrange(desc(FoldChange))%>%
+  filter(FDR<0.05)%>%
+  distinct(Term,.keep_all = TRUE)
+
+write.csv(final_compare_results,paste0(base_dir,'/',parameters$name,'/compare/compare_processed_results.csv'),row.names=F,col.names = FALSE)
+
+```
+
