@@ -122,10 +122,10 @@ plot_all_MPRA <- function(working_dir, analysis_name, ncol = 3) {
 
 
 
-### Retained cCREs and barcodes
-**Goal: Estimate the percentages of barcodes and cCREs retained after association** <br>
+## Retained cCREs and barcodes
+**Goal: Assesses cCRE and BC coverage** <br>
 **Input file: activity_per_rep**<br>
-**Evaluated metrics: final library complexity**:<br>
+**Evaluated metrics: DNA Complexity, RNA Complexity**:<br>
 
 ```{r,echo=FALSE}
 good_example_MPRA = "PMID_38766054_Reilly"
@@ -141,15 +141,63 @@ plot_side_by_side(good_example,bad_example)
 
 rm(good_example_MPRA,bad_example_MPRA,analysis_name)
 ```
+**Legend: Percentage of cCREs and BCs present in the DNA and RNA quantification data compared with those observed in the association data** <br>
+**Interpretation:**<br>
+
+
+## DNA counts vs GC content
+
+**Goal: ** <br>
+**Input file: ** <br>
+**Evaluated metrics: ** <br>
+
+
+
+```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
+knitr::include_graphics(c("external_figures/placeholder.svg",
+                          "external_figures/placeholder.svg"))
+```
+
+**Legend:** <br>
+**Interpretation:**<br>
+
+## Activity statistic vs count ratio
+
+**Goal: ** <br>
+**Input file: ** <br>
+**Evaluated metrics: ** <br>
+
+
+
+```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
+knitr::include_graphics(c("external_figures/placeholder.svg",
+                          "external_figures/placeholder.svg"))
+```
+
+**Legend:** <br>
+**Interpretation:**<br>
+
+## Differential activity statistic vs count ratio
+
+**Goal: ** <br>
+**Input file: ** <br>
+**Evaluated metrics: ** <br>
+
+
+
+```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
+knitr::include_graphics(c("external_figures/placeholder.svg",
+                          "external_figures/placeholder.svg"))
+```
+
 **Legend:** <br>
 **Interpretation:**<br>
 
 
-
 ## Activity distribution
-**Goal: Inferring tht power of the  quantification step in determining activity** <br>
+**Goal: Assesses activity dynamic range, noise, and statistical power** <br>
 **Input file: quantification table (comb_df)**<br>
-**Evaluated metrics: activity dynamic range, noise, and statistical power**:<br>
+**Evaluated metrics: DNA Complexity, RNA Complexity**:<br>
 
 ```{r,echo=FALSE}
 
@@ -175,11 +223,27 @@ rm(good_example_MPRA,bad_example_MPRA,bad_example_MPRA_2,analysis_name)
 **Interpretation:**<br>
 
 
+## Differential activity distribution
+
+**Goal: Assesses differential activity dynamic range, noise, and statistical power** <br>
+**Input file: comparative_df** <br>
+**Evaluated metrics: DNA Complexity, RNA Complexity** <br>
+
+
+
+```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
+knitr::include_graphics(c("external_figures/modern_humanMPRA_Hob/Differential_activity_distribution.svg",
+                          "external_figures/humanMPRA_L1a1_Neurons/Differential_activity_distribution.svg"))
+```
+
+**Legend:** <br>
+**Interpretation:**<br>
+
 
 ## P-value distribution
 **Goal: Inferring the power of the statistical test** <br>
 **Input file: quantification table (comb_df)**<br>
-**Evaluated metrics: ajusted P-value**:<br>
+**Evaluated metrics: DNA Complexity, RNA Complexity, Reproducibility, Dynamic range**:<br>
 
 Problem: nothitng looks mildly bad, max looks too bad. 
 
@@ -203,46 +267,74 @@ rm(good_example_MPRA,bad_example_MPRA,analysis_name)
 **Legend:** <br>
 **Interpretation:**<br>
 
+## Volcano plot - FC vs Pval
+
+**Goal: ** <br>
+**Input file: ** <br>
+**Evaluated metrics: ** <br>
 
 
-## Downsampling analysis - active cCREs
-**Goal:** <br>
-**Input file:**<br>
-**Evaluated metrics**:<br>
 
-```{r,echo=FALSE}
-
-grid.newpage()
-
-good_example <- readPNG(file.path(working_dir,"placeholder.png"),native = T)
-bad_example <- readPNG(file.path(working_dir,"placeholder.png"),native = T)
-
-# Start new page and define layout
-grid.newpage()
-pushViewport(viewport(layout = grid.layout(1, 2)))
-
-# Helper to specify location in layout
-vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col)
-
-# Draw both images in the layout without using print()
-pushViewport(vplayout(1, 1))
-grid.raster(good_example, interpolate = FALSE)
-popViewport()
-
-pushViewport(vplayout(1, 2))
-grid.raster(bad_example, interpolate = FALSE)
-popViewport()
-
+```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
+knitr::include_graphics(c("external_figures/placeholder.svg",
+                          "external_figures/placeholder.svg"))
 ```
+
+**Legend:** <br>
+**Interpretation:**<br>
+
+## BC retention by DNA/RNA sequencing depth
+
+**Goal: ** <br>
+**Input file: ** <br>
+**Evaluated metrics: ** <br>
+
+
+
+```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
+knitr::include_graphics(c("external_figures/placeholder.svg",
+                          "external_figures/placeholder.svg"))
+```
+
+**Legend:** <br>
+**Interpretation:**<br>
+
+
+## cCRE retention by DNA/RNA sequencing depth
+
+**Goal: ** <br>
+**Input file: ** <br>
+**Evaluated metrics: ** <br>
+
+
+
+```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
+knitr::include_graphics(c("external_figures/placeholder.svg",
+                          "external_figures/placeholder.svg"))
+```
+
 **Legend:** <br>
 **Interpretation:**<br>
 
 
 
+## Activity by sequencing depth
+**Goal: uses downsampling of sequencing reads to assess if sequencing depth is sufficient** <br>
+**Input file: Downsampling activity data frames**<br>
+**Evaluated metrics: DNA Complexity, RNA Complexity**<br>
+
+```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
+knitr::include_graphics(c("external_figures/modern_humanMPRA_Hob/Activity_by_sequencing_depth.svg",
+                          "external_figures/modern_humanMPRA_NPC/Activity_by_sequencing_depth.svg"))
+```
+**Legend:** <br>
+**Interpretation:**<br>
+
+
 ## Cumulative RNA reads
-**Goal: To assess jackpotting** <br>
+**Goal: assesses jackpotting** <br>
 **Input file: quantification table (comb_df)**<br>
-**Evaluated metrics: DNA and RNA read counts**:<br>
+**Evaluated metrics: DNA Complexity, RNA Complexity**:<br>
 
 ```{r,echo=FALSE}
 good_example_MPRA = "PMID_38766054_Reilly"
@@ -264,27 +356,13 @@ rm(good_example_MPRA,bad_example_MPRA,analysis_name)
 **Legend:** <br>
 **Interpretation:**<br>
 
-## Activity by sequencing depth
-
-**Goal: This analysis uses downsampling of sequencing reads to assess if sequencing depth is sufficient** <br>
-**Input file: Activity down sampling files** <br>
-**Evaluated metrics: RNA and DNA complexity** <br>
 
 
 
-```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
-knitr::include_graphics(c("external_figures/modern_humanMPRA_Hob/Activity_by_sequencing_depth.svg",
-                          "external_figures/modern_humanMPRA_NPC/Activity_by_sequencing_depth.svg"))
-```
-
-**Legend:** <br>
-**Interpretation:**<br>
-
-
-## Similarity between samples (PCA)
-**Goal: to assess reproducibility between samples** <br>
+## Sample clustering
+**Goal: Assesses reproducibility between samples** <br>
 **Input file: cDNA_reads_by_cell_type**<br>
-**Evaluated metrics: sample clustering based on expression**:<br>
+**Evaluated metrics: Reproducibility**:<br>
 
 mention in the bookdown: the importance of the percentage explained by the 1st and 2nd PCs. 
 ```{r,echo=FALSE}
@@ -304,15 +382,15 @@ plot_side_by_side(good_example,bad_example)
 rm(good_example_MPRA,bad_example_MPRA,analysis_name)
 
 ```
-**Legend:** <br>
+**Legend: Principal component analysis (PCA) on samples** <br>
 **Interpretation:**<br>
 
 
 
 ## Correlation between replicates
-**Goal: To assess reproducibility between replicates** <br>
+**Goal: assesses reproducibility between replicates** <br>
 **Input file: activity_per_rep**<br>
-**Evaluated metrics: correlation of expression between replicates**:<br>
+**Evaluated metrics: Reproducibility**:<br>
 
 ```{r,echo=FALSE}
 good_example_MPRA = "thylacine_biorxiv_Gallego_Romero"
@@ -334,12 +412,32 @@ rm(good_example_MPRA,bad_example_MPRA,bad_example_MPRA_2,analysis_name)
 
 
 
-## Variation at various activity levels
-**Goal:** <br>
-**Input file:**<br>
-**Evaluated metrics**:<br>
+## Correlation of differential activity between replicates
 
-Omer is in charge of this part.
+**Goal: ** <br>
+**Input file: ** <br>
+**Evaluated metrics: ** <br>
+
+
+
+```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
+knitr::include_graphics(c("external_figures/placeholder.svg",
+                          "external_figures/placeholder.svg"))
+```
+
+**Legend:** <br>
+**Interpretation:**<br>
+
+
+
+
+
+
+## Replicability by activity
+**Goal: assesses the correlation in activity between replicates in active vs non-active cCREs** <br>
+**Input file:**<br>
+**Evaluated metrics: Reproducibility **<br>
+
 
 ```{r,echo=FALSE}
 good_example_MPRA = "PMID_38766054_Reilly"
@@ -361,10 +459,14 @@ rm(good_example_MPRA,bad_example_MPRA,analysis_name)
 **Interpretation:**<br>
 
 
+
+
+
+
 ## Correlation between replicates (controls)
-**Goal:** <br>
+**Goal: analysis assesses reproducibility between replicates in positive and negative controls** <br>
 **Input file: quantification table (comb_df)**<br>
-**Evaluated metrics**:<br>
+**Evaluated metrics: Reproducibility**<br>
 
 ```{r,echo=FALSE}
 good_example_MPRA = "PMID_38766054_Reilly"
@@ -384,10 +486,166 @@ rm(good_example_MPRA,bad_example_MPRA,analysis_name)
 **Legend:** <br>
 **Interpretation:**<br>
 
-## RNA_DNA_ratio
-**Goal:** <br>
+
+## Cross-validation:allelic pairs
+
+**Goal: ** <br>
+**Input file: ** <br>
+**Evaluated metrics: ** <br>
+
+
+
+```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
+knitr::include_graphics(c("external_figures/placeholder.svg",
+                          "external_figures/placeholder.svg"))
+```
+
+**Legend:** <br>
+**Interpretation:**<br>
+
+## Correlation of differential activity between overlapping sequences
+
+**Goal: ** <br>
+**Input file: ** <br>
+**Evaluated metrics: ** <br>
+
+
+
+```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
+knitr::include_graphics(c("external_figures/placeholder.svg",
+                          "external_figures/placeholder.svg"))
+```
+
+**Legend:** <br>
+**Interpretation:**<br>
+
+## Cross-validaiton: cell types
+
+**Goal: ** <br>
+**Input file: ** <br>
+**Evaluated metrics: ** <br>
+
+
+
+```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
+knitr::include_graphics(c("external_figures/placeholder.svg",
+                          "external_figures/placeholder.svg"))
+```
+
+**Legend:** <br>
+**Interpretation:**<br>
+
+## Correlation of differential activity between cell types
+
+**Goal: ** <br>
+**Input file: ** <br>
+**Evaluated metrics: ** <br>
+
+
+
+```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
+knitr::include_graphics(c("external_figures/placeholder.svg",
+                          "external_figures/placeholder.svg"))
+```
+
+**Legend:** <br>
+**Interpretation:**<br>
+
+## Cross-validation: experiments
+
+**Goal: ** <br>
+**Input file: ** <br>
+**Evaluated metrics: ** <br>
+
+
+
+```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
+knitr::include_graphics(c("external_figures/placeholder.svg",
+                          "external_figures/placeholder.svg"))
+```
+
+**Legend:** <br>
+**Interpretation:**<br>
+
+## Correlation of differential activity between experiments
+
+**Goal: ** <br>
+**Input file: ** <br>
+**Evaluated metrics: ** <br>
+
+
+
+```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
+knitr::include_graphics(c("external_figures/placeholder.svg",
+                          "external_figures/placeholder.svg"))
+```
+
+**Legend:** <br>
+**Interpretation:**<br>
+
+## Replicability across experiments
+
+**Goal: ** <br>
+**Input file: ** <br>
+**Evaluated metrics: ** <br>
+
+
+
+```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
+knitr::include_graphics(c("external_figures/placeholder.svg",
+                          "external_figures/placeholder.svg"))
+```
+
+**Legend:** <br>
+**Interpretation:**<br>
+
+
+
+
+## Minimizing noise 
+**Goal: Removing outlier BCs and optimizing the threshold of minimum DNA counts to increase reproducibility** <br>
+**Input file: **<br>
+**Evaluated metrics: Reproducibility**:<br>
+
+```{r,echo=FALSE}
+
+good_example_MPRA = "modern_humanMPRA_Hob"
+analysis_name = 'minimizing_noise.png'
+print_examples(good_example_MPRA, 'NA')
+
+good_example <- readPNG(file.path(working_dir,good_example_MPRA,analysis_name),native = T)
+plot_single(good_example)
+
+#plot_all_MPRA(working_dir, analysis_name, ncol = 3)
+
+
+rm(good_example_MPRA,analysis_name)
+
+```
+**Legend:** <br>
+**Interpretation:**<br>
+
+
+## Reproducibility by sequencing depth
+
+**Goal: Assesses whether additional sequencing will improve reproducibility between replicates** <br>
+**Input file: Activity down sampling files** <br>
+**Evaluated metrics: Reproducibility** <br>
+
+
+```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
+knitr::include_graphics(c("external_figures/modern_humanMPRA_Hob/Reproducibility_by_sequencing_depth.svg",
+                          "external_figures/modern_humanMPRA_NPC/Reproducibility_by_sequencing_depth.svg"))
+```
+
+**Legend:** <br>
+**Interpretation:**<br>
+
+
+## RNA vs DNA
+**Goal: Assesses if there is true activity in the experiment** <br>
 **Input file:**<br>
-**Evaluated metrics**:<br>
+**Evaluated metrics: Dynamic Range**<br>
 
 ```{r,echo=FALSE}
 good_example_MPRA = "PMID_38766054_Reilly"
@@ -412,10 +670,10 @@ rm(good_example_MPRA,bad_example_MPRA,bad_example_MPRA_2,analysis_name)
 
 
 
-## Activity of controls - sample comparison
-**Goal: To assess dynamic range of activity using sequences with known levels of activity** <br>
+## Activity of controls
+**Goal: assesses the dynamic range of activity** <br>
 **Input file: quantification table (comb_df)**<br>
-**Evaluated metrics: dynamic range of activity**:<br>
+**Evaluated metrics: Dynamic Range**:<br>
 
 ```{r,echo=FALSE}
 good_example_MPRA = "PMID_38766054_Reilly"
@@ -437,95 +695,6 @@ rm(good_example_MPRA,bad_example_MPRA,analysis_name)
 **Interpretation:**<br>
 
 
-
-## Minimizing noise [Outlier barcodes + min(DNA)] - use the mhMPRA data
-**Goal: optimizing the threshold of minimum DNA counts to increase reproducibility** <br>
-**Input file: **<br>
-**Evaluated metrics: correlation between replicates**:<br>
-
-```{r,echo=FALSE}
-
-good_example_MPRA = "modern_humanMPRA_Hob"
-analysis_name = 'minimizing_noise.png'
-print_examples(good_example_MPRA, 'NA')
-
-good_example <- readPNG(file.path(working_dir,good_example_MPRA,analysis_name),native = T)
-plot_single(good_example)
-
-#plot_all_MPRA(working_dir, analysis_name, ncol = 3)
-
-
-rm(good_example_MPRA,analysis_name)
-
-```
-**Legend:** <br>
-**Interpretation:**<br>
-
-
-
-## Outlier barcodes
-**Goal:** <br>
-**Input file:**<br>
-**Evaluated metrics**:<br>
-
-```{r,echo=FALSE}
-
-grid.newpage()
-
-good_example <- readPNG(file.path(working_dir,"placeholder.png"),native = T)
-bad_example <- readPNG(file.path(working_dir,"placeholder.png"),native = T)
-
-# Start new page and define layout
-grid.newpage()
-pushViewport(viewport(layout = grid.layout(1, 2)))
-
-# Helper to specify location in layout
-vplayout <- function(row, col) viewport(layout.pos.row = row, layout.pos.col = col)
-
-# Draw both images in the layout without using print()
-pushViewport(vplayout(1, 1))
-grid.raster(good_example, interpolate = FALSE)
-popViewport()
-
-pushViewport(vplayout(1, 2))
-grid.raster(bad_example, interpolate = FALSE)
-popViewport()
-
-```
-
-## Reproducibility by sequencing depth
-
-**Goal: This analysis assesses whether additional sequencing will improve reproducibility between replicates** <br>
-**Input file: Activity down sampling files** <br>
-**Evaluated metrics: Replicability** <br>
-
-
-```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
-knitr::include_graphics(c("external_figures/modern_humanMPRA_Hob/Reproducibility_by_sequencing_depth.svg",
-                          "external_figures/modern_humanMPRA_NPC/Reproducibility_by_sequencing_depth.svg"))
-```
-
-**Legend:** <br>
-**Interpretation:**<br>
-
-
-
-## Replicability by activity
-
-**Goal: This analysis assesses the correlation in activity between replicates in active vs non-active cCREs** <br>
-**Input file: Activity file** <br>
-**Evaluated metrics: Replicability** <br>
-
-
-```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
-knitr::include_graphics(c("external_figures/modern_humanMPRA_Hob/Activity_by_sequencing_depth.svg",
-                          "external_figures/modern_humanMPRA_NPC/Activity_by_sequencing_depth.svg"))
-```
-
-**Legend:** <br>
-**Interpretation:**<br>
-
-
 ## Genomic annotations
 
 **Goal: This analysis assesses concordance with endogenous signals of active chromatin marks** <br>
@@ -536,6 +705,23 @@ knitr::include_graphics(c("external_figures/modern_humanMPRA_Hob/Activity_by_seq
 ```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
 knitr::include_graphics(c("external_figures/humanMPRA_L1a1_Neurons/Genomic_annotations.svg",
                           "external_figures/PMID_38766054_Reilly/Genomic_annotations.svg"))
+```
+
+**Legend:** <br>
+**Interpretation:**<br>
+
+
+## Endogenous genomic annotation - differential activity
+
+**Goal: ** <br>
+**Input file: ** <br>
+**Evaluated metrics: ** <br>
+
+
+
+```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
+knitr::include_graphics(c("external_figures/placeholder.svg",
+                          "external_figures/placeholder.svg"))
 ```
 
 **Legend:** <br>
@@ -555,3 +741,32 @@ knitr::include_graphics(c("external_figures/humanMPRA_L1a1_Neurons/Proximity_to_
 
 **Legend:** <br>
 **Interpretation:**<br>
+
+
+
+
+## AI predictions vs activity
+
+**Goal: ** <br>
+**Input file: ** <br>
+**Evaluated metrics: ** <br>
+
+
+
+```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
+knitr::include_graphics(c("external_figures/placeholder.svg",
+                          "external_figures/placeholder.svg"))
+```
+
+**Legend:** <br>
+**Interpretation:**<br>
+
+
+
+
+
+
+
+
+
+

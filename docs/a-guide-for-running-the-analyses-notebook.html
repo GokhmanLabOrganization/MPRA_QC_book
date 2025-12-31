@@ -8,7 +8,7 @@
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
 set in the _output.yml file.</p>" />
-  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 1 A guide for running the analyses notebook | Quality Control Pipeline for Massively Parallel Reporter Assays (MPRAs)" />
   <meta property="og:type" content="book" />
@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Omer Ronen" />
 
 
-<meta name="date" content="2025-12-28" />
+<meta name="date" content="2025-12-31" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -115,24 +115,38 @@ set in the _output.yml file.</p>" />
 </ul></li>
 <li class="chapter" data-level="3" data-path="activity-qc.html"><a href="activity-qc.html"><i class="fa fa-check"></i><b>3</b> Activity QC</a>
 <ul>
-<li class="chapter" data-level="3.0.1" data-path="activity-qc.html"><a href="activity-qc.html#retained-ccres-and-barcodes"><i class="fa fa-check"></i><b>3.0.1</b> Retained cCREs and barcodes</a></li>
-<li class="chapter" data-level="3.1" data-path="activity-qc.html"><a href="activity-qc.html#activity-distribution"><i class="fa fa-check"></i><b>3.1</b> Activity distribution</a></li>
-<li class="chapter" data-level="3.2" data-path="activity-qc.html"><a href="activity-qc.html#p-value-distribution"><i class="fa fa-check"></i><b>3.2</b> P-value distribution</a></li>
-<li class="chapter" data-level="3.3" data-path="activity-qc.html"><a href="activity-qc.html#downsampling-analysis---active-ccres"><i class="fa fa-check"></i><b>3.3</b> Downsampling analysis - active cCREs</a></li>
-<li class="chapter" data-level="3.4" data-path="activity-qc.html"><a href="activity-qc.html#cumulative-rna-reads"><i class="fa fa-check"></i><b>3.4</b> Cumulative RNA reads</a></li>
-<li class="chapter" data-level="3.5" data-path="activity-qc.html"><a href="activity-qc.html#activity-by-sequencing-depth"><i class="fa fa-check"></i><b>3.5</b> Activity by sequencing depth</a></li>
-<li class="chapter" data-level="3.6" data-path="activity-qc.html"><a href="activity-qc.html#similarity-between-samples-pca"><i class="fa fa-check"></i><b>3.6</b> Similarity between samples (PCA)</a></li>
-<li class="chapter" data-level="3.7" data-path="activity-qc.html"><a href="activity-qc.html#correlation-between-replicates"><i class="fa fa-check"></i><b>3.7</b> Correlation between replicates</a></li>
-<li class="chapter" data-level="3.8" data-path="activity-qc.html"><a href="activity-qc.html#variation-at-various-activity-levels"><i class="fa fa-check"></i><b>3.8</b> Variation at various activity levels</a></li>
-<li class="chapter" data-level="3.9" data-path="activity-qc.html"><a href="activity-qc.html#correlation-between-replicates-controls"><i class="fa fa-check"></i><b>3.9</b> Correlation between replicates (controls)</a></li>
-<li class="chapter" data-level="3.10" data-path="activity-qc.html"><a href="activity-qc.html#rna_dna_ratio"><i class="fa fa-check"></i><b>3.10</b> RNA_DNA_ratio</a></li>
-<li class="chapter" data-level="3.11" data-path="activity-qc.html"><a href="activity-qc.html#activity-of-controls---sample-comparison"><i class="fa fa-check"></i><b>3.11</b> Activity of controls - sample comparison</a></li>
-<li class="chapter" data-level="3.12" data-path="activity-qc.html"><a href="activity-qc.html#minimizing-noise-outlier-barcodes-mindna---use-the-mhmpra-data"><i class="fa fa-check"></i><b>3.12</b> Minimizing noise [Outlier barcodes + min(DNA)] - use the mhMPRA data</a></li>
-<li class="chapter" data-level="3.13" data-path="activity-qc.html"><a href="activity-qc.html#outlier-barcodes"><i class="fa fa-check"></i><b>3.13</b> Outlier barcodes</a></li>
-<li class="chapter" data-level="3.14" data-path="activity-qc.html"><a href="activity-qc.html#reproducibility-by-sequencing-depth"><i class="fa fa-check"></i><b>3.14</b> Reproducibility by sequencing depth</a></li>
-<li class="chapter" data-level="3.15" data-path="activity-qc.html"><a href="activity-qc.html#replicability-by-activity"><i class="fa fa-check"></i><b>3.15</b> Replicability by activity</a></li>
-<li class="chapter" data-level="3.16" data-path="activity-qc.html"><a href="activity-qc.html#genomic-annotations"><i class="fa fa-check"></i><b>3.16</b> Genomic annotations</a></li>
-<li class="chapter" data-level="3.17" data-path="activity-qc.html"><a href="activity-qc.html#proximity-to-tss"><i class="fa fa-check"></i><b>3.17</b> Proximity to TSS</a></li>
+<li class="chapter" data-level="3.1" data-path="activity-qc.html"><a href="activity-qc.html#retained-ccres-and-barcodes"><i class="fa fa-check"></i><b>3.1</b> Retained cCREs and barcodes</a></li>
+<li class="chapter" data-level="3.2" data-path="activity-qc.html"><a href="activity-qc.html#dna-counts-vs-gc-content"><i class="fa fa-check"></i><b>3.2</b> DNA counts vs GC content</a></li>
+<li class="chapter" data-level="3.3" data-path="activity-qc.html"><a href="activity-qc.html#activity-statistic-vs-count-ratio"><i class="fa fa-check"></i><b>3.3</b> Activity statistic vs count ratio</a></li>
+<li class="chapter" data-level="3.4" data-path="activity-qc.html"><a href="activity-qc.html#differential-activity-statistic-vs-count-ratio"><i class="fa fa-check"></i><b>3.4</b> Differential activity statistic vs count ratio</a></li>
+<li class="chapter" data-level="3.5" data-path="activity-qc.html"><a href="activity-qc.html#activity-distribution"><i class="fa fa-check"></i><b>3.5</b> Activity distribution</a></li>
+<li class="chapter" data-level="3.6" data-path="activity-qc.html"><a href="activity-qc.html#differential-activity-distribution"><i class="fa fa-check"></i><b>3.6</b> Differential activity distribution</a></li>
+<li class="chapter" data-level="3.7" data-path="activity-qc.html"><a href="activity-qc.html#p-value-distribution"><i class="fa fa-check"></i><b>3.7</b> P-value distribution</a></li>
+<li class="chapter" data-level="3.8" data-path="activity-qc.html"><a href="activity-qc.html#volcano-plot---fc-vs-pval"><i class="fa fa-check"></i><b>3.8</b> Volcano plot - FC vs Pval</a></li>
+<li class="chapter" data-level="3.9" data-path="activity-qc.html"><a href="activity-qc.html#bc-retention-by-dnarna-sequencing-depth"><i class="fa fa-check"></i><b>3.9</b> BC retention by DNA/RNA sequencing depth</a></li>
+<li class="chapter" data-level="3.10" data-path="activity-qc.html"><a href="activity-qc.html#ccre-retention-by-dnarna-sequencing-depth"><i class="fa fa-check"></i><b>3.10</b> cCRE retention by DNA/RNA sequencing depth</a></li>
+<li class="chapter" data-level="3.11" data-path="activity-qc.html"><a href="activity-qc.html#activity-by-sequencing-depth"><i class="fa fa-check"></i><b>3.11</b> Activity by sequencing depth</a></li>
+<li class="chapter" data-level="3.12" data-path="activity-qc.html"><a href="activity-qc.html#cumulative-rna-reads"><i class="fa fa-check"></i><b>3.12</b> Cumulative RNA reads</a></li>
+<li class="chapter" data-level="3.13" data-path="activity-qc.html"><a href="activity-qc.html#sample-clustering"><i class="fa fa-check"></i><b>3.13</b> Sample clustering</a></li>
+<li class="chapter" data-level="3.14" data-path="activity-qc.html"><a href="activity-qc.html#correlation-between-replicates"><i class="fa fa-check"></i><b>3.14</b> Correlation between replicates</a></li>
+<li class="chapter" data-level="3.15" data-path="activity-qc.html"><a href="activity-qc.html#correlation-of-differential-activity-between-replicates"><i class="fa fa-check"></i><b>3.15</b> Correlation of differential activity between replicates</a></li>
+<li class="chapter" data-level="3.16" data-path="activity-qc.html"><a href="activity-qc.html#replicability-by-activity"><i class="fa fa-check"></i><b>3.16</b> Replicability by activity</a></li>
+<li class="chapter" data-level="3.17" data-path="activity-qc.html"><a href="activity-qc.html#correlation-between-replicates-controls"><i class="fa fa-check"></i><b>3.17</b> Correlation between replicates (controls)</a></li>
+<li class="chapter" data-level="3.18" data-path="activity-qc.html"><a href="activity-qc.html#cross-validationallelic-pairs"><i class="fa fa-check"></i><b>3.18</b> Cross-validation:allelic pairs</a></li>
+<li class="chapter" data-level="3.19" data-path="activity-qc.html"><a href="activity-qc.html#correlation-of-differential-activity-between-overlapping-sequences"><i class="fa fa-check"></i><b>3.19</b> Correlation of differential activity between overlapping sequences</a></li>
+<li class="chapter" data-level="3.20" data-path="activity-qc.html"><a href="activity-qc.html#cross-validaiton-cell-types"><i class="fa fa-check"></i><b>3.20</b> Cross-validaiton: cell types</a></li>
+<li class="chapter" data-level="3.21" data-path="activity-qc.html"><a href="activity-qc.html#correlation-of-differential-activity-between-cell-types"><i class="fa fa-check"></i><b>3.21</b> Correlation of differential activity between cell types</a></li>
+<li class="chapter" data-level="3.22" data-path="activity-qc.html"><a href="activity-qc.html#cross-validation-experiments"><i class="fa fa-check"></i><b>3.22</b> Cross-validation: experiments</a></li>
+<li class="chapter" data-level="3.23" data-path="activity-qc.html"><a href="activity-qc.html#correlation-of-differential-activity-between-experiments"><i class="fa fa-check"></i><b>3.23</b> Correlation of differential activity between experiments</a></li>
+<li class="chapter" data-level="3.24" data-path="activity-qc.html"><a href="activity-qc.html#replicability-across-experiments"><i class="fa fa-check"></i><b>3.24</b> Replicability across experiments</a></li>
+<li class="chapter" data-level="3.25" data-path="activity-qc.html"><a href="activity-qc.html#minimizing-noise"><i class="fa fa-check"></i><b>3.25</b> Minimizing noise</a></li>
+<li class="chapter" data-level="3.26" data-path="activity-qc.html"><a href="activity-qc.html#reproducibility-by-sequencing-depth"><i class="fa fa-check"></i><b>3.26</b> Reproducibility by sequencing depth</a></li>
+<li class="chapter" data-level="3.27" data-path="activity-qc.html"><a href="activity-qc.html#rna-vs-dna"><i class="fa fa-check"></i><b>3.27</b> RNA vs DNA</a></li>
+<li class="chapter" data-level="3.28" data-path="activity-qc.html"><a href="activity-qc.html#activity-of-controls"><i class="fa fa-check"></i><b>3.28</b> Activity of controls</a></li>
+<li class="chapter" data-level="3.29" data-path="activity-qc.html"><a href="activity-qc.html#genomic-annotations"><i class="fa fa-check"></i><b>3.29</b> Genomic annotations</a></li>
+<li class="chapter" data-level="3.30" data-path="activity-qc.html"><a href="activity-qc.html#endogenous-genomic-annotation---differential-activity"><i class="fa fa-check"></i><b>3.30</b> Endogenous genomic annotation - differential activity</a></li>
+<li class="chapter" data-level="3.31" data-path="activity-qc.html"><a href="activity-qc.html#proximity-to-tss"><i class="fa fa-check"></i><b>3.31</b> Proximity to TSS</a></li>
+<li class="chapter" data-level="3.32" data-path="activity-qc.html"><a href="activity-qc.html#ai-predictions-vs-activity"><i class="fa fa-check"></i><b>3.32</b> AI predictions vs activity</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
