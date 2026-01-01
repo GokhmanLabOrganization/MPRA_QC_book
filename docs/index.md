@@ -1,7 +1,7 @@
 --- 
 title: "Quality Control Pipeline for Massively Parallel Reporter Assays (MPRAs)"
 author: "Omer Ronen"
-date: "2025-12-31"
+date: "2026-01-01"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]

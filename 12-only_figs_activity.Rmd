@@ -127,20 +127,13 @@ plot_all_MPRA <- function(working_dir, analysis_name, ncol = 3) {
 **Input file: activity_per_rep**<br>
 **Evaluated metrics: DNA Complexity, RNA Complexity**:<br>
 
-```{r,echo=FALSE}
-good_example_MPRA = "PMID_38766054_Reilly"
-bad_example_MPRA = "Max_MPRA_run2"
-analysis_name = 'retained_cCREs_and_barcodes.png'
-print_examples(good_example_MPRA, bad_example_MPRA)
 
-good_example <- readPNG(file.path(working_dir,good_example_MPRA,analysis_name),native = T)
-bad_example <- readPNG(file.path(working_dir, bad_example_MPRA, analysis_name),native = T)
-plot_side_by_side(good_example,bad_example)
-
-#plot_all_MPRA(working_dir, analysis_name, ncol = 3)
-
-rm(good_example_MPRA,bad_example_MPRA,analysis_name)
+```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
+knitr::include_graphics(c("external_figures/PMID_38766054_Reilly/retained_cCREs_and_barcodes.svg",
+                          "external_figures/Max_MPRA_run2/retained_cCREs_and_barcodes.svg"))
 ```
+
+
 **Legend: Percentage of cCREs and BCs present in the DNA and RNA quantification data compared with those observed in the association data** <br>
 **Interpretation:**<br>
 

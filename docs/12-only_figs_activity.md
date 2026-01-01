@@ -15,12 +15,9 @@
 **Evaluated metrics: DNA Complexity, RNA Complexity**:<br>
 
 
-```
-## Good example: PMID_38766054_Reilly 
-## Bad example: Max_MPRA_run2
-```
+<img src="external_figures/PMID_38766054_Reilly/retained_cCREs_and_barcodes.svg" width="49%" /><img src="external_figures/Max_MPRA_run2/retained_cCREs_and_barcodes.svg" width="49%" />
 
-<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-3-1.png" width="672" />
+
 **Legend: Percentage of cCREs and BCs present in the DNA and RNA quantification data compared with those observed in the association data** <br>
 **Interpretation:**<br>
 
