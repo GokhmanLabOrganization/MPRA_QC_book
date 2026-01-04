@@ -102,15 +102,9 @@
 **Input file: quantification table (comb_df)**<br>
 **Evaluated metrics: DNA Complexity, RNA Complexity, Reproducibility, Dynamic range**:<br>
 
-Problem: nothitng looks mildly bad, max looks too bad. 
 
+<img src="external_figures/PMID_38766054_Reilly/P_value_distribution.svg" width="49%" /><img src="external_figures/Max_MPRA_run2/P_value_distribution.svg" width="49%" />
 
-```
-## Good example: PMID_38766054_Reilly 
-## Bad example: Max_MPRA_run2
-```
-
-<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-9-1.png" width="672" />
 **Legend:** <br>
 **Interpretation:**<br>
 
@@ -178,6 +172,9 @@ Problem: nothitng looks mildly bad, max looks too bad.
 ```
 
 <img src="12-only_figs_activity_files/figure-html/unnamed-chunk-14-1.png" width="672" />
+
+<img src="external_figures/PMID_38766054_Reilly/cumulative_RNA_reads.svg" width="49%" /><img src="external_figures/placeholder.svg" width="49%" />
+
 **Legend:** <br>
 **Interpretation:**<br>
 
@@ -196,7 +193,10 @@ mention in the bookdown: the importance of the percentage explained by the 1st a
 ## Bad example: thylacine_biorxiv_Gallego_Romero
 ```
 
-<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-15-1.png" width="672" />
+<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-16-1.png" width="672" />
+
+<img src="external_figures/PMID_38766054_Reilly/PCA_similarity_between_samples.svg" width="49%" /><img src="external_figures/thylacine_biorxiv_Gallego_Romero/PCA_similarity_between_samples.svg" width="49%" />
+
 **Legend: Principal component analysis (PCA) on samples** <br>
 **Interpretation:**<br>
 
@@ -207,18 +207,7 @@ mention in the bookdown: the importance of the percentage explained by the 1st a
 **Input file: activity_per_rep**<br>
 **Evaluated metrics: Reproducibility**:<br>
 
-
-```
-## Good example: thylacine_biorxiv_Gallego_Romero 
-## Bad example: humanMPRA_L4a2
-```
-
-<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-16-1.png" width="672" />
-
-```
-## Warning in rm(good_example_MPRA, bad_example_MPRA, bad_example_MPRA_2,
-## analysis_name): object 'bad_example_MPRA_2' not found
-```
+<img src="external_figures/thylacine_biorxiv_Gallego_Romero/RNA_DNA_ratio_correlation_between_replicates_hexbin_w_bar.svg" width="49%" /><img src="external_figures/humanMPRA_L4a2/RNA_DNA_ratio_correlation_between_replicates_hexbin_w_bar.svg" width="49%" />
 **Legend:** <br>
 **Interpretation:**<br>
 
@@ -248,13 +237,7 @@ mention in the bookdown: the importance of the percentage explained by the 1st a
 **Evaluated metrics: Reproducibility **<br>
 
 
-
-```
-## Good example: PMID_38766054_Reilly 
-## Bad example: humanMPRA_L4a2
-```
-
-<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-18-1.png" width="672" />
+<img src="external_figures/PMID_38766054_Reilly/Variation_at_various_activity_levels.svg" width="49%" /><img src="external_figures/humanMPRA_L1a1_Neurons/Variation_at_various_activity_levels.svg" width="49%" />
 **Legend:** <br>
 **Interpretation:**<br>
 
@@ -268,15 +251,11 @@ mention in the bookdown: the importance of the percentage explained by the 1st a
 **Input file: quantification table (comb_df)**<br>
 **Evaluated metrics: Reproducibility**<br>
 
-
-```
-## Good example: PMID_38766054_Reilly 
-## Bad example: Max_MPRA_run2
-```
-
-<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-19-1.png" width="672" />
+<img src="external_figures/PMID_38766054_Reilly/RNA_DNA_ratio_correlation_between_replicates_with_controls_hexbin.svg" width="49%" /><img src="external_figures/Max_MPRA_run2/RNA_DNA_ratio_correlation_between_replicates_with_controls_hexbin.svg" width="49%" />
 **Legend:** <br>
 **Interpretation:**<br>
+
+
 
 
 ## Cross-validation:allelic pairs
@@ -378,13 +357,7 @@ mention in the bookdown: the importance of the percentage explained by the 1st a
 **Input file: **<br>
 **Evaluated metrics: Reproducibility**:<br>
 
-
-```
-## Good example: modern_humanMPRA_Hob 
-## Bad example: NA
-```
-
-<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-27-1.png" width="672" />
+<img src="external_figures/modern_humanMPRA_Hob/minimizing_noise_hexbin.svg" width="49%" /><img src="external_figures/placeholder.svg" width="49%" />
 **Legend:** <br>
 **Interpretation:**<br>
 
@@ -396,7 +369,7 @@ mention in the bookdown: the importance of the percentage explained by the 1st a
 **Evaluated metrics: Reproducibility** <br>
 
 
-<img src="external_figures/modern_humanMPRA_Hob/Reproducibility_by_sequencing_depth.svg" width="49%" /><img src="external_figures/modern_humanMPRA_NPC/Reproducibility_by_sequencing_depth.svg" width="49%" />
+<img src="external_figures/modern_humanMPRA_Hob/Reproducibility_by_sequencing_depth.svg" width="49%" /><img src="external_figures/Max_MPRA_run2/Reproducibility_by_sequencing_depth.svg" width="49%" />
 
 **Legend:** <br>
 **Interpretation:**<br>
@@ -408,13 +381,8 @@ mention in the bookdown: the importance of the percentage explained by the 1st a
 **Evaluated metrics: Dynamic Range**<br>
 
 
-```
-## Good example: PMID_38766054_Reilly 
-## Bad example: humanMPRA_L4a2 
-## Bad example 2: humanMPRA_L1a1_Neurons
-```
+<img src="external_figures/PMID_38766054_Reilly/RNA_DNA_ratio_hexbin_w_bar.svg" width="32%" /><img src="external_figures/humanMPRA_L4a2/RNA_DNA_ratio_hexbin_w_bar.svg" width="32%" /><img src="external_figures/humanMPRA_L1a1_Neurons/RNA_DNA_ratio_hexbin_w_bar.svg" width="32%" />
 
-<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-29-1.png" width="672" />
 **Legend:** <br>
 **Interpretation:**<br>
 
@@ -427,12 +395,7 @@ mention in the bookdown: the importance of the percentage explained by the 1st a
 **Evaluated metrics: Dynamic Range**:<br>
 
 
-```
-## Good example: PMID_38766054_Reilly 
-## Bad example: Max_MPRA_run2
-```
-
-<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-30-1.png" width="672" />
+<img src="external_figures/PMID_38766054_Reilly/Control_activity_boxplots.svg" width="49%" /><img src="external_figures/Max_MPRA_run2/Control_activity_boxplots.svg" width="49%" />
 **Legend:** <br>
 **Interpretation:**<br>
 
@@ -444,7 +407,7 @@ mention in the bookdown: the importance of the percentage explained by the 1st a
 **Evaluated metrics: Dynamic Range** <br>
 
 
-<img src="external_figures/humanMPRA_L1a1_Neurons/Genomic_annotations.svg" width="49%" /><img src="external_figures/PMID_38766054_Reilly/Genomic_annotations.svg" width="49%" />
+<img src="external_figures/PMID_38766054_Reilly/Genomic_annotations.svg" width="49%" /><img src="external_figures/humanMPRA_L1a1_Neurons/Genomic_annotations.svg" width="49%" />
 
 **Legend:** <br>
 **Interpretation:**<br>
@@ -470,7 +433,7 @@ mention in the bookdown: the importance of the percentage explained by the 1st a
 **Input file: Distance to TSS file** <br>
 **Evaluated metrics: Dynamic Range** <br>
 
-<img src="external_figures/humanMPRA_L1a1_Neurons/Proximity_to_TSS.svg" width="49%" /><img src="external_figures/PMID_38766054_Reilly/Proximity_to_TSS.svg" width="49%" />
+<img src="external_figures/PMID_38766054_Reilly/Proximity_to_TSS.svg" width="49%" /><img src="external_figures/humanMPRA_L1a1_Neurons/Proximity_to_TSS.svg" width="49%" />
 
 **Legend:** <br>
 **Interpretation:**<br>
@@ -486,7 +449,7 @@ mention in the bookdown: the importance of the percentage explained by the 1st a
 
 
 
-<img src="external_figures/placeholder.svg" width="49%" /><img src="external_figures/placeholder.svg" width="49%" />
+<img src="external_figures/modern_humanMPRA_Hob/AI_predictions_vs_activity_hexbin_w_bar.svg" width="49%" /><img src="external_figures/humanMPRA_L1a1_Neurons/AI_predictions_vs_activity_hexbin_w_bar.svg" width="49%" />
 
 **Legend:** <br>
 **Interpretation:**<br>

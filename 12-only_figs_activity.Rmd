@@ -238,25 +238,12 @@ knitr::include_graphics(c("external_figures/modern_humanMPRA_Hob/Differential_ac
 **Input file: quantification table (comb_df)**<br>
 **Evaluated metrics: DNA Complexity, RNA Complexity, Reproducibility, Dynamic range**:<br>
 
-Problem: nothitng looks mildly bad, max looks too bad. 
 
-```{r,echo=FALSE}
-
-good_example_MPRA = "PMID_38766054_Reilly"
-bad_example_MPRA = "Max_MPRA_run2"
-analysis_name = 'P_value_distribution.png'
-print_examples(good_example_MPRA, bad_example_MPRA)
-
-good_example <- readPNG(file.path(working_dir,good_example_MPRA,analysis_name),native = T)
-bad_example <- readPNG(file.path(working_dir, bad_example_MPRA, analysis_name),native = T)
-plot_side_by_side(good_example,bad_example)
-
-
-#plot_all_MPRA(working_dir, analysis_name, ncol = 3)
-
-
-rm(good_example_MPRA,bad_example_MPRA,analysis_name)
+```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
+knitr::include_graphics(c("external_figures/PMID_38766054_Reilly/P_value_distribution.svg",
+                          "external_figures/Max_MPRA_run2/P_value_distribution.svg"))
 ```
+
 **Legend:** <br>
 **Interpretation:**<br>
 
@@ -346,6 +333,12 @@ plot_side_by_side(good_example,bad_example)
 rm(good_example_MPRA,bad_example_MPRA,analysis_name)
 
 ```
+
+```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
+knitr::include_graphics(c("external_figures/PMID_38766054_Reilly/cumulative_RNA_reads.svg",
+                          "external_figures/placeholder.svg"))
+```
+
 **Legend:** <br>
 **Interpretation:**<br>
 
@@ -375,6 +368,12 @@ plot_side_by_side(good_example,bad_example)
 rm(good_example_MPRA,bad_example_MPRA,analysis_name)
 
 ```
+
+```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
+knitr::include_graphics(c("external_figures/PMID_38766054_Reilly/PCA_similarity_between_samples.svg",
+                          "external_figures/thylacine_biorxiv_Gallego_Romero/PCA_similarity_between_samples.svg"))
+```
+
 **Legend: Principal component analysis (PCA) on samples** <br>
 **Interpretation:**<br>
 
@@ -385,20 +384,10 @@ rm(good_example_MPRA,bad_example_MPRA,analysis_name)
 **Input file: activity_per_rep**<br>
 **Evaluated metrics: Reproducibility**:<br>
 
-```{r,echo=FALSE}
-good_example_MPRA = "thylacine_biorxiv_Gallego_Romero"
-bad_example_MPRA = "humanMPRA_L4a2"
-analysis_name = 'RNA_DNA_ratio_correlation_between_replicates.png'
-print_examples(good_example_MPRA, bad_example_MPRA)
-
-good_example <- readPNG(file.path(working_dir,good_example_MPRA,analysis_name),native = T)
-bad_example <- readPNG(file.path(working_dir, bad_example_MPRA, analysis_name),native = T)
-plot_side_by_side(good_example,bad_example)
-
-#plot_all_MPRA(working_dir, analysis_name, ncol = 3)
-
-
-rm(good_example_MPRA,bad_example_MPRA,bad_example_MPRA_2,analysis_name)
+```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
+knitr::include_graphics(c("external_figures/thylacine_biorxiv_Gallego_Romero/RNA_DNA_ratio_correlation_between_replicates_hexbin_w_bar.svg",
+                          "external_figures/humanMPRA_L4a2/RNA_DNA_ratio_correlation_between_replicates_hexbin_w_bar.svg"
+                          ))
 ```
 **Legend:** <br>
 **Interpretation:**<br>
@@ -432,21 +421,9 @@ knitr::include_graphics(c("external_figures/placeholder.svg",
 **Evaluated metrics: Reproducibility **<br>
 
 
-```{r,echo=FALSE}
-good_example_MPRA = "PMID_38766054_Reilly"
-bad_example_MPRA = "humanMPRA_L4a2"
-analysis_name = 'variation_at_various_activity_levels.png'
-print_examples(good_example_MPRA, bad_example_MPRA)
-
-good_example <- readPNG(file.path(working_dir,good_example_MPRA,analysis_name),native = T)
-bad_example <- readPNG(file.path(working_dir, bad_example_MPRA, analysis_name),native = T)
-plot_side_by_side(good_example,bad_example)
-
-#plot_all_MPRA(working_dir, analysis_name, ncol = 3)
-
-
-rm(good_example_MPRA,bad_example_MPRA,analysis_name)
-
+```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
+knitr::include_graphics(c("external_figures/PMID_38766054_Reilly/Variation_at_various_activity_levels.svg",
+                          "external_figures/humanMPRA_L1a1_Neurons/Variation_at_various_activity_levels.svg"))
 ```
 **Legend:** <br>
 **Interpretation:**<br>
@@ -461,23 +438,14 @@ rm(good_example_MPRA,bad_example_MPRA,analysis_name)
 **Input file: quantification table (comb_df)**<br>
 **Evaluated metrics: Reproducibility**<br>
 
-```{r,echo=FALSE}
-good_example_MPRA = "PMID_38766054_Reilly"
-bad_example_MPRA = "Max_MPRA_run2"
-analysis_name = 'RNA_DNA_ratio_correlation_between_replicates_with_controls.png'
-print_examples(good_example_MPRA, bad_example_MPRA)
-
-good_example <- readPNG(file.path(working_dir,good_example_MPRA,analysis_name),native = T)
-bad_example <- readPNG(file.path(working_dir, bad_example_MPRA, analysis_name),native = T)
-plot_side_by_side(good_example,bad_example)
-
-#plot_all_MPRA(working_dir, analysis_name, ncol = 3)
-
-
-rm(good_example_MPRA,bad_example_MPRA,analysis_name)
+```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
+knitr::include_graphics(c("external_figures/PMID_38766054_Reilly/RNA_DNA_ratio_correlation_between_replicates_with_controls_hexbin.svg",
+                          "external_figures/Max_MPRA_run2/RNA_DNA_ratio_correlation_between_replicates_with_controls_hexbin.svg"))
 ```
 **Legend:** <br>
 **Interpretation:**<br>
+
+
 
 
 ## Cross-validation:allelic pairs
@@ -600,20 +568,9 @@ knitr::include_graphics(c("external_figures/placeholder.svg",
 **Input file: **<br>
 **Evaluated metrics: Reproducibility**:<br>
 
-```{r,echo=FALSE}
-
-good_example_MPRA = "modern_humanMPRA_Hob"
-analysis_name = 'minimizing_noise.png'
-print_examples(good_example_MPRA, 'NA')
-
-good_example <- readPNG(file.path(working_dir,good_example_MPRA,analysis_name),native = T)
-plot_single(good_example)
-
-#plot_all_MPRA(working_dir, analysis_name, ncol = 3)
-
-
-rm(good_example_MPRA,analysis_name)
-
+```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
+knitr::include_graphics(c("external_figures/modern_humanMPRA_Hob/minimizing_noise_hexbin.svg",
+                          "external_figures/placeholder.svg"))
 ```
 **Legend:** <br>
 **Interpretation:**<br>
@@ -628,7 +585,7 @@ rm(good_example_MPRA,analysis_name)
 
 ```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
 knitr::include_graphics(c("external_figures/modern_humanMPRA_Hob/Reproducibility_by_sequencing_depth.svg",
-                          "external_figures/modern_humanMPRA_NPC/Reproducibility_by_sequencing_depth.svg"))
+                          "external_figures/Max_MPRA_run2/Reproducibility_by_sequencing_depth.svg"))
 ```
 
 **Legend:** <br>
@@ -640,23 +597,14 @@ knitr::include_graphics(c("external_figures/modern_humanMPRA_Hob/Reproducibility
 **Input file:**<br>
 **Evaluated metrics: Dynamic Range**<br>
 
-```{r,echo=FALSE}
-good_example_MPRA = "PMID_38766054_Reilly"
-bad_example_MPRA = "humanMPRA_L4a2"
-bad_example_MPRA_2 = "humanMPRA_L1a1_Neurons"
-analysis_name = 'RNA_DNA_ratio.png'
-print_examples(good_example_MPRA, bad_example_MPRA,bad_example_MPRA_2)
 
-good_example <- readPNG(file.path(working_dir,good_example_MPRA,analysis_name),native = T)
-bad_example <- readPNG(file.path(working_dir, bad_example_MPRA, analysis_name),native = T)
-bad_example_2 <- readPNG(file.path(working_dir, bad_example_MPRA_2, analysis_name),native = T)
-plot_three_side_by_side(good_example,bad_example,bad_example_2)
-
-#plot_all_MPRA(working_dir, analysis_name, ncol = 3)
-
-rm(good_example_MPRA,bad_example_MPRA,bad_example_MPRA_2,analysis_name)
-
+```{r echo=FALSE, fig.show="hold", out.width=rep("32%", 3)}
+knitr::include_graphics(c("external_figures/PMID_38766054_Reilly/RNA_DNA_ratio_hexbin_w_bar.svg",
+                          "external_figures/humanMPRA_L4a2/RNA_DNA_ratio_hexbin_w_bar.svg",
+                          "external_figures/humanMPRA_L1a1_Neurons/RNA_DNA_ratio_hexbin_w_bar.svg"
+                          ))
 ```
+
 **Legend:** <br>
 **Interpretation:**<br>
 
@@ -668,21 +616,11 @@ rm(good_example_MPRA,bad_example_MPRA,bad_example_MPRA_2,analysis_name)
 **Input file: quantification table (comb_df)**<br>
 **Evaluated metrics: Dynamic Range**:<br>
 
-```{r,echo=FALSE}
-good_example_MPRA = "PMID_38766054_Reilly"
-bad_example_MPRA = "Max_MPRA_run2"
-analysis_name = 'Control_activity_boxplots.png'
-print_examples(good_example_MPRA, bad_example_MPRA)
 
-good_example <- readPNG(file.path(working_dir,good_example_MPRA,analysis_name),native = T)
-bad_example <- readPNG(file.path(working_dir, bad_example_MPRA, analysis_name),native = T)
-plot_side_by_side(good_example,bad_example)
-
-#plot_all_MPRA(working_dir, analysis_name, ncol = 3)
-
-
-rm(good_example_MPRA,bad_example_MPRA,analysis_name)
-
+```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
+knitr::include_graphics(c("external_figures/PMID_38766054_Reilly/Control_activity_boxplots.svg",
+                          "external_figures/Max_MPRA_run2/Control_activity_boxplots.svg"
+                          ))
 ```
 **Legend:** <br>
 **Interpretation:**<br>
@@ -696,8 +634,9 @@ rm(good_example_MPRA,bad_example_MPRA,analysis_name)
 
 
 ```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
-knitr::include_graphics(c("external_figures/humanMPRA_L1a1_Neurons/Genomic_annotations.svg",
-                          "external_figures/PMID_38766054_Reilly/Genomic_annotations.svg"))
+knitr::include_graphics(c("external_figures/PMID_38766054_Reilly/Genomic_annotations.svg",
+                          "external_figures/humanMPRA_L1a1_Neurons/Genomic_annotations.svg"
+                          ))
 ```
 
 **Legend:** <br>
@@ -728,8 +667,9 @@ knitr::include_graphics(c("external_figures/placeholder.svg",
 **Evaluated metrics: Dynamic Range** <br>
 
 ```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
-knitr::include_graphics(c("external_figures/humanMPRA_L1a1_Neurons/Proximity_to_TSS.svg",
-                          "external_figures/PMID_38766054_Reilly/Proximity_to_TSS.svg"))
+knitr::include_graphics(c("external_figures/PMID_38766054_Reilly/Proximity_to_TSS.svg",
+                          "external_figures/humanMPRA_L1a1_Neurons/Proximity_to_TSS.svg"
+                          ))
 ```
 
 **Legend:** <br>
@@ -747,8 +687,8 @@ knitr::include_graphics(c("external_figures/humanMPRA_L1a1_Neurons/Proximity_to_
 
 
 ```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
-knitr::include_graphics(c("external_figures/placeholder.svg",
-                          "external_figures/placeholder.svg"))
+knitr::include_graphics(c("external_figures/modern_humanMPRA_Hob/AI_predictions_vs_activity_hexbin_w_bar.svg",
+                          "external_figures/humanMPRA_L1a1_Neurons/AI_predictions_vs_activity_hexbin_w_bar.svg"))
 ```
 
 **Legend:** <br>
