@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Omer Ronen" />
 
 
-<meta name="date" content="2026-01-01" />
+<meta name="date" content="2026-01-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -233,11 +233,8 @@ set in the _output.yml file.</p>" />
 <p><strong>Goal: Inferring the power of the statistical test</strong> <br>
 <strong>Input file: quantification table (comb_df)</strong><br>
 <strong>Evaluated metrics: DNA Complexity, RNA Complexity, Reproducibility, Dynamic range</strong>:<br></p>
-<p>Problem: nothitng looks mildly bad, max looks too bad.</p>
-<pre><code>## Good example: PMID_38766054_Reilly 
-## Bad example: Max_MPRA_run2</code></pre>
-<p><img src="12-only_figs_activity_files/figure-html/unnamed-chunk-9-1.png" width="672" />
-<strong>Legend:</strong> <br>
+<p><img src="external_figures/PMID_38766054_Reilly/P_value_distribution.svg" width="49%" /><img src="external_figures/Max_MPRA_run2/P_value_distribution.svg" width="49%" /></p>
+<p><strong>Legend:</strong> <br>
 <strong>Interpretation:</strong><br></p>
 </div>
 <div id="volcano-plot---fc-vs-pval" class="section level2 hasAnchor" number="3.8">
@@ -283,8 +280,9 @@ set in the _output.yml file.</p>" />
 <strong>Evaluated metrics: DNA Complexity, RNA Complexity</strong>:<br></p>
 <pre><code>## Good example: PMID_38766054_Reilly 
 ## Bad example: d2Osteoblast_spiking_oligos</code></pre>
-<p><img src="12-only_figs_activity_files/figure-html/unnamed-chunk-14-1.png" width="672" />
-<strong>Legend:</strong> <br>
+<p><img src="12-only_figs_activity_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p><img src="external_figures/PMID_38766054_Reilly/cumulative_RNA_reads.svg" width="49%" /><img src="external_figures/placeholder.svg" width="49%" /></p>
+<p><strong>Legend:</strong> <br>
 <strong>Interpretation:</strong><br></p>
 </div>
 <div id="sample-clustering" class="section level2 hasAnchor" number="3.13">
@@ -295,8 +293,9 @@ set in the _output.yml file.</p>" />
 <p>mention in the bookdown: the importance of the percentage explained by the 1st and 2nd PCs.</p>
 <pre><code>## Good example: PMID_38766054_Reilly 
 ## Bad example: thylacine_biorxiv_Gallego_Romero</code></pre>
-<p><img src="12-only_figs_activity_files/figure-html/unnamed-chunk-15-1.png" width="672" />
-<strong>Legend: Principal component analysis (PCA) on samples</strong> <br>
+<p><img src="12-only_figs_activity_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p><img src="external_figures/PMID_38766054_Reilly/PCA_similarity_between_samples.svg" width="49%" /><img src="external_figures/thylacine_biorxiv_Gallego_Romero/PCA_similarity_between_samples.svg" width="49%" /></p>
+<p><strong>Legend: Principal component analysis (PCA) on samples</strong> <br>
 <strong>Interpretation:</strong><br></p>
 </div>
 <div id="correlation-between-replicates" class="section level2 hasAnchor" number="3.14">
@@ -304,12 +303,8 @@ set in the _output.yml file.</p>" />
 <p><strong>Goal: assesses reproducibility between replicates</strong> <br>
 <strong>Input file: activity_per_rep</strong><br>
 <strong>Evaluated metrics: Reproducibility</strong>:<br></p>
-<pre><code>## Good example: thylacine_biorxiv_Gallego_Romero 
-## Bad example: humanMPRA_L4a2</code></pre>
-<p><img src="12-only_figs_activity_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
-<pre><code>## Warning in rm(good_example_MPRA, bad_example_MPRA, bad_example_MPRA_2,
-## analysis_name): object &#39;bad_example_MPRA_2&#39; not found</code></pre>
-<p><strong>Legend:</strong> <br>
+<p><img src="external_figures/thylacine_biorxiv_Gallego_Romero/RNA_DNA_ratio_correlation_between_replicates_hexbin_w_bar.svg" width="49%" /><img src="external_figures/humanMPRA_L4a2/RNA_DNA_ratio_correlation_between_replicates_hexbin_w_bar.svg" width="49%" />
+<strong>Legend:</strong> <br>
 <strong>Interpretation:</strong><br></p>
 </div>
 <div id="correlation-of-differential-activity-between-replicates" class="section level2 hasAnchor" number="3.15">
@@ -326,9 +321,7 @@ set in the _output.yml file.</p>" />
 <p><strong>Goal: assesses the correlation in activity between replicates in active vs non-active cCREs</strong> <br>
 <strong>Input file:</strong><br>
 <strong>Evaluated metrics: Reproducibility </strong><br></p>
-<pre><code>## Good example: PMID_38766054_Reilly 
-## Bad example: humanMPRA_L4a2</code></pre>
-<p><img src="12-only_figs_activity_files/figure-html/unnamed-chunk-18-1.png" width="672" />
+<p><img src="external_figures/PMID_38766054_Reilly/Variation_at_various_activity_levels.svg" width="49%" /><img src="external_figures/humanMPRA_L1a1_Neurons/Variation_at_various_activity_levels.svg" width="49%" />
 <strong>Legend:</strong> <br>
 <strong>Interpretation:</strong><br></p>
 </div>
@@ -337,9 +330,7 @@ set in the _output.yml file.</p>" />
 <p><strong>Goal: analysis assesses reproducibility between replicates in positive and negative controls</strong> <br>
 <strong>Input file: quantification table (comb_df)</strong><br>
 <strong>Evaluated metrics: Reproducibility</strong><br></p>
-<pre><code>## Good example: PMID_38766054_Reilly 
-## Bad example: Max_MPRA_run2</code></pre>
-<p><img src="12-only_figs_activity_files/figure-html/unnamed-chunk-19-1.png" width="672" />
+<p><img src="external_figures/PMID_38766054_Reilly/RNA_DNA_ratio_correlation_between_replicates_with_controls_hexbin.svg" width="49%" /><img src="external_figures/Max_MPRA_run2/RNA_DNA_ratio_correlation_between_replicates_with_controls_hexbin.svg" width="49%" />
 <strong>Legend:</strong> <br>
 <strong>Interpretation:</strong><br></p>
 </div>
@@ -411,9 +402,7 @@ set in the _output.yml file.</p>" />
 <p><strong>Goal: Removing outlier BCs and optimizing the threshold of minimum DNA counts to increase reproducibility</strong> <br>
 <strong>Input file: </strong><br>
 <strong>Evaluated metrics: Reproducibility</strong>:<br></p>
-<pre><code>## Good example: modern_humanMPRA_Hob 
-## Bad example: NA</code></pre>
-<p><img src="12-only_figs_activity_files/figure-html/unnamed-chunk-27-1.png" width="672" />
+<p><img src="external_figures/modern_humanMPRA_Hob/minimizing_noise_hexbin.svg" width="49%" /><img src="external_figures/placeholder.svg" width="49%" />
 <strong>Legend:</strong> <br>
 <strong>Interpretation:</strong><br></p>
 </div>
@@ -422,7 +411,7 @@ set in the _output.yml file.</p>" />
 <p><strong>Goal: Assesses whether additional sequencing will improve reproducibility between replicates</strong> <br>
 <strong>Input file: Activity down sampling files</strong> <br>
 <strong>Evaluated metrics: Reproducibility</strong> <br></p>
-<p><img src="external_figures/modern_humanMPRA_Hob/Reproducibility_by_sequencing_depth.svg" width="49%" /><img src="external_figures/modern_humanMPRA_NPC/Reproducibility_by_sequencing_depth.svg" width="49%" /></p>
+<p><img src="external_figures/modern_humanMPRA_Hob/Reproducibility_by_sequencing_depth.svg" width="49%" /><img src="external_figures/Max_MPRA_run2/Reproducibility_by_sequencing_depth.svg" width="49%" /></p>
 <p><strong>Legend:</strong> <br>
 <strong>Interpretation:</strong><br></p>
 </div>
@@ -431,11 +420,8 @@ set in the _output.yml file.</p>" />
 <p><strong>Goal: Assesses if there is true activity in the experiment</strong> <br>
 <strong>Input file:</strong><br>
 <strong>Evaluated metrics: Dynamic Range</strong><br></p>
-<pre><code>## Good example: PMID_38766054_Reilly 
-## Bad example: humanMPRA_L4a2 
-## Bad example 2: humanMPRA_L1a1_Neurons</code></pre>
-<p><img src="12-only_figs_activity_files/figure-html/unnamed-chunk-29-1.png" width="672" />
-<strong>Legend:</strong> <br>
+<p><img src="external_figures/PMID_38766054_Reilly/RNA_DNA_ratio_hexbin_w_bar.svg" width="32%" /><img src="external_figures/humanMPRA_L4a2/RNA_DNA_ratio_hexbin_w_bar.svg" width="32%" /><img src="external_figures/humanMPRA_L1a1_Neurons/RNA_DNA_ratio_hexbin_w_bar.svg" width="32%" /></p>
+<p><strong>Legend:</strong> <br>
 <strong>Interpretation:</strong><br></p>
 </div>
 <div id="activity-of-controls" class="section level2 hasAnchor" number="3.28">
@@ -443,9 +429,7 @@ set in the _output.yml file.</p>" />
 <p><strong>Goal: assesses the dynamic range of activity</strong> <br>
 <strong>Input file: quantification table (comb_df)</strong><br>
 <strong>Evaluated metrics: Dynamic Range</strong>:<br></p>
-<pre><code>## Good example: PMID_38766054_Reilly 
-## Bad example: Max_MPRA_run2</code></pre>
-<p><img src="12-only_figs_activity_files/figure-html/unnamed-chunk-30-1.png" width="672" />
+<p><img src="external_figures/PMID_38766054_Reilly/Control_activity_boxplots.svg" width="49%" /><img src="external_figures/Max_MPRA_run2/Control_activity_boxplots.svg" width="49%" />
 <strong>Legend:</strong> <br>
 <strong>Interpretation:</strong><br></p>
 </div>
@@ -454,7 +438,7 @@ set in the _output.yml file.</p>" />
 <p><strong>Goal: This analysis assesses concordance with endogenous signals of active chromatin marks</strong> <br>
 <strong>Input file: Genomic annotation file</strong> <br>
 <strong>Evaluated metrics: Dynamic Range</strong> <br></p>
-<p><img src="external_figures/humanMPRA_L1a1_Neurons/Genomic_annotations.svg" width="49%" /><img src="external_figures/PMID_38766054_Reilly/Genomic_annotations.svg" width="49%" /></p>
+<p><img src="external_figures/PMID_38766054_Reilly/Genomic_annotations.svg" width="49%" /><img src="external_figures/humanMPRA_L1a1_Neurons/Genomic_annotations.svg" width="49%" /></p>
 <p><strong>Legend:</strong> <br>
 <strong>Interpretation:</strong><br></p>
 </div>
@@ -472,7 +456,7 @@ set in the _output.yml file.</p>" />
 <p><strong>Goal: is analysis assesses concordance with endogenous locations of cCREs</strong> <br>
 <strong>Input file: Distance to TSS file</strong> <br>
 <strong>Evaluated metrics: Dynamic Range</strong> <br></p>
-<p><img src="external_figures/humanMPRA_L1a1_Neurons/Proximity_to_TSS.svg" width="49%" /><img src="external_figures/PMID_38766054_Reilly/Proximity_to_TSS.svg" width="49%" /></p>
+<p><img src="external_figures/PMID_38766054_Reilly/Proximity_to_TSS.svg" width="49%" /><img src="external_figures/humanMPRA_L1a1_Neurons/Proximity_to_TSS.svg" width="49%" /></p>
 <p><strong>Legend:</strong> <br>
 <strong>Interpretation:</strong><br></p>
 </div>
@@ -481,7 +465,7 @@ set in the _output.yml file.</p>" />
 <p><strong>Goal: </strong> <br>
 <strong>Input file: </strong> <br>
 <strong>Evaluated metrics: </strong> <br></p>
-<p><img src="external_figures/placeholder.svg" width="49%" /><img src="external_figures/placeholder.svg" width="49%" /></p>
+<p><img src="external_figures/modern_humanMPRA_Hob/AI_predictions_vs_activity_hexbin_w_bar.svg" width="49%" /><img src="external_figures/humanMPRA_L1a1_Neurons/AI_predictions_vs_activity_hexbin_w_bar.svg" width="49%" /></p>
 <p><strong>Legend:</strong> <br>
 <strong>Interpretation:</strong><br></p>
 
