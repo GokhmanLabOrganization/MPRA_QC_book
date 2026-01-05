@@ -266,7 +266,7 @@ mention in the bookdown: the importance of the percentage explained by the 1st a
 
 
 
-<img src="external_figures/placeholder.svg" width="49%" /><img src="external_figures/placeholder.svg" width="49%" />
+<img src="external_figures/modern_humanMPRA_Hob/allelic_pairs_hexbin_w_bar.svg" width="49%" /><img src="external_figures/Max_MPRA_run2/allelic_pairs_hexbin_w_bar.svg" width="49%" />
 
 **Legend:** <br>
 **Interpretation:**<br>

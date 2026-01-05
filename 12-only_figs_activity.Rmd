@@ -457,8 +457,8 @@ knitr::include_graphics(c("external_figures/PMID_38766054_Reilly/RNA_DNA_ratio_c
 
 
 ```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
-knitr::include_graphics(c("external_figures/placeholder.svg",
-                          "external_figures/placeholder.svg"))
+knitr::include_graphics(c("external_figures/modern_humanMPRA_Hob/allelic_pairs_hexbin_w_bar.svg",
+                          "external_figures/Max_MPRA_run2/allelic_pairs_hexbin_w_bar.svg"))
 ```
 
 **Legend:** <br>
