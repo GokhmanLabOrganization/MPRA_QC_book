@@ -413,7 +413,7 @@ mention in the bookdown: the importance of the percentage explained by the 1st a
 **Interpretation:**<br>
 
 
-## Endogenous genomic annotation - differential activity
+## AI predictions vs differential activity
 
 **Goal: ** <br>
 **Input file: ** <br>
@@ -421,7 +421,7 @@ mention in the bookdown: the importance of the percentage explained by the 1st a
 
 
 
-<img src="external_figures/placeholder.svg" width="49%" /><img src="external_figures/placeholder.svg" width="49%" />
+<img src="external_figures/modern_humanMPRA_Hob/AI_predictions_vs_differential_activity_hexbin_w_bar.svg" width="49%" /><img src="external_figures/humanMPRA_L1a1_Neurons/AI_predictions_vs_differential_activity_hexbin_w_bar.svg" width="49%" />
 
 **Legend:** <br>
 **Interpretation:**<br>

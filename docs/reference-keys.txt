@@ -44,6 +44,6 @@ reproducibility-by-sequencing-depth
 rna-vs-dna
 activity-of-controls
 genomic-annotations
-endogenous-genomic-annotation---differential-activity
+ai-predictions-vs-differential-activity
 proximity-to-tss
 ai-predictions-vs-activity
