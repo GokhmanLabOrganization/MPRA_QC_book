@@ -116,7 +116,7 @@
 
 
 
-<img src="external_figures/placeholder.svg" width="49%" /><img src="external_figures/placeholder.svg" width="49%" />
+<img src="external_figures/modern_humanMPRA_Hob/Differential_activity_volcano_zoom.svg" width="49%" /><img src="external_figures/humanMPRA_L1a1_Neurons/Differential_activity_volcano_zoom.svg" width="49%" />
 
 **Legend:** <br>
 **Interpretation:**<br>
@@ -129,7 +129,7 @@
 
 
 
-<img src="external_figures/placeholder.svg" width="49%" /><img src="external_figures/placeholder.svg" width="49%" />
+<img src="external_figures/modern_humanMPRA_Hob/BC_retention_by_DNA_RNA_sequencing_depth.svg" width="49%" /><img src="external_figures/Max_MPRA_run2/BC_retention_by_DNA_RNA_sequencing_depth.svg" width="49%" />
 
 **Legend:** <br>
 **Interpretation:**<br>
@@ -143,7 +143,7 @@
 
 
 
-<img src="external_figures/placeholder.svg" width="49%" /><img src="external_figures/placeholder.svg" width="49%" />
+<img src="external_figures/modern_humanMPRA_Hob/cCRE_retention_by_DNA_RNA_sequencing_depth.svg" width="49%" /><img src="external_figures/Max_MPRA_run2/cCRE_retention_by_DNA_RNA_sequencing_depth.svg" width="49%" />
 
 **Legend:** <br>
 **Interpretation:**<br>
@@ -344,7 +344,7 @@ mention in the bookdown: the importance of the percentage explained by the 1st a
 **Input file: **<br>
 **Evaluated metrics: Reproducibility**:<br>
 
-<img src="external_figures/modern_humanMPRA_Hob/minimizing_noise_hexbin.svg" width="49%" /><img src="external_figures/placeholder.svg" width="49%" />
+<img src="external_figures/modern_humanMPRA_Hob/minimizing_noise_hexbin.svg" width="100%" />
 **Legend:** <br>
 **Interpretation:**<br>
 
@@ -400,18 +400,7 @@ mention in the bookdown: the importance of the percentage explained by the 1st a
 **Interpretation:**<br>
 
 
-## AI predictions vs differential activity
 
-**Goal: ** <br>
-**Input file: ** <br>
-**Evaluated metrics: ** <br>
-
-
-
-<img src="external_figures/modern_humanMPRA_Hob/AI_predictions_vs_differential_activity_hexbin_w_bar.svg" width="49%" /><img src="external_figures/humanMPRA_L1a1_Neurons/AI_predictions_vs_differential_activity_hexbin_w_bar.svg" width="49%" />
-
-**Legend:** <br>
-**Interpretation:**<br>
 
 ## Proximity to TSS
 
@@ -443,7 +432,18 @@ mention in the bookdown: the importance of the percentage explained by the 1st a
 
 
 
+## AI predictions vs differential activity
 
+**Goal: ** <br>
+**Input file: ** <br>
+**Evaluated metrics: ** <br>
+
+
+
+<img src="external_figures/modern_humanMPRA_Hob/AI_predictions_vs_differential_activity_hexbin_w_bar.svg" width="49%" /><img src="external_figures/humanMPRA_L1a1_Neurons/AI_predictions_vs_differential_activity_hexbin_w_bar.svg" width="49%" />
+
+**Legend:** <br>
+**Interpretation:**<br>
 
 
 

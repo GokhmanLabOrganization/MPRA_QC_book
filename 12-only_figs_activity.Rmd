@@ -256,8 +256,8 @@ knitr::include_graphics(c("external_figures/PMID_38766054_Reilly/P_value_distrib
 
 
 ```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
-knitr::include_graphics(c("external_figures/placeholder.svg",
-                          "external_figures/placeholder.svg"))
+knitr::include_graphics(c("external_figures/modern_humanMPRA_Hob/Differential_activity_volcano_zoom.svg",
+                          "external_figures/humanMPRA_L1a1_Neurons/Differential_activity_volcano_zoom.svg"))
 ```
 
 **Legend:** <br>
@@ -272,8 +272,8 @@ knitr::include_graphics(c("external_figures/placeholder.svg",
 
 
 ```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
-knitr::include_graphics(c("external_figures/placeholder.svg",
-                          "external_figures/placeholder.svg"))
+knitr::include_graphics(c("external_figures/modern_humanMPRA_Hob/BC_retention_by_DNA_RNA_sequencing_depth.svg",
+                          "external_figures/Max_MPRA_run2/BC_retention_by_DNA_RNA_sequencing_depth.svg"))
 ```
 
 **Legend:** <br>
@@ -289,8 +289,8 @@ knitr::include_graphics(c("external_figures/placeholder.svg",
 
 
 ```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
-knitr::include_graphics(c("external_figures/placeholder.svg",
-                          "external_figures/placeholder.svg"))
+knitr::include_graphics(c("external_figures/modern_humanMPRA_Hob/cCRE_retention_by_DNA_RNA_sequencing_depth.svg",
+                          "external_figures/Max_MPRA_run2/cCRE_retention_by_DNA_RNA_sequencing_depth.svg"))
 ```
 
 **Legend:** <br>
@@ -535,9 +535,9 @@ knitr::include_graphics(c("external_figures/placeholder.svg",
 **Input file: **<br>
 **Evaluated metrics: Reproducibility**:<br>
 
-```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
-knitr::include_graphics(c("external_figures/modern_humanMPRA_Hob/minimizing_noise_hexbin.svg",
-                          "external_figures/placeholder.svg"))
+```{r echo=FALSE, fig.show="hold", out.width="100%"}
+knitr::include_graphics("external_figures/modern_humanMPRA_Hob/minimizing_noise_hexbin.svg",
+                          )
 ```
 **Legend:** <br>
 **Interpretation:**<br>
@@ -610,21 +610,7 @@ knitr::include_graphics(c("external_figures/PMID_38766054_Reilly/Genomic_annotat
 **Interpretation:**<br>
 
 
-## AI predictions vs differential activity
 
-**Goal: ** <br>
-**Input file: ** <br>
-**Evaluated metrics: ** <br>
-
-
-
-```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
-knitr::include_graphics(c("external_figures/modern_humanMPRA_Hob/AI_predictions_vs_differential_activity_hexbin_w_bar.svg",
-                          "external_figures/humanMPRA_L1a1_Neurons/AI_predictions_vs_differential_activity_hexbin_w_bar.svg"))
-```
-
-**Legend:** <br>
-**Interpretation:**<br>
 
 ## Proximity to TSS
 
@@ -663,7 +649,21 @@ knitr::include_graphics(c("external_figures/modern_humanMPRA_Hob/AI_predictions_
 
 
 
+## AI predictions vs differential activity
 
+**Goal: ** <br>
+**Input file: ** <br>
+**Evaluated metrics: ** <br>
+
+
+
+```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
+knitr::include_graphics(c("external_figures/modern_humanMPRA_Hob/AI_predictions_vs_differential_activity_hexbin_w_bar.svg",
+                          "external_figures/humanMPRA_L1a1_Neurons/AI_predictions_vs_differential_activity_hexbin_w_bar.svg"))
+```
+
+**Legend:** <br>
+**Interpretation:**<br>
 
 
 

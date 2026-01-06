@@ -46,7 +46,7 @@
 **Evaluated metrics: Complexity**<br>
 
 
-<img src="external_figures/placeholder.svg" width="49%" /><img src="external_figures/thylacine_biorxiv_Gallego_Romero/PCR_bias_G-stretches.svg" width="49%" />
+<img src="external_figures/thylacine_biorxiv_Gallego_Romero/PCR_bias_G-stretches.svg" width="49%" /><img src="external_figures/placeholder.svg" width="49%" />
 
 **Legend:** <br>
 **Interpretation:**<br>
