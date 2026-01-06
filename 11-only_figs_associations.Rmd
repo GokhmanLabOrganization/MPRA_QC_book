@@ -59,8 +59,9 @@ knitr::include_graphics(c("external_figures/Max_MPRA_run2/PCR_bias_GC.svg",
 
 
 ```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
-knitr::include_graphics(c("external_figures/placeholder.svg",
-                          "external_figures/thylacine_biorxiv_Gallego_Romero/PCR_bias_G-stretches.svg"))
+knitr::include_graphics(c("external_figures/thylacine_biorxiv_Gallego_Romero/PCR_bias_G-stretches.svg",
+                          "external_figures/placeholder.svg"
+                          ))
 ```
 
 **Legend:** <br>
