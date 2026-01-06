@@ -316,27 +316,10 @@ knitr::include_graphics(c("external_figures/modern_humanMPRA_Hob/Activity_by_seq
 **Input file: quantification table (comb_df)**<br>
 **Evaluated metrics: DNA Complexity, RNA Complexity**:<br>
 
-```{r,echo=FALSE}
-good_example_MPRA = "PMID_38766054_Reilly"
-bad_example_MPRA = "d2Osteoblast_spiking_oligos"
-analysis_name = 'cumulative_RNA_reads.png'
-print_examples(good_example_MPRA, bad_example_MPRA)
-
-good_example <- readPNG(file.path(working_dir,good_example_MPRA,analysis_name),native = T)
-bad_example <- readPNG(file.path(working_dir, bad_example_MPRA, analysis_name),native = T)
-plot_side_by_side(good_example,bad_example)
-
-
-#plot_all_MPRA(working_dir, analysis_name, ncol = 3)
-
-
-rm(good_example_MPRA,bad_example_MPRA,analysis_name)
-
-```
 
 ```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
 knitr::include_graphics(c("external_figures/PMID_38766054_Reilly/cumulative_RNA_reads.svg",
-                          "external_figures/placeholder.svg"))
+                          "external_figures/d2Osteoblast_spiking_oligos/cumulative_RNA_reads.svg"))
 ```
 
 **Legend:** <br>
@@ -351,23 +334,7 @@ knitr::include_graphics(c("external_figures/PMID_38766054_Reilly/cumulative_RNA_
 **Evaluated metrics: Reproducibility**:<br>
 
 mention in the bookdown: the importance of the percentage explained by the 1st and 2nd PCs. 
-```{r,echo=FALSE}
 
-good_example_MPRA = "PMID_38766054_Reilly"
-bad_example_MPRA = "thylacine_biorxiv_Gallego_Romero"
-analysis_name = 'PCA_similarity_between_samples.png'
-print_examples(good_example_MPRA, bad_example_MPRA)
-
-good_example <- readPNG(file.path(working_dir,good_example_MPRA,analysis_name),native = T)
-bad_example <- readPNG(file.path(working_dir, bad_example_MPRA, analysis_name),native = T)
-plot_side_by_side(good_example,bad_example)
-
-#plot_all_MPRA(working_dir, analysis_name, ncol = 3)
-
-
-rm(good_example_MPRA,bad_example_MPRA,analysis_name)
-
-```
 
 ```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
 knitr::include_graphics(c("external_figures/PMID_38766054_Reilly/PCA_similarity_between_samples.svg",
