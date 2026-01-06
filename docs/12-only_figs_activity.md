@@ -166,14 +166,7 @@
 **Evaluated metrics: DNA Complexity, RNA Complexity**:<br>
 
 
-```
-## Good example: PMID_38766054_Reilly 
-## Bad example: d2Osteoblast_spiking_oligos
-```
-
-<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-14-1.png" width="672" />
-
-<img src="external_figures/PMID_38766054_Reilly/cumulative_RNA_reads.svg" width="49%" /><img src="external_figures/placeholder.svg" width="49%" />
+<img src="external_figures/PMID_38766054_Reilly/cumulative_RNA_reads.svg" width="49%" /><img src="external_figures/d2Osteoblast_spiking_oligos/cumulative_RNA_reads.svg" width="49%" />
 
 **Legend:** <br>
 **Interpretation:**<br>
@@ -188,12 +181,6 @@
 
 mention in the bookdown: the importance of the percentage explained by the 1st and 2nd PCs. 
 
-```
-## Good example: PMID_38766054_Reilly 
-## Bad example: thylacine_biorxiv_Gallego_Romero
-```
-
-<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-16-1.png" width="672" />
 
 <img src="external_figures/PMID_38766054_Reilly/PCA_similarity_between_samples.svg" width="49%" /><img src="external_figures/thylacine_biorxiv_Gallego_Romero/PCA_similarity_between_samples.svg" width="49%" />
 
