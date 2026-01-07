@@ -25,8 +25,8 @@ output_dir=sprintf("%s/test_QC",working_dir)
 
 
 ```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
-knitr::include_graphics(c("external_figures/Max_MPRA_run2/Barcodes_per_cCRE.svg",
-                          "external_figures/PMID_38766054_Reilly/Barcodes_per_cCRE.svg"))
+knitr::include_graphics(c("external_figures/PMID_38766054_Reilly/Barcodes_per_cCRE.svg",
+                          "external_figures/Max_MPRA_run2/Barcodes_per_cCRE.svg"))
 ```
 
 **Legend:** <br>
@@ -40,8 +40,8 @@ knitr::include_graphics(c("external_figures/Max_MPRA_run2/Barcodes_per_cCRE.svg"
 **Input file: BC-cCRE association file**<br>
 **Evaluated metrics: Complexity**<br>
 ```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
-knitr::include_graphics(c("external_figures/Max_MPRA_run2/PCR_bias_GC.svg",
-                          "external_figures/PMID_38766054_Reilly/PCR_bias_GC.svg"))
+knitr::include_graphics(c("external_figures/PMID_38766054_Reilly/PCR_bias_GC.svg",
+                          "external_figures/Max_MPRA_run2/PCR_bias_GC.svg"))
 ```
 
 **Legend:** <br>
@@ -59,9 +59,7 @@ knitr::include_graphics(c("external_figures/Max_MPRA_run2/PCR_bias_GC.svg",
 
 
 ```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
-knitr::include_graphics(c("external_figures/thylacine_biorxiv_Gallego_Romero/PCR_bias_G-stretches.svg",
-                          "external_figures/placeholder.svg"
-                          ))
+knitr::include_graphics(c("external_figures/thylacine_biorxiv_Gallego_Romero/PCR_bias_G-stretches.svg", "external_figures/placeholder.svg"))
 ```
 
 **Legend:** <br>
@@ -74,8 +72,8 @@ knitr::include_graphics(c("external_figures/thylacine_biorxiv_Gallego_Romero/PCR
 **Input file: Associations file before filtering for minimal number of associations**<br>
 **Evaluated metrics**:<br>
 ```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
-knitr::include_graphics(c("external_figures/Max_MPRA_run2/UMIs_per_association.svg",
-                          "external_figures/PMID_38766054_Reilly/UMIs_per_association.svg"))
+knitr::include_graphics(c("external_figures/PMID_38766054_Reilly/UMIs_per_association.svg",
+                          "external_figures/Max_MPRA_run2/UMIs_per_association.svg"))
 ```
 
 
@@ -89,8 +87,8 @@ knitr::include_graphics(c("external_figures/Max_MPRA_run2/UMIs_per_association.s
 **Input file: BC-cCRE association file**<br>
 **Evaluated metrics: BC replicability**<br>
 ```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
-knitr::include_graphics(c("external_figures/Max_MPRA_run2/Retained_cCREs.svg",
-                          "external_figures/PMID_38766054_Reilly/Retained_cCREs.svg"))
+knitr::include_graphics(c("external_figures/PMID_38766054_Reilly/Retained_cCREs.svg",
+                          "external_figures/Max_MPRA_run2/Retained_cCREs.svg"))
 ```
 
 **Legend:** <br>
@@ -102,8 +100,8 @@ knitr::include_graphics(c("external_figures/Max_MPRA_run2/Retained_cCREs.svg",
 **Input file: Associations file before filtering for BC promiscuity**<br>
 **Evaluated metrics: BC promiscuity**<br>
 ```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
-knitr::include_graphics(c("external_figures/Max_MPRA_run2/cCREs_per_BC_shuffled.svg",
-                          "external_figures/PMID_38766054_Reilly/cCREs_per_BC.svg"))
+knitr::include_graphics(c("external_figures/PMID_38766054_Reilly/cCREs_per_BC.svg",
+                          "external_figures/Max_MPRA_run2/cCREs_per_BC_shuffled.svg"))
 ```
 
 **Legend:** <br>
@@ -116,8 +114,9 @@ knitr::include_graphics(c("external_figures/Max_MPRA_run2/cCREs_per_BC_shuffled.
 **Evaluated metrics: complexity**<br>
 ```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
 
-knitr::include_graphics(c("external_figures/Max_MPRA_run2/Downsampling_Retained_cCREs.svg",
-                          "external_figures/L3a2_281122/Downsampling_Retained_cCREs.svg"))
+knitr::include_graphics(c("external_figures/L3a2_281122/Downsampling_Retained_cCREs.svg",
+                          "external_figures/Max_MPRA_run2/Downsampling_Retained_cCREs.svg"
+                          ))
 ```
 
 **Legend:** <br>
@@ -129,8 +128,7 @@ knitr::include_graphics(c("external_figures/Max_MPRA_run2/Downsampling_Retained_
 **Input file: Input file: Downsampling association files****<br>
 **Evaluated metrics: Complexity**<br>
 ```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
-knitr::include_graphics(c("external_figures/L3a2_281122/Downsampling_Barcodes_per_cCRE.svg",
-                          "external_figures/Max_MPRA_run2/Downsampling_Barcodes_per_cCRE.svg"))
+knitr::include_graphics(c("external_figures/Max_MPRA_run2/Downsampling_Barcodes_per_cCRE.svg", "external_figures/L3a2_281122/Downsampling_Barcodes_per_cCRE.svg"))
 ```
 
 **Legend:** <br>
