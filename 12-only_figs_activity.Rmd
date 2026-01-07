@@ -192,25 +192,11 @@ knitr::include_graphics(c("external_figures/placeholder.svg",
 **Input file: quantification table (comb_df)**<br>
 **Evaluated metrics: DNA Complexity, RNA Complexity**:<br>
 
-```{r,echo=FALSE}
-
-good_example_MPRA = "PMID_38766054_Reilly"
-bad_example_MPRA = "humanMPRA_L4a2"
-bad_example_MPRA_2 = "humanMPRA_L1a1_Neurons"
-analysis_name = 'activity_distribution.png'
-print_examples(good_example_MPRA, bad_example_MPRA,bad_example_MPRA_2)
-
-good_example <- readPNG(file.path(working_dir,good_example_MPRA,analysis_name),native = T)
-bad_example <- readPNG(file.path(working_dir, bad_example_MPRA, analysis_name),native = T)
-bad_example_2 <- readPNG(file.path(working_dir, bad_example_MPRA_2, analysis_name),native = T)
-plot_three_side_by_side(good_example,bad_example,bad_example_2)
-
-#plot_all_MPRA(working_dir, analysis_name, ncol = 3)
-
-print('add arrows that indicate right tail, symmetry, or no activity detected')
-
-rm(good_example_MPRA,bad_example_MPRA,bad_example_MPRA_2,analysis_name)
-
+```{r echo=FALSE, fig.show="hold", out.width=rep("32%", 3)}
+knitr::include_graphics(c("external_figures/PMID_38766054_Reilly/activity_distribution.svg",
+                          "external_figures/humanMPRA_L4a2/activity_distribution.svg",
+                          "external_figures/humanMPRA_L1a1_Neurons/activity_distribution.svg"
+                          ))
 ```
 **Legend:** <br>
 **Interpretation:**<br>

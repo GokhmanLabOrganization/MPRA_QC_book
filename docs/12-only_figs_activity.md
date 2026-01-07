@@ -67,18 +67,7 @@
 **Input file: quantification table (comb_df)**<br>
 **Evaluated metrics: DNA Complexity, RNA Complexity**:<br>
 
-
-```
-## Good example: PMID_38766054_Reilly 
-## Bad example: humanMPRA_L4a2 
-## Bad example 2: humanMPRA_L1a1_Neurons
-```
-
-<img src="12-only_figs_activity_files/figure-html/unnamed-chunk-7-1.png" width="672" />
-
-```
-## [1] "add arrows that indicate right tail, symmetry, or no activity detected"
-```
+<img src="external_figures/PMID_38766054_Reilly/activity_distribution.svg" width="32%" /><img src="external_figures/humanMPRA_L4a2/activity_distribution.svg" width="32%" /><img src="external_figures/humanMPRA_L1a1_Neurons/activity_distribution.svg" width="32%" />
 **Legend:** <br>
 **Interpretation:**<br>
 
