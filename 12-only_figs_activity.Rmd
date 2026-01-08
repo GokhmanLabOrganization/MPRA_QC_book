@@ -147,8 +147,8 @@ knitr::include_graphics(c("external_figures/PMID_38766054_Reilly/retained_cCREs_
 
 
 ```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
-knitr::include_graphics(c("external_figures/placeholder.svg",
-                          "external_figures/placeholder.svg"))
+knitr::include_graphics(c("external_figures/PMID_38766054_Reilly/GC_content_bias_in_DNA.svg",
+                          "external_figures/humanMPRA_L1a1_Neurons/GC_content_bias_in_DNA.svg"))
 ```
 
 **Legend:** <br>
@@ -163,8 +163,8 @@ knitr::include_graphics(c("external_figures/placeholder.svg",
 
 
 ```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
-knitr::include_graphics(c("external_figures/placeholder.svg",
-                          "external_figures/placeholder.svg"))
+knitr::include_graphics(c("external_figures/PMID_38766054_Reilly/Activity_statistic_vs_count_ratio.svg",
+                          "external_figures/humanMPRA_L4a2/Activity_statistic_vs_count_ratio.svg"))
 ```
 
 **Legend:** <br>

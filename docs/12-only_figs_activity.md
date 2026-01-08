@@ -30,7 +30,7 @@
 
 
 
-<img src="external_figures/placeholder.svg" width="49%" /><img src="external_figures/placeholder.svg" width="49%" />
+<img src="external_figures/PMID_38766054_Reilly/GC_content_bias_in_DNA.svg" width="49%" /><img src="external_figures/humanMPRA_L1a1_Neurons/GC_content_bias_in_DNA.svg" width="49%" />
 
 **Legend:** <br>
 **Interpretation:**<br>
@@ -43,7 +43,7 @@
 
 
 
-<img src="external_figures/placeholder.svg" width="49%" /><img src="external_figures/placeholder.svg" width="49%" />
+<img src="external_figures/PMID_38766054_Reilly/Activity_statistic_vs_count_ratio.svg" width="49%" /><img src="external_figures/humanMPRA_L4a2/Activity_statistic_vs_count_ratio.svg" width="49%" />
 
 **Legend:** <br>
 **Interpretation:**<br>
