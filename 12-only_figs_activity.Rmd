@@ -291,7 +291,7 @@ knitr::include_graphics(c("external_figures/modern_humanMPRA_Hob/cCRE_retention_
 
 ```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
 knitr::include_graphics(c("external_figures/modern_humanMPRA_Hob/Activity_by_sequencing_depth.svg",
-                          "external_figures/modern_humanMPRA_NPC/Activity_by_sequencing_depth.svg"))
+                          "external_figures/humanMPRA_L1a1_Neurons/Activity_by_sequencing_depth.svg"))
 ```
 **Legend:** <br>
 **Interpretation:**<br>
@@ -442,8 +442,8 @@ knitr::include_graphics(c("external_figures/placeholder.svg",
 
 
 ```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
-knitr::include_graphics(c("external_figures/placeholder.svg",
-                          "external_figures/placeholder.svg"))
+knitr::include_graphics(c("external_figures/modern_humanMPRA_NPC/cell_types_hexbin_w_bar.svg",
+                          "external_figures/humanMPRA_L1a1_Neurons/cell_types_hexbin_w_bar.svg"))
 ```
 
 **Legend:** <br>
