@@ -144,7 +144,7 @@
 **Input file: Downsampling activity data frames**<br>
 **Evaluated metrics: DNA Complexity, RNA Complexity**<br>
 
-<img src="external_figures/modern_humanMPRA_Hob/Activity_by_sequencing_depth.svg" width="49%" /><img src="external_figures/modern_humanMPRA_NPC/Activity_by_sequencing_depth.svg" width="49%" />
+<img src="external_figures/modern_humanMPRA_Hob/Activity_by_sequencing_depth.svg" width="49%" /><img src="external_figures/humanMPRA_L1a1_Neurons/Activity_by_sequencing_depth.svg" width="49%" />
 **Legend:** <br>
 **Interpretation:**<br>
 
@@ -268,7 +268,7 @@ mention in the bookdown: the importance of the percentage explained by the 1st a
 
 
 
-<img src="external_figures/placeholder.svg" width="49%" /><img src="external_figures/placeholder.svg" width="49%" />
+<img src="external_figures/modern_humanMPRA_NPC/cell_types_hexbin_w_bar.svg" width="49%" /><img src="external_figures/humanMPRA_L1a1_Neurons/cell_types_hexbin_w_bar.svg" width="49%" />
 
 **Legend:** <br>
 **Interpretation:**<br>
