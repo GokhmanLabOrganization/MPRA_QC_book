@@ -417,21 +417,9 @@ knitr::include_graphics(c("external_figures/modern_humanMPRA_Hob/allelic_pairs_h
 **Legend:** <br>
 **Interpretation:**<br>
 
-## Correlation of differential activity between overlapping sequences
-
-**Goal: ** <br>
-**Input file: ** <br>
-**Evaluated metrics: ** <br>
 
 
 
-```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
-knitr::include_graphics(c("external_figures/placeholder.svg",
-                          "external_figures/placeholder.svg"))
-```
-
-**Legend:** <br>
-**Interpretation:**<br>
 
 ## Cross-validaiton: cell types
 
@@ -448,72 +436,6 @@ knitr::include_graphics(c("external_figures/modern_humanMPRA_NPC/cell_types_hexb
 
 **Legend:** <br>
 **Interpretation:**<br>
-
-## Correlation of differential activity between cell types
-
-**Goal: ** <br>
-**Input file: ** <br>
-**Evaluated metrics: ** <br>
-
-
-
-```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
-knitr::include_graphics(c("external_figures/placeholder.svg",
-                          "external_figures/placeholder.svg"))
-```
-
-**Legend:** <br>
-**Interpretation:**<br>
-
-## Cross-validation: experiments
-
-**Goal: ** <br>
-**Input file: ** <br>
-**Evaluated metrics: ** <br>
-
-
-
-```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
-knitr::include_graphics(c("external_figures/placeholder.svg",
-                          "external_figures/placeholder.svg"))
-```
-
-**Legend:** <br>
-**Interpretation:**<br>
-
-## Correlation of differential activity between experiments
-
-**Goal: ** <br>
-**Input file: ** <br>
-**Evaluated metrics: ** <br>
-
-
-
-```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
-knitr::include_graphics(c("external_figures/placeholder.svg",
-                          "external_figures/placeholder.svg"))
-```
-
-**Legend:** <br>
-**Interpretation:**<br>
-
-## Replicability across experiments
-
-**Goal: ** <br>
-**Input file: ** <br>
-**Evaluated metrics: ** <br>
-
-
-
-```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
-knitr::include_graphics(c("external_figures/placeholder.svg",
-                          "external_figures/placeholder.svg"))
-```
-
-**Legend:** <br>
-**Interpretation:**<br>
-
-
 
 
 ## Minimizing noise 

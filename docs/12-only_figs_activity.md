@@ -247,18 +247,9 @@ mention in the bookdown: the importance of the percentage explained by the 1st a
 **Legend:** <br>
 **Interpretation:**<br>
 
-## Correlation of differential activity between overlapping sequences
-
-**Goal: ** <br>
-**Input file: ** <br>
-**Evaluated metrics: ** <br>
 
 
 
-<img src="external_figures/placeholder.svg" width="49%" /><img src="external_figures/placeholder.svg" width="49%" />
-
-**Legend:** <br>
-**Interpretation:**<br>
 
 ## Cross-validaiton: cell types
 
@@ -272,60 +263,6 @@ mention in the bookdown: the importance of the percentage explained by the 1st a
 
 **Legend:** <br>
 **Interpretation:**<br>
-
-## Correlation of differential activity between cell types
-
-**Goal: ** <br>
-**Input file: ** <br>
-**Evaluated metrics: ** <br>
-
-
-
-<img src="external_figures/placeholder.svg" width="49%" /><img src="external_figures/placeholder.svg" width="49%" />
-
-**Legend:** <br>
-**Interpretation:**<br>
-
-## Cross-validation: experiments
-
-**Goal: ** <br>
-**Input file: ** <br>
-**Evaluated metrics: ** <br>
-
-
-
-<img src="external_figures/placeholder.svg" width="49%" /><img src="external_figures/placeholder.svg" width="49%" />
-
-**Legend:** <br>
-**Interpretation:**<br>
-
-## Correlation of differential activity between experiments
-
-**Goal: ** <br>
-**Input file: ** <br>
-**Evaluated metrics: ** <br>
-
-
-
-<img src="external_figures/placeholder.svg" width="49%" /><img src="external_figures/placeholder.svg" width="49%" />
-
-**Legend:** <br>
-**Interpretation:**<br>
-
-## Replicability across experiments
-
-**Goal: ** <br>
-**Input file: ** <br>
-**Evaluated metrics: ** <br>
-
-
-
-<img src="external_figures/placeholder.svg" width="49%" /><img src="external_figures/placeholder.svg" width="49%" />
-
-**Legend:** <br>
-**Interpretation:**<br>
-
-
 
 
 ## Minimizing noise 
