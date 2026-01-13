@@ -7,10 +7,36 @@ library(png)
 library(grid)
 ```
 
-```{r, echo=FALSE}
-working_dir="/home/labs/davidgo/Collaboration/L4_MPRA/"
-output_dir=sprintf("%s/test_QC",working_dir)
+
+
+
+## cCREs per BC
+**Goal:** <br>
+**Input file: Associations file before filtering for BC promiscuity**<br>
+**Evaluated metrics: BC promiscuity**<br>
+```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
+knitr::include_graphics(c("external_figures/PMID_38766054_Reilly/cCREs_per_BC.svg",
+                          "external_figures/Max_MPRA_run2/cCREs_per_BC_shuffled.svg"))
 ```
+
+**Legend:** <br>
+**Interpretation:**<br>
+
+
+## UMIs per association
+**Goal:** <br>
+**Input file: Associations file before filtering for minimal number of associations**<br>
+**Evaluated metrics**:<br>
+```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
+knitr::include_graphics(c("external_figures/PMID_38766054_Reilly/UMIs_per_association.svg",
+                          "external_figures/Max_MPRA_run2/UMIs_per_association.svg"))
+```
+
+
+
+**Legend:** <br>
+**Interpretation:**<br>
+
 
 
 ## BCs per cCRE
@@ -33,55 +59,6 @@ knitr::include_graphics(c("external_figures/PMID_38766054_Reilly/Barcodes_per_cC
 **Interpretation:**<br>
 
 
-
-## PCR bias - GC
-
-**Goal: This analysis assesses GC content bias in PCR amplification** <br>
-**Input file: BC-cCRE association file**<br>
-**Evaluated metrics: Complexity**<br>
-```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
-knitr::include_graphics(c("external_figures/PMID_38766054_Reilly/PCR_bias_GC.svg",
-                          "external_figures/Max_MPRA_run2/PCR_bias_GC.svg"))
-```
-
-**Legend:** <br>
-**Interpretation: The successful example shows a relatively consistent number of reads per GC content, and PCR conditions that are optimized for the GC content levels of most cCREs (peaks are close to one another). The unsuccessful example shows both a strong amplification bias and suboptimal PCR conditions for the GC content levels of most cCREs**<br>
-
-
-
-
-
-## PCR bias - G Stretches
-
-**Goal: This analysis assesses G-stretches bias in PCR amplification** <br>
-**Input file: BC-cCRE association file**<br>
-**Evaluated metrics: Complexity**<br>
-
-
-```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
-knitr::include_graphics(c("external_figures/thylacine_biorxiv_Gallego_Romero/PCR_bias_G-stretches.svg", "external_figures/placeholder.svg"))
-```
-
-**Legend:** <br>
-**Interpretation:**<br>
-
-
-
-## UMIs per association
-**Goal:** <br>
-**Input file: Associations file before filtering for minimal number of associations**<br>
-**Evaluated metrics**:<br>
-```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
-knitr::include_graphics(c("external_figures/PMID_38766054_Reilly/UMIs_per_association.svg",
-                          "external_figures/Max_MPRA_run2/UMIs_per_association.svg"))
-```
-
-
-
-**Legend:** <br>
-**Interpretation:**<br>
-
-
 ## Retained cCREs
 **Goal: Retained cCREs per increasing cutoffs of BC number per cCRE** <br>
 **Input file: BC-cCRE association file**<br>
@@ -89,19 +66,6 @@ knitr::include_graphics(c("external_figures/PMID_38766054_Reilly/UMIs_per_associ
 ```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
 knitr::include_graphics(c("external_figures/PMID_38766054_Reilly/Retained_cCREs.svg",
                           "external_figures/Max_MPRA_run2/Retained_cCREs.svg"))
-```
-
-**Legend:** <br>
-**Interpretation:**<br>
-
-
-## cCREs per BC
-**Goal:** <br>
-**Input file: Associations file before filtering for BC promiscuity**<br>
-**Evaluated metrics: BC promiscuity**<br>
-```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
-knitr::include_graphics(c("external_figures/PMID_38766054_Reilly/cCREs_per_BC.svg",
-                          "external_figures/Max_MPRA_run2/cCREs_per_BC_shuffled.svg"))
 ```
 
 **Legend:** <br>
@@ -133,3 +97,39 @@ knitr::include_graphics(c("external_figures/Max_MPRA_run2/Downsampling_Barcodes_
 
 **Legend:** <br>
 **Interpretation:**<br>
+
+
+## PCR bias - GC
+
+**Goal: This analysis assesses GC content bias in PCR amplification** <br>
+**Input file: BC-cCRE association file**<br>
+**Evaluated metrics: Complexity**<br>
+```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
+knitr::include_graphics(c("external_figures/PMID_38766054_Reilly/PCR_bias_GC.svg",
+                          "external_figures/Max_MPRA_run2/PCR_bias_GC.svg"))
+```
+
+**Legend:** <br>
+**Interpretation: The successful example shows a relatively consistent number of reads per GC content, and PCR conditions that are optimized for the GC content levels of most cCREs (peaks are close to one another). The unsuccessful example shows both a strong amplification bias and suboptimal PCR conditions for the GC content levels of most cCREs**<br>
+
+
+
+
+
+## PCR bias - G Stretches
+
+**Goal: This analysis assesses G-stretches bias in PCR amplification** <br>
+**Input file: BC-cCRE association file**<br>
+**Evaluated metrics: Complexity**<br>
+
+
+```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
+knitr::include_graphics(c("external_figures/thylacine_biorxiv_Gallego_Romero/PCR_bias_G-stretches.svg", "external_figures/humanMPRA_L4a2/PCR_bias_G-stretches.svg"))
+```
+
+**Legend:** <br>
+**Interpretation:**<br>
+
+
+
+
