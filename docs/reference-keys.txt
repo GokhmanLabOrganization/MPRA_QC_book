@@ -34,7 +34,7 @@ correlation-between-replicates
 correlation-of-differential-activity-between-replicates
 replicability-by-activity
 correlation-between-replicates-controls
-cross-validationallelic-pairs
+cross-validation-allelic-pairs
 cross-validaiton-cell-types
 minimizing-noise
 reproducibility-by-sequencing-depth
