@@ -17,6 +17,8 @@ The raw output files are generated during the processing of the MPRA raw data. T
 
 **association_before_promiscuity:** Barcode - cCRE association file before filtering out barcodes that are associated with multiple cCREs, must include three columns: barcode, cCRE and match_count which represents the number of unique barcode - cCRE observations
 
+**assoc_downsampling:** A path for the folder of the input files of the down sampling analysis
+
 ### Output
 
 Output figures are presented in this book in chapter 2
@@ -55,6 +57,11 @@ Most of the input files are generated during the processing of the MPRA raw data
 **comparative_df:** MPRA comparative results, each row represents a locus 
     
 **allelic_pairs_df:** MPRA quantitative data, each row represents a locus and includes data for both alleles of the locus
+
+**cell_types_df:** MPRA quantitative data, each row represents a cCRE and includes data for two different cell types
+
+**allelic_pairs_replicates_df:** log2 RNA/DNA data for each locus, includes two alleles and their logFC
+
 
 ### Output
 

@@ -1,7 +1,7 @@
 --- 
 title: "Quality Control Pipeline for Massively Parallel Reporter Assays (MPRAs)"
-author: "Omer Ronen"
-date: "2026-01-13"
+author: "The Gokhman lab"
+date: "2026-01-14"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -32,11 +32,10 @@ A scheme of root problems, the impacted quality metrics and analyses for the cCR
 Root problems, impacted quality metrics and recommended analyses for the RNA and DNA quantification step.
 
 
-The quality control (QC) pipeline is organized into three chapters:
+The quality control (QC) pipeline is organized into two chapters:
 
 - (i) QC of the barcode association step  
 - (ii) QC of activity estimation  
-- (iii) QC of differential activity estimation  
 
 For each analysis, we provide an example of a successful and an unsuccessful dataset to illustrate how they manifest in the analysis.
 
