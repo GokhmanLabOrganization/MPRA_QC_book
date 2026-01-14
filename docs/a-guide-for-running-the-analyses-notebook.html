@@ -26,10 +26,10 @@ The HTML output format for this example is bookdown::gitbook,
 set in the _output.yml file.</p>" />
   
 
-<meta name="author" content="Omer Ronen" />
+<meta name="author" content="The Gokhman lab" />
 
 
-<meta name="date" content="2026-01-13" />
+<meta name="date" content="2026-01-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -180,6 +180,7 @@ Each chapter is accompanied by a dedicated script that allows the user to run al
 <p><strong>final_df:</strong> Barcode - cCRE association file, must include three columns: barcode, cCRE and match_count which represents the number of unique barcode - cCRE observations. This is the key file for association chapter</p>
 <p><strong>association_before_minimum_associations:</strong> Barcode - cCRE association file before filtering for a minimal number of unique observations for each pair, must include three columns: barcode, cCRE and match_count which represents the number of unique barcode - cCRE observations</p>
 <p><strong>association_before_promiscuity:</strong> Barcode - cCRE association file before filtering out barcodes that are associated with multiple cCREs, must include three columns: barcode, cCRE and match_count which represents the number of unique barcode - cCRE observations</p>
+<p><strong>assoc_downsampling:</strong> A path for the folder of the input files of the down sampling analysis</p>
 </div>
 <div id="output" class="section level3 hasAnchor" number="1.1.3">
 <h3><span class="header-section-number">1.1.3</span> Output<a href="a-guide-for-running-the-analyses-notebook.html#output" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -208,6 +209,8 @@ Each chapter is accompanied by a dedicated script that allows the user to run al
 <p><strong>downsampling_ratio_path:</strong> A path for a folder that includes activity_per_rep for each sampling parameter</p>
 <p><strong>comparative_df:</strong> MPRA comparative results, each row represents a locus</p>
 <p><strong>allelic_pairs_df:</strong> MPRA quantitative data, each row represents a locus and includes data for both alleles of the locus</p>
+<p><strong>cell_types_df:</strong> MPRA quantitative data, each row represents a cCRE and includes data for two different cell types</p>
+<p><strong>allelic_pairs_replicates_df:</strong> log2 RNA/DNA data for each locus, includes two alleles and their logFC</p>
 </div>
 <div id="output-1" class="section level3 hasAnchor" number="1.2.3">
 <h3><span class="header-section-number">1.2.3</span> Output<a href="a-guide-for-running-the-analyses-notebook.html#output-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>

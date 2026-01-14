@@ -11,22 +11,22 @@ library(grid)
 
 
 ## cCREs per BC
-**Goal: Assesses BC promiscuity ** <br>
-**Input file: association_before_promiscuity**<br>
-**Evaluated metrics: Specificity**<br>
+**Goal:** Assesses BC promiscuity <br>
+**Input file:** association_before_promiscuity<br>
+**Evaluated metrics:** Specificity<br>
 ```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
 knitr::include_graphics(c("external_figures/PMID_38766054_Reilly/cCREs_per_BC.svg",
                           "external_figures/Max_MPRA_run2/cCREs_per_BC_shuffled.svg"))
 ```
 
-**Legend: A bar plot that shows the percentage of BCs (y axis) by their number of associated cCREs (x axis)** <br>
-**Interpretation: The successful example showcases a highly specific experiment, where most of the BCs are associated with only one cCRE. The unsuccessful example showcases a problem where many BCs are associated with more than one oligo, suggesting a problem in specificity **<br>
+**Legend:** A bar plot that shows the percentage of BCs (y axis) by their number of associated cCREs (x axis) <br>
+**Interpretation:** The successful example showcases a highly specific experiment, where most of the BCs are associated with only one cCRE. The unsuccessful example showcases a problem where many BCs are associated with more than one oligo, suggesting a problem in specificity <br>
 
 
 ## UMIs per association
-**Goal: assesses confidence in associations** <br>
-**Input file: association_before_minimum_associations**<br>
-**Evaluated metrics: Specificity**<br>
+**Goal:** Assesses confidence in associations <br>
+**Input file:** association_before_minimum_associations<br>
+**Evaluated metrics:** Specificity<br>
 ```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
 knitr::include_graphics(c("external_figures/PMID_38766054_Reilly/UMIs_per_association.svg",
                           "external_figures/Max_MPRA_run2/UMIs_per_association.svg"))
@@ -34,8 +34,8 @@ knitr::include_graphics(c("external_figures/PMID_38766054_Reilly/UMIs_per_associ
 
 
 
-**Legend: A bar plot of the number of reads supporting each cCRE-BC pairing** <br>
-**Interpretation: The successful example showcases a reliable experiment, where many BC-cCRE pairs are supported with a large number of reads. The unsuccessful example showcases a problem where many pairs only appear once, making it hard to trust the pairings **<br>
+**Legend:** A bar plot of the number of reads supporting each cCRE-BC pairing <br>
+**Interpretation:** The successful example showcases a reliable experiment, where many BC-cCRE pairs are supported with a large number of reads. The unsuccessful example showcases a problem where many pairs only appear once, making it hard to trust the pairings <br>
 
 
 
@@ -43,9 +43,9 @@ knitr::include_graphics(c("external_figures/PMID_38766054_Reilly/UMIs_per_associ
 
 
 
-**Goal: Assesses BC replicability** <br>
-**Input file: final_df** <br>
-**Evaluated metrics: Complexity (multiplicity & uniformity)** <br>
+**Goal:** Assesses BC replicability <br>
+**Input file:** final_df <br>
+**Evaluated metrics:** Complexity (multiplicity & uniformity)<br>
 
 
 
@@ -55,27 +55,27 @@ knitr::include_graphics(c("external_figures/PMID_38766054_Reilly/Barcodes_per_cC
                           "external_figures/Max_MPRA_run2/Barcodes_per_cCRE.svg"))
 ```
 
-**Legend: An empirical cumulative function (eCDF) of BCs per cCRE** <br>
-**Interpretation: The successful example showcases a high BCs per cCRE statistics and a low percentage of cCREs with less than 10 BCs, suggesting high complexity and reliable associations. The unsuccessful example showcases a problem where many cCREs have low BC counts **<br>
+**Legend:** An empirical cumulative function (eCDF) of BCs per cCRE <br>
+**Interpretation:** The successful example showcases a high BCs per cCRE statistics and a low percentage of cCREs with less than 10 BCs, suggesting high complexity and reliable associations. The unsuccessful example showcases a problem where many cCREs have low BC counts <br>
 
 
 ## Retained cCREs
-**Goal: Assesses BC replicability** <br>
-**Input file: final_df**<br>
-**Evaluated metrics: Complexity (multiplicity & uniformity)**<br>
+**Goal:** Assesses BC replicability <br>
+**Input file:** final_df<br>
+**Evaluated metrics:** Complexity (multiplicity & uniformity)<br>
 ```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
 knitr::include_graphics(c("external_figures/PMID_38766054_Reilly/Retained_cCREs.svg",
                           "external_figures/Max_MPRA_run2/Retained_cCREs.svg"))
 ```
 
-**Legend: Retained cCREs per increasing cutoffs of BC number per cCRE** <br>
-**Interpretation: The successful example showcases an experiment with high complexity, most of the cCREs are retained in high thresholds of minimal number of BC associations. The unsuccessful example showcases a low complexity experiment, when we filter for high BC associations per cCRE, most of the cCREs are filtered out**<br>
+**Legend:** Retained cCREs per increasing cutoffs of BC number per cCRE<br>
+**Interpretation:** The successful example showcases an experiment with high complexity, most of the cCREs are retained in high thresholds of minimal number of BC associations. The unsuccessful example showcases a low complexity experiment, when we filter for high BC associations per cCRE, most of the cCREs are filtered out<br>
 
 
 ## cCRE retention by sequencing depth
-**Goal: Assesses whether sequencing depth is sufficient** <br>
-**Input file: assoc_downsampling**<br>
-**Evaluated metrics: Complexity (multiplicity & uniformity)**<br>
+**Goal:** Assesses whether sequencing depth is sufficient<br>
+**Input file:** assoc_downsampling<br>
+**Evaluated metrics:** Complexity (multiplicity & uniformity)<br>
 ```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
 
 knitr::include_graphics(c("external_figures/L3a2_281122/Downsampling_Retained_cCREs.svg",
@@ -83,34 +83,34 @@ knitr::include_graphics(c("external_figures/L3a2_281122/Downsampling_Retained_cC
                           ))
 ```
 
-**Legend: A scatter plot that shows the connection between the sampling parameter (x axis) and the percentage of retained cCREs. This analysis also includes predicted values to test whether additional sequening will help improving the results** <br>
-**Interpretation: The successful example showcases an experiment with high complexity, predicted value for additional sequencing don't improve the coverage significantly. The unsuccessful example showcases an experiment that can be improved by additional sequencing**<br>
+**Legend:** A scatter plot that shows the connection between the sampling parameter (x axis) and the percentage of retained cCREs. This analysis also includes predicted values to test whether additional sequening will help improving the results<br>
+**Interpretation:** The successful example showcases an experiment with high complexity, predicted value for additional sequencing don't improve the coverage significantly. The unsuccessful example showcases an experiment that can be improved by additional sequencing<br>
 
 
 ## BCs per cCRE by sequencing depth
-**Goal: Assesses whether sequencing depth is sufficient** <br>
-**Input file: Input file: assoc_downsampling****<br>
-**Evaluated metrics: Complexity (multiplicity & uniformity)**<br>
+**Goal:** Assesses whether sequencing depth is sufficient <br>
+**Input file:** Input file: assoc_downsampling<br>
+**Evaluated metrics:** Complexity (multiplicity & uniformity)<br>
 ```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
 knitr::include_graphics(c("external_figures/Max_MPRA_run2/Downsampling_Barcodes_per_cCRE.svg", "external_figures/L3a2_281122/Downsampling_Barcodes_per_cCRE.svg"))
 ```
 
-**Legend: A box plot of the number of BCs per cCRE (y axis) as a function of the sampling parameter (x axis)** <br>
-**Interpretation: The successful example showcases a plateau in the tested statistic. The unsuccessful example showcases an increase in the tested statistic, suggesting it can be improved by additional sequencing**<br>
+**Legend:** A box plot of the number of BCs per cCRE (y axis) as a function of the sampling parameter (x axis) <br>
+**Interpretation:** The successful example showcases a plateau in the tested statistic. The unsuccessful example showcases an increase in the tested statistic, suggesting it can be improved by additional sequencing<br>
 
 
 ## PCR bias - GC
 
-**Goal: Assesses GC content bias in PCR amplification** <br>
-**Input file: final_df**<br>
-**Evaluated metrics: Complexity (multiplicity & uniformity)**<br>
+**Goal:** Assesses GC content bias in PCR amplification <br>
+**Input file:** final_df<br>
+**Evaluated metrics:** Complexity (multiplicity & uniformity)<br>
 ```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
 knitr::include_graphics(c("external_figures/PMID_38766054_Reilly/PCR_bias_GC.svg",
                           "external_figures/Max_MPRA_run2/PCR_bias_GC.svg"))
 ```
 
-**Legend: This figure includes two different plots with a shared x axis - GC% content bin. The box plot presents the number of reads for each cCRE and the line plot presents the number of cCREs in each bin. Data was binned in fixed sizes of 5%** <br>
-**Interpretation: The successful example shows a relatively consistent number of reads per GC content, and PCR conditions that are optimized for the GC content levels of most cCREs (peaks are close to one another). The unsuccessful example shows both a strong amplification bias and suboptimal PCR conditions for the GC content levels of most cCREs**<br>
+**Legend:** This figure includes two different plots with a shared x axis - GC% content bin. The box plot presents the number of reads for each cCRE and the line plot presents the number of cCREs in each bin. Data was binned in fixed sizes of 5% <br>
+**Interpretation:** The successful example shows a relatively consistent number of reads per GC content, and PCR conditions that are optimized for the GC content levels of most cCREs (peaks are close to one another). The unsuccessful example shows both a strong amplification bias and suboptimal PCR conditions for the GC content levels of most cCREs<br>
 
 
 
@@ -118,17 +118,17 @@ knitr::include_graphics(c("external_figures/PMID_38766054_Reilly/PCR_bias_GC.svg
 
 ## PCR bias - G Stretches
 
-**Goal: Assesses G-stretches bias in PCR amplification** <br>
-**Input file: final_df**<br>
-**Evaluated metrics: Complexity (multiplicity & uniformity)**<br>
+**Goal:** Assesses G-stretches bias in PCR amplification<br>
+**Input file:** final_df<br>
+**Evaluated metrics:** Complexity (multiplicity & uniformity)<br>
 
 
 ```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
 knitr::include_graphics(c("external_figures/thylacine_biorxiv_Gallego_Romero/PCR_bias_G-stretches.svg", "external_figures/humanMPRA_L4a2/PCR_bias_G-stretches.svg"))
 ```
 
-**Legend: This figure includes two different plots with a shared x axis - G stretch length. The box plot presents the number of reads for each cCRE and the line plot presents the number of cCREs in each bin.** <br>
-**Interpretation: The successful example shows a relatively consistent number of reads per G stretch length, suggesting no bias for short G stretch cCREs (peaks are close to one another). The unsuccessful example shows both a bias and suboptimal PCR conditions for long G stretch cCREs  **<br>
+**Legend:** This figure includes two different plots with a shared x axis - G stretch length. The box plot presents the number of reads for each cCRE and the line plot presents the number of cCREs in each bin.<br>
+**Interpretation:** The successful example shows a relatively consistent number of reads per G stretch length, suggesting no bias for short G stretch cCREs (peaks are close to one another). The unsuccessful example shows both a bias and suboptimal PCR conditions for long G stretch cCREs  <br>
 
 
 
