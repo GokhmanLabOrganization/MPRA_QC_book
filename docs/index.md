@@ -1,7 +1,7 @@
 --- 
 title: "Quality Control Pipeline for Massively Parallel Reporter Assays (MPRAs)"
-author: "The Gokhman lab"
-date: "2026-01-14"
+author: "Simon Fishilevich, Omer Ronen, Nadav Mishol, Ryder Easterlin, Nitzan Haim, Katharina Lange, Nadav Ahituv, Irene Gallego Romero, Fumitaka Inoue, Martin Kircher, Michael I. Love, Max Schubach, and David Gokhman"
+date: "2026-01-15"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
