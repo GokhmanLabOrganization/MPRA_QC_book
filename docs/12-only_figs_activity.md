@@ -44,19 +44,6 @@
 **Legend:** The scatter plot presents the correlation between the naive method of testing activity: log2(RNA/DNA) (x axis) and the more reliable summary statistic calculated by the pipeline (y axis)<br>
 **Interpretation:** The successful example showcases an experiment with high complexity, reflected in the high correlation between the measurements. The unsuccessful example showcases an experiment with a relatively low correlation between measurements, suggesting low complexity<br>
 
-## Differential activity statistic vs count ratio
-
-**Goal: ** <br>
-**Input file: ** <br>
-**Evaluated metrics: ** <br>
-
-
-
-<img src="external_figures/placeholder.svg" width="49%" /><img src="external_figures/placeholder.svg" width="49%" />
-
-**Legend:** <br>
-**Interpretation:**<br>
-
 
 ## Activity distribution
 **Goal:** Assesses activity dynamic range, noise, and statistical power <br>
