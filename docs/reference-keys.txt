@@ -20,7 +20,6 @@ activity-qc
 retained-ccres-and-barcodes
 dna-counts-vs-gc-content
 activity-statistic-vs-count-ratio
-differential-activity-statistic-vs-count-ratio
 activity-distribution
 differential-activity-distribution
 p-value-distribution
