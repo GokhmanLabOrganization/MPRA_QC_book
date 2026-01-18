@@ -1,5 +1,6 @@
 bookdown::gitbook:
   css: style.css
+  pandoc_args: ["--from=markdown+raw_html"]
   config:
     toc:
       before: |

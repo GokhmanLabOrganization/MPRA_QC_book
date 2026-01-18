@@ -11,7 +11,24 @@
 **Evaluated metrics:** DNA Complexity, RNA Complexity<br>
 
 
-<img src="external_figures/PMID_38766054_Reilly/retained_cCREs_and_barcodes.svg" width="49%" /><img src="external_figures/Max_MPRA_run2/retained_cCREs_and_barcodes.svg" width="49%" />
+```{=html}
+<div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/PMID_38766054_Reilly/retained_cCREs_and_barcodes.svg" style="width:100%; display:block;"/>
+</div>
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/Max_MPRA_run2/retained_cCREs_and_barcodes.svg" style="width:100%; display:block;"/>
+</div>
+</div>
+```
+
+
 
 
 **Legend:** Percentage of cCREs and BCs present in the DNA and RNA quantification data compared with those observed in the association data <br>
@@ -25,8 +42,24 @@
 **Evaluated metrics:** DNA Complexity <br>
 
 
+```{=html}
+<div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/PMID_38766054_Reilly/GC_content_bias_in_DNA.svg" style="width:100%; display:block;"/>
+</div>
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/humanMPRA_L1a1_Neurons/GC_content_bias_in_DNA.svg" style="width:100%; display:block;"/>
+</div>
+</div>
+```
 
-<img src="external_figures/PMID_38766054_Reilly/GC_content_bias_in_DNA.svg" width="49%" /><img src="external_figures/humanMPRA_L1a1_Neurons/GC_content_bias_in_DNA.svg" width="49%" />
+
 
 **Legend:** This figure includes two different plots with a shared x axis - GC% content bin. The box plot presents the number of reads for each cCRE and the histogram presents the number of cCREs in each bin. Data was binned in fixed sizes of 5% <br>
 **Interpretation:** The successful example shows a relatively consistent number of reads per GC content, and PCR conditions that are optimized for the GC content levels of most cCREs (peaks are close to one another). The unsuccessful example shows both a strong amplification bias and suboptimal PCR conditions for the GC content levels of most cCREs<br>
@@ -38,8 +71,23 @@
 **Evaluated metrics:** DNA Complexity, RNA Complexity <br>
 
 
+```{=html}
+<div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/PMID_38766054_Reilly/Activity_statistic_vs_count_ratio.svg" style="width:100%; display:block;"/>
+</div>
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/humanMPRA_L4a2/Activity_statistic_vs_count_ratio.svg" style="width:100%; display:block;"/>
+</div>
+</div>
+```
 
-<img src="external_figures/PMID_38766054_Reilly/Activity_statistic_vs_count_ratio.svg" width="49%" /><img src="external_figures/humanMPRA_L4a2/Activity_statistic_vs_count_ratio.svg" width="49%" />
 
 **Legend:** The scatter plot presents the correlation between the naive method of testing activity: log2(RNA/DNA) (x axis) and the more reliable summary statistic calculated by the pipeline (y axis)<br>
 **Interpretation:** The successful example showcases an experiment with high complexity, reflected in the high correlation between the measurements. The unsuccessful example showcases an experiment with a relatively low correlation between measurements, suggesting low complexity<br>
@@ -50,7 +98,32 @@
 **Input file:** comb_df<br>
 **Evaluated metrics:** DNA Complexity, RNA Complexity:<br>
 
-<img src="external_figures/PMID_38766054_Reilly/activity_distribution.svg" width="32%" /><img src="external_figures/humanMPRA_L4a2/activity_distribution.svg" width="32%" /><img src="external_figures/humanMPRA_L1a1_Neurons/activity_distribution.svg" width="32%" />
+
+```{=html}
+<div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
+<div style="width:32%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/PMID_38766054_Reilly/activity_distribution.svg" style="width:100%; display:block;"/>
+</div>
+<div style="width:32%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/humanMPRA_L4a2/activity_distribution.svg" style="width:100%; display:block;"/>
+</div>
+<div style="width:32%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/humanMPRA_L1a1_Neurons/activity_distribution.svg" style="width:100%; display:block;"/>
+</div>
+</div>
+```
+
+
+
 **Legend:** An histogram of log2(RNA/DNA) of the tested cCREs. cCREs that are marked in red were determined to be active by the pipeline <br>
 **Interpretation:** The successful example showcases a broad dynamic range, with most of the highly active cCREs detected as significantly active. The 1st unsuccessful example showcases a problem in the detection of activity, either because of high noise levels or the experiment being underpowered. The 2nd unsuccessful example showcases silencing, with cCREs that are unlikely to be truly active detected as significantly active<br>
 
@@ -62,8 +135,24 @@
 **Evaluated metrics:** DNA Complexity, RNA Complexity<br>
 
 
+```{=html}
+<div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/modern_humanMPRA_Hob/Differential_activity_distribution.svg" style="width:100%; display:block;"/>
+</div>
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/humanMPRA_L1a1_Neurons/Differential_activity_distribution.svg" style="width:100%; display:block;"/>
+</div>
+</div>
+```
 
-<img src="external_figures/modern_humanMPRA_Hob/Differential_activity_distribution.svg" width="49%" /><img src="external_figures/humanMPRA_L1a1_Neurons/Differential_activity_distribution.svg" width="49%" />
+
 
 **Legend:** An histogram of log2(RNA/DNA) difference between the two alleles for each locus. cCREs that are marked in red were determined to be differentialy active by the pipeline <br>
 **Interpretation:** The successful example showcases a broad dynamic range of differential activity, with high fold-changes detected as significantly differential active. The unsuccessful example showcases under-detection of differential activity<br>
@@ -74,8 +163,24 @@
 **Input file:** comb_df<br>
 **Evaluated metrics:** DNA Complexity, RNA Complexity, Reproducibility, Dynamic range<br>
 
+```{=html}
+<div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/PMID_38766054_Reilly/P_value_distribution.svg" style="width:100%; display:block;"/>
+</div>
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/Max_MPRA_run2/P_value_distribution.svg" style="width:100%; display:block;"/>
+</div>
+</div>
+```
 
-<img src="external_figures/PMID_38766054_Reilly/P_value_distribution.svg" width="49%" /><img src="external_figures/Max_MPRA_run2/P_value_distribution.svg" width="49%" />
+
 
 **Legend:** A qq plot of the p-values assigned to each cCRE activity level compared to the expected p-values generated by a uniform distribution <br>
 **Interpretation:** The successful example exhibits an experiment with sufficient statistical power, reflected in a deviation from the expected distribution with many significantly low p-values detected. The unsuccessful example showcases a deviation from the expected distribution but with an enrichment of high p-values, suggests under-powered testing<br>
@@ -87,8 +192,24 @@
 **Evaluated metrics:** DNA Complexity, RNA Complexity, Reproducibility, Dynamic range <br>
 
 
+```{=html}
+<div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/modern_humanMPRA_Hob/Differential_activity_volcano_zoom.svg" style="width:100%; display:block;"/>
+</div>
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/humanMPRA_L1a1_Neurons/Differential_activity_volcano_zoom.svg" style="width:100%; display:block;"/>
+</div>
+</div>
+```
 
-<img src="external_figures/modern_humanMPRA_Hob/Differential_activity_volcano_zoom.svg" width="49%" /><img src="external_figures/humanMPRA_L1a1_Neurons/Differential_activity_volcano_zoom.svg" width="49%" />
+
 
 **Legend:** A volcano plot that shows the connection between the logFC value and the -log10(p-value) of the statistical test <br>
 **Interpretation:** The successful example exhibits an experiment with sufficient statistical power to detect differential activity, every cCRE with a large enough logFC is detected as differential active. The unsuccessful example showcases an experiment with many cCREs with relatively large logFC that are not detected as differential active, suggesting lack of power in the analysis<br>
@@ -99,9 +220,24 @@
 **Input file:** downsampling_ratio_path <br>
 **Evaluated metrics:** DNA Complexity, RNA Complexity <br>
 
+```{=html}
+<div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/modern_humanMPRA_Hob/BC_retention_by_DNA_RNA_sequencing_depth.svg" style="width:100%; display:block;"/>
+</div>
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/Max_MPRA_run2/BC_retention_by_DNA_RNA_sequencing_depth.svg" style="width:100%; display:block;"/>
+</div>
+</div>
+```
 
 
-<img src="external_figures/modern_humanMPRA_Hob/BC_retention_by_DNA_RNA_sequencing_depth.svg" width="49%" /><img src="external_figures/Max_MPRA_run2/BC_retention_by_DNA_RNA_sequencing_depth.svg" width="49%" />
 
 **Legend:** A line plot that exhibits the effect of sequencing depth (x axis) on the percentage of retained BCs (y axis). Sampling values higher than 1 represent predicted data points <br>
 **Interpretation:** The successful example showcases sufficient sequencing depth, The baseline percentage is relatively high and additional sequencing doesn't improve the percentage of retained BCs significantly. The unsuccessful example showcases an experiment with a low percentage of retained BCs and more sequencing increases significantly coverage suggesting additional sequencing is required<br>
@@ -114,8 +250,24 @@
 **Evaluated metrics:** DNA Complexity, RNA Complexity<br>
 
 
+```{=html}
+<div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/modern_humanMPRA_Hob/cCRE_retention_by_DNA_RNA_sequencing_depth.svg" style="width:100%; display:block;"/>
+</div>
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/Max_MPRA_run2/cCRE_retention_by_DNA_RNA_sequencing_depth.svg" style="width:100%; display:block;"/>
+</div>
+</div>
+```
 
-<img src="external_figures/modern_humanMPRA_Hob/cCRE_retention_by_DNA_RNA_sequencing_depth.svg" width="49%" /><img src="external_figures/Max_MPRA_run2/cCRE_retention_by_DNA_RNA_sequencing_depth.svg" width="49%" />
+
 
 **Legend:** A line plot that exhibits the effect of sequencing depth (x axis) on the percentage of retained cCREs (y axis). Sampling values higher than 1 represent predicted data points <br>
 **Interpretation:** The successful example showcases sufficient sequencing depth, The baseline percentage is relatively high and additional sequencing doesn't improve the percentage of retained cCREs significantly. The unsuccessful example showcases an experiment with a low percentage of retained cCREs and more sequencing increases significantly coverage suggesting additional sequencing is required<br>
@@ -127,7 +279,25 @@
 **Input file:** downsampling_activity_path<br>
 **Evaluated metrics:** DNA Complexity, RNA Complexity<br>
 
-<img src="external_figures/modern_humanMPRA_Hob/Activity_by_sequencing_depth.svg" width="49%" /><img src="external_figures/humanMPRA_L1a1_Neurons/Activity_by_sequencing_depth.svg" width="49%" />
+
+```{=html}
+<div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/modern_humanMPRA_Hob/Activity_by_sequencing_depth.svg" style="width:100%; display:block;"/>
+</div>
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/humanMPRA_L1a1_Neurons/Activity_by_sequencing_depth.svg" style="width:100%; display:block;"/>
+</div>
+</div>
+```
+
+
 **Legend:** A line plot that exhibits the effect of sequencing depth (x axis) on the percentage of active cCREs (y axis).  <br>
 **Interpretation:** The successful example showcases sufficient sequencing depth, reaching a plateau in the number of active cCREs detected, suggesting low noise levels. The unsuccessful example showcases an experiment where more sequencing decreases the number of active sequences detected, suggesting some of the currently detected active sequences are false positives<br>
 
@@ -138,7 +308,23 @@
 **Evaluated metrics:** RNA Complexity, Dynamic range<br>
 
 
-<img src="external_figures/PMID_38766054_Reilly/cumulative_RNA_reads.svg" width="49%" /><img src="external_figures/d2Osteoblast_spiking_oligos/cumulative_RNA_reads.svg" width="49%" />
+```{=html}
+<div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/PMID_38766054_Reilly/cumulative_RNA_reads.svg" style="width:100%; display:block;"/>
+</div>
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/d2Osteoblast_spiking_oligos/cumulative_RNA_reads.svg" style="width:100%; display:block;"/>
+</div>
+</div>
+```
+
 
 **Legend:** cCREs are sorted by their RNA read counts and ranked relatively (x axis), they are assigned with a cumulative fraction value, calculated by the sum of all the RNA reads of all cCREs ranked above the cCRE and the cCRE RNA reads count, divided by the total number of reads <br>
 **Interpretation:** The successful example showcases no jackpotting. The unsuccessful example showcases an experiment where most of the RNA reads come from just a few cCREs<br>
@@ -151,10 +337,24 @@
 **Input file:** cDNA_reads_by_cell_type<br>
 **Evaluated metrics:** Reproducibility<br>
 
-mention in the bookdown: the importance of the percentage explained by the 1st and 2nd PCs. 
 
+```{=html}
+<div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/PMID_38766054_Reilly/PCA_similarity_between_samples.svg" style="width:100%; display:block;"/>
+</div>
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/thylacine_biorxiv_Gallego_Romero/PCA_similarity_between_samples.svg" style="width:100%; display:block;"/>
+</div>
+</div>
+```
 
-<img src="external_figures/PMID_38766054_Reilly/PCA_similarity_between_samples.svg" width="49%" /><img src="external_figures/thylacine_biorxiv_Gallego_Romero/PCA_similarity_between_samples.svg" width="49%" />
 
 **Legend:** Principal component analysis (PCA) on samples <br>
 **Interpretation:** The successful example showcases replicates clustering by cell type. The unsuccessful example showcases variation between replicates that is as large as that between cell types<br>
@@ -166,7 +366,25 @@ mention in the bookdown: the importance of the percentage explained by the 1st a
 **Input file:** activity_per_rep<br>
 **Evaluated metrics:** Reproducibility, Dynamic range<br>
 
-<img src="external_figures/thylacine_biorxiv_Gallego_Romero/RNA_DNA_ratio_correlation_between_replicates_hexbin_w_bar.svg" width="49%" /><img src="external_figures/humanMPRA_L4a2/RNA_DNA_ratio_correlation_between_replicates_hexbin_w_bar.svg" width="49%" />
+
+```{=html}
+<div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/thylacine_biorxiv_Gallego_Romero/RNA_DNA_ratio_correlation_between_replicates_hexbin_w_bar.svg" style="width:100%; display:block;"/>
+</div>
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/humanMPRA_L4a2/RNA_DNA_ratio_correlation_between_replicates_hexbin_w_bar.svg" style="width:100%; display:block;"/>
+</div>
+</div>
+```
+
+
 **Legend:** Scatter plot of the log2(RNA/DNA) values of each cCRE in two experimental replicates. Each data point is an hexagon that represents the cCRE density in the given values <br>
 **Interpretation:** The successful example showcases a high correlation between replicates in more active cCREs. The unsuccessful example showcases no correlation<br>
 
@@ -195,8 +413,24 @@ mention in the bookdown: the importance of the percentage explained by the 1st a
 **Input file:** activity_per_rep<br>
 **Evaluated metrics:** Reproducibility <br>
 
+```{=html}
+<div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/PMID_38766054_Reilly/Variation_at_various_activity_levels.svg" style="width:100%; display:block;"/>
+</div>
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/humanMPRA_L1a1_Neurons/Variation_at_various_activity_levels.svg" style="width:100%; display:block;"/>
+</div>
+</div>
+```
 
-<img src="external_figures/PMID_38766054_Reilly/Variation_at_various_activity_levels.svg" width="49%" /><img src="external_figures/humanMPRA_L1a1_Neurons/Variation_at_various_activity_levels.svg" width="49%" />
+
 **Legend:** A scatter plot of the correlation between replicates (y axis) as a function of log2(RNA/DNA) average value for each cCRE bin. Bins are in fixed ranges of size 1 <br>
 **Interpretation:** The successful example showcases a higher correlation in active sequences, which further increases with activity level. The unsuccessful example showcases a low correlation in active sequences<br>
 
@@ -210,7 +444,25 @@ mention in the bookdown: the importance of the percentage explained by the 1st a
 **Input file:** comb_df<br>
 **Evaluated metrics:** Reproducibility<br>
 
-<img src="external_figures/PMID_38766054_Reilly/RNA_DNA_ratio_correlation_between_replicates_with_controls_hexbin.svg" width="49%" /><img src="external_figures/Max_MPRA_run2/RNA_DNA_ratio_correlation_between_replicates_with_controls_hexbin.svg" width="49%" />
+
+```{=html}
+<div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/PMID_38766054_Reilly/RNA_DNA_ratio_correlation_between_replicates_with_controls_hexbin.svg" style="width:100%; display:block;"/>
+</div>
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/Max_MPRA_run2/RNA_DNA_ratio_correlation_between_replicates_with_controls_hexbin.svg" style="width:100%; display:block;"/>
+</div>
+</div>
+```
+
+
 **Legend:** Scatter plot of the log2(RNA/DNA) values of each cCRE in two experimental replicates. Positive controls are marked in green and negative controls are marked in red <br>
 **Interpretation:** The successful examples showcases a high correlation between positive controls, and a low correlation between negatives controls. The unsuccessful example showcases low correlations in both<br>
 
@@ -224,8 +476,24 @@ mention in the bookdown: the importance of the percentage explained by the 1st a
 **Evaluated metrics:** Reproducibility <br>
 
 
+```{=html}
+<div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/modern_humanMPRA_Hob/allelic_pairs_hexbin_w_bar.svg" style="width:100%; display:block;"/>
+</div>
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/Max_MPRA_run2/allelic_pairs_hexbin_w_bar.svg" style="width:100%; display:block;"/>
+</div>
+</div>
+```
 
-<img src="external_figures/modern_humanMPRA_Hob/allelic_pairs_hexbin_w_bar.svg" width="49%" /><img src="external_figures/Max_MPRA_run2/allelic_pairs_hexbin_w_bar.svg" width="49%" />
+
 
 **Legend:** Scatter plot of the log2(RNA/DNA) values of the allelic pairs of a locus. Each data point is an hexagon that represents the cCRE density in the given values<br>
 **Interpretation:** The successful example showcases correlation between allelic pairs. The unsuccessful example showcases no correlation<br>
@@ -241,8 +509,24 @@ mention in the bookdown: the importance of the percentage explained by the 1st a
 **Evaluated metrics:** Reproducibility<br>
 
 
+```{=html}
+<div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/modern_humanMPRA_NPC/cell_types_hexbin_w_bar.svg" style="width:100%; display:block;"/>
+</div>
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/humanMPRA_L1a1_Neurons/cell_types_hexbin_w_bar.svg" style="width:100%; display:block;"/>
+</div>
+</div>
+```
 
-<img src="external_figures/modern_humanMPRA_NPC/cell_types_hexbin_w_bar.svg" width="49%" /><img src="external_figures/humanMPRA_L1a1_Neurons/cell_types_hexbin_w_bar.svg" width="49%" />
+
 
 **Legend:** Scatter plot of the log2(RNA/DNA) values of each control sequence in two different cell types. Each data point is an hexagon that represents the cCRE density in the given values <br>
 **Interpretation:** The successful example showcases correlation between cell types. The unsuccessful example showcases no correlation<br>
@@ -265,7 +549,24 @@ mention in the bookdown: the importance of the percentage explained by the 1st a
 **Evaluated metrics:** Reproducibility <br>
 
 
-<img src="external_figures/modern_humanMPRA_Hob/Reproducibility_by_sequencing_depth.svg" width="49%" /><img src="external_figures/Max_MPRA_run2/Reproducibility_by_sequencing_depth.svg" width="49%" />
+```{=html}
+<div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/modern_humanMPRA_Hob/Reproducibility_by_sequencing_depth.svg" style="width:100%; display:block;"/>
+</div>
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/Max_MPRA_run2/Reproducibility_by_sequencing_depth.svg" style="width:100%; display:block;"/>
+</div>
+</div>
+```
+
+
 
 **Legend:** A line plot of the correlation between replicates (y axis) as a function of the sampling parameter (y axis) <br>
 **Interpretation:** The successful example showcases a scenario where additional sequencing will improve reproducibility, whereas the unsuccessful example showcases that the experiment has reached a plateau<br>
@@ -277,7 +578,30 @@ mention in the bookdown: the importance of the percentage explained by the 1st a
 **Evaluated metrics:** Dynamic Range<br>
 
 
-<img src="external_figures/PMID_38766054_Reilly/RNA_DNA_ratio_hexbin_w_bar.svg" width="32%" /><img src="external_figures/humanMPRA_L4a2/RNA_DNA_ratio_hexbin_w_bar.svg" width="32%" /><img src="external_figures/humanMPRA_L1a1_Neurons/RNA_DNA_ratio_hexbin_w_bar.svg" width="32%" />
+```{=html}
+<div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
+<div style="width:32%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/PMID_38766054_Reilly/RNA_DNA_ratio_hexbin_w_bar.svg" style="width:100%; display:block;"/>
+</div>
+<div style="width:32%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/humanMPRA_L4a2/RNA_DNA_ratio_hexbin_w_bar.svg" style="width:100%; display:block;"/>
+</div>
+<div style="width:32%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/humanMPRA_L1a1_Neurons/RNA_DNA_ratio_hexbin_w_bar.svg" style="width:100%; display:block;"/>
+</div>
+</div>
+```
+
+
 
 **Legend:** Scatter plot of RNA counts (y axis) vs. DNA counts (x axis) of each cCRE. Each data point is an hexagon that represents the cCRE density in the given values <br>
 **Interpretation:** The successful example showcases many sequences with high RNA-to-DNA ratios (points above the diagonal). The 1st unsuccessful example showcases no activity (points are on the diagonal), and the 2nd unsuccessful example showcases silencing (points belot the diagonal)<br>
@@ -291,7 +615,24 @@ mention in the bookdown: the importance of the percentage explained by the 1st a
 **Evaluated metrics:** Dynamic Range<br>
 
 
-<img src="external_figures/PMID_38766054_Reilly/Control_activity_boxplots.svg" width="49%" /><img src="external_figures/Max_MPRA_run2/Control_activity_boxplots.svg" width="49%" />
+```{=html}
+<div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/PMID_38766054_Reilly/Control_activity_boxplots.svg" style="width:100%; display:block;"/>
+</div>
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/Max_MPRA_run2/Control_activity_boxplots.svg" style="width:100%; display:block;"/>
+</div>
+</div>
+```
+
+
 **Legend:** Box plot of cCREs' activity levels by control type - Positive, Negative or test cCREs** <br>
 **Interpretation:** The successful example showcases high activity of positive controls and low activity of negative controls. The unsuccessful example showcases similar activity of positive and negative controls**<br>
 
@@ -303,7 +644,24 @@ mention in the bookdown: the importance of the percentage explained by the 1st a
 **Evaluated metrics:** Concordance with endogenous signals <br>
 
 
-<img src="external_figures/PMID_38766054_Reilly/Genomic_annotations.svg" width="49%" /><img src="external_figures/humanMPRA_L1a1_Neurons/Genomic_annotations.svg" width="49%" />
+```{=html}
+<div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/PMID_38766054_Reilly/Genomic_annotations.svg" style="width:100%; display:block;"/>
+</div>
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/humanMPRA_L1a1_Neurons/Genomic_annotations.svg" style="width:100%; display:block;"/>
+</div>
+</div>
+```
+
+
 
 **Legend:** A stacked Bar plot of the cCREs' overlap with screen elements. cCREs were grouped by activity levels to six groups - Inactive and five activity quantiles <br>
 **Interpretation:** The successful example showcases increased overlap with active chromatin marks as activity increases. The unsuccessful example shows no such increase<br>
@@ -316,7 +674,24 @@ mention in the bookdown: the importance of the percentage explained by the 1st a
 **Input file:** tss_df<br>
 **Evaluated metrics:** Concordance with endogenous signals <br>
 
-<img src="external_figures/PMID_38766054_Reilly/Proximity_to_TSS.svg" width="49%" /><img src="external_figures/humanMPRA_L1a1_Neurons/Proximity_to_TSS.svg" width="49%" />
+
+```{=html}
+<div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/PMID_38766054_Reilly/Proximity_to_TSS.svg" style="width:100%; display:block;"/>
+</div>
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/humanMPRA_L1a1_Neurons/Proximity_to_TSS.svg" style="width:100%; display:block;"/>
+</div>
+</div>
+```
+
 
 **Legend:** A box plot of the distances of cCREs to the nearest TSS. cCREs were grouped by activity levels to six groups - Inactive and five activity quantiles <br>
 **Interpretation:** The successful example showcases that more active cCREs tend to be closer to a TSS. The unsuccessful example shows no such trend<br>
@@ -331,8 +706,24 @@ mention in the bookdown: the importance of the percentage explained by the 1st a
 **Evaluated metrics:** Concordance with endogenous signals <br>
 
 
+```{=html}
+<div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/modern_humanMPRA_Hob/AI_predictions_vs_activity_hexbin_w_bar.svg" style="width:100%; display:block;"/>
+</div>
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/humanMPRA_L1a1_Neurons/AI_predictions_vs_activity_hexbin_w_bar.svg" style="width:100%; display:block;"/>
+</div>
+</div>
+```
 
-<img src="external_figures/modern_humanMPRA_Hob/AI_predictions_vs_activity_hexbin_w_bar.svg" width="49%" /><img src="external_figures/humanMPRA_L1a1_Neurons/AI_predictions_vs_activity_hexbin_w_bar.svg" width="49%" />
+
 
 **Legend:** A scatter plot of the Experimentally measuerd activity (x axis) compared to the AI-predicted activity (y axis). Each data point is an hexagon that represents the cCRE density in the given values<br>
 **Interpretation:** The successful example showcases a high correlation, and the unsuccessful example showcases little correlation<br>
@@ -346,8 +737,25 @@ mention in the bookdown: the importance of the percentage explained by the 1st a
 **Evaluated metrics:** Concordance with endogenous signals <br>
 
 
+```{=html}
+<div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/modern_humanMPRA_Hob/AI_predictions_vs_differential_activity_hexbin_w_bar.svg" style="width:100%; display:block;"/>
+</div>
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/humanMPRA_L1a1_Neurons/AI_predictions_vs_differential_activity_hexbin_w_bar.svg" style="width:100%; display:block;"/>
+</div>
+</div>
+```
 
-<img src="external_figures/modern_humanMPRA_Hob/AI_predictions_vs_differential_activity_hexbin_w_bar.svg" width="49%" /><img src="external_figures/humanMPRA_L1a1_Neurons/AI_predictions_vs_differential_activity_hexbin_w_bar.svg" width="49%" />
+
+
 
 **Legend:** A scatter plot of the Experimentally measuerd activity (x axis) compared to the AI-predicted activity (y axis). Each data point is an hexagon that represents the cCRE density in the given values <br>
 **Interpretation:** The successful example showcases a modest but consistent positive correlation, and the unsuccessful example showcases no correlation<br>
