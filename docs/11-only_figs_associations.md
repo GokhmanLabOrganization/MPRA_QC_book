@@ -11,7 +11,26 @@
 **Goal:** Assesses BC promiscuity <br>
 **Input file:** association_before_promiscuity<br>
 **Evaluated metrics:** Specificity<br>
-<img src="external_figures/PMID_38766054_Reilly/cCREs_per_BC.svg" width="49%" /><img src="external_figures/Max_MPRA_run2/cCREs_per_BC_shuffled.svg" width="49%" />
+
+
+```{=html}
+<div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/PMID_38766054_Reilly/cCREs_per_BC.svg" style="width:100%; display:block;"/>
+</div>
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/Max_MPRA_run2/cCREs_per_BC_shuffled.svg" style="width:100%; display:block;"/>
+</div>
+</div>
+```
+
+
 
 **Legend:** A bar plot that shows the percentage of BCs (y axis) by their number of associated cCREs (x axis) <br>
 **Interpretation:** The successful example showcases a highly specific experiment, where most of the BCs are associated with only one cCRE. The unsuccessful example showcases a problem where many BCs are associated with more than one oligo, suggesting a problem in specificity <br>
@@ -21,7 +40,26 @@
 **Goal:** Assesses confidence in associations <br>
 **Input file:** association_before_minimum_associations<br>
 **Evaluated metrics:** Specificity<br>
-<img src="external_figures/PMID_38766054_Reilly/UMIs_per_association.svg" width="49%" /><img src="external_figures/Max_MPRA_run2/UMIs_per_association.svg" width="49%" />
+
+
+```{=html}
+<div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/PMID_38766054_Reilly/UMIs_per_association.svg" style="width:100%; display:block;"/>
+</div>
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/Max_MPRA_run2/UMIs_per_association.svg" style="width:100%; display:block;"/>
+</div>
+</div>
+```
+
+
 
 
 
@@ -40,8 +78,23 @@
 
 
 
+```{=html}
+<div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/PMID_38766054_Reilly/Barcodes_per_cCRE.svg" style="width:100%; display:block;"/>
+</div>
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/Max_MPRA_run2/Barcodes_per_cCRE.svg" style="width:100%; display:block;"/>
+</div>
+</div>
+```
 
-<img src="external_figures/PMID_38766054_Reilly/Barcodes_per_cCRE.svg" width="49%" /><img src="external_figures/Max_MPRA_run2/Barcodes_per_cCRE.svg" width="49%" />
 
 **Legend:** An empirical cumulative function (eCDF) of BCs per cCRE <br>
 **Interpretation:** The successful example showcases a high BCs per cCRE statistics and a low percentage of cCREs with less than 10 BCs, suggesting high complexity and reliable associations. The unsuccessful example showcases a problem where many cCREs have low BC counts <br>
@@ -51,7 +104,26 @@
 **Goal:** Assesses BC replicability <br>
 **Input file:** final_df<br>
 **Evaluated metrics:** Complexity (multiplicity & uniformity)<br>
-<img src="external_figures/PMID_38766054_Reilly/Retained_cCREs.svg" width="49%" /><img src="external_figures/Max_MPRA_run2/Retained_cCREs.svg" width="49%" />
+
+
+```{=html}
+<div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/PMID_38766054_Reilly/Retained_cCREs.svg" style="width:100%; display:block;"/>
+</div>
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/Max_MPRA_run2/Retained_cCREs.svg" style="width:100%; display:block;"/>
+</div>
+</div>
+```
+
+
 
 **Legend:** Retained cCREs per increasing cutoffs of BC number per cCRE<br>
 **Interpretation:** The successful example showcases an experiment with high complexity, most of the cCREs are retained in high thresholds of minimal number of BC associations. The unsuccessful example showcases a low complexity experiment, when we filter for high BC associations per cCRE, most of the cCREs are filtered out<br>
@@ -61,7 +133,25 @@
 **Goal:** Assesses whether sequencing depth is sufficient<br>
 **Input file:** assoc_downsampling<br>
 **Evaluated metrics:** Complexity (multiplicity & uniformity)<br>
-<img src="external_figures/L3a2_281122/Downsampling_Retained_cCREs.svg" width="49%" /><img src="external_figures/Max_MPRA_run2/Downsampling_Retained_cCREs.svg" width="49%" />
+
+
+```{=html}
+<div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/L3a2_281122/Downsampling_Retained_cCREs.svg" style="width:100%; display:block;"/>
+</div>
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/Max_MPRA_run2/Downsampling_Retained_cCREs.svg" style="width:100%; display:block;"/>
+</div>
+</div>
+```
+
 
 **Legend:** A scatter plot that shows the connection between the sampling parameter (x axis) and the percentage of retained cCREs. This analysis also includes predicted values to test whether additional sequening will help improving the results<br>
 **Interpretation:** The successful example showcases an experiment with high complexity, predicted value for additional sequencing don't improve the coverage significantly. The unsuccessful example showcases an experiment that can be improved by additional sequencing<br>
@@ -71,7 +161,25 @@
 **Goal:** Assesses whether sequencing depth is sufficient <br>
 **Input file:** Input file: assoc_downsampling<br>
 **Evaluated metrics:** Complexity (multiplicity & uniformity)<br>
-<img src="external_figures/Max_MPRA_run2/Downsampling_Barcodes_per_cCRE.svg" width="49%" /><img src="external_figures/L3a2_281122/Downsampling_Barcodes_per_cCRE.svg" width="49%" />
+
+
+```{=html}
+<div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/Max_MPRA_run2/Downsampling_Barcodes_per_cCRE.svg" style="width:100%; display:block;"/>
+</div>
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/L3a2_281122/Downsampling_Barcodes_per_cCRE.svg" style="width:100%; display:block;"/>
+</div>
+</div>
+```
+
 
 **Legend:** A box plot of the number of BCs per cCRE (y axis) as a function of the sampling parameter (x axis) <br>
 **Interpretation:** The successful example showcases a plateau in the tested statistic. The unsuccessful example showcases an increase in the tested statistic, suggesting it can be improved by additional sequencing<br>
@@ -79,10 +187,28 @@
 
 ## PCR bias - GC
 
+
+
 **Goal:** Assesses GC content bias in PCR amplification <br>
 **Input file:** final_df<br>
 **Evaluated metrics:** Complexity (multiplicity & uniformity)<br>
-<img src="external_figures/PMID_38766054_Reilly/PCR_bias_GC.svg" width="49%" /><img src="external_figures/Max_MPRA_run2/PCR_bias_GC.svg" width="49%" />
+
+```{=html}
+<div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/PMID_38766054_Reilly/PCR_bias_GC.svg" style="width:100%; display:block;"/>
+</div>
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/Max_MPRA_run2/PCR_bias_GC.svg" style="width:100%; display:block;"/>
+</div>
+</div>
+```
 
 **Legend:** This figure includes two different plots with a shared x axis - GC% content bin. The box plot presents the number of reads for each cCRE and the line plot presents the number of cCREs in each bin. Data was binned in fixed sizes of 5% <br>
 **Interpretation:** The successful example shows a relatively consistent number of reads per GC content, and PCR conditions that are optimized for the GC content levels of most cCREs (peaks are close to one another). The unsuccessful example shows both a strong amplification bias and suboptimal PCR conditions for the GC content levels of most cCREs<br>
@@ -98,7 +224,23 @@
 **Evaluated metrics:** Complexity (multiplicity & uniformity)<br>
 
 
-<img src="external_figures/thylacine_biorxiv_Gallego_Romero/PCR_bias_G-stretches.svg" width="49%" /><img src="external_figures/humanMPRA_L4a2/PCR_bias_G-stretches.svg" width="49%" />
+```{=html}
+<div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/thylacine_biorxiv_Gallego_Romero/PCR_bias_G-stretches.svg" style="width:100%; display:block;"/>
+</div>
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/humanMPRA_L4a2/PCR_bias_G-stretches.svg" style="width:100%; display:block;"/>
+</div>
+</div>
+```
+
 
 **Legend:** This figure includes two different plots with a shared x axis - G stretch length. The box plot presents the number of reads for each cCRE and the line plot presents the number of cCREs in each bin.<br>
 **Interpretation:** The successful example shows a relatively consistent number of reads per G stretch length, suggesting no bias for short G stretch cCREs (peaks are close to one another). The unsuccessful example shows both a bias and suboptimal PCR conditions for long G stretch cCREs  <br>
