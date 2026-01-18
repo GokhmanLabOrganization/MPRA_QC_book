@@ -43,7 +43,8 @@ We welcome questions, feedback, or suggestions. Please feel free to reach out at
 
 
 ## Scripts {-}
-All of these analyses are integrated into the quality control pipeline described in this resource, with scripts provided here: [link].
+All of these analyses are integrated into the quality control pipeline described in this resource, with scripts provided here: [GokhmanLabOrganization/MPRA_QC_analysis](https://github.com/GokhmanLabOrganization/MPRA_QC_analysis).
+
 
 
 
