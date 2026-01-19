@@ -9,7 +9,7 @@ input-1
 output-1
 associations-qc
 ccres-per-bc
-umis-per-association
+reads-per-association
 bcs-per-ccre
 retained-ccres
 ccre-retention-by-sequencing-depth
