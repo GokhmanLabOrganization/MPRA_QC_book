@@ -1,11 +1,11 @@
 --- 
 title: "Quality Control Pipeline for Massively Parallel Reporter Assays (MPRAs)"
 author: "Simon Fishilevich, Omer Ronen, Nadav Mishol, Ryder Easterlin, Nitzan Haim, Katharina Lange, Nadav Ahituv, Irene Gallego Romero, Fumitaka Inoue, Martin Kircher, Michael I. Love, Max Schubach, and David Gokhman"
-date: "2026-01-19"
+date: "2026-01-20"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
-# url: your book url like https://bookdown.org/yihui/bookdown
+# url: your book url like https://gokhmanlaborganization.github.io/MPRA_QC_book/
 # cover-image: path to the social sharing image like images/cover.jpg
 description: |
   A bookdown guide containing benchmarked quality-control examples for successful and unsuccessful MPRA experiments.
@@ -22,11 +22,11 @@ Because each issue can influence multiple quality metrics, and each metric may b
 
 ## Usage {-}
 
-![Alt text](associations_root.png)
+![Alt text](Fig2.svg)
 A scheme of root problems, the impacted quality metrics and analyses for the cCRE-barcode association step.
 
 
-![Alt text](activity_root.png)
+![Alt text](Fig4.svg)
 Root problems, impacted quality metrics and recommended analyses for the RNA and DNA quantification step.
 
 
