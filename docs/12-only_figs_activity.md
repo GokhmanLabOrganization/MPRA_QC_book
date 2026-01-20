@@ -189,7 +189,7 @@
 
 **Goal:** Assesses the power of the statistical testing <br>
 **Input file:** comparative_df<br>
-**Evaluated metrics:** DNA Complexity, RNA Complexity, Reproducibility, Dynamic range <br>
+**Evaluated metrics:** DNA Complexity, RNA Complexity <br>
 
 
 ```{=html}
@@ -442,7 +442,7 @@
 ## Correlation between replicates (controls)
 **Goal:** Assesses reproducibility between replicates in positive and negative controls <br>
 **Input file:** comb_df<br>
-**Evaluated metrics:** Reproducibility<br>
+**Evaluated metrics:** Reproducibility, Dynamic range<br>
 
 
 ```{=html}
