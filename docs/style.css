@@ -12,3 +12,14 @@ pre {
 pre code {
   white-space: inherit;
 }
+
+/* 1pt smaller text utility */
+.small-1pt { font-size: calc(1em - 1pt); }
+
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.table-scroll table {
+  white-space: nowrap;
+}

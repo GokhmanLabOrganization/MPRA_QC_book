@@ -17,23 +17,34 @@ github-repo: rstudio/bookdown-demo
 
 
 This pipeline is designed to help investigators evaluate the quality of their MPRA, quickly identify pitfalls, trace them to their source, and mitigate them. The scripts provided help ensure that the resulting MPRA data are suitable for robust statistical analysis and meaningful biological interpretation.
-This Bookdown accompanies our guide for best practices for MPRAs, which outlines recommendations for study design and interpretation [REF]. The manuscript covers all key experimental and analytical steps, including library design, and estimation of activity differential activity. It then describes core problems that often compromise MPRA quality, illustrating how these issues manifest in the data, and offering practical strategies for correction and optimization.
-Because each issue can influence multiple quality metrics, and each metric may be affected by several issues, the relationships form a many-to-many network. The figures presented below map these interdependencies and connect them to recommended diagnostic analyses. 
+This Bookdown accompanies our guide for best practices for MPRAs, which outlines recommendations for study design and interpretation [REF TBD]. The manuscript covers all key experimental and analytical steps, including library design, and estimation of activity differential activity. It then describes core problems that often compromise MPRA quality, illustrating how these issues manifest in the data, and offering practical strategies for correction and optimization.
+Because each issue can influence multiple quality metrics, and each metric may be affected by several issues, the relationships form a many-to-many network. The figures presented below map these interdependencies and connect them to recommended diagnostic analyses.
+
+## Abbreviations {-}
+-	CRE – cis-regulatory element <br>
+-	cCRE – candidate CRE <br>
+-	BC - barcode <br>
+
 
 ## Usage {-}
-
-![Alt text](Fig2.svg)
-A scheme of root problems, the impacted quality metrics and analyses for the cCRE-barcode association step.
-
-
-![Alt text](Fig4.svg)
-Root problems, impacted quality metrics and recommended analyses for the RNA and DNA quantification step.
-
-
 The quality control (QC) pipeline is organized into two chapters:
 
-- (i) QC of the barcode association step  
-- (ii) QC of activity estimation  
+- (i) QC of the association step between candidate cis-regulatory elements (cCREs) and barcodes (BCs) 
+- (ii) QC of the RNA and DNA quantification step  
+
+<div class="small-1pt">
+
+![Alt text](Fig2.svg)
+**Root problems, impacted quality metrics and recommended diagnostic analyses for the sequence-barcode association step. Diagnostic analyses are presented alongside their corresponding manuscript figure and/or Bookdown (BD) reference number**
+</div>
+<br>
+
+<div class="small-1pt">
+
+![Alt text](Fig4.svg)
+**Root problems, impacted quality metrics and recommended analyses for the RNA and DNA quantification step.**
+</div>
+<br>
 
 For each analysis, we provide an example of a successful and an unsuccessful dataset to illustrate how they manifest in the analysis.
 

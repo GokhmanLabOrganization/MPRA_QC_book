@@ -3,7 +3,7 @@ associations
 script
 input
 output
-activity
+rna-and-dna-quantification
 script-1
 input-1
 output-1
