@@ -23,7 +23,7 @@
 <meta name="author" content="Simon Fishilevich, Omer Ronen, Nadav Mishol, Ryder Easterlin, Nitzan Haim, Katharina Lange, Nadav Ahituv, Irene Gallego Romero, Fumitaka Inoue, Martin Kircher, Michael I. Love, Max Schubach, and David Gokhman" />
 
 
-<meta name="date" content="2026-02-01" />
+<meta name="date" content="2026-02-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -219,24 +219,204 @@ Format is identical to final_df</p>
 <p>As part of MPRA data processing, the pipeline produces a set of intermediate output files. Some of these files are subsequently used as the final data files used in this chapter and others are combined with external data sets and then used in the pipeline.</p>
 <div class="table-scroll">
 <p><strong>comb_df:</strong> Each row represents a cCRE and has both activity data - statistic and p-value and RNA/DNA counts. This is the key file for the activity chapter</p>
+<table>
+<colgroup>
+<col width="5%" />
+<col width="12%" />
+<col width="12%" />
+<col width="18%" />
+<col width="19%" />
+<col width="8%" />
+<col width="12%" />
+<col width="9%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>oligo</th>
+<th>DNA_rep_comb</th>
+<th>RNA_rep_comb</th>
+<th>activity_adjusted</th>
+<th>ratio_log_rep_comb</th>
+<th>pval.mad</th>
+<th>control_type</th>
+<th>statistic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>cCRE ID 1</td>
+<td>DNA read count across all replicates</td>
+<td>RNA read count across all replicates</td>
+<td>cCRE activity</td>
+<td>log RNA/DNA ratio across all replicates</td>
+<td>mad score p-value</td>
+<td>Control annotation</td>
+<td>activity statistic</td>
+</tr>
+<tr class="even">
+<td>cCRE ID 2</td>
+<td>DNA read count across all replicates</td>
+<td>RNA read count across all replicates</td>
+<td>cCRE activity</td>
+<td>log RNA/DNA ratio across all replicates</td>
+<td>mad score p-value</td>
+<td>Control annotation</td>
+<td>activity statistic</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="table-scroll">
-<p><strong>activity_per_rep:</strong> Read counts data for each cCRE by replicates and combined</p>
+<p><strong>activity_per_rep:</strong> Read counts data for each cCRE by replicates and combined after filtering for two standard deviations</p>
+<table>
+<colgroup>
+<col width="2%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>oligo</th>
+<th>RNA_filtered_std2_rep1</th>
+<th>DNA_filtered_std2_rep1</th>
+<th>RNA_filtered_std2_rep2</th>
+<th>DNA_filtered_std2_rep2</th>
+<th>RNA_filtered_std2_rep3</th>
+<th>DNA_filtered_std2_rep3</th>
+<th>ratio_log_filtered_std2_rep1</th>
+<th>ratio_log_filtered_std2_rep2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>cCRE ID 1</td>
+<td>RNA reads rep1</td>
+<td>log2 RNA/DNA derived allele rep1</td>
+<td>log2 RNA/DNA ancestral allele rep2</td>
+<td>log2 RNA/DNA derived allele rep2</td>
+<td>Log fold change derived/ancestral rep1</td>
+<td>Log fold change derived/ancestral rep2</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>cCRE ID 2</td>
+<td>RNA reads rep1</td>
+<td>log2 RNA/DNA derived allele rep1</td>
+<td>log2 RNA/DNA ancestral allele rep2</td>
+<td>log2 RNA/DNA derived allele rep2</td>
+<td>Log fold change derived/ancestral rep1</td>
+<td>Log fold change derived/ancestral rep2</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="table-scroll">
 <p><strong>UMI_counts:</strong> Read counts data for each UMI</p>
+<table>
+<thead>
+<tr class="header">
+<th>oligo_bc</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>UMI count per barcode</td>
+</tr>
+<tr class="even">
+<td>UMI count per barcode</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="table-scroll">
 <p><strong>oligo_fasta:</strong> Fasta file that includes all cCREs tested</p>
 </div>
 <div class="table-scroll">
-<p><strong>std_analysis_df:</strong> DNA and RNA counts after outlier filterings of several degrees of strictness</p>
+<p><strong>std_analysis_df:</strong> DNA and RNA counts after outlier filterings of several degrees of strictness.</p>
+<table>
+<colgroup>
+<col width="53%" />
+<col width="46%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>ratio_log_{outlier_filter}_{rep}</th>
+<th>DNA_{outlier_filter}<em>sum</em>{rep}</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>RNA/DNA ratio for each outlier filter parameter - replicate pair</td>
+<td>DNA read count for each outlier filter parameter - replicate pair</td>
+</tr>
+<tr class="even">
+<td>RNA/DNA ratio for each outlier filter parameter - replicate pair</td>
+<td>DNA read count for each outlier filter parameter - replicate pair</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="table-scroll">
 <p><strong>screen_df:</strong> Overlap of cCRE library with screen data, each row represents a cCRE and must have a screen annotation of the following: Distal enhancer like sequence, DNase-only, Proximal enhancer like sequence, Heterochromatin, Promoter like sequence, DNase-H3K4me3. This file can be created using bedtools</p>
+<table>
+<thead>
+<tr class="header">
+<th>activity_adjusted</th>
+<th>statistic</th>
+<th>class</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>cCRE activity</td>
+<td>cCRE activity statistic</td>
+<td>cCRE screen class overlap</td>
+</tr>
+<tr class="even">
+<td>cCRE activity</td>
+<td>cCRE activity statistic</td>
+<td>cCRE screen class overlap</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="table-scroll">
 <p><strong>tss_df:</strong> Distance of each cCRE from the nearest TSS, each row must include a numeric value that represents the distance. This file can be created using bedtools</p>
+<table>
+<colgroup>
+<col width="30%" />
+<col width="30%" />
+<col width="39%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>activity_adjusted</th>
+<th>statistic</th>
+<th>log10_distance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>cCRE activity</td>
+<td>cCRE activity statistic</td>
+<td>cCRE distance from nearest TSS, log10</td>
+</tr>
+<tr class="even">
+<td>cCRE activity</td>
+<td>cCRE activity statistic</td>
+<td>cCRE distance from nearest TSS, log10</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="table-scroll">
 <p><strong>AI_df:</strong> Comparison of MPRA activity data with an AI model predictions for the same cCREs</p>
@@ -329,7 +509,7 @@ Format is identical to final_df</p>
 </tr>
 <tr class="even">
 <td>cCRE ID 2</td>
-<td>Activity statistic in cell type 2</td>
+<td>Activity statistic in cell type 1</td>
 <td>Activity statistic in cell type 2</td>
 </tr>
 </tbody>
@@ -358,7 +538,7 @@ Format is identical to final_df</p>
 </tr>
 <tr class="even">
 <td>cCRE ID 2</td>
-<td>Activity statistic in cell type 2</td>
+<td>Activity statistic in cell type 1</td>
 <td>Activity statistic in cell type 2</td>
 </tr>
 </tbody>

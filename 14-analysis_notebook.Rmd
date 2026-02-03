@@ -39,18 +39,32 @@ activity_analysis.ipynb
 As part of MPRA data processing, the pipeline produces a set of intermediate output files. Some of these files are subsequently used as the final data files used in this chapter and others are combined with external data sets and then used in the pipeline.
 
 <div class="table-scroll">
-**comb_df:**  Each row represents a cCRE and has both activity data - statistic and p-value and RNA/DNA counts. This is the key file for the activity chapter  
+**comb_df:**  Each row represents a cCRE and has both activity data - statistic and p-value and RNA/DNA counts. This is the key file for the activity chapter 
+
+|oligo|DNA_rep_comb|RNA_rep_comb|activity_adjusted|ratio_log_rep_comb|pval.mad|control_type|statistic|
+|-----|------------|------------|-----------------|------------------|--------|------------|---------|
+|cCRE ID 1|DNA read count across all replicates |RNA read count across all replicates|cCRE activity|log RNA/DNA ratio across all replicates|mad score p-value|Control annotation|activity statistic|
+|cCRE ID 2|DNA read count across all replicates |RNA read count across all replicates|cCRE activity|log RNA/DNA ratio across all replicates|mad score p-value|Control annotation|activity statistic|
 
 </div>
 <div class="table-scroll">
 
-**activity_per_rep:** Read counts data for each cCRE by replicates and combined
+**activity_per_rep:** Read counts data for each cCRE by replicates and combined after filtering for two standard deviations
+
+|oligo|RNA_filtered_std2_rep1|DNA_filtered_std2_rep1|RNA_filtered_std2_rep2|DNA_filtered_std2_rep2|RNA_filtered_std2_rep3|DNA_filtered_std2_rep3|ratio_log_filtered_std2_rep1|ratio_log_filtered_std2_rep2|
+|-----|----------------------|----------------------|----------------------|----------------------|----------------------|----------------------|----------------------|----------------------|
+|cCRE ID 1|RNA reads rep1 |log2 RNA/DNA derived allele rep1|log2 RNA/DNA ancestral allele rep2|log2 RNA/DNA derived allele rep2|Log fold change derived/ancestral rep1|Log fold change derived/ancestral rep2|
+|cCRE ID 2|RNA reads rep1 |log2 RNA/DNA derived allele rep1|log2 RNA/DNA ancestral allele rep2|log2 RNA/DNA derived allele rep2|Log fold change derived/ancestral rep1| Log fold change derived/ancestral rep2|
 
 </div>
 <div class="table-scroll">
 
-**UMI_counts:** Read counts data for each UMI 
+**UMI_counts:** Read counts data for each UMI
 
+|oligo_bc |
+|-------|
+| UMI count per barcode |
+| UMI count per barcode |
 </div>
 <div class="table-scroll">
  
@@ -60,17 +74,31 @@ As part of MPRA data processing, the pipeline produces a set of intermediate out
 <div class="table-scroll">
 
     
-**std_analysis_df:**  DNA and RNA counts after outlier filterings of several degrees of strictness
+**std_analysis_df:**  DNA and RNA counts after outlier filterings of several degrees of strictness.
+
+|ratio_log_{outlier_filter}_{rep}  |DNA_{outlier_filter}_sum_{rep}|
+|----------------------------------|------------------------------|
+| RNA/DNA ratio for each outlier filter parameter - replicate pair |  DNA read count for each outlier filter parameter - replicate pair |
+| RNA/DNA ratio for each outlier filter parameter - replicate pair |  DNA read count for each outlier filter parameter - replicate pair |
 
 </div>
 <div class="table-scroll">
    
 **screen_df:** Overlap of cCRE library with screen data, each row represents a cCRE and must have a screen annotation of the following: Distal enhancer like sequence, DNase-only, Proximal enhancer like sequence, Heterochromatin, Promoter like sequence, DNase-H3K4me3. This file can be created using bedtools
 
+|activity_adjusted  |statistic |class |
+|-------|-------|---------|
+| cCRE activity |  cCRE activity statistic | cCRE screen class overlap |
+| cCRE activity |  cCRE activity statistic | cCRE screen class overlap |
 </div>
 <div class="table-scroll">
 
 **tss_df:** Distance of each cCRE from the nearest TSS, each row must include a numeric value that represents the distance. This file can be created using bedtools 
+
+|activity_adjusted  |statistic |log10_distance |
+|-------|-------|---------|
+| cCRE activity |  cCRE activity statistic | cCRE distance from nearest TSS, log10 |
+| cCRE activity |  cCRE activity statistic | cCRE distance from nearest TSS, log10 |
 
 </div>
 <div class="table-scroll">
@@ -106,7 +134,7 @@ As part of MPRA data processing, the pipeline produces a set of intermediate out
 |seq_id  |allele1 |allele2 |
 |-------|-------|---------|
 | cCRE ID 1 | Activity statistic in cell type 1  | Activity statistic in cell type 2  |
-| cCRE ID 2  | Activity statistic in cell type 2 | Activity statistic in cell type 2  |
+| cCRE ID 2  | Activity statistic in cell type 1 | Activity statistic in cell type 2  |
 
 </div>
 <div class="table-scroll">
@@ -116,7 +144,7 @@ As part of MPRA data processing, the pipeline produces a set of intermediate out
 |seq_id  |allele1 |allele2 |
 |-------|-------|---------|
 | cCRE ID 1 | Activity statistic in cell type 1  | Activity statistic in cell type 2  |
-| cCRE ID 2  | Activity statistic in cell type 2 | Activity statistic in cell type 2  |
+| cCRE ID 2  | Activity statistic in cell type 1 | Activity statistic in cell type 2  |
 
 </div>
 <div class="table-scroll">
