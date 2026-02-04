@@ -1,4 +1,4 @@
-# A guide for running the analyses notebook 
+# A guide for running the analyses scripts 
 The QC pipeline is organized into two main chapters: sequence-barcode association, and RNA and DNA quantification.
 Each chapter is accompanied by a dedicated script that allows the user to run all analyses presented in this book.
 

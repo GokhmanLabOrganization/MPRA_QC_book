@@ -1,4 +1,4 @@
-a-guide-for-running-the-analyses-notebook
+a-guide-for-running-the-analyses-scripts
 associations
 script
 input

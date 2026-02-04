@@ -240,7 +240,7 @@
 
 
 **Legend:** The relationship between sequencing depth and the percentage of retained BCs. Data is downsampled in order to assess whether we have reached saturation in the percentage of retained BCs. Then, data is extrapolated to predict whether additional sequencing would help improve the results. <br>
-**Interpretation:** The successful example showcases sufficient sequencing depth, The baseline percentage is relatively high and additional sequencing doesn't improve the percentage of retained BCs significantly. The unsuccessful example showcases an experiment with a low percentage of retained BCs and more sequencing increases significantly coverage suggesting additional sequencing is required<br>
+**Interpretation:** -	3.8: In the following point, please update the numbers: Interpretation: The successful example showcases sufficient sequencing depth: 3-fold more sequencing will only increase BC DNA retention from ~87% to 94% (1.08-fold), and BC RNA from 92% to 95% (1.03-fold). The unsuccessful example showcases suboptimal RNA sequencing depth: additional sequencing is predicted to increase the number of retained BCs by 1.33-fold (from 24% to 32%).<br>
 
 
 ## cCRE retention by DNA/RNA sequencing depth
@@ -269,8 +269,8 @@
 
 
 
-**Legend:** A line plot that exhibits the effect of sequencing depth (x axis) on the percentage of retained cCREs (y axis). Sampling values higher than 1 represent predicted data points <br>
-**Interpretation:** The successful example showcases sufficient sequencing depth, The baseline percentage is relatively high and additional sequencing doesn't improve the percentage of retained cCREs significantly. The unsuccessful example showcases an experiment with a low percentage of retained cCREs and more sequencing increases significantly coverage suggesting additional sequencing is required<br>
+**Legend:** The relationship between sequencing depth and the percentage of retained cCREs. Data is downsampled in order to assess whether we have reached saturation in the percentage of retained cCREs. Then, data is extrapolated to predict whether additional sequencing would help improve the results. <br>
+**Interpretation:** Interpretation: The successful example showcases sufficient sequencing depth: 3-fold more sequencing will not increase cCRE retention. The unsuccessful example showcases suboptimal RNA sequencing depth: additional sequencing is predicted to increase the percentage of retained cCREs from 66% to 72%.<br>
 
 
 
