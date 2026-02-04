@@ -24,6 +24,7 @@ Because each issue can influence multiple quality metrics, and each metric may b
 -	CRE – cis-regulatory element <br>
 -	cCRE – candidate CRE <br>
 -	BC - barcode <br>
+- logFC – log2(fold-change) between alleles <br>
 
 
 ## Usage {-}

@@ -11,7 +11,7 @@ library(grid)
 
 
 ## cCREs per BC
-**Goal:** Assesses BC promiscuity <br>
+**Goal:** Assess BC promiscuity <br>
 **Input file:** association_before_promiscuity<br>
 **Evaluated metrics:** Specificity<br>
 
@@ -63,7 +63,7 @@ htmltools::tagList(
 
 
 ## Reads per association
-**Goal:** Assesses confidence in associations <br>
+**Goal:** Assess confidence in associations <br>
 **Input file:** association_before_minimum_associations<br>
 **Evaluated metrics:** Specificity<br>
 
@@ -121,7 +121,7 @@ htmltools::tagList(
 
 
 
-**Goal:** Assesses BC replicability <br>
+**Goal:** Assess BC replicability <br>
 **Input file:** final_df <br>
 **Evaluated metrics:** Complexity (multiplicity & uniformity)<br>
 
@@ -173,7 +173,7 @@ htmltools::tagList(
 
 
 ## Retained cCREs
-**Goal:** Assesses BC replicability <br>
+**Goal:** Assess BC replicability <br>
 **Input file:** final_df<br>
 **Evaluated metrics:** Complexity (multiplicity & uniformity)<br>
 
@@ -225,7 +225,7 @@ htmltools::tagList(
 
 
 ## cCRE retention by sequencing depth
-**Goal:** Assesses whether sequencing depth is sufficient<br>
+**Goal:** Assess whether sequencing depth is sufficient<br>
 **Input file:** assoc_downsampling<br>
 **Evaluated metrics:** Complexity (multiplicity & uniformity)<br>
 
@@ -276,7 +276,7 @@ htmltools::tagList(
 
 
 ## BCs per cCRE by sequencing depth
-**Goal:** Assesses whether sequencing depth is sufficient <br>
+**Goal:** Assess whether sequencing depth is sufficient <br>
 **Input file:** Input file: assoc_downsampling<br>
 **Evaluated metrics:** Complexity (multiplicity & uniformity)<br>
 
@@ -330,7 +330,7 @@ htmltools::tagList(
 
 
 
-**Goal:** Assesses GC content bias in PCR amplification <br>
+**Goal:** Assess GC content bias in PCR amplification <br>
 **Input file:** final_df<br>
 **Evaluated metrics:** Complexity (multiplicity & uniformity)<br>
 ```{r echo=FALSE}
@@ -383,7 +383,7 @@ htmltools::tagList(
 
 ## PCR bias - G-stretches
 
-**Goal:** Assesses G-stretches bias in PCR amplification<br>
+**Goal:** Assess G-stretches bias in PCR amplification<br>
 **Input file:** final_df<br>
 **Evaluated metrics:** Complexity (multiplicity & uniformity)<br>
 
