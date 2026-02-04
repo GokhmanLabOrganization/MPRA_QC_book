@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 1 A guide for running the analyses scripts | Quality Control Pipeline for Massively Parallel Reporter Assays (MPRAs)</title>
+  <meta name="description" content="A bookdown guide containing benchmarked quality-control examples for successful and unsuccessful MPRA experiments." />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 1 A guide for running the analyses scripts | Quality Control Pipeline for Massively Parallel Reporter Assays (MPRAs)" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="A bookdown guide containing benchmarked quality-control examples for successful and unsuccessful MPRA experiments." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 1 A guide for running the analyses scripts | Quality Control Pipeline for Massively Parallel Reporter Assays (MPRAs)" />
+  
+  <meta name="twitter:description" content="A bookdown guide containing benchmarked quality-control examples for successful and unsuccessful MPRA experiments." />
+  
+
+<meta name="author" content="Simon Fishilevich, Omer Ronen, Nadav Mishol, Ryder Easterlin, Nitzan Haim, Katharina Lange, Nadav Ahituv, Irene Gallego Romero, Fumitaka Inoue, Martin Kircher, Michael I. Love, Max Schubach, and David Gokhman" />
+
+
+<meta name="date" content="2026-02-04" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="associations-qc.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Quality Control Pipeline for Massively Parallel Reporter Assays (MPRAs)</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Overview</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#abbreviations"><i class="fa fa-check"></i>Abbreviations</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#usage"><i class="fa fa-check"></i>Usage</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#scripts"><i class="fa fa-check"></i>Scripts</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="a-guide-for-running-the-analyses-scripts.html"><a href="a-guide-for-running-the-analyses-scripts.html"><i class="fa fa-check"></i><b>1</b> A guide for running the analyses scripts</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="a-guide-for-running-the-analyses-scripts.html"><a href="a-guide-for-running-the-analyses-scripts.html#associations"><i class="fa fa-check"></i><b>1.1</b> Associations</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="a-guide-for-running-the-analyses-scripts.html"><a href="a-guide-for-running-the-analyses-scripts.html#script"><i class="fa fa-check"></i><b>1.1.1</b> Script</a></li>
+<li class="chapter" data-level="1.1.2" data-path="a-guide-for-running-the-analyses-scripts.html"><a href="a-guide-for-running-the-analyses-scripts.html#input"><i class="fa fa-check"></i><b>1.1.2</b> Input</a></li>
+<li class="chapter" data-level="1.1.3" data-path="a-guide-for-running-the-analyses-scripts.html"><a href="a-guide-for-running-the-analyses-scripts.html#output"><i class="fa fa-check"></i><b>1.1.3</b> Output</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="a-guide-for-running-the-analyses-scripts.html"><a href="a-guide-for-running-the-analyses-scripts.html#rna-and-dna-quantification"><i class="fa fa-check"></i><b>1.2</b> RNA and DNA quantification</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="a-guide-for-running-the-analyses-scripts.html"><a href="a-guide-for-running-the-analyses-scripts.html#script-1"><i class="fa fa-check"></i><b>1.2.1</b> Script</a></li>
+<li class="chapter" data-level="1.2.2" data-path="a-guide-for-running-the-analyses-scripts.html"><a href="a-guide-for-running-the-analyses-scripts.html#input-1"><i class="fa fa-check"></i><b>1.2.2</b> Input</a></li>
+<li class="chapter" data-level="1.2.3" data-path="a-guide-for-running-the-analyses-scripts.html"><a href="a-guide-for-running-the-analyses-scripts.html#output-1"><i class="fa fa-check"></i><b>1.2.3</b> Output</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="associations-qc.html"><a href="associations-qc.html"><i class="fa fa-check"></i><b>2</b> Associations QC</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="associations-qc.html"><a href="associations-qc.html#ccres-per-bc"><i class="fa fa-check"></i><b>2.1</b> cCREs per BC</a></li>
+<li class="chapter" data-level="2.2" data-path="associations-qc.html"><a href="associations-qc.html#reads-per-association"><i class="fa fa-check"></i><b>2.2</b> Reads per association</a></li>
+<li class="chapter" data-level="2.3" data-path="associations-qc.html"><a href="associations-qc.html#bcs-per-ccre"><i class="fa fa-check"></i><b>2.3</b> BCs per cCRE</a></li>
+<li class="chapter" data-level="2.4" data-path="associations-qc.html"><a href="associations-qc.html#retained-ccres"><i class="fa fa-check"></i><b>2.4</b> Retained cCREs</a></li>
+<li class="chapter" data-level="2.5" data-path="associations-qc.html"><a href="associations-qc.html#ccre-retention-by-sequencing-depth"><i class="fa fa-check"></i><b>2.5</b> cCRE retention by sequencing depth</a></li>
+<li class="chapter" data-level="2.6" data-path="associations-qc.html"><a href="associations-qc.html#bcs-per-ccre-by-sequencing-depth"><i class="fa fa-check"></i><b>2.6</b> BCs per cCRE by sequencing depth</a></li>
+<li class="chapter" data-level="2.7" data-path="associations-qc.html"><a href="associations-qc.html#pcr-bias---gc"><i class="fa fa-check"></i><b>2.7</b> PCR bias - GC</a></li>
+<li class="chapter" data-level="2.8" data-path="associations-qc.html"><a href="associations-qc.html#pcr-bias---g-stretches"><i class="fa fa-check"></i><b>2.8</b> PCR bias - G-stretches</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="activity-qc.html"><a href="activity-qc.html"><i class="fa fa-check"></i><b>3</b> Activity QC</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="activity-qc.html"><a href="activity-qc.html#retained-ccres-and-barcodes"><i class="fa fa-check"></i><b>3.1</b> Retained cCREs and barcodes</a></li>
+<li class="chapter" data-level="3.2" data-path="activity-qc.html"><a href="activity-qc.html#dna-counts-vs-gc-content"><i class="fa fa-check"></i><b>3.2</b> DNA counts vs GC content</a></li>
+<li class="chapter" data-level="3.3" data-path="activity-qc.html"><a href="activity-qc.html#activity-statistic-vs-count-ratio"><i class="fa fa-check"></i><b>3.3</b> Activity statistic vs count ratio</a></li>
+<li class="chapter" data-level="3.4" data-path="activity-qc.html"><a href="activity-qc.html#activity-distribution"><i class="fa fa-check"></i><b>3.4</b> Activity distribution</a></li>
+<li class="chapter" data-level="3.5" data-path="activity-qc.html"><a href="activity-qc.html#differential-activity-distribution"><i class="fa fa-check"></i><b>3.5</b> Differential activity distribution</a></li>
+<li class="chapter" data-level="3.6" data-path="activity-qc.html"><a href="activity-qc.html#p-value-distribution"><i class="fa fa-check"></i><b>3.6</b> P-value distribution</a></li>
+<li class="chapter" data-level="3.7" data-path="activity-qc.html"><a href="activity-qc.html#volcano-plot---fc-vs-pval"><i class="fa fa-check"></i><b>3.7</b> Volcano plot - FC vs Pval</a></li>
+<li class="chapter" data-level="3.8" data-path="activity-qc.html"><a href="activity-qc.html#bc-retention-by-dnarna-sequencing-depth"><i class="fa fa-check"></i><b>3.8</b> BC retention by DNA/RNA sequencing depth</a></li>
+<li class="chapter" data-level="3.9" data-path="activity-qc.html"><a href="activity-qc.html#ccre-retention-by-dnarna-sequencing-depth"><i class="fa fa-check"></i><b>3.9</b> cCRE retention by DNA/RNA sequencing depth</a></li>
+<li class="chapter" data-level="3.10" data-path="activity-qc.html"><a href="activity-qc.html#activity-by-sequencing-depth"><i class="fa fa-check"></i><b>3.10</b> Activity by sequencing depth</a></li>
+<li class="chapter" data-level="3.11" data-path="activity-qc.html"><a href="activity-qc.html#cumulative-rna-reads"><i class="fa fa-check"></i><b>3.11</b> Cumulative RNA reads</a></li>
+<li class="chapter" data-level="3.12" data-path="activity-qc.html"><a href="activity-qc.html#sample-clustering"><i class="fa fa-check"></i><b>3.12</b> Sample clustering</a></li>
+<li class="chapter" data-level="3.13" data-path="activity-qc.html"><a href="activity-qc.html#correlation-between-replicates"><i class="fa fa-check"></i><b>3.13</b> Correlation between replicates</a></li>
+<li class="chapter" data-level="3.14" data-path="activity-qc.html"><a href="activity-qc.html#correlation-of-differential-activity-between-replicates"><i class="fa fa-check"></i><b>3.14</b> Correlation of differential activity between replicates</a></li>
+<li class="chapter" data-level="3.15" data-path="activity-qc.html"><a href="activity-qc.html#replicability-by-activity"><i class="fa fa-check"></i><b>3.15</b> Replicability by activity</a></li>
+<li class="chapter" data-level="3.16" data-path="activity-qc.html"><a href="activity-qc.html#correlation-between-replicates-controls"><i class="fa fa-check"></i><b>3.16</b> Correlation between replicates (controls)</a></li>
+<li class="chapter" data-level="3.17" data-path="activity-qc.html"><a href="activity-qc.html#cross-validation-allelic-pairs"><i class="fa fa-check"></i><b>3.17</b> Cross-validation: allelic pairs</a></li>
+<li class="chapter" data-level="3.18" data-path="activity-qc.html"><a href="activity-qc.html#cross-validaiton-cell-types"><i class="fa fa-check"></i><b>3.18</b> Cross-validaiton: cell types</a></li>
+<li class="chapter" data-level="3.19" data-path="activity-qc.html"><a href="activity-qc.html#minimizing-noise"><i class="fa fa-check"></i><b>3.19</b> Minimizing noise</a></li>
+<li class="chapter" data-level="3.20" data-path="activity-qc.html"><a href="activity-qc.html#reproducibility-by-sequencing-depth"><i class="fa fa-check"></i><b>3.20</b> Reproducibility by sequencing depth</a></li>
+<li class="chapter" data-level="3.21" data-path="activity-qc.html"><a href="activity-qc.html#rna-vs-dna"><i class="fa fa-check"></i><b>3.21</b> RNA vs DNA</a></li>
+<li class="chapter" data-level="3.22" data-path="activity-qc.html"><a href="activity-qc.html#activity-of-controls"><i class="fa fa-check"></i><b>3.22</b> Activity of controls</a></li>
+<li class="chapter" data-level="3.23" data-path="activity-qc.html"><a href="activity-qc.html#genomic-annotations"><i class="fa fa-check"></i><b>3.23</b> Genomic annotations</a></li>
+<li class="chapter" data-level="3.24" data-path="activity-qc.html"><a href="activity-qc.html#proximity-to-tss"><i class="fa fa-check"></i><b>3.24</b> Proximity to TSS</a></li>
+<li class="chapter" data-level="3.25" data-path="activity-qc.html"><a href="activity-qc.html#ai-predictions-vs-activity"><i class="fa fa-check"></i><b>3.25</b> AI predictions vs activity</a></li>
+<li class="chapter" data-level="3.26" data-path="activity-qc.html"><a href="activity-qc.html#ai-predictions-vs-differential-activity"><i class="fa fa-check"></i><b>3.26</b> AI predictions vs differential activity</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Quality Control Pipeline for Massively Parallel Reporter Assays (MPRAs)</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="a-guide-for-running-the-analyses-scripts" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Chapter 1</span> A guide for running the analyses scripts<a href="a-guide-for-running-the-analyses-scripts.html#a-guide-for-running-the-analyses-scripts" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>The QC pipeline is organized into two main chapters: sequence-barcode association, and RNA and DNA quantification.
+Each chapter is accompanied by a dedicated script that allows the user to run all analyses presented in this book.</p>
+<p>Below, we describe the files required to run the pipeline. Alongside each analysis, you will find the input files needed in order to run it. Example files are provided below.</p>
+<div id="associations" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Associations<a href="a-guide-for-running-the-analyses-scripts.html#associations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="script" class="section level3 hasAnchor" number="1.1.1">
+<h3><span class="header-section-number">1.1.1</span> Script<a href="a-guide-for-running-the-analyses-scripts.html#script" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Association_analysis.ipynb</p>
+</div>
+<div id="input" class="section level3 hasAnchor" number="1.1.2">
+<h3><span class="header-section-number">1.1.2</span> Input<a href="a-guide-for-running-the-analyses-scripts.html#input" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>As part of MPRA data processing, the pipeline produces a set of intermediate output files. These files are subsequently used as inputs to Process_for_association_QC.py, which generates the final data files used in this chapter.</p>
+<p><strong>final_df:</strong> BC - cCRE association file after all filtering.</p>
+<table>
+<colgroup>
+<col width="30%" />
+<col width="30%" />
+<col width="39%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>barcode</th>
+<th>cCRE</th>
+<th>match_count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>BC sequence 1</td>
+<td>cCRE ID 2</td>
+<td>Number of observations (reads) for this BC-cCRE association</td>
+</tr>
+<tr class="even">
+<td>BC sequence 2</td>
+<td>cCRE ID 2</td>
+<td>Number of observations (reads) for this BC-cCRE association</td>
+</tr>
+</tbody>
+</table>
+<p><strong>association_before_minimum_associations:</strong> BC - cCRE association file before filtering for a minimal number of unique BC-cCRE observations. Format is identical to final_df</p>
+<p><strong>association_before_promiscuity:</strong> BC - cCRE association file before filtering out BCs that are associated with multiple cCREs.
+Format is identical to final_df</p>
+<p><strong>assoc_downsampling:</strong> A path to the folder containing the input files for the downsampling analysis</p>
+</div>
+<div id="output" class="section level3 hasAnchor" number="1.1.3">
+<h3><span class="header-section-number">1.1.3</span> Output<a href="a-guide-for-running-the-analyses-scripts.html#output" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Output figures for the cCRE-BC association analyses are presented in the chapter: 2. Associations QC</p>
+</div>
+</div>
+<div id="rna-and-dna-quantification" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> RNA and DNA quantification<a href="a-guide-for-running-the-analyses-scripts.html#rna-and-dna-quantification" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="script-1" class="section level3 hasAnchor" number="1.2.1">
+<h3><span class="header-section-number">1.2.1</span> Script<a href="a-guide-for-running-the-analyses-scripts.html#script-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>activity_analysis.ipynb</p>
+</div>
+<div id="input-1" class="section level3 hasAnchor" number="1.2.2">
+<h3><span class="header-section-number">1.2.2</span> Input<a href="a-guide-for-running-the-analyses-scripts.html#input-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>As part of MPRA data processing, the pipeline produces a set of intermediate output files. Some of these files are subsequently used as the final data files used in this chapter and others are combined with external data sets and then used in the pipeline.</p>
+<div class="table-scroll">
+<p><strong>comb_df:</strong> Each row represents a cCRE and has both activity data - statistic and p-value and RNA/DNA counts. This is the key file for the activity chapter</p>
+<table>
+<colgroup>
+<col width="5%" />
+<col width="12%" />
+<col width="12%" />
+<col width="18%" />
+<col width="19%" />
+<col width="8%" />
+<col width="12%" />
+<col width="9%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>oligo</th>
+<th>DNA_rep_comb</th>
+<th>RNA_rep_comb</th>
+<th>activity_adjusted</th>
+<th>ratio_log_rep_comb</th>
+<th>pval.mad</th>
+<th>control_type</th>
+<th>statistic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>cCRE ID 1</td>
+<td>DNA read count across all replicates</td>
+<td>RNA read count across all replicates</td>
+<td>cCRE activity</td>
+<td>log RNA/DNA ratio across all replicates</td>
+<td>mad score p-value</td>
+<td>Control annotation</td>
+<td>activity statistic</td>
+</tr>
+<tr class="even">
+<td>cCRE ID 2</td>
+<td>DNA read count across all replicates</td>
+<td>RNA read count across all replicates</td>
+<td>cCRE activity</td>
+<td>log RNA/DNA ratio across all replicates</td>
+<td>mad score p-value</td>
+<td>Control annotation</td>
+<td>activity statistic</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-scroll">
+<p><strong>activity_per_rep:</strong> Read counts data for each cCRE by replicates and combined after filtering for two standard deviations</p>
+<table>
+<colgroup>
+<col width="2%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>oligo</th>
+<th>RNA_filtered_std2_rep1</th>
+<th>DNA_filtered_std2_rep1</th>
+<th>RNA_filtered_std2_rep2</th>
+<th>DNA_filtered_std2_rep2</th>
+<th>RNA_filtered_std2_rep3</th>
+<th>DNA_filtered_std2_rep3</th>
+<th>ratio_log_filtered_std2_rep1</th>
+<th>ratio_log_filtered_std2_rep2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>cCRE ID 1</td>
+<td>RNA reads rep1</td>
+<td>log2 RNA/DNA derived allele rep1</td>
+<td>log2 RNA/DNA ancestral allele rep2</td>
+<td>log2 RNA/DNA derived allele rep2</td>
+<td>Log fold change derived/ancestral rep1</td>
+<td>Log fold change derived/ancestral rep2</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>cCRE ID 2</td>
+<td>RNA reads rep1</td>
+<td>log2 RNA/DNA derived allele rep1</td>
+<td>log2 RNA/DNA ancestral allele rep2</td>
+<td>log2 RNA/DNA derived allele rep2</td>
+<td>Log fold change derived/ancestral rep1</td>
+<td>Log fold change derived/ancestral rep2</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-scroll">
+<p><strong>UMI_counts:</strong> Read counts data for each UMI</p>
+<table>
+<thead>
+<tr class="header">
+<th>oligo_bc</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>UMI count per barcode</td>
+</tr>
+<tr class="even">
+<td>UMI count per barcode</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-scroll">
+<p><strong>oligo_fasta:</strong> Fasta file that includes all cCREs tested</p>
+</div>
+<div class="table-scroll">
+<p><strong>std_analysis_df:</strong> DNA and RNA counts after outlier filterings of several degrees of strictness.</p>
+<table>
+<colgroup>
+<col width="53%" />
+<col width="46%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>ratio_log_{outlier_filter}_{rep}</th>
+<th>DNA_{outlier_filter}<em>sum</em>{rep}</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>RNA/DNA ratio for each outlier filter parameter - replicate pair</td>
+<td>DNA read count for each outlier filter parameter - replicate pair</td>
+</tr>
+<tr class="even">
+<td>RNA/DNA ratio for each outlier filter parameter - replicate pair</td>
+<td>DNA read count for each outlier filter parameter - replicate pair</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-scroll">
+<p><strong>screen_df:</strong> Overlap of cCRE library with screen data, each row represents a cCRE and must have a screen annotation of the following: Distal enhancer like sequence, DNase-only, Proximal enhancer like sequence, Heterochromatin, Promoter like sequence, DNase-H3K4me3. This file can be created using bedtools</p>
+<table>
+<thead>
+<tr class="header">
+<th>activity_adjusted</th>
+<th>statistic</th>
+<th>class</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>cCRE activity</td>
+<td>cCRE activity statistic</td>
+<td>cCRE screen class overlap</td>
+</tr>
+<tr class="even">
+<td>cCRE activity</td>
+<td>cCRE activity statistic</td>
+<td>cCRE screen class overlap</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-scroll">
+<p><strong>tss_df:</strong> Distance of each cCRE from the nearest TSS, each row must include a numeric value that represents the distance. This file can be created using bedtools</p>
+<table>
+<colgroup>
+<col width="30%" />
+<col width="30%" />
+<col width="39%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>activity_adjusted</th>
+<th>statistic</th>
+<th>log10_distance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>cCRE activity</td>
+<td>cCRE activity statistic</td>
+<td>cCRE distance from nearest TSS, log10</td>
+</tr>
+<tr class="even">
+<td>cCRE activity</td>
+<td>cCRE activity statistic</td>
+<td>cCRE distance from nearest TSS, log10</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-scroll">
+<p><strong>AI_df:</strong> Comparison of MPRA activity data with an AI model predictions for the same cCREs</p>
+<table>
+<colgroup>
+<col width="3%" />
+<col width="24%" />
+<col width="24%" />
+<col width="24%" />
+<col width="24%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>id</th>
+<th>Alt activity - exp</th>
+<th>Ref activity - exp</th>
+<th>Ref activity - AI</th>
+<th>Alt activity - AI</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>cCRE ID 1</td>
+<td>Experimental activity statistic of alternative allele</td>
+<td>Experimental activity statistic of reference allele</td>
+<td>AI-predicted activity statistic of alternative allele</td>
+<td>AI-predicted activity statistic of reference allele</td>
+</tr>
+<tr class="even">
+<td>cCRE ID 2</td>
+<td>Experimental activity statistic of alternative allele</td>
+<td>Experimental activity statistic of reference allele</td>
+<td>AI-predicted activity statistic of alternative allele</td>
+<td>AI-predicted activity statistic of reference allele</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-scroll">
+<p><strong>AI_comparative_df:</strong> Same as above but for differential activity</p>
+<table>
+<colgroup>
+<col width="30%" />
+<col width="30%" />
+<col width="39%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>id</th>
+<th>LFC - exp</th>
+<th>LFC - AI</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>cCRE ID 1</td>
+<td>Experimental log fold change derived/ancestral</td>
+<td>AI-predicted log fold change derived/ancestral</td>
+</tr>
+<tr class="even">
+<td>cCRE ID 2</td>
+<td>Experimental log fold change derived/ancestral</td>
+<td>AI-predicted log fold change derived/ancestral</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>downsampling_activity_path:</strong> A path for a folder that includes comb_df for each sampling parameter</p>
+<p><strong>downsampling_ratio_path:</strong> A path for a folder that includes activity_per_rep for each sampling parameter</p>
+<div class="table-scroll">
+<p><strong>comparative_df:</strong> MPRA comparative results, each row represents a locus</p>
+<table>
+<colgroup>
+<col width="30%" />
+<col width="30%" />
+<col width="39%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>seq_id</th>
+<th>allele1</th>
+<th>allele2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>cCRE ID 1</td>
+<td>Activity statistic in cell type 1</td>
+<td>Activity statistic in cell type 2</td>
+</tr>
+<tr class="even">
+<td>cCRE ID 2</td>
+<td>Activity statistic in cell type 1</td>
+<td>Activity statistic in cell type 2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-scroll">
+<p><strong>allelic_pairs_df:</strong> MPRA quantitative data, each row represents a locus and includes data for both alleles of the locus</p>
+<table>
+<colgroup>
+<col width="30%" />
+<col width="30%" />
+<col width="39%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>seq_id</th>
+<th>allele1</th>
+<th>allele2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>cCRE ID 1</td>
+<td>Activity statistic in cell type 1</td>
+<td>Activity statistic in cell type 2</td>
+</tr>
+<tr class="even">
+<td>cCRE ID 2</td>
+<td>Activity statistic in cell type 1</td>
+<td>Activity statistic in cell type 2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-scroll">
+
+<p><strong>cell_types_df:</strong> MPRA quantitative data, each row represents a cCRE and includes data for two different cell types</p>
+<table>
+<colgroup>
+<col width="30%" />
+<col width="30%" />
+<col width="39%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Sequence ID</th>
+<th>Ref log2 RNA/DNA ratio 1</th>
+<th>Ref log2 RNA/DNA ratio 2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>cCRE ID 1</td>
+<td>Activity statistic of allele 1</td>
+<td>Activity statistic of allele 2</td>
+</tr>
+<tr class="even">
+<td>cCRE ID 2</td>
+<td>Activity statistic of allele 1</td>
+<td>Activity statistic of allele 2</td>
+</tr>
+</tbody>
+</table>
+<div class="table-scroll">
+<p><strong>allelic_pairs_replicates_df:</strong> log2 RNA/DNA data for each locus, includes two alleles and their logFC</p>
+<table style="width:100%;">
+<colgroup>
+<col width="3%" />
+<col width="23%" />
+<col width="20%" />
+<col width="23%" />
+<col width="20%" />
+<col width="4%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>seq_id_</th>
+<th>ratio_log_filtered_std2_rep1_Ancestral</th>
+<th>ratio_log_filtered_std2_rep1_Derived</th>
+<th>ratio_log_filtered_std2_rep2_Ancestral</th>
+<th>ratio_log_filtered_std2_rep2_Derived</th>
+<th>lfc_rep1</th>
+<th>lfc_rep2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>cCRE ID 1</td>
+<td>log2 RNA/DNA ancestral allele rep1</td>
+<td>log2 RNA/DNA derived allele rep1</td>
+<td>log2 RNA/DNA ancestral allele rep2</td>
+<td>log2 RNA/DNA derived allele rep2</td>
+<td>Log fold change derived/ancestral rep1</td>
+<td>Log fold change derived/ancestral rep2</td>
+</tr>
+<tr class="even">
+<td>cCRE ID 2</td>
+<td>log2 RNA/DNA ancestral allele rep1</td>
+<td>log2 RNA/DNA derived allele rep1</td>
+<td>log2 RNA/DNA ancestral allele rep2</td>
+<td>log2 RNA/DNA derived allele rep2</td>
+<td>Log fold change derived/ancestral rep1</td>
+<td>Log fold change derived/ancestral rep2</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="output-1" class="section level3 hasAnchor" number="1.2.3">
+<h3><span class="header-section-number">1.2.3</span> Output<a href="a-guide-for-running-the-analyses-scripts.html#output-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Output figures for the RNA and DNA quantification analyses are presented in the chapter: 3. Activity QC</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="associations-qc.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/USERNAME/REPO/edit/BRANCH/14-analysis_notebook.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["_main.pdf", "_main.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+</body>
+
+</html>
