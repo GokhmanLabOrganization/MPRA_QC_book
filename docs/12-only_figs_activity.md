@@ -6,7 +6,7 @@
 
 
 ## Retained cCREs and barcodes
-**Goal:** Assesses cCRE and BC coverage <br>
+**Goal:** Assess cCRE and BC coverage <br>
 **Input file:** activity_per_rep<br>
 **Evaluated metrics:** DNA Complexity, RNA Complexity<br>
 
@@ -32,12 +32,12 @@
 
 
 **Legend:** Percentage of cCREs and BCs present in the DNA and RNA quantification data compared with those observed in the association data <br>
-**Interpretation:** The successful examples exhibits high percentages of retaiend BCs and cCREs in both RNA and DNA data. The unsuccessful example exhibits low coverage of cCREs in both DNA and RNA data and exteremly low coverage of BCs in the DNA data, suggesting low complexity<br>
+**Interpretation:** The successful example showcases high retention of BCs and cCREs in both RNA and DNA data. The unsuccessful example showcases low retention, particularly of DNA BCs<br>
 
 
 ## DNA counts vs GC content
 
-**Goal:** Assesses GC content bias in PCR amplification  <br>
+**Goal:** Assess GC content bias in PCR amplification  <br>
 **Input file:** oligo_fasta, comb_df  <br>
 **Evaluated metrics:** DNA Complexity <br>
 
@@ -61,12 +61,12 @@
 
 
 
-**Legend:** This figure includes two different plots with a shared x axis - GC% content bin. The box plot presents the number of reads for each cCRE and the histogram presents the number of cCREs in each bin. Data was binned in fixed sizes of 5% <br>
-**Interpretation:** The successful example shows a relatively consistent number of reads per GC content, and PCR conditions that are optimized for the GC content levels of most cCREs (peaks are close to one another). The unsuccessful example shows both a strong amplification bias and suboptimal PCR conditions for the GC content levels of most cCREs<br>
+**Legend:** Each figure includes two panels with a shared x-axis showing binned GC content. The box plots showcase the number of DNA reads per cCRE. The histogram showcases the number of cCREs in each GC content bin. Data was binned in fixed sizes of 5%. <br>
+**Interpretation:** In the successful example, read counts are relatively consistent across GC content, indicating PCR conditions well matched to the GC composition of most cCREs, as reflected by closely aligned peaks. The unsuccessful example showcases pronounced amplification bias and PCR conditions that are poorly optimized for the GC content of the majority of cCREs.<br>
 
 ## Activity statistic vs count ratio
 
-**Goal:** Assesses the correlation between log2(RNA/DNA) and the summary statistic of activity <br>
+**Goal:** Assess the correlation between log2(RNA/DNA) and the summary statistic of activity <br>
 **Input file:** comb_df <br>
 **Evaluated metrics:** DNA Complexity, RNA Complexity <br>
 
@@ -89,12 +89,12 @@
 ```
 
 
-**Legend:** The scatter plot presents the correlation between the naive method of testing activity: log2(RNA/DNA) (x axis) and the more reliable summary statistic calculated by the pipeline (y axis)<br>
+**Legend:** A scatter plot of raw actviity values x-axis vs the activity summary statistic. Colors show density.<br>
 **Interpretation:** The successful example showcases an experiment with high complexity, reflected in the high correlation between the measurements. The unsuccessful example showcases an experiment with a relatively low correlation between measurements, suggesting low complexity<br>
 
 
 ## Activity distribution
-**Goal:** Assesses activity dynamic range, noise, and statistical power <br>
+**Goal:** Assess activity dynamic range, noise, and statistical power <br>
 **Input file:** comb_df<br>
 **Evaluated metrics:** DNA Complexity, RNA Complexity:<br>
 
@@ -124,13 +124,13 @@
 
 
 
-**Legend:** An histogram of log2(RNA/DNA) of the tested cCREs. cCREs that are marked in red were determined to be active by the pipeline <br>
+**Legend:** A histogram of log2(RNA/DNA) of the tested cCREs, with significantly active cCREs marked in red. <br>
 **Interpretation:** The successful example showcases a broad dynamic range, with most of the highly active cCREs detected as significantly active. The 1st unsuccessful example showcases a problem in the detection of activity, either because of high noise levels or the experiment being underpowered. The 2nd unsuccessful example showcases silencing, with cCREs that are unlikely to be truly active detected as significantly active<br>
 
 
 ## Differential activity distribution
 
-**Goal:** Assesses differential activity dynamic range, noise, and statistical power <br>
+**Goal:** Assess differential activity dynamic range, noise, and statistical power <br>
 **Input file:** comparative_df <br>
 **Evaluated metrics:** DNA Complexity, RNA Complexity<br>
 
@@ -154,12 +154,12 @@
 
 
 
-**Legend:** An histogram of log2(RNA/DNA) difference between the two alleles for each locus. cCREs that are marked in red were determined to be differentialy active by the pipeline <br>
-**Interpretation:** The successful example showcases a broad dynamic range of differential activity, with high fold-changes detected as significantly differential active. The unsuccessful example showcases under-detection of differential activity<br>
+**Legend:** A histogram of the log2(RNA/DNA) difference between the two alleles of a cCRE, with significantly differentially active cCREs marked in red. <br>
+**Interpretation:** The successful example showcases a broad dynamic range of differential activity, with high fold-changes detected as significantly differential active. The unsuccessful example showcases underdetection of differential activity or high noise levels.<br>
 
 
 ## P-value distribution
-**Goal:** Assesses the power of the statistical testing <br>
+**Goal:** Assess statistical power <br>
 **Input file:** comb_df<br>
 **Evaluated metrics:** DNA Complexity, RNA Complexity, Reproducibility, Dynamic range<br>
 
@@ -183,11 +183,11 @@
 
 
 **Legend:** A qq plot of the p-values assigned to each cCRE activity level compared to the expected p-values generated by a uniform distribution <br>
-**Interpretation:** The successful example exhibits an experiment with sufficient statistical power, reflected in a deviation from the expected distribution with many significantly low p-values detected. The unsuccessful example showcases a deviation from the expected distribution but with an enrichment of high p-values, suggests under-powered testing<br>
+**Interpretation:** The successful example showcases sufficient statistical power, reflected in a downward deviation from the expected distribution, with many low p-values. The unsuccessful example showcases an upward deviation, reflecting an inflation of p-values.<br>
 
 ## Volcano plot - FC vs Pval
 
-**Goal:** Assesses the power of the statistical testing <br>
+**Goal:** Assess statistical power of differential activity detection <br>
 **Input file:** comparative_df<br>
 **Evaluated metrics:** DNA Complexity, RNA Complexity <br>
 
@@ -211,12 +211,12 @@
 
 
 
-**Legend:** A volcano plot that shows the connection between the logFC value and the -log10(p-value) of the statistical test <br>
-**Interpretation:** The successful example exhibits an experiment with sufficient statistical power to detect differential activity, every cCRE with a large enough logFC is detected as differential active. The unsuccessful example showcases an experiment with many cCREs with relatively large logFC that are not detected as differential active, suggesting lack of power in the analysis<br>
+**Legend:** A volcano plot of logFC vs FDR. Dashed line shows FDR = 0.05.  <br>
+**Interpretation:** The successful example showcases sufficient statistical power to detect differential activity. cCRES with large absolute(logFC) are detected as differentially active. The unsuccessful example showcases many cCREs with relatively large absolute(logFC) that are not detected as differentially active, suggesting low power or high noise levels.<br>
 
 ## BC retention by DNA/RNA sequencing depth
 
-**Goal:** Assesses whether sequencing depth is sufficient <br>
+**Goal:** Assess whether sequencing depth is sufficient <br>
 **Input file:** downsampling_ratio_path <br>
 **Evaluated metrics:** DNA Complexity, RNA Complexity <br>
 
@@ -239,13 +239,13 @@
 
 
 
-**Legend:** A line plot that exhibits the effect of sequencing depth (x axis) on the percentage of retained BCs (y axis). Sampling values higher than 1 represent predicted data points <br>
+**Legend:** The relationship between sequencing depth and the percentage of retained BCs. Data is downsampled in order to assess whether we have reached saturation in the percentage of retained BCs. Then, data is extrapolated to predict whether additional sequencing would help improve the results. <br>
 **Interpretation:** The successful example showcases sufficient sequencing depth, The baseline percentage is relatively high and additional sequencing doesn't improve the percentage of retained BCs significantly. The unsuccessful example showcases an experiment with a low percentage of retained BCs and more sequencing increases significantly coverage suggesting additional sequencing is required<br>
 
 
 ## cCRE retention by DNA/RNA sequencing depth
 
-**Goal:** Assesses whether sequencing depth is sufficient <br>
+**Goal:** Assess whether sequencing depth is sufficient <br>
 **Input file:** downsampling_ratio_path <br>
 **Evaluated metrics:** DNA Complexity, RNA Complexity<br>
 
@@ -275,7 +275,7 @@
 
 
 ## Activity by sequencing depth
-**Goal:** Assesses if sequencing depth is sufficient <br>
+**Goal:** Assess if sequencing depth is sufficient <br>
 **Input file:** downsampling_activity_path<br>
 **Evaluated metrics:** DNA Complexity, RNA Complexity<br>
 
@@ -298,12 +298,12 @@
 ```
 
 
-**Legend:** A line plot that exhibits the effect of sequencing depth (x axis) on the percentage of active cCREs (y axis).  <br>
-**Interpretation:** The successful example showcases sufficient sequencing depth, reaching a plateau in the number of active cCREs detected, suggesting low noise levels. The unsuccessful example showcases an experiment where more sequencing decreases the number of active sequences detected, suggesting some of the currently detected active sequences are false positives<br>
+**Legend:** The relationship between sequencing depth and the percentage of active cCREs. Data is downsampled in order to assess whether we have reached saturation in the percentage of active cCREs. Then, data is extrapolated to predict whether additional sequencing would help improve the results.  <br>
+**Interpretation:** The successful example showcases sufficient sequencing depth: the percentage of active cCREs has reached a plateau, and more sequencing is not expected to affect it. The unsuccessful example showcases suboptimal RNA sequencing depth: additional sequencing will likely affect the percentage of active cCREs.<br>
 
 
 ## Cumulative RNA reads
-**Goal:** Assesses jackpotting <br>
+**Goal:** Assess jackpotting <br>
 **Input file:** comb_df<br>
 **Evaluated metrics:** RNA Complexity, Dynamic range<br>
 
@@ -326,14 +326,14 @@
 ```
 
 
-**Legend:** cCREs are sorted by their RNA read counts and ranked relatively (x axis), they are assigned with a cumulative fraction value, calculated by the sum of all the RNA reads of all cCREs ranked above the cCRE and the cCRE RNA reads count, divided by the total number of reads <br>
-**Interpretation:** The successful example showcases no jackpotting. The unsuccessful example showcases an experiment where most of the RNA reads come from just a few cCREs<br>
+**Legend:** A cumulative distribution showcasing the fraction of RNA reads from each cCRE. cCREs are sorted by their RNA read counts. <br>
+**Interpretation:** The successful example showcases no jackpotting – the RNA reads come from many cCREs. The unsuccessful example showcases an experiment where most of the RNA reads come from just a few cCREs.<br>
 
 
 
 
 ## Sample clustering
-**Goal:** Assesses reproducibility between samples <br>
+**Goal:** Assess reproducibility between samples <br>
 **Input file:** cDNA_reads_by_cell_type<br>
 **Evaluated metrics:** Reproducibility<br>
 
@@ -356,13 +356,13 @@
 ```
 
 
-**Legend:** Principal component analysis (PCA) on samples <br>
-**Interpretation:** The successful example showcases replicates clustering by cell type. The unsuccessful example showcases variation between replicates that is as large as that between cell types<br>
+**Legend:** Principal component analysis (PCA) on the activity of cCREs in replicates from two cell lines. <br>
+**Interpretation:** In the successful example, PC1 separates between cell types. In the unsuccessful example, variation between replicates is as large as that between cell types, and one of the replicates of cell type 2 clusters closely with cell type 1.<br>
 
 
 
 ## Correlation between replicates
-**Goal:** Assesses reproducibility between replicates<br>
+**Goal:** Assess reproducibility between replicates<br>
 **Input file:** activity_per_rep<br>
 **Evaluated metrics:** Reproducibility, Dynamic range<br>
 
@@ -385,14 +385,14 @@
 ```
 
 
-**Legend:** Scatter plot of the log2(RNA/DNA) values of each cCRE in two experimental replicates. Each data point is an hexagon that represents the cCRE density in the given values <br>
+**Legend:** Scatter plot of the log2(RNA/DNA) values of each cCRE across two experimental replicates. Each data point is a hexagon representing the local density of cCREs. <br>
 **Interpretation:** The successful example showcases a high correlation between replicates in more active cCREs. The unsuccessful example showcases no correlation<br>
 
 
 
 ## Correlation of differential activity between replicates
 
-**Goal:** Assesses reproducibility between replicates <br>
+**Goal:** Assess reproducibility between replicates <br>
 **Input file:** allelic_pairs_replicates_df<br>
 **Evaluated metrics:** Reproducibility, Dynamic range <br>
 
@@ -400,8 +400,8 @@
 
 <img src="external_figures/modern_humanMPRA_Hob/diff_activity_corr_reps_hexbin_w_bar.svg" width="49%" /><img src="external_figures/humanMPRA_L4a2/diff_activity_corr_reps_hexbin_w_bar.svg" width="49%" />
 
-**Legend:** Scatter plot of the log2(RNA/DNA) allelic difference values for each locus in two experimental replicates. Each data point is an hexagon that represents the cCRE density in the given values <br>
-**Interpretation:** The successful example showcases correlation between replicates in more active cCREs. The unsuccessful example showcases no correlation<br>
+**Legend:** Scatter plot of the log2(RNA/DNA) allelic difference values for each cCRE in two replicates. Each data point is a hexagon representing the local density of cCREs. <br>
+**Interpretation:** The successful example showcases concordance in differential activity between repliactes. The unsuccessful example showcases little concordance.<br>
 
 
 
@@ -409,7 +409,7 @@
 
 
 ## Replicability by activity
-**Goal:** Assesses the correlation in activity between replicates in active vs non-active cCREs <br>
+**Goal:** Assess the correlation in activity between replicates in active vs non-active cCREs <br>
 **Input file:** activity_per_rep<br>
 **Evaluated metrics:** Reproducibility <br>
 
@@ -431,8 +431,8 @@
 ```
 
 
-**Legend:** A scatter plot of the correlation between replicates (y axis) as a function of log2(RNA/DNA) average value for each cCRE bin. Bins are in fixed ranges of size 1 <br>
-**Interpretation:** The successful example showcases a higher correlation in active sequences, which further increases with activity level. The unsuccessful example showcases a low correlation in active sequences<br>
+**Legend:** Correlation between replicates as a function of average activity [log₂(RNA/DNA)], shown across fixed bins of width 1. <br>
+**Interpretation:** In the successful example, more active cCREs showcase a higher correlation, which further improves with higher activity level. The unsuccessful example showcases a low correlation, which remains poor in active cCREs.<br>
 
 
 
@@ -440,7 +440,7 @@
 
 
 ## Correlation between replicates (controls)
-**Goal:** Assesses reproducibility between replicates in positive and negative controls <br>
+**Goal:** Assess reproducibility between replicates in positive and negative controls <br>
 **Input file:** comb_df<br>
 **Evaluated metrics:** Reproducibility, Dynamic range<br>
 
@@ -463,15 +463,15 @@
 ```
 
 
-**Legend:** Scatter plot of the log2(RNA/DNA) values of each cCRE in two experimental replicates. Positive controls are marked in green and negative controls are marked in red <br>
-**Interpretation:** The successful examples showcases a high correlation between positive controls, and a low correlation between negatives controls. The unsuccessful example showcases low correlations in both<br>
+**Legend:** Scatter plot of the log2(RNA/DNA) values of each cCRE across two experimental replicates. Positive controls are marked in green, and negative controls are marked in red. <br>
+**Interpretation:** The successful example showcases a high correlation between positive controls and a low correlation between negative controls. The unsuccessful example showcases low correlations in both.<br>
 
 
 
 
 ## Cross-validation: allelic pairs
 
-**Goal:** Assesses reproducibility between allelic pairs <br>
+**Goal:** Assess reproducibility between allelic pairs <br>
 **Input file:** allelic_pairs_df <br>
 **Evaluated metrics:** Reproducibility <br>
 
@@ -495,8 +495,8 @@
 
 
 
-**Legend:** Scatter plot of the log2(RNA/DNA) values of the allelic pairs of a locus. Each data point is an hexagon that represents the cCRE density in the given values<br>
-**Interpretation:** The successful example showcases correlation between allelic pairs. The unsuccessful example showcases no correlation<br>
+**Legend:** Log2(RNA/DNA) values of the two alleles of a cCRE. Each data point is a hexagon representing the local density of cCREs.<br>
+**Interpretation:** When allelic pairs differ by only a few nucleotides, their regulatory activity should be highly correlated. The successful example showcases a strong correlation between allelic pairs. The unsuccessful example showcases little to no correlation.<br>
 
 
 
@@ -504,7 +504,7 @@
 
 ## Cross-validaiton: cell types
 
-**Goal:** Assesses reproducibility between different cell types<br>
+**Goal:** Assess reproducibility between different cell types<br>
 **Input file:** cell_types_df <br>
 **Evaluated metrics:** Reproducibility<br>
 
@@ -528,23 +528,23 @@
 
 
 
-**Legend:** Scatter plot of the log2(RNA/DNA) values of each control sequence in two different cell types. Each data point is an hexagon that represents the cCRE density in the given values <br>
-**Interpretation:** The successful example showcases correlation between cell types. The unsuccessful example showcases no correlation<br>
+**Legend:** Log2(RNA/DNA) values of shared control sequences across two cell types. Each data point is a hexagon representing the local density of cCREs. <br>
+**Interpretation:** Although cell types differ in their trans environments, many regulatory networks are shared, particularly between closely related cell types. As a result, regulatory sequences often exhibit similar activity across cell types. This pattern is evident in the successful example, which shows a strong correlation between cell types. The unsuccessful example, on the other hand, showcases no correlation.<br>
 
 
 ## Minimizing noise 
-**Goal:** Removing outlier BCs and optimizing the threshold of minimum DNA counts to increase reproducibility<br>
+**Goal:** Remove outlier barcodes and optimize minimum DNA count threshold to improve reproducibility<br>
 **Input file:** different_std_threshold_analysis<br>
 **Evaluated metrics:** Reproducibility<br>
 
 <img src="external_figures/modern_humanMPRA_Hob/minimizing_noise_hexbin.svg" width="100%" />
-**Legend:** Each subplot is a scatter plot of correlation between replicates. The x axis represents the threshold for removing BCs and the y axis is the threshold of DNA reads <br>
+**Legend:** Each panel shows the correlation between replicates across different threshold of outlier removal (horizontal), and minimum DNA counts per cCRE (vertical). Each data point is a hexagon representing the local density of cCREs.<br>
 **Interpretation:** The examples show an increase in correlations between replicates with increasing DNA cutoffs and outlier BC removal<br>
 
 
 ## Reproducibility by sequencing depth
 
-**Goal:** Assesses whether additional sequencing will improve reproducibility between replicates <br>
+**Goal:** Assess whether additional sequencing will improve reproducibility between replicates <br>
 **Input file:** downsampling_activity_path, downsampling_ratio_path <br>
 **Evaluated metrics:** Reproducibility <br>
 
@@ -568,12 +568,12 @@
 
 
 
-**Legend:** A line plot of the correlation between replicates (y axis) as a function of the sampling parameter (y axis) <br>
-**Interpretation:** The successful example showcases a scenario where additional sequencing will improve reproducibility, whereas the unsuccessful example showcases that the experiment has reached a plateau<br>
+**Legend:** The correlation between replicates as a function of the sequencing depth. The x-axis shows increasing levels of downsampling of the current data. <br>
+**Interpretation:** In the successful example, additional sequencing is expected to slightly improve reproducibility, whereas in the unsuccessful example it is not.<br>
 
 
 ## RNA vs DNA
-**Goal:** Assesses if there is true activity in the experiment <br>
+**Goal:** Assess true activity in the experiment <br>
 **Input file:** comb_df<br>
 **Evaluated metrics:** Dynamic Range<br>
 
@@ -603,14 +603,14 @@
 
 
 
-**Legend:** Scatter plot of RNA counts (y axis) vs. DNA counts (x axis) of each cCRE. Each data point is an hexagon that represents the cCRE density in the given values <br>
-**Interpretation:** The successful example showcases many sequences with high RNA-to-DNA ratios (points above the diagonal). The 1st unsuccessful example showcases no activity (points are on the diagonal), and the 2nd unsuccessful example showcases silencing (points belot the diagonal)<br>
+**Legend:** RNA vs. DNA counts for each cCRE, normalized to sequencing depth. Each data point is a hexagon representing the local density of cCREs. <br>
+**Interpretation:** The successful example showcases many sequences with high RNA-to-DNA ratios, reflected by points above the diagonal. The 1st unsuccessful example showcases little to no activity, with points clustering along the diagonal, and the 2nd unsuccessful example showcases silencing, reflected by many points falling below the diagonal.<br>
 
 
 
 
 ## Activity of controls
-**Goal:** Assesses the dynamic range of activity<br>
+**Goal:** Assess the dynamic range of activity<br>
 **Input file:** comb_df<br>
 **Evaluated metrics:** Dynamic Range<br>
 
@@ -633,13 +633,13 @@
 ```
 
 
-**Legend:** Box plot of cCREs' activity levels by control type - Positive, Negative or test cCREs** <br>
-**Interpretation:** The successful example showcases high activity of positive controls and low activity of negative controls. The unsuccessful example showcases similar activity of positive and negative controls**<br>
+**Legend:** Box plots of activity levels for positive and negative controls, as well as cCREs. <br>
+**Interpretation:** In the successful example, positive controls show high activity while negative controls show low activity. The unsuccessful example shows similar activity levels for positive and negative controls.<br>
 
 
 ## Genomic annotations
 
-**Goal:** Assesses concordance with endogenous signals of active chromatin marks<br>
+**Goal:** Assess concordance with endogenous signals of active chromatin marks<br>
 **Input file:** screen_df <br>
 **Evaluated metrics:** Concordance with endogenous signals <br>
 
@@ -663,14 +663,14 @@
 
 
 
-**Legend:** A stacked Bar plot of the cCREs' overlap with screen elements. cCREs were grouped by activity levels to six groups - Inactive and five activity quantiles <br>
+**Legend:** A stacked bar plot of cCRE overlap with active chromatin marks (ENCODE SCREEN elements). cCREs were grouped into six groups based on their activity levels. <br>
 **Interpretation:** The successful example showcases increased overlap with active chromatin marks as activity increases. The unsuccessful example shows no such increase<br>
 
 
 ## Proximity to TSS
 
 
-**Goal:** Assesses concordance with endogenous locations of cCREs <br>
+**Goal:** Assess concordance with endogenous locations of cCREs <br>
 **Input file:** tss_df<br>
 **Evaluated metrics:** Concordance with endogenous signals <br>
 
@@ -693,7 +693,7 @@
 ```
 
 
-**Legend:** A box plot of the distances of cCREs to the nearest TSS. cCREs were grouped by activity levels to six groups - Inactive and five activity quantiles <br>
+**Legend:** Box plots of cCRE distance to the closest TSS. cCREs were grouped into six groups based on their activity levels. <br>
 **Interpretation:** The successful example showcases that more active cCREs tend to be closer to a TSS. The unsuccessful example shows no such trend<br>
 
 
@@ -701,7 +701,7 @@
 
 ## AI predictions vs activity
 
-**Goal:** Assesses the correlation between AI predictions of activity and MPRA results <br>
+**Goal:** Assess the correlation between AI predictions of activity and MPRA results <br>
 **Input file:** AI_df <br>
 **Evaluated metrics:** Concordance with endogenous signals <br>
 
@@ -725,14 +725,14 @@
 
 
 
-**Legend:** A scatter plot of the Experimentally measuerd activity (x axis) compared to the AI-predicted activity (y axis). Each data point is an hexagon that represents the cCRE density in the given values<br>
+**Legend:** Experimentally measured activity vs AI-predicted activity. Each data point is a hexagon representing the local density of cCREs.<br>
 **Interpretation:** The successful example showcases a high correlation, and the unsuccessful example showcases little correlation<br>
 
 
 
 ## AI predictions vs differential activity
 
-**Goal:** Assesses the correlation between AI predictions of differential activity and MPRA results <br>
+**Goal:** Assess the correlation between AI predictions of differential activity and MPRA results <br>
 **Input file:** AI_comparative_df <br>
 **Evaluated metrics:** Concordance with endogenous signals <br>
 
@@ -757,8 +757,8 @@
 
 
 
-**Legend:** A scatter plot of the Experimentally measuerd activity (x axis) compared to the AI-predicted activity (y axis). Each data point is an hexagon that represents the cCRE density in the given values <br>
-**Interpretation:** The successful example showcases a modest but consistent positive correlation, and the unsuccessful example showcases no correlation<br>
+**Legend:** Experimentally measured differential activity vs AI-predicted differential activity. Each data point is a hexagon representing the local density of cCREs. <br>
+**Interpretation:** The successful example showcases some correlation, and the unsuccessful example showcases no correlation.<br>
 
 
 

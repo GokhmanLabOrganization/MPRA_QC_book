@@ -23,7 +23,7 @@
 <meta name="author" content="Simon Fishilevich, Omer Ronen, Nadav Mishol, Ryder Easterlin, Nitzan Haim, Katharina Lange, Nadav Ahituv, Irene Gallego Romero, Fumitaka Inoue, Martin Kircher, Michael I. Love, Max Schubach, and David Gokhman" />
 
 
-<meta name="date" content="2026-02-03" />
+<meta name="date" content="2026-02-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -161,7 +161,7 @@
 <h1><span class="header-section-number">Chapter 2</span> Associations QC<a href="associations-qc.html#associations-qc" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="ccres-per-bc" class="section level2 hasAnchor" number="2.1">
 <h2><span class="header-section-number">2.1</span> cCREs per BC<a href="associations-qc.html#ccres-per-bc" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>Goal:</strong> Assesses BC promiscuity <br>
+<p><strong>Goal:</strong> Assess BC promiscuity <br>
 <strong>Input file:</strong> association_before_promiscuity<br>
 <strong>Evaluated metrics:</strong> Specificity<br></p>
 <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
@@ -178,12 +178,12 @@
 <img src="external_figures/Max_MPRA_run2/cCREs_per_BC_shuffled.svg" style="width:100%; display:block;"/>
 </div>
 </div>
-<p><strong>Legend:</strong> A bar plot that shows the percentage of BCs (y axis) by their number of associated cCREs (x axis) <br>
+<p><strong>Legend:</strong> A histogram of the number of cCREs per BC <br>
 <strong>Interpretation:</strong> The successful example showcases a highly specific experiment, where most of the BCs are associated with only one cCRE. The unsuccessful example showcases a problem where many BCs are associated with more than one oligo, suggesting a problem in specificity <br></p>
 </div>
 <div id="reads-per-association" class="section level2 hasAnchor" number="2.2">
 <h2><span class="header-section-number">2.2</span> Reads per association<a href="associations-qc.html#reads-per-association" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>Goal:</strong> Assesses confidence in associations <br>
+<p><strong>Goal:</strong> Assess confidence in associations <br>
 <strong>Input file:</strong> association_before_minimum_associations<br>
 <strong>Evaluated metrics:</strong> Specificity<br></p>
 <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
@@ -200,12 +200,12 @@
 <img src="external_figures/Max_MPRA_run2/UMIs_per_association.svg" style="width:100%; display:block;"/>
 </div>
 </div>
-<p><strong>Legend:</strong> A bar plot of the number of reads supporting each cCRE-BC pairing <br>
-<strong>Interpretation:</strong> The successful example showcases a reliable experiment, where many BC-cCRE pairs are supported with a large number of reads. The unsuccessful example showcases a problem where many pairs only appear once, making it hard to trust the pairings <br></p>
+<p><strong>Legend:</strong> The number of reads supporting each cCRE-BC pairing <br>
+<strong>Interpretation:</strong> The successful example showcases a robust experiment, where BC-cCRE associations are supported by many reads. In the unsuccessful example, over half of the associations appear only once. <br></p>
 </div>
 <div id="bcs-per-ccre" class="section level2 hasAnchor" number="2.3">
 <h2><span class="header-section-number">2.3</span> BCs per cCRE<a href="associations-qc.html#bcs-per-ccre" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>Goal:</strong> Assesses BC replicability <br>
+<p><strong>Goal:</strong> Assess BC replicability <br>
 <strong>Input file:</strong> final_df <br>
 <strong>Evaluated metrics:</strong> Complexity (multiplicity &amp; uniformity)<br></p>
 <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
@@ -223,11 +223,11 @@
 </div>
 </div>
 <p><strong>Legend:</strong> An empirical cumulative function (eCDF) of BCs per cCRE <br>
-<strong>Interpretation:</strong> The successful example showcases a high BCs per cCRE statistics and a low percentage of cCREs with less than 10 BCs, suggesting high complexity and reliable associations. The unsuccessful example showcases a problem where many cCREs have low BC counts <br></p>
+<strong>Interpretation:</strong> The successful example showcases many BCs per cCRE and a low percentage of cCREs with fewer than 10 BCs, suggesting high complexity. The unsuccessful example showcases a problem where most cCREs have few BCs. <br></p>
 </div>
 <div id="retained-ccres" class="section level2 hasAnchor" number="2.4">
 <h2><span class="header-section-number">2.4</span> Retained cCREs<a href="associations-qc.html#retained-ccres" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>Goal:</strong> Assesses BC replicability <br>
+<p><strong>Goal:</strong> Assess BC replicability <br>
 <strong>Input file:</strong> final_df<br>
 <strong>Evaluated metrics:</strong> Complexity (multiplicity &amp; uniformity)<br></p>
 <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
@@ -245,11 +245,11 @@
 </div>
 </div>
 <p><strong>Legend:</strong> Retained cCREs per increasing cutoffs of BC number per cCRE<br>
-<strong>Interpretation:</strong> The successful example showcases an experiment with high complexity, most of the cCREs are retained in high thresholds of minimal number of BC associations. The unsuccessful example showcases a low complexity experiment, when we filter for high BC associations per cCRE, most of the cCREs are filtered out<br></p>
+<strong>Interpretation:</strong> The successful example showcases a high-complexity experiment, in which most cCREs are retained even at stringent minimum barcode thresholds. The unsuccessful example showcases a low-complexity experiment, in which the majority of cCREs are lost when applying high BC-per-cCRE filters.<br></p>
 </div>
 <div id="ccre-retention-by-sequencing-depth" class="section level2 hasAnchor" number="2.5">
 <h2><span class="header-section-number">2.5</span> cCRE retention by sequencing depth<a href="associations-qc.html#ccre-retention-by-sequencing-depth" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>Goal:</strong> Assesses whether sequencing depth is sufficient<br>
+<p><strong>Goal:</strong> Assess whether sequencing depth is sufficient<br>
 <strong>Input file:</strong> assoc_downsampling<br>
 <strong>Evaluated metrics:</strong> Complexity (multiplicity &amp; uniformity)<br></p>
 <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
@@ -266,12 +266,12 @@
 <img src="external_figures/Max_MPRA_run2/Downsampling_Retained_cCREs.svg" style="width:100%; display:block;"/>
 </div>
 </div>
-<p><strong>Legend:</strong> A scatter plot that shows the connection between the sampling parameter (x axis) and the percentage of retained cCREs. This analysis also includes predicted values to test whether additional sequening will help improving the results<br>
-<strong>Interpretation:</strong> The successful example showcases an experiment with high complexity, predicted value for additional sequencing don’t improve the coverage significantly. The unsuccessful example showcases an experiment that can be improved by additional sequencing<br></p>
+<p><strong>Legend:</strong> Sequencing depth vs retained cCREs. Sequencing data is downsampled in order to assess whether we have reached saturation in the percentage of retained cCREs. Then, data is extrapolated to predict whether additional sequencing will help improve the results.<br>
+<strong>Interpretation:</strong> The successful example showcases a high-complexity experiment: additional sequencing is not predicted to improve the percentage of retained cCREs. The unsuccessful example showcases an experiment where sequencing depth was suboptimal: additional sequencing is predicted to improve the percentage of retained cCREs.<br></p>
 </div>
 <div id="bcs-per-ccre-by-sequencing-depth" class="section level2 hasAnchor" number="2.6">
 <h2><span class="header-section-number">2.6</span> BCs per cCRE by sequencing depth<a href="associations-qc.html#bcs-per-ccre-by-sequencing-depth" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>Goal:</strong> Assesses whether sequencing depth is sufficient <br>
+<p><strong>Goal:</strong> Assess whether sequencing depth is sufficient <br>
 <strong>Input file:</strong> Input file: assoc_downsampling<br>
 <strong>Evaluated metrics:</strong> Complexity (multiplicity &amp; uniformity)<br></p>
 <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
@@ -288,12 +288,12 @@
 <img src="external_figures/L3a2_281122/Downsampling_Barcodes_per_cCRE.svg" style="width:100%; display:block;"/>
 </div>
 </div>
-<p><strong>Legend:</strong> A box plot of the number of BCs per cCRE (y axis) as a function of the sampling parameter (x axis) <br>
-<strong>Interpretation:</strong> The successful example showcases a plateau in the tested statistic. The unsuccessful example showcases an increase in the tested statistic, suggesting it can be improved by additional sequencing<br></p>
+<p><strong>Legend:</strong> A box plot of the number of BCs per cCRE (y axis) as a function of the downsampling parameter (x axis), i.e., the fraction of sequencing data used. <br>
+<strong>Interpretation:</strong> In the successful example, sequencing depth was sufficient to capture library complexity. In the unsuccessful example, additional sequencing substantially increases the number of barcodes, indicating that the library has not yet been sequenced to saturation.<br></p>
 </div>
 <div id="pcr-bias---gc" class="section level2 hasAnchor" number="2.7">
 <h2><span class="header-section-number">2.7</span> PCR bias - GC<a href="associations-qc.html#pcr-bias---gc" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>Goal:</strong> Assesses GC content bias in PCR amplification <br>
+<p><strong>Goal:</strong> Assess GC content bias in PCR amplification <br>
 <strong>Input file:</strong> final_df<br>
 <strong>Evaluated metrics:</strong> Complexity (multiplicity &amp; uniformity)<br></p>
 <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
@@ -310,12 +310,12 @@
 <img src="external_figures/Max_MPRA_run2/PCR_bias_GC.svg" style="width:100%; display:block;"/>
 </div>
 </div>
-<p><strong>Legend:</strong> This figure includes two different plots with a shared x axis - GC% content bin. The box plot presents the number of reads for each cCRE and the line plot presents the number of cCREs in each bin. Data was binned in fixed sizes of 5% <br>
-<strong>Interpretation:</strong> The successful example shows a relatively consistent number of reads per GC content, and PCR conditions that are optimized for the GC content levels of most cCREs (peaks are close to one another). The unsuccessful example shows both a strong amplification bias and suboptimal PCR conditions for the GC content levels of most cCREs<br></p>
+<p><strong>Legend:</strong> The number of reads (yellow box plots) and cCREs (green line) at various levels of GC content. Data was binned in fixed sizes of 5%. <br>
+<strong>Interpretation:</strong> The successful example showcases a relatively consistent number of reads per GC content, as well as PCR conditions that are optimized for the most common GC content levels (peaks are close to one another). The unsuccessful example showcases both a strong amplification bias and suboptimal PCR conditions for the GC content levels of most cCREs.<br></p>
 </div>
 <div id="pcr-bias---g-stretches" class="section level2 hasAnchor" number="2.8">
 <h2><span class="header-section-number">2.8</span> PCR bias - G-stretches<a href="associations-qc.html#pcr-bias---g-stretches" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>Goal:</strong> Assesses G-stretches bias in PCR amplification<br>
+<p><strong>Goal:</strong> Assess G-stretches bias in PCR amplification<br>
 <strong>Input file:</strong> final_df<br>
 <strong>Evaluated metrics:</strong> Complexity (multiplicity &amp; uniformity)<br></p>
 <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
@@ -332,8 +332,8 @@
 <img src="external_figures/humanMPRA_L4a2/PCR_bias_G-stretches.svg" style="width:100%; display:block;"/>
 </div>
 </div>
-<p><strong>Legend:</strong> This figure includes two different plots with a shared x axis - G stretch length. The box plot presents the number of reads for each cCRE and the line plot presents the number of cCREs in each bin.<br>
-<strong>Interpretation:</strong> The successful example shows a relatively consistent number of reads per G stretch length, suggesting no bias for short G stretch cCREs (peaks are close to one another). The unsuccessful example shows both a bias and suboptimal PCR conditions for long G stretch cCREs <br></p>
+<p><strong>Legend:</strong> The number of reads (yellow box plots) and cCREs (green line) at various lengths of G-stretches.<br>
+<strong>Interpretation:</strong> The successful example showcases a relatively consistent number of reads per G-stretch length. The unsuccessful example showcases both a strong amplification bias and suboptimal PCR conditions for the GC content levels of most cCREs (peaks do not overlap).<br></p>
 
 </div>
 </div>
