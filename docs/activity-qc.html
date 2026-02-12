@@ -23,7 +23,7 @@
 <meta name="author" content="Simon Fishilevich, Omer Ronen, Nadav Mishol, Ryder Easterlin, Nitzan Haim, Katharina Lange, Nadav Ahituv, Irene Gallego Romero, Fumitaka Inoue, Martin Kircher, Michael I. Love, Max Schubach, and David Gokhman" />
 
 
-<meta name="date" content="2026-02-04" />
+<meta name="date" content="2026-02-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -184,7 +184,7 @@
 <div id="dna-counts-vs-gc-content" class="section level2 hasAnchor" number="3.2">
 <h2><span class="header-section-number">3.2</span> DNA counts vs GC content<a href="activity-qc.html#dna-counts-vs-gc-content" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>Goal:</strong> Assess GC content bias in PCR amplification <br>
-<strong>Input file:</strong> oligo_fasta, comb_df <br>
+<strong>Input file:</strong> oligo_fasta, activity_df <br>
 <strong>Evaluated metrics:</strong> DNA Complexity <br></p>
 <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
 <div style="width:49%;">
@@ -206,7 +206,7 @@
 <div id="activity-statistic-vs-count-ratio" class="section level2 hasAnchor" number="3.3">
 <h2><span class="header-section-number">3.3</span> Activity statistic vs count ratio<a href="activity-qc.html#activity-statistic-vs-count-ratio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>Goal:</strong> Assess the correlation between log2(RNA/DNA) and the summary statistic of activity <br>
-<strong>Input file:</strong> comb_df <br>
+<strong>Input file:</strong> activity_df <br>
 <strong>Evaluated metrics:</strong> DNA Complexity, RNA Complexity <br></p>
 <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
 <div style="width:49%;">
@@ -228,7 +228,7 @@
 <div id="activity-distribution" class="section level2 hasAnchor" number="3.4">
 <h2><span class="header-section-number">3.4</span> Activity distribution<a href="activity-qc.html#activity-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>Goal:</strong> Assess activity dynamic range, noise, and statistical power <br>
-<strong>Input file:</strong> comb_df<br>
+<strong>Input file:</strong> activity_df<br>
 <strong>Evaluated metrics:</strong> DNA Complexity, RNA Complexity:<br></p>
 <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
 <div style="width:32%;">
@@ -278,7 +278,7 @@
 <div id="p-value-distribution" class="section level2 hasAnchor" number="3.6">
 <h2><span class="header-section-number">3.6</span> P-value distribution<a href="activity-qc.html#p-value-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>Goal:</strong> Assess statistical power <br>
-<strong>Input file:</strong> comb_df<br>
+<strong>Input file:</strong> activity_df<br>
 <strong>Evaluated metrics:</strong> DNA Complexity, RNA Complexity, Reproducibility, Dynamic range<br></p>
 <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
 <div style="width:49%;">
@@ -388,7 +388,7 @@
 <div id="cumulative-rna-reads" class="section level2 hasAnchor" number="3.11">
 <h2><span class="header-section-number">3.11</span> Cumulative RNA reads<a href="activity-qc.html#cumulative-rna-reads" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>Goal:</strong> Assess jackpotting <br>
-<strong>Input file:</strong> comb_df<br>
+<strong>Input file:</strong> activity_df<br>
 <strong>Evaluated metrics:</strong> RNA Complexity, Dynamic range<br></p>
 <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
 <div style="width:49%;">
@@ -485,7 +485,7 @@
 <div id="correlation-between-replicates-controls" class="section level2 hasAnchor" number="3.16">
 <h2><span class="header-section-number">3.16</span> Correlation between replicates (controls)<a href="activity-qc.html#correlation-between-replicates-controls" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>Goal:</strong> Assess reproducibility between replicates in positive and negative controls <br>
-<strong>Input file:</strong> comb_df<br>
+<strong>Input file:</strong> activity_df<br>
 <strong>Evaluated metrics:</strong> Reproducibility, Dynamic range<br></p>
 <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
 <div style="width:49%;">
@@ -582,7 +582,7 @@
 <div id="rna-vs-dna" class="section level2 hasAnchor" number="3.21">
 <h2><span class="header-section-number">3.21</span> RNA vs DNA<a href="activity-qc.html#rna-vs-dna" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>Goal:</strong> Assess true activity in the experiment <br>
-<strong>Input file:</strong> comb_df<br>
+<strong>Input file:</strong> activity_df<br>
 <strong>Evaluated metrics:</strong> Dynamic Range<br></p>
 <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
 <div style="width:32%;">
@@ -610,7 +610,7 @@
 <div id="activity-of-controls" class="section level2 hasAnchor" number="3.22">
 <h2><span class="header-section-number">3.22</span> Activity of controls<a href="activity-qc.html#activity-of-controls" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>Goal:</strong> Assess the dynamic range of activity<br>
-<strong>Input file:</strong> comb_df<br>
+<strong>Input file:</strong> activity_df<br>
 <strong>Evaluated metrics:</strong> Dynamic Range<br></p>
 <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
 <div style="width:49%;">

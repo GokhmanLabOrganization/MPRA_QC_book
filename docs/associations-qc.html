@@ -23,7 +23,7 @@
 <meta name="author" content="Simon Fishilevich, Omer Ronen, Nadav Mishol, Ryder Easterlin, Nitzan Haim, Katharina Lange, Nadav Ahituv, Irene Gallego Romero, Fumitaka Inoue, Martin Kircher, Michael I. Love, Max Schubach, and David Gokhman" />
 
 
-<meta name="date" content="2026-02-04" />
+<meta name="date" content="2026-02-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -162,7 +162,7 @@
 <div id="ccres-per-bc" class="section level2 hasAnchor" number="2.1">
 <h2><span class="header-section-number">2.1</span> cCREs per BC<a href="associations-qc.html#ccres-per-bc" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>Goal:</strong> Assess BC promiscuity <br>
-<strong>Input file:</strong> association_before_promiscuity<br>
+<strong>Input file:</strong> associations_before_promiscuity<br>
 <strong>Evaluated metrics:</strong> Specificity<br></p>
 <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
 <div style="width:49%;">
@@ -184,7 +184,7 @@
 <div id="reads-per-association" class="section level2 hasAnchor" number="2.2">
 <h2><span class="header-section-number">2.2</span> Reads per association<a href="associations-qc.html#reads-per-association" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>Goal:</strong> Assess confidence in associations <br>
-<strong>Input file:</strong> association_before_minimum_associations<br>
+<strong>Input file:</strong> associations_before_minimum_observations<br>
 <strong>Evaluated metrics:</strong> Specificity<br></p>
 <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
 <div style="width:49%;">
@@ -206,7 +206,7 @@
 <div id="bcs-per-ccre" class="section level2 hasAnchor" number="2.3">
 <h2><span class="header-section-number">2.3</span> BCs per cCRE<a href="associations-qc.html#bcs-per-ccre" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>Goal:</strong> Assess BC replicability <br>
-<strong>Input file:</strong> final_df <br>
+<strong>Input file:</strong> final_associations, cCRE_fasta <br>
 <strong>Evaluated metrics:</strong> Complexity (multiplicity &amp; uniformity)<br></p>
 <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
 <div style="width:49%;">
@@ -228,7 +228,7 @@
 <div id="retained-ccres" class="section level2 hasAnchor" number="2.4">
 <h2><span class="header-section-number">2.4</span> Retained cCREs<a href="associations-qc.html#retained-ccres" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>Goal:</strong> Assess BC replicability <br>
-<strong>Input file:</strong> final_df<br>
+<strong>Input file:</strong> final_associations, cCRE_fasta<br>
 <strong>Evaluated metrics:</strong> Complexity (multiplicity &amp; uniformity)<br></p>
 <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
 <div style="width:49%;">
@@ -250,7 +250,7 @@
 <div id="ccre-retention-by-sequencing-depth" class="section level2 hasAnchor" number="2.5">
 <h2><span class="header-section-number">2.5</span> cCRE retention by sequencing depth<a href="associations-qc.html#ccre-retention-by-sequencing-depth" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>Goal:</strong> Assess whether sequencing depth is sufficient<br>
-<strong>Input file:</strong> assoc_downsampling<br>
+<strong>Input file:</strong> associations_downsampling_path, associations_downsampling_file_name, cCRE_fasta <br>
 <strong>Evaluated metrics:</strong> Complexity (multiplicity &amp; uniformity)<br></p>
 <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
 <div style="width:49%;">
@@ -272,7 +272,7 @@
 <div id="bcs-per-ccre-by-sequencing-depth" class="section level2 hasAnchor" number="2.6">
 <h2><span class="header-section-number">2.6</span> BCs per cCRE by sequencing depth<a href="associations-qc.html#bcs-per-ccre-by-sequencing-depth" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>Goal:</strong> Assess whether sequencing depth is sufficient <br>
-<strong>Input file:</strong> Input file: assoc_downsampling<br>
+<strong>Input file:</strong> associations_downsampling_path, associations_downsampling_file_name, cCRE_fasta <br>
 <strong>Evaluated metrics:</strong> Complexity (multiplicity &amp; uniformity)<br></p>
 <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
 <div style="width:49%;">
@@ -294,7 +294,7 @@
 <div id="pcr-bias---gc" class="section level2 hasAnchor" number="2.7">
 <h2><span class="header-section-number">2.7</span> PCR bias - GC<a href="associations-qc.html#pcr-bias---gc" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>Goal:</strong> Assess GC content bias in PCR amplification <br>
-<strong>Input file:</strong> final_df<br>
+<strong>Input file:</strong> final_associations, cCRE_fasta<br>
 <strong>Evaluated metrics:</strong> Complexity (multiplicity &amp; uniformity)<br></p>
 <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
 <div style="width:49%;">
@@ -316,7 +316,7 @@
 <div id="pcr-bias---g-stretches" class="section level2 hasAnchor" number="2.8">
 <h2><span class="header-section-number">2.8</span> PCR bias - G-stretches<a href="associations-qc.html#pcr-bias---g-stretches" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>Goal:</strong> Assess G-stretches bias in PCR amplification<br>
-<strong>Input file:</strong> final_df<br>
+<strong>Input file:</strong> final_associations, cCRE_fasta<br>
 <strong>Evaluated metrics:</strong> Complexity (multiplicity &amp; uniformity)<br></p>
 <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
 <div style="width:49%;">

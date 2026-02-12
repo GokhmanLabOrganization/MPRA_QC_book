@@ -9,7 +9,7 @@
 
 ## cCREs per BC
 **Goal:** Assess BC promiscuity <br>
-**Input file:** association_before_promiscuity<br>
+**Input file:** associations_before_promiscuity<br>
 **Evaluated metrics:** Specificity<br>
 
 
@@ -38,7 +38,7 @@
 
 ## Reads per association
 **Goal:** Assess confidence in associations <br>
-**Input file:** association_before_minimum_associations<br>
+**Input file:** associations_before_minimum_observations<br>
 **Evaluated metrics:** Specificity<br>
 
 
@@ -73,7 +73,7 @@
 
 
 **Goal:** Assess BC replicability <br>
-**Input file:** final_df <br>
+**Input file:** final_associations, cCRE_fasta <br>
 **Evaluated metrics:** Complexity (multiplicity & uniformity)<br>
 
 
@@ -102,7 +102,7 @@
 
 ## Retained cCREs
 **Goal:** Assess BC replicability <br>
-**Input file:** final_df<br>
+**Input file:** final_associations, cCRE_fasta<br>
 **Evaluated metrics:** Complexity (multiplicity & uniformity)<br>
 
 
@@ -131,7 +131,7 @@
 
 ## cCRE retention by sequencing depth
 **Goal:** Assess whether sequencing depth is sufficient<br>
-**Input file:** assoc_downsampling<br>
+**Input file:** associations_downsampling_path, associations_downsampling_file_name, cCRE_fasta <br>
 **Evaluated metrics:** Complexity (multiplicity & uniformity)<br>
 
 
@@ -159,7 +159,7 @@
 
 ## BCs per cCRE by sequencing depth
 **Goal:** Assess whether sequencing depth is sufficient <br>
-**Input file:** Input file: assoc_downsampling<br>
+**Input file:** associations_downsampling_path, associations_downsampling_file_name, cCRE_fasta <br>
 **Evaluated metrics:** Complexity (multiplicity & uniformity)<br>
 
 
@@ -190,7 +190,7 @@
 
 
 **Goal:** Assess GC content bias in PCR amplification <br>
-**Input file:** final_df<br>
+**Input file:** final_associations, cCRE_fasta<br>
 **Evaluated metrics:** Complexity (multiplicity & uniformity)<br>
 
 ```{=html}
@@ -220,7 +220,7 @@
 ## PCR bias - G-stretches
 
 **Goal:** Assess G-stretches bias in PCR amplification<br>
-**Input file:** final_df<br>
+**Input file:** final_associations, cCRE_fasta<br>
 **Evaluated metrics:** Complexity (multiplicity & uniformity)<br>
 
 
