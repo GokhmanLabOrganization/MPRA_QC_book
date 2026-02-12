@@ -23,7 +23,7 @@
 <meta name="author" content="Simon Fishilevich, Omer Ronen, Nadav Mishol, Ryder Easterlin, Nitzan Haim, Katharina Lange, Nadav Ahituv, Irene Gallego Romero, Fumitaka Inoue, Martin Kircher, Michael I. Love, Max Schubach, and David Gokhman" />
 
 
-<meta name="date" content="2026-02-04" />
+<meta name="date" content="2026-02-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -166,12 +166,12 @@ Each chapter is accompanied by a dedicated script that allows the user to run al
 <h2><span class="header-section-number">1.1</span> Associations<a href="a-guide-for-running-the-analyses-scripts.html#associations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="script" class="section level3 hasAnchor" number="1.1.1">
 <h3><span class="header-section-number">1.1.1</span> Script<a href="a-guide-for-running-the-analyses-scripts.html#script" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Association_analysis.ipynb</p>
+<p>association_analysis.py</p>
 </div>
 <div id="input" class="section level3 hasAnchor" number="1.1.2">
 <h3><span class="header-section-number">1.1.2</span> Input<a href="a-guide-for-running-the-analyses-scripts.html#input" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>As part of MPRA data processing, the pipeline produces a set of intermediate output files. These files are subsequently used as inputs to Process_for_association_QC.py, which generates the final data files used in this chapter.</p>
-<p><strong>final_df:</strong> BC - cCRE association file after all filtering.</p>
+<p><strong>final_associations:</strong> BC - cCRE association file after all filtering.</p>
 <table>
 <colgroup>
 <col width="30%" />
@@ -198,10 +198,12 @@ Each chapter is accompanied by a dedicated script that allows the user to run al
 </tr>
 </tbody>
 </table>
-<p><strong>association_before_minimum_associations:</strong> BC - cCRE association file before filtering for a minimal number of unique BC-cCRE observations. Format is identical to final_df</p>
-<p><strong>association_before_promiscuity:</strong> BC - cCRE association file before filtering out BCs that are associated with multiple cCREs.
+<p><strong>associations_before_minimum_observations:</strong> BC - cCRE association file before filtering for a minimal number of unique BC-cCRE observations. Format is identical to final_df</p>
+<p><strong>associations_before_promiscuity:</strong> BC - cCRE association file before filtering out BCs that are associated with multiple cCREs.
 Format is identical to final_df</p>
-<p><strong>assoc_downsampling:</strong> A path to the folder containing the input files for the downsampling analysis</p>
+<p><strong>associations_downsampling_path:</strong> A path to a folder containing input files for the downsampling analysis.</p>
+<p><strong>associations_downsampling_file_name:</strong> The downsampling associations file name</p>
+<p><strong>cCRE_fasta:</strong> Fasta file that includes all cCREs tested</p>
 </div>
 <div id="output" class="section level3 hasAnchor" number="1.1.3">
 <h3><span class="header-section-number">1.1.3</span> Output<a href="a-guide-for-running-the-analyses-scripts.html#output" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -212,34 +214,34 @@ Format is identical to final_df</p>
 <h2><span class="header-section-number">1.2</span> RNA and DNA quantification<a href="a-guide-for-running-the-analyses-scripts.html#rna-and-dna-quantification" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="script-1" class="section level3 hasAnchor" number="1.2.1">
 <h3><span class="header-section-number">1.2.1</span> Script<a href="a-guide-for-running-the-analyses-scripts.html#script-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>activity_analysis.ipynb</p>
+<p>activity_analysis.py</p>
 </div>
 <div id="input-1" class="section level3 hasAnchor" number="1.2.2">
 <h3><span class="header-section-number">1.2.2</span> Input<a href="a-guide-for-running-the-analyses-scripts.html#input-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>As part of MPRA data processing, the pipeline produces a set of intermediate output files. Some of these files are subsequently used as the final data files used in this chapter and others are combined with external data sets and then used in the pipeline.</p>
 <div class="table-scroll">
-<p><strong>comb_df:</strong> Each row represents a cCRE and has both activity data - statistic and p-value and RNA/DNA counts. This is the key file for the activity chapter</p>
+<p><strong>activity_df:</strong> Each row represents a cCRE and includes activity data - statistic and p-value and RNA/DNA counts. This is the key file for the activity chapter</p>
 <table>
 <colgroup>
-<col width="5%" />
-<col width="12%" />
-<col width="12%" />
-<col width="18%" />
-<col width="19%" />
-<col width="8%" />
-<col width="12%" />
-<col width="9%" />
+<col width="3%" />
+<col width="10%" />
+<col width="10%" />
+<col width="13%" />
+<col width="23%" />
+<col width="11%" />
+<col width="16%" />
+<col width="10%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th>oligo</th>
+<th>cCRE</th>
 <th>DNA_rep_comb</th>
 <th>RNA_rep_comb</th>
-<th>activity_adjusted</th>
-<th>ratio_log_rep_comb</th>
-<th>pval.mad</th>
-<th>control_type</th>
-<th>statistic</th>
+<th>activity_status</th>
+<th>RNA_DNA_ratio_log_rep_comb</th>
+<th>activity_pval</th>
+<th>activity_statistic</th>
+<th>activity_FDR</th>
 </tr>
 </thead>
 <tbody>
@@ -250,8 +252,8 @@ Format is identical to final_df</p>
 <td>cCRE activity</td>
 <td>log RNA/DNA ratio across all replicates</td>
 <td>mad score p-value</td>
-<td>Control annotation</td>
 <td>activity statistic</td>
+<td></td>
 </tr>
 <tr class="even">
 <td>cCRE ID 2</td>
@@ -260,14 +262,15 @@ Format is identical to final_df</p>
 <td>cCRE activity</td>
 <td>log RNA/DNA ratio across all replicates</td>
 <td>mad score p-value</td>
-<td>Control annotation</td>
 <td>activity statistic</td>
+<td>adjusted p-value after FDR</td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="table-scroll">
-<p><strong>activity_per_rep:</strong> Read counts data for each cCRE by replicates and combined after filtering for two standard deviations</p>
+<p><br><br></p>
+<p><strong>activity_per_rep:</strong> RNA and DNA read counts data for each cCRE by replicates and combined</p>
 <table>
 <colgroup>
 <col width="2%" />
@@ -282,65 +285,36 @@ Format is identical to final_df</p>
 </colgroup>
 <thead>
 <tr class="header">
-<th>oligo</th>
-<th>RNA_filtered_std2_rep1</th>
-<th>DNA_filtered_std2_rep1</th>
-<th>RNA_filtered_std2_rep2</th>
-<th>DNA_filtered_std2_rep2</th>
-<th>RNA_filtered_std2_rep3</th>
-<th>DNA_filtered_std2_rep3</th>
-<th>ratio_log_filtered_std2_rep1</th>
-<th>ratio_log_filtered_std2_rep2</th>
+<th>cCRE</th>
+<th>RNA_rep1</th>
+<th>DNA_rep1</th>
+<th>RNA_rep2</th>
+<th>DNA_rep2</th>
+<th>RNA_rep3</th>
+<th>DNA_rep3</th>
+<th>RNA_DNA_ratio_log_rep1</th>
+<th>RNA_DNA_ratio_log_rep2</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>cCRE ID 1</td>
 <td>RNA reads rep1</td>
-<td>log2 RNA/DNA derived allele rep1</td>
-<td>log2 RNA/DNA ancestral allele rep2</td>
-<td>log2 RNA/DNA derived allele rep2</td>
-<td>Log fold change derived/ancestral rep1</td>
-<td>Log fold change derived/ancestral rep2</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>cCRE ID 2</td>
-<td>RNA reads rep1</td>
-<td>log2 RNA/DNA derived allele rep1</td>
-<td>log2 RNA/DNA ancestral allele rep2</td>
-<td>log2 RNA/DNA derived allele rep2</td>
-<td>Log fold change derived/ancestral rep1</td>
-<td>Log fold change derived/ancestral rep2</td>
-<td></td>
-<td></td>
+<td>DNA reads rep1</td>
+<td>RNA reads rep2</td>
+<td>DNA reads rep2</td>
+<td>RNA reads rep3</td>
+<td>DNA reads rep3</td>
+<td>RNA/DNA log ratio rep 1</td>
+<td>RNA/DNA log ratio rep 2</td>
 </tr>
 </tbody>
 </table>
 </div>
+<p><br><br></p>
+<p><strong>cCRE_fasta:</strong> Fasta file that includes all cCREs tested</p>
 <div class="table-scroll">
-<p><strong>UMI_counts:</strong> Read counts data for each UMI</p>
-<table>
-<thead>
-<tr class="header">
-<th>oligo_bc</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>UMI count per barcode</td>
-</tr>
-<tr class="even">
-<td>UMI count per barcode</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="table-scroll">
-<p><strong>oligo_fasta:</strong> Fasta file that includes all cCREs tested</p>
-</div>
-<div class="table-scroll">
+<p><br><br></p>
 <p><strong>std_analysis_df:</strong> DNA and RNA counts after outlier filterings of several degrees of strictness.</p>
 <table>
 <colgroup>
@@ -366,12 +340,13 @@ Format is identical to final_df</p>
 </table>
 </div>
 <div class="table-scroll">
-<p><strong>screen_df:</strong> Overlap of cCRE library with screen data, each row represents a cCRE and must have a screen annotation of the following: Distal enhancer like sequence, DNase-only, Proximal enhancer like sequence, Heterochromatin, Promoter like sequence, DNase-H3K4me3. This file can be created using bedtools</p>
+<p><br><br></p>
+<p><strong>screen_df:</strong> Overlap of cCRE library with ENCODE SCREEN databases of regulatory elements. Each row represents a cCRE and must have a screen annotation of the following: Distal enhancer like sequence, DNase-only, Proximal enhancer like sequence, Heterochromatin, Promoter like sequence, DNase-H3K4me3. This file can be created using bedtools</p>
 <table>
 <thead>
 <tr class="header">
-<th>activity_adjusted</th>
-<th>statistic</th>
+<th>activity_status</th>
+<th>activity_statistic</th>
 <th>class</th>
 </tr>
 </thead>
@@ -390,6 +365,7 @@ Format is identical to final_df</p>
 </table>
 </div>
 <div class="table-scroll">
+<p><br><br></p>
 <p><strong>tss_df:</strong> Distance of each cCRE from the nearest TSS, each row must include a numeric value that represents the distance. This file can be created using bedtools</p>
 <table>
 <colgroup>
@@ -399,8 +375,8 @@ Format is identical to final_df</p>
 </colgroup>
 <thead>
 <tr class="header">
-<th>activity_adjusted</th>
-<th>statistic</th>
+<th>activity_status</th>
+<th>activity_statistic</th>
 <th>log10_distance</th>
 </tr>
 </thead>
@@ -419,43 +395,37 @@ Format is identical to final_df</p>
 </table>
 </div>
 <div class="table-scroll">
+<p><br><br></p>
 <p><strong>AI_df:</strong> Comparison of MPRA activity data with an AI model predictions for the same cCREs</p>
 <table>
 <colgroup>
-<col width="3%" />
-<col width="24%" />
-<col width="24%" />
-<col width="24%" />
-<col width="24%" />
+<col width="9%" />
+<col width="40%" />
+<col width="50%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th>id</th>
-<th>Alt activity - exp</th>
-<th>Ref activity - exp</th>
-<th>Ref activity - AI</th>
-<th>Alt activity - AI</th>
+<th>cCRE</th>
+<th>exp: MPRA_activity</th>
+<th>AI: predicted_activity</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>cCRE ID 1</td>
-<td>Experimental activity statistic of alternative allele</td>
-<td>Experimental activity statistic of reference allele</td>
-<td>AI-predicted activity statistic of alternative allele</td>
-<td>AI-predicted activity statistic of reference allele</td>
+<td>Experimental activity statistic</td>
+<td>AI-predicted activity statistic</td>
 </tr>
 <tr class="even">
 <td>cCRE ID 2</td>
-<td>Experimental activity statistic of alternative allele</td>
-<td>Experimental activity statistic of reference allele</td>
-<td>AI-predicted activity statistic of alternative allele</td>
-<td>AI-predicted activity statistic of reference allele</td>
+<td>Experimental activity statistic</td>
+<td>AI-predicted activity statistic</td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="table-scroll">
+<p><br><br></p>
 <p><strong>AI_comparative_df:</strong> Same as above but for differential activity</p>
 <table>
 <colgroup>
@@ -484,38 +454,50 @@ Format is identical to final_df</p>
 </tbody>
 </table>
 </div>
-<p><strong>downsampling_activity_path:</strong> A path for a folder that includes comb_df for each sampling parameter</p>
+<p><br><br></p>
+<p><strong>downsampling_activity_path:</strong> A path for a folder that includes actvitiy_df for each sampling parameter</p>
+<p><br><br></p>
 <p><strong>downsampling_ratio_path:</strong> A path for a folder that includes activity_per_rep for each sampling parameter</p>
 <div class="table-scroll">
+<p><br><br></p>
 <p><strong>comparative_df:</strong> MPRA comparative results, each row represents a locus</p>
 <table>
 <colgroup>
+<col width="10%" />
+<col width="8%" />
 <col width="30%" />
-<col width="30%" />
-<col width="39%" />
+<col width="13%" />
+<col width="36%" />
 </colgroup>
 <thead>
 <tr class="header">
 <th>seq_id</th>
-<th>allele1</th>
-<th>allele2</th>
+<th>logFC</th>
+<th>differentialy_active</th>
+<th>neglog10p</th>
+<th>differential_activity_FDR</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>cCRE ID 1</td>
-<td>Activity statistic in cell type 1</td>
-<td>Activity statistic in cell type 2</td>
+<td>logFC between the derived and ancestral alleles</td>
+<td>differential activity status</td>
+<td>-log10 p-value</td>
+<td>p-value after FDR</td>
 </tr>
 <tr class="even">
 <td>cCRE ID 2</td>
-<td>Activity statistic in cell type 1</td>
-<td>Activity statistic in cell type 2</td>
+<td>logFC between the derived and ancestral alleles</td>
+<td>differential activity status</td>
+<td>-log10 p-value</td>
+<td>p-value after FDR</td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="table-scroll">
+<p><br><br></p>
 <p><strong>allelic_pairs_df:</strong> MPRA quantitative data, each row represents a locus and includes data for both alleles of the locus</p>
 <table>
 <colgroup>
@@ -525,7 +507,7 @@ Format is identical to final_df</p>
 </colgroup>
 <thead>
 <tr class="header">
-<th>seq_id</th>
+<th>cCRE</th>
 <th>allele1</th>
 <th>allele2</th>
 </tr>
@@ -533,19 +515,19 @@ Format is identical to final_df</p>
 <tbody>
 <tr class="odd">
 <td>cCRE ID 1</td>
-<td>Activity statistic in cell type 1</td>
-<td>Activity statistic in cell type 2</td>
+<td>Activity statistic of allele 1</td>
+<td>Activity statistic of allele 2</td>
 </tr>
 <tr class="even">
 <td>cCRE ID 2</td>
-<td>Activity statistic in cell type 1</td>
-<td>Activity statistic in cell type 2</td>
+<td>Activity statistic of allele 1</td>
+<td>Activity statistic of allele 2</td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="table-scroll">
-
+<p><br><br></p>
 <p><strong>cell_types_df:</strong> MPRA quantitative data, each row represents a cCRE and includes data for two different cell types</p>
 <table>
 <colgroup>
@@ -555,43 +537,37 @@ Format is identical to final_df</p>
 </colgroup>
 <thead>
 <tr class="header">
-<th>Sequence ID</th>
-<th>Ref log2 RNA/DNA ratio 1</th>
-<th>Ref log2 RNA/DNA ratio 2</th>
+<th>seq_id</th>
+<th>RNA_DNA_ratio_log_cell1</th>
+<th>RNA_DNA_ratio_log_cell2</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>cCRE ID 1</td>
-<td>Activity statistic of allele 1</td>
-<td>Activity statistic of allele 2</td>
+<td>RNA/DNA log ratio in cell type 1</td>
+<td>RNA/DNA log ratio in cell type 2</td>
 </tr>
 <tr class="even">
 <td>cCRE ID 2</td>
-<td>Activity statistic of allele 1</td>
-<td>Activity statistic of allele 2</td>
+<td>RNA/DNA log ratio in cell type 1</td>
+<td>RNA/DNA log ratio in cell type 2</td>
 </tr>
 </tbody>
 </table>
+</div>
 <div class="table-scroll">
+<p><br><br></p>
 <p><strong>allelic_pairs_replicates_df:</strong> log2 RNA/DNA data for each locus, includes two alleles and their logFC</p>
-<table style="width:100%;">
+<table>
 <colgroup>
-<col width="3%" />
-<col width="23%" />
-<col width="20%" />
-<col width="23%" />
-<col width="20%" />
-<col width="4%" />
-<col width="4%" />
+<col width="27%" />
+<col width="36%" />
+<col width="36%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th>seq_id_</th>
-<th>ratio_log_filtered_std2_rep1_Ancestral</th>
-<th>ratio_log_filtered_std2_rep1_Derived</th>
-<th>ratio_log_filtered_std2_rep2_Ancestral</th>
-<th>ratio_log_filtered_std2_rep2_Derived</th>
+<th>seq_id</th>
 <th>lfc_rep1</th>
 <th>lfc_rep2</th>
 </tr>
@@ -599,21 +575,38 @@ Format is identical to final_df</p>
 <tbody>
 <tr class="odd">
 <td>cCRE ID 1</td>
-<td>log2 RNA/DNA ancestral allele rep1</td>
-<td>log2 RNA/DNA derived allele rep1</td>
-<td>log2 RNA/DNA ancestral allele rep2</td>
-<td>log2 RNA/DNA derived allele rep2</td>
 <td>Log fold change derived/ancestral rep1</td>
 <td>Log fold change derived/ancestral rep2</td>
 </tr>
 <tr class="even">
 <td>cCRE ID 2</td>
-<td>log2 RNA/DNA ancestral allele rep1</td>
-<td>log2 RNA/DNA derived allele rep1</td>
-<td>log2 RNA/DNA ancestral allele rep2</td>
-<td>log2 RNA/DNA derived allele rep2</td>
 <td>Log fold change derived/ancestral rep1</td>
 <td>Log fold change derived/ancestral rep2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-scroll">
+<p><br><br></p>
+<p><strong>control_df:</strong> control annotation for each cCRE</p>
+<table>
+<thead>
+<tr class="header">
+<th>cCRE</th>
+<th>cCRE type</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>cCRE ID 1</td>
+<td>cCRE annotation: control (positive/negative) or test</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>cCRE ID 2</td>
+<td>cCRE annotation: control (positive/negative) or test</td>
+<td></td>
 </tr>
 </tbody>
 </table>

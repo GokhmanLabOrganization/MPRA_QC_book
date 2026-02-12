@@ -38,7 +38,7 @@
 ## DNA counts vs GC content
 
 **Goal:** Assess GC content bias in PCR amplification  <br>
-**Input file:** oligo_fasta, comb_df  <br>
+**Input file:** oligo_fasta, activity_df  <br>
 **Evaluated metrics:** DNA Complexity <br>
 
 
@@ -67,7 +67,7 @@
 ## Activity statistic vs count ratio
 
 **Goal:** Assess the correlation between log2(RNA/DNA) and the summary statistic of activity <br>
-**Input file:** comb_df <br>
+**Input file:** activity_df <br>
 **Evaluated metrics:** DNA Complexity, RNA Complexity <br>
 
 
@@ -95,7 +95,7 @@
 
 ## Activity distribution
 **Goal:** Assess activity dynamic range, noise, and statistical power <br>
-**Input file:** comb_df<br>
+**Input file:** activity_df<br>
 **Evaluated metrics:** DNA Complexity, RNA Complexity:<br>
 
 
@@ -160,7 +160,7 @@
 
 ## P-value distribution
 **Goal:** Assess statistical power <br>
-**Input file:** comb_df<br>
+**Input file:** activity_df<br>
 **Evaluated metrics:** DNA Complexity, RNA Complexity, Reproducibility, Dynamic range<br>
 
 ```{=html}
@@ -304,7 +304,7 @@
 
 ## Cumulative RNA reads
 **Goal:** Assess jackpotting <br>
-**Input file:** comb_df<br>
+**Input file:** activity_df<br>
 **Evaluated metrics:** RNA Complexity, Dynamic range<br>
 
 
@@ -441,7 +441,7 @@
 
 ## Correlation between replicates (controls)
 **Goal:** Assess reproducibility between replicates in positive and negative controls <br>
-**Input file:** comb_df<br>
+**Input file:** activity_df<br>
 **Evaluated metrics:** Reproducibility, Dynamic range<br>
 
 
@@ -574,7 +574,7 @@
 
 ## RNA vs DNA
 **Goal:** Assess true activity in the experiment <br>
-**Input file:** comb_df<br>
+**Input file:** activity_df<br>
 **Evaluated metrics:** Dynamic Range<br>
 
 
@@ -611,7 +611,7 @@
 
 ## Activity of controls
 **Goal:** Assess the dynamic range of activity<br>
-**Input file:** comb_df<br>
+**Input file:** activity_df<br>
 **Evaluated metrics:** Dynamic Range<br>
 
 
