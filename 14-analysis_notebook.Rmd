@@ -231,13 +231,43 @@ activity_analysis.py
 
 
 |cCRE|cCRE type|
-|------|--------|--------|
+|------|--------|
 |cCRE ID 1|cCRE annotation: control (positive/negative) or test|
 |cCRE ID 2|cCRE annotation: control (positive/negative) or test|
 
 
 </div>
 
+<div class="table-scroll">
+
+<br><br>
+
+**reads_by_group:** RNA reads for each cCRE by sample
+
+
+|cCRE|{Sample}|
+|------|--------|
+|cCRE ID 1|cCRE RNA reads in {sample}|
+|cCRE ID 2|cCRE RNA reads in {sample}|
+
+
+</div>
+
+
+<div class="table-scroll">
+
+<br><br>
+
+**samples_metadata:** Group annotation per sample 
+
+
+|Sample|Group|
+|------|--------|
+|Sample ID 1|Group annotation for sample 1|
+|Sample ID 2|Group annotation for sample 2|
+
+
+</div>
 
 ### Output
 
