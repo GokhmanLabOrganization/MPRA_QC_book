@@ -23,7 +23,7 @@
 <meta name="author" content="Simon Fishilevich, Omer Ronen, Nadav Mishol, Ryder Easterlin, Nitzan Haim, Katharina Lange, Nadav Ahituv, Irene Gallego Romero, Fumitaka Inoue, Martin Kircher, Michael I. Love, Max Schubach, and David Gokhman" />
 
 
-<meta name="date" content="2026-02-15" />
+<meta name="date" content="2026-02-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -592,19 +592,60 @@ Format is identical to final_associations</p>
 <tr class="header">
 <th>cCRE</th>
 <th>cCRE type</th>
-<th></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>cCRE ID 1</td>
 <td>cCRE annotation: control (positive/negative) or test</td>
-<td></td>
 </tr>
 <tr class="even">
 <td>cCRE ID 2</td>
 <td>cCRE annotation: control (positive/negative) or test</td>
-<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-scroll">
+<p><br><br></p>
+<p><strong>reads_by_group:</strong> RNA reads for each cCRE by sample</p>
+<table>
+<thead>
+<tr class="header">
+<th>cCRE</th>
+<th>{Sample}</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>cCRE ID 1</td>
+<td>cCRE RNA reads in {sample}</td>
+</tr>
+<tr class="even">
+<td>cCRE ID 2</td>
+<td>cCRE RNA reads in {sample}</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-scroll">
+<p><br><br></p>
+<p><strong>samples_metadata:</strong> Group annotation per sample</p>
+<table>
+<thead>
+<tr class="header">
+<th>Sample</th>
+<th>Group</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sample ID 1</td>
+<td>Group annotation for sample 1</td>
+</tr>
+<tr class="even">
+<td>Sample ID 2</td>
+<td>Group annotation for sample 2</td>
 </tr>
 </tbody>
 </table>
