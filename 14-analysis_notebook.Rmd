@@ -27,10 +27,8 @@ association_analysis.py
 Format is identical to final_associations
 
 
-**associations_downsampling_path:** A path to a folder containing input files for the downsampling analysis. 
+**associations_downsampling_path:** A path to a folder containing input files for the downsampling analysis. Format of these files is identical to final_associations
 
-
-**associations_downsampling_file_name:** The downsampling associations file name
 
 
 **cCRE_fasta:** Fasta file that includes all cCREs tested
