@@ -16,7 +16,8 @@ association_analysis.py
 
 |barcode  |cCRE |match_count |
 |-------|-------|---------|
-| BC sequence 1 | cCRE ID 2  | Number of observations (reads) for this BC-cCRE association  |
+|[str]|[str]|[int]|
+| BC sequence 1  | cCRE ID 2 | Number of observations (reads) for this BC-cCRE association  |
 | BC sequence 2  | cCRE ID 2 | Number of observations (reads) for this BC-cCRE association  |
 
 
@@ -58,6 +59,7 @@ activity_analysis.py
 
 |cCRE|DNA_rep_comb|RNA_rep_comb|activity_status|RNA_DNA_ratio_log_rep_comb|activity_pval|activity_statistic|activity_FDR|
 |----|------------|------------|---------------|--------------------------|-------------|------------------|------------|
+|[str]|[float64]|[float64]|[str], Allowed values: 'non_active'/'active'|[float64]|[float64]|[float64]|[float64]|
 |cCRE ID 1|DNA read count across all replicates |RNA read count across all replicates|cCRE activity|log RNA/DNA ratio across all replicates|Statistic score p-value|activity statistic|adjusted p-value after FDR|
 |cCRE ID 2|DNA read count across all replicates |RNA read count across all replicates|cCRE activity|log RNA/DNA ratio across all replicates|Statistic score p-value|activity statistic|adjusted p-value after FDR|
 
@@ -71,9 +73,10 @@ activity_analysis.py
 
 
 
-|cCRE|RNA_rep1|DNA_rep1|RNA_rep2|DNA_rep2|RNA_rep3|DNA_rep3|RNA_DNA_ratio_log_rep1|RNA_DNA_ratio_log_rep2|
-|-----|----------------------|----------------------|----------------------|----------------------|----------------------|----------------------|----------------------|----------------------|
-|cCRE ID 1|RNA reads rep1|DNA reads rep1|RNA reads rep2|DNA reads rep2|RNA reads rep3|DNA reads rep3|RNA/DNA log ratio rep 1|RNA/DNA log ratio rep 2|
+|cCRE|RNA_rep1|DNA_rep1|RNA_rep2|DNA_rep2|RNA_rep3|DNA_rep3|RNA_DNA_ratio_log_rep1|RNA_DNA_ratio_log_rep2|RNA_DNA_ratio_log_rep3|
+|-----|----------------------|----------------------|----------------------|----------------------|----------------------|----------------------|----------------------|----------------------|----------------------|
+|[str]|[object], a list of integers|[object], a list of integers|[object], a list of integers|[object], a list of integers|[object], a list of integers|[object], a list of integers|[float64]|[float64]|[float64]|
+|cCRE ID 1|RNA reads rep1|DNA reads rep1|RNA reads rep2|DNA reads rep2|RNA reads rep3|DNA reads rep3|RNA/DNA log ratio rep 1|RNA/DNA log ratio rep 2|RNA/DNA log ratio rep 3|
 
 
 </div>
@@ -88,12 +91,13 @@ activity_analysis.py
 
 <br><br>
 
-**std_analysis_df:**  DNA and RNA counts after outlier filterings of several degrees of strictness.
+**different_std_threshold_analysis:**  DNA and RNA counts after outlier filterings of several degrees of strictness.
 
 
 
 |ratio_log_{outlier_filter}_{rep}  |DNA_{outlier_filter}_sum_{rep}|
 |----------------------------------|------------------------------|
+|[float64]|[float64]|
 | RNA/DNA ratio for each outlier filter parameter - replicate pair |  DNA read count for each outlier filter parameter - replicate pair |
 | RNA/DNA ratio for each outlier filter parameter - replicate pair |  DNA read count for each outlier filter parameter - replicate pair |
 
@@ -108,6 +112,7 @@ activity_analysis.py
 
 |activity_status  |activity_statistic |class |
 |-------|-------|---------|
+|[str],'non_active'/'active'|[float64]|[str], Allowed values: 'Proximal Enhancer'/'Distal Enhancer'/'Promoter'/'Heterochromatin'/'DNase-only'/'DNase-H3K4me3' |
 | cCRE activity |  cCRE activity statistic | cCRE screen class overlap |
 | cCRE activity |  cCRE activity statistic | cCRE screen class overlap |
 </div>
@@ -121,6 +126,7 @@ activity_analysis.py
 
 |activity_status  |activity_statistic |log10_distance |
 |-------|-------|---------|
+|[str], Allowed values: 'non_active'/'active'|[float64]|[float64]|
 | cCRE activity |  cCRE activity statistic | cCRE distance from nearest TSS, log10 |
 | cCRE activity |  cCRE activity statistic | cCRE distance from nearest TSS, log10 |
 
@@ -135,6 +141,7 @@ activity_analysis.py
 
 |cCRE|exp: MPRA_activity|AI: predicted_activity|
 |----|------------------|----------------------|
+|[str]|[float64]|[float64]|
 | cCRE ID 1 |  Experimental activity statistic  | AI-predicted activity statistic|
 | cCRE ID 2 |  Experimental activity statistic  | AI-predicted activity statistic|
 
@@ -150,6 +157,7 @@ activity_analysis.py
 
 |id  |LFC - exp |LFC - AI |
 |-------|-------|---------|
+|[str]|[float64]|[float64]|
 | cCRE ID 1 |  Experimental log fold change derived/ancestral | AI-predicted log fold change derived/ancestral  |
 | cCRE ID 2 |  Experimental log fold change derived/ancestral | AI-predicted log fold change derived/ancestral  |
 </div>
@@ -170,10 +178,11 @@ activity_analysis.py
 **comparative_df:** MPRA comparative results, each row represents a locus 
 
 
-|seq_id |logFC |differentialy_active |neglog10p|differential_activity_FDR|
-|-------|------|---------------------|---------|-------------------------|
-| cCRE ID 1 | logFC between the derived and ancestral alleles  | differential activity status|-log10 p-value | p-value after FDR|
-| cCRE ID 2 | logFC between the derived and ancestral alleles  | differential activity status|-log10 p-value | p-value after FDR|
+|seq_id |logFC |differentialy_active |differential_activity_FDR|
+|-------|------|---------------------|-------------------------|
+|[str]|[float64]|[bool]|[float64]|
+| cCRE ID 1 | logFC between the derived and ancestral alleles  | differential activity status | p-value after FDR|
+| cCRE ID 2 | logFC between the derived and ancestral alleles  | differential activity status| p-value after FDR|
 
 
 </div>
@@ -186,7 +195,7 @@ activity_analysis.py
 
 
 |cCRE  |allele1 |allele2 |
-|-------|-------|---------|
+|[str]|[float64]|[float64]|
 | cCRE ID 1 | Activity statistic of allele 1  | Activity statistic of allele 2  |
 | cCRE ID 2 | Activity statistic of allele 1 | Activity statistic of allele 2  |
 </div>
@@ -200,6 +209,7 @@ activity_analysis.py
 
 |seq_id  | RNA_DNA_ratio_log_cell1 |RNA_DNA_ratio_log_cell2|
 |-------|-------|---------|
+|[str]|[float64]|[float64]|
 | cCRE ID 1 | RNA/DNA log ratio in cell type 1 | RNA/DNA log ratio in cell type 2  |
 | cCRE ID 2 | RNA/DNA log ratio in cell type 1 | RNA/DNA log ratio in cell type 2  |
 
@@ -214,6 +224,7 @@ activity_analysis.py
 
 |seq_id|lfc_rep1|lfc_rep2|
 |------|--------|--------|
+|[str]|[float64]|[float64]|
 |cCRE ID 1|Log fold change derived/ancestral rep1|Log fold change derived/ancestral rep2|
 |cCRE ID 2|Log fold change derived/ancestral rep1|Log fold change derived/ancestral rep2|
 
@@ -230,8 +241,9 @@ activity_analysis.py
 
 |cCRE|cCRE type|
 |------|--------|
-|cCRE ID 1|cCRE annotation: control (positive/negative) or test|
-|cCRE ID 2|cCRE annotation: control (positive/negative) or test|
+|[str]|[str], Allowed values: 'positive'/'negative'/'test'|
+|cCRE ID 1|cCRE annotation|
+|cCRE ID 2|cCRE annotation|
 
 
 </div>
@@ -245,6 +257,7 @@ activity_analysis.py
 
 |cCRE|{Sample}|
 |------|--------|
+|[str]|[str]|
 |cCRE ID 1|cCRE RNA reads in {sample}|
 |cCRE ID 2|cCRE RNA reads in {sample}|
 
@@ -260,7 +273,8 @@ activity_analysis.py
 
 
 |Sample|Group|
-|------|--------|
+|------|-----|
+|[str]|[str]|
 |Sample ID 1|Group annotation for sample 1|
 |Sample ID 2|Group annotation for sample 2|
 

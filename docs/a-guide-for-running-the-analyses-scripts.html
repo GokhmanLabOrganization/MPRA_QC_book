@@ -23,7 +23,7 @@
 <meta name="author" content="Simon Fishilevich, Omer Ronen, Nadav Mishol, Ryder Easterlin, Nitzan Haim, Katharina Lange, Nadav Ahituv, Irene Gallego Romero, Fumitaka Inoue, Martin Kircher, Michael I. Love, Max Schubach, and David Gokhman" />
 
 
-<meta name="date" content="2026-03-15" />
+<meta name="date" content="2026-03-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -186,11 +186,16 @@ Each chapter is accompanied by a dedicated script that allows the user to run al
 </thead>
 <tbody>
 <tr class="odd">
+<td>[str]</td>
+<td>[str]</td>
+<td>[int]</td>
+</tr>
+<tr class="even">
 <td>BC sequence 1</td>
 <td>cCRE ID 2</td>
 <td>Number of observations (reads) for this BC-cCRE association</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>BC sequence 2</td>
 <td>cCRE ID 2</td>
 <td>Number of observations (reads) for this BC-cCRE association</td>
@@ -243,6 +248,16 @@ Format is identical to final_associations</p>
 </thead>
 <tbody>
 <tr class="odd">
+<td>[str]</td>
+<td>[float64]</td>
+<td>[float64]</td>
+<td>[str], Allowed values: ‘non_active’/‘active’</td>
+<td>[float64]</td>
+<td>[float64]</td>
+<td>[float64]</td>
+<td>[float64]</td>
+</tr>
+<tr class="even">
 <td>cCRE ID 1</td>
 <td>DNA read count across all replicates</td>
 <td>RNA read count across all replicates</td>
@@ -252,7 +267,7 @@ Format is identical to final_associations</p>
 <td>activity statistic</td>
 <td>adjusted p-value after FDR</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>cCRE ID 2</td>
 <td>DNA read count across all replicates</td>
 <td>RNA read count across all replicates</td>
@@ -268,17 +283,18 @@ Format is identical to final_associations</p>
 <div class="table-scroll">
 <p><br><br></p>
 <p><strong>activity_per_rep:</strong> RNA and DNA read counts data for each cCRE by replicates and combined</p>
-<table>
+<table style="width:100%;">
 <colgroup>
 <col width="2%" />
-<col width="12%" />
-<col width="12%" />
-<col width="12%" />
-<col width="12%" />
-<col width="12%" />
-<col width="12%" />
-<col width="12%" />
-<col width="12%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -291,10 +307,23 @@ Format is identical to final_associations</p>
 <th>DNA_rep3</th>
 <th>RNA_DNA_ratio_log_rep1</th>
 <th>RNA_DNA_ratio_log_rep2</th>
+<th>RNA_DNA_ratio_log_rep3</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
+<td>[str]</td>
+<td>[object], a list of integers</td>
+<td>[object], a list of integers</td>
+<td>[object], a list of integers</td>
+<td>[object], a list of integers</td>
+<td>[object], a list of integers</td>
+<td>[object], a list of integers</td>
+<td>[float64]</td>
+<td>[float64]</td>
+<td>[float64]</td>
+</tr>
+<tr class="even">
 <td>cCRE ID 1</td>
 <td>RNA reads rep1</td>
 <td>DNA reads rep1</td>
@@ -304,6 +333,7 @@ Format is identical to final_associations</p>
 <td>DNA reads rep3</td>
 <td>RNA/DNA log ratio rep 1</td>
 <td>RNA/DNA log ratio rep 2</td>
+<td>RNA/DNA log ratio rep 3</td>
 </tr>
 </tbody>
 </table>
@@ -312,7 +342,7 @@ Format is identical to final_associations</p>
 <p><strong>cCRE_fasta:</strong> Fasta file that includes all cCREs tested</p>
 <div class="table-scroll">
 <p><br><br></p>
-<p><strong>std_analysis_df:</strong> DNA and RNA counts after outlier filterings of several degrees of strictness.</p>
+<p><strong>different_std_threshold_analysis:</strong> DNA and RNA counts after outlier filterings of several degrees of strictness.</p>
 <table>
 <colgroup>
 <col width="53%" />
@@ -326,10 +356,14 @@ Format is identical to final_associations</p>
 </thead>
 <tbody>
 <tr class="odd">
+<td>[float64]</td>
+<td>[float64]</td>
+</tr>
+<tr class="even">
 <td>RNA/DNA ratio for each outlier filter parameter - replicate pair</td>
 <td>DNA read count for each outlier filter parameter - replicate pair</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>RNA/DNA ratio for each outlier filter parameter - replicate pair</td>
 <td>DNA read count for each outlier filter parameter - replicate pair</td>
 </tr>
@@ -340,6 +374,11 @@ Format is identical to final_associations</p>
 <p><br><br></p>
 <p><strong>screen_df:</strong> Overlap of cCRE library with ENCODE SCREEN database of regulatory elements. Each row represents a cCRE and must have a SCREEN annotation of the following: Distal enhancer like sequence, DNase-only, Proximal enhancer like sequence, Heterochromatin, Promoter like sequence, DNase-H3K4me3. This file can be created using bedtools</p>
 <table>
+<colgroup>
+<col width="30%" />
+<col width="30%" />
+<col width="39%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th>activity_status</th>
@@ -349,11 +388,16 @@ Format is identical to final_associations</p>
 </thead>
 <tbody>
 <tr class="odd">
+<td>[str],‘non_active’/‘active’</td>
+<td>[float64]</td>
+<td>[str], Allowed values: ‘Proximal Enhancer’/‘Distal Enhancer’/‘Promoter’/‘Heterochromatin’/‘DNase-only’/‘DNase-H3K4me3’</td>
+</tr>
+<tr class="even">
 <td>cCRE activity</td>
 <td>cCRE activity statistic</td>
 <td>cCRE screen class overlap</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>cCRE activity</td>
 <td>cCRE activity statistic</td>
 <td>cCRE screen class overlap</td>
@@ -379,11 +423,16 @@ Format is identical to final_associations</p>
 </thead>
 <tbody>
 <tr class="odd">
+<td>[str], Allowed values: ‘non_active’/‘active’</td>
+<td>[float64]</td>
+<td>[float64]</td>
+</tr>
+<tr class="even">
 <td>cCRE activity</td>
 <td>cCRE activity statistic</td>
 <td>cCRE distance from nearest TSS, log10</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>cCRE activity</td>
 <td>cCRE activity statistic</td>
 <td>cCRE distance from nearest TSS, log10</td>
@@ -409,11 +458,16 @@ Format is identical to final_associations</p>
 </thead>
 <tbody>
 <tr class="odd">
+<td>[str]</td>
+<td>[float64]</td>
+<td>[float64]</td>
+</tr>
+<tr class="even">
 <td>cCRE ID 1</td>
 <td>Experimental activity statistic</td>
 <td>AI-predicted activity statistic</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>cCRE ID 2</td>
 <td>Experimental activity statistic</td>
 <td>AI-predicted activity statistic</td>
@@ -439,11 +493,16 @@ Format is identical to final_associations</p>
 </thead>
 <tbody>
 <tr class="odd">
+<td>[str]</td>
+<td>[float64]</td>
+<td>[float64]</td>
+</tr>
+<tr class="even">
 <td>cCRE ID 1</td>
 <td>Experimental log fold change derived/ancestral</td>
 <td>AI-predicted log fold change derived/ancestral</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>cCRE ID 2</td>
 <td>Experimental log fold change derived/ancestral</td>
 <td>AI-predicted log fold change derived/ancestral</td>
@@ -460,34 +519,36 @@ Format is identical to final_associations</p>
 <p><strong>comparative_df:</strong> MPRA comparative results, each row represents a locus</p>
 <table>
 <colgroup>
+<col width="11%" />
 <col width="10%" />
-<col width="8%" />
-<col width="30%" />
-<col width="13%" />
-<col width="36%" />
+<col width="35%" />
+<col width="42%" />
 </colgroup>
 <thead>
 <tr class="header">
 <th>seq_id</th>
 <th>logFC</th>
 <th>differentialy_active</th>
-<th>neglog10p</th>
 <th>differential_activity_FDR</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
+<td>[str]</td>
+<td>[float64]</td>
+<td>[bool]</td>
+<td>[float64]</td>
+</tr>
+<tr class="even">
 <td>cCRE ID 1</td>
 <td>logFC between the derived and ancestral alleles</td>
 <td>differential activity status</td>
-<td>-log10 p-value</td>
 <td>p-value after FDR</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>cCRE ID 2</td>
 <td>logFC between the derived and ancestral alleles</td>
 <td>differential activity status</td>
-<td>-log10 p-value</td>
 <td>p-value after FDR</td>
 </tr>
 </tbody>
@@ -496,32 +557,10 @@ Format is identical to final_associations</p>
 <div class="table-scroll">
 <p><br><br></p>
 <p><strong>allelic_pairs_df:</strong> MPRA quantitative data, each row represents a locus and includes data for both alleles of the locus</p>
-<table>
-<colgroup>
-<col width="30%" />
-<col width="30%" />
-<col width="39%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>cCRE</th>
-<th>allele1</th>
-<th>allele2</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>cCRE ID 1</td>
-<td>Activity statistic of allele 1</td>
-<td>Activity statistic of allele 2</td>
-</tr>
-<tr class="even">
-<td>cCRE ID 2</td>
-<td>Activity statistic of allele 1</td>
-<td>Activity statistic of allele 2</td>
-</tr>
-</tbody>
-</table>
+<p>|cCRE |allele1 |allele2 |
+|[str]|[float64]|[float64]|
+| cCRE ID 1 | Activity statistic of allele 1 | Activity statistic of allele 2 |
+| cCRE ID 2 | Activity statistic of allele 1 | Activity statistic of allele 2 |</p>
 </div>
 <div class="table-scroll">
 <p><br><br></p>
@@ -541,11 +580,16 @@ Format is identical to final_associations</p>
 </thead>
 <tbody>
 <tr class="odd">
+<td>[str]</td>
+<td>[float64]</td>
+<td>[float64]</td>
+</tr>
+<tr class="even">
 <td>cCRE ID 1</td>
 <td>RNA/DNA log ratio in cell type 1</td>
 <td>RNA/DNA log ratio in cell type 2</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>cCRE ID 2</td>
 <td>RNA/DNA log ratio in cell type 1</td>
 <td>RNA/DNA log ratio in cell type 2</td>
@@ -571,11 +615,16 @@ Format is identical to final_associations</p>
 </thead>
 <tbody>
 <tr class="odd">
+<td>[str]</td>
+<td>[float64]</td>
+<td>[float64]</td>
+</tr>
+<tr class="even">
 <td>cCRE ID 1</td>
 <td>Log fold change derived/ancestral rep1</td>
 <td>Log fold change derived/ancestral rep2</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>cCRE ID 2</td>
 <td>Log fold change derived/ancestral rep1</td>
 <td>Log fold change derived/ancestral rep2</td>
@@ -595,12 +644,16 @@ Format is identical to final_associations</p>
 </thead>
 <tbody>
 <tr class="odd">
-<td>cCRE ID 1</td>
-<td>cCRE annotation: control (positive/negative) or test</td>
+<td>[str]</td>
+<td>[str], Allowed values: ‘positive’/‘negative’/‘test’</td>
 </tr>
 <tr class="even">
+<td>cCRE ID 1</td>
+<td>cCRE annotation</td>
+</tr>
+<tr class="odd">
 <td>cCRE ID 2</td>
-<td>cCRE annotation: control (positive/negative) or test</td>
+<td>cCRE annotation</td>
 </tr>
 </tbody>
 </table>
@@ -617,10 +670,14 @@ Format is identical to final_associations</p>
 </thead>
 <tbody>
 <tr class="odd">
+<td>[str]</td>
+<td>[str]</td>
+</tr>
+<tr class="even">
 <td>cCRE ID 1</td>
 <td>cCRE RNA reads in {sample}</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>cCRE ID 2</td>
 <td>cCRE RNA reads in {sample}</td>
 </tr>
@@ -639,10 +696,14 @@ Format is identical to final_associations</p>
 </thead>
 <tbody>
 <tr class="odd">
+<td>[str]</td>
+<td>[str]</td>
+</tr>
+<tr class="even">
 <td>Sample ID 1</td>
 <td>Group annotation for sample 1</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Sample ID 2</td>
 <td>Group annotation for sample 2</td>
 </tr>
