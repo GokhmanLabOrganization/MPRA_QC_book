@@ -16,7 +16,7 @@ association_analysis.py
 
 |barcode  |cCRE |match_count |
 |-------|-------|---------|
-|[str]|[str]|[int]|
+|[str]|[str]|[int64]|
 | BC sequence 1  | cCRE ID 2 | Number of observations (reads) for this BC-cCRE association  |
 | BC sequence 2  | cCRE ID 2 | Number of observations (reads) for this BC-cCRE association  |
 

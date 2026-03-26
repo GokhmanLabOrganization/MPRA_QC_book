@@ -334,7 +334,7 @@
 
 ## Sample clustering
 **Goal:** Assess reproducibility between samples <br>
-**Input file:** cDNA_reads_by_cell_type<br>
+**Input file:** reads_by_group<br>
 **Evaluated metrics:** Reproducibility<br>
 
 
