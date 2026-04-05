@@ -1,4 +1,4 @@
-# Associations QC
+# cCRE-BC association QC
 
 
 
@@ -25,7 +25,7 @@
 <div style="text-align:center; margin-bottom:6px;">
 <img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
 </div>
-<img src="external_figures/Max_MPRA_run2/cCREs_per_BC_shuffled.svg" style="width:100%; display:block;"/>
+<img src="external_figures/Max_MPRA_run2/cCREs_per_BC_shuffled_0.4.svg" style="width:100%; display:block;"/>
 </div>
 </div>
 ```
