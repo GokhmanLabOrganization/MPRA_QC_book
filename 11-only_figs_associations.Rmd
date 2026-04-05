@@ -45,7 +45,7 @@ htmltools::tagList(
         )
       ),
       htmltools::tags$img(
-        src = "external_figures/Max_MPRA_run2/cCREs_per_BC_shuffled.svg",
+        src = "external_figures/Max_MPRA_run2/cCREs_per_BC_shuffled_0.4.svg",
         style = "width:100%; display:block;"
       )
     )
