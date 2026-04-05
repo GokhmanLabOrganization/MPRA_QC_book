@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 cCRE-BC association QC | Quality Control Pipeline for Massively Parallel Reporter Assays (MPRAs)</title>
+  <meta name="description" content="A bookdown guide containing benchmarked quality-control examples for successful and unsuccessful MPRA experiments." />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 cCRE-BC association QC | Quality Control Pipeline for Massively Parallel Reporter Assays (MPRAs)" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="A bookdown guide containing benchmarked quality-control examples for successful and unsuccessful MPRA experiments." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 cCRE-BC association QC | Quality Control Pipeline for Massively Parallel Reporter Assays (MPRAs)" />
+  
+  <meta name="twitter:description" content="A bookdown guide containing benchmarked quality-control examples for successful and unsuccessful MPRA experiments." />
+  
+
+<meta name="author" content="Simon Fishilevich, Omer Ronen, Nadav Mishol, Ryder Easterlin, Nitzan Haim, Katharina Lange, Nadav Ahituv, Irene Gallego Romero, Fumitaka Inoue, Martin Kircher, Michael I. Love, Max Schubach, and David Gokhman" />
+
+
+<meta name="date" content="2026-04-05" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="input-format.html"/>
+<link rel="next" href="activity-qc.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Quality Control Pipeline for Massively Parallel Reporter Assays (MPRAs)</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Overview</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#abbreviations"><i class="fa fa-check"></i>Abbreviations</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#usage"><i class="fa fa-check"></i>Usage</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#scripts"><i class="fa fa-check"></i>Scripts</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="input-format.html"><a href="input-format.html"><i class="fa fa-check"></i><b>1</b> Input format</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="input-format.html"><a href="input-format.html#associations"><i class="fa fa-check"></i><b>1.1</b> Associations</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="input-format.html"><a href="input-format.html#script"><i class="fa fa-check"></i><b>1.1.1</b> Script</a></li>
+<li class="chapter" data-level="1.1.2" data-path="input-format.html"><a href="input-format.html#input"><i class="fa fa-check"></i><b>1.1.2</b> Input</a></li>
+<li class="chapter" data-level="1.1.3" data-path="input-format.html"><a href="input-format.html#output"><i class="fa fa-check"></i><b>1.1.3</b> Output</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="input-format.html"><a href="input-format.html#rna-and-dna-quantification"><i class="fa fa-check"></i><b>1.2</b> RNA and DNA quantification</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="input-format.html"><a href="input-format.html#script-1"><i class="fa fa-check"></i><b>1.2.1</b> Script</a></li>
+<li class="chapter" data-level="1.2.2" data-path="input-format.html"><a href="input-format.html#input-1"><i class="fa fa-check"></i><b>1.2.2</b> Input</a></li>
+<li class="chapter" data-level="1.2.3" data-path="input-format.html"><a href="input-format.html#output-1"><i class="fa fa-check"></i><b>1.2.3</b> Output</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="ccre-bc-association-qc.html"><a href="ccre-bc-association-qc.html"><i class="fa fa-check"></i><b>2</b> cCRE-BC association QC</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="ccre-bc-association-qc.html"><a href="ccre-bc-association-qc.html#ccres-per-bc"><i class="fa fa-check"></i><b>2.1</b> cCREs per BC</a></li>
+<li class="chapter" data-level="2.2" data-path="ccre-bc-association-qc.html"><a href="ccre-bc-association-qc.html#reads-per-association"><i class="fa fa-check"></i><b>2.2</b> Reads per association</a></li>
+<li class="chapter" data-level="2.3" data-path="ccre-bc-association-qc.html"><a href="ccre-bc-association-qc.html#bcs-per-ccre"><i class="fa fa-check"></i><b>2.3</b> BCs per cCRE</a></li>
+<li class="chapter" data-level="2.4" data-path="ccre-bc-association-qc.html"><a href="ccre-bc-association-qc.html#retained-ccres"><i class="fa fa-check"></i><b>2.4</b> Retained cCREs</a></li>
+<li class="chapter" data-level="2.5" data-path="ccre-bc-association-qc.html"><a href="ccre-bc-association-qc.html#ccre-retention-by-sequencing-depth"><i class="fa fa-check"></i><b>2.5</b> cCRE retention by sequencing depth</a></li>
+<li class="chapter" data-level="2.6" data-path="ccre-bc-association-qc.html"><a href="ccre-bc-association-qc.html#bcs-per-ccre-by-sequencing-depth"><i class="fa fa-check"></i><b>2.6</b> BCs per cCRE by sequencing depth</a></li>
+<li class="chapter" data-level="2.7" data-path="ccre-bc-association-qc.html"><a href="ccre-bc-association-qc.html#pcr-bias---gc"><i class="fa fa-check"></i><b>2.7</b> PCR bias - GC</a></li>
+<li class="chapter" data-level="2.8" data-path="ccre-bc-association-qc.html"><a href="ccre-bc-association-qc.html#pcr-bias---g-stretches"><i class="fa fa-check"></i><b>2.8</b> PCR bias - G-stretches</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="activity-qc.html"><a href="activity-qc.html"><i class="fa fa-check"></i><b>3</b> Activity QC</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="activity-qc.html"><a href="activity-qc.html#retained-ccres-and-barcodes"><i class="fa fa-check"></i><b>3.1</b> Retained cCREs and barcodes</a></li>
+<li class="chapter" data-level="3.2" data-path="activity-qc.html"><a href="activity-qc.html#dna-counts-vs-gc-content"><i class="fa fa-check"></i><b>3.2</b> DNA counts vs GC content</a></li>
+<li class="chapter" data-level="3.3" data-path="activity-qc.html"><a href="activity-qc.html#activity-statistic-vs-count-ratio"><i class="fa fa-check"></i><b>3.3</b> Activity statistic vs count ratio</a></li>
+<li class="chapter" data-level="3.4" data-path="activity-qc.html"><a href="activity-qc.html#activity-distribution"><i class="fa fa-check"></i><b>3.4</b> Activity distribution</a></li>
+<li class="chapter" data-level="3.5" data-path="activity-qc.html"><a href="activity-qc.html#differential-activity-distribution"><i class="fa fa-check"></i><b>3.5</b> Differential activity distribution</a></li>
+<li class="chapter" data-level="3.6" data-path="activity-qc.html"><a href="activity-qc.html#p-value-distribution"><i class="fa fa-check"></i><b>3.6</b> P-value distribution</a></li>
+<li class="chapter" data-level="3.7" data-path="activity-qc.html"><a href="activity-qc.html#volcano-plot---fc-vs-pval"><i class="fa fa-check"></i><b>3.7</b> Volcano plot - FC vs Pval</a></li>
+<li class="chapter" data-level="3.8" data-path="activity-qc.html"><a href="activity-qc.html#bc-retention-by-dnarna-sequencing-depth"><i class="fa fa-check"></i><b>3.8</b> BC retention by DNA/RNA sequencing depth</a></li>
+<li class="chapter" data-level="3.9" data-path="activity-qc.html"><a href="activity-qc.html#ccre-retention-by-dnarna-sequencing-depth"><i class="fa fa-check"></i><b>3.9</b> cCRE retention by DNA/RNA sequencing depth</a></li>
+<li class="chapter" data-level="3.10" data-path="activity-qc.html"><a href="activity-qc.html#activity-by-sequencing-depth"><i class="fa fa-check"></i><b>3.10</b> Activity by sequencing depth</a></li>
+<li class="chapter" data-level="3.11" data-path="activity-qc.html"><a href="activity-qc.html#cumulative-rna-reads"><i class="fa fa-check"></i><b>3.11</b> Cumulative RNA reads</a></li>
+<li class="chapter" data-level="3.12" data-path="activity-qc.html"><a href="activity-qc.html#sample-clustering"><i class="fa fa-check"></i><b>3.12</b> Sample clustering</a></li>
+<li class="chapter" data-level="3.13" data-path="activity-qc.html"><a href="activity-qc.html#correlation-between-replicates"><i class="fa fa-check"></i><b>3.13</b> Correlation between replicates</a></li>
+<li class="chapter" data-level="3.14" data-path="activity-qc.html"><a href="activity-qc.html#correlation-of-differential-activity-between-replicates"><i class="fa fa-check"></i><b>3.14</b> Correlation of differential activity between replicates</a></li>
+<li class="chapter" data-level="3.15" data-path="activity-qc.html"><a href="activity-qc.html#replicability-by-activity"><i class="fa fa-check"></i><b>3.15</b> Replicability by activity</a></li>
+<li class="chapter" data-level="3.16" data-path="activity-qc.html"><a href="activity-qc.html#correlation-between-replicates-controls"><i class="fa fa-check"></i><b>3.16</b> Correlation between replicates (controls)</a></li>
+<li class="chapter" data-level="3.17" data-path="activity-qc.html"><a href="activity-qc.html#cross-validation-allelic-pairs"><i class="fa fa-check"></i><b>3.17</b> Cross-validation: allelic pairs</a></li>
+<li class="chapter" data-level="3.18" data-path="activity-qc.html"><a href="activity-qc.html#cross-validaiton-cell-types"><i class="fa fa-check"></i><b>3.18</b> Cross-validaiton: cell types</a></li>
+<li class="chapter" data-level="3.19" data-path="activity-qc.html"><a href="activity-qc.html#minimizing-noise"><i class="fa fa-check"></i><b>3.19</b> Minimizing noise</a></li>
+<li class="chapter" data-level="3.20" data-path="activity-qc.html"><a href="activity-qc.html#reproducibility-by-sequencing-depth"><i class="fa fa-check"></i><b>3.20</b> Reproducibility by sequencing depth</a></li>
+<li class="chapter" data-level="3.21" data-path="activity-qc.html"><a href="activity-qc.html#rna-vs-dna"><i class="fa fa-check"></i><b>3.21</b> RNA vs DNA</a></li>
+<li class="chapter" data-level="3.22" data-path="activity-qc.html"><a href="activity-qc.html#activity-of-controls"><i class="fa fa-check"></i><b>3.22</b> Activity of controls</a></li>
+<li class="chapter" data-level="3.23" data-path="activity-qc.html"><a href="activity-qc.html#genomic-annotations"><i class="fa fa-check"></i><b>3.23</b> Genomic annotations</a></li>
+<li class="chapter" data-level="3.24" data-path="activity-qc.html"><a href="activity-qc.html#proximity-to-tss"><i class="fa fa-check"></i><b>3.24</b> Proximity to TSS</a></li>
+<li class="chapter" data-level="3.25" data-path="activity-qc.html"><a href="activity-qc.html#ai-predictions-vs-activity"><i class="fa fa-check"></i><b>3.25</b> AI predictions vs activity</a></li>
+<li class="chapter" data-level="3.26" data-path="activity-qc.html"><a href="activity-qc.html#ai-predictions-vs-differential-activity"><i class="fa fa-check"></i><b>3.26</b> AI predictions vs differential activity</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Quality Control Pipeline for Massively Parallel Reporter Assays (MPRAs)</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ccre-bc-association-qc" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Chapter 2</span> cCRE-BC association QC<a href="ccre-bc-association-qc.html#ccre-bc-association-qc" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="ccres-per-bc" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> cCREs per BC<a href="ccre-bc-association-qc.html#ccres-per-bc" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Goal:</strong> Assess BC promiscuity <br>
+<strong>Input file:</strong> associations_before_promiscuity<br>
+<strong>Evaluated metrics:</strong> Specificity<br></p>
+<div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/PMID_38766054_Reilly/cCREs_per_BC.svg" style="width:100%; display:block;"/>
+</div>
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/Max_MPRA_run2/cCREs_per_BC_shuffled_0.4.svg" style="width:100%; display:block;"/>
+</div>
+</div>
+<p><strong>Legend:</strong> A histogram of the number of cCREs per BC <br>
+<strong>Interpretation:</strong> The successful example showcases a highly specific experiment, where most of the BCs are associated with only one cCRE. The unsuccessful example showcases a problem where many BCs are associated with more than one oligo, suggesting a problem in specificity <br></p>
+</div>
+<div id="reads-per-association" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Reads per association<a href="ccre-bc-association-qc.html#reads-per-association" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Goal:</strong> Assess confidence in associations <br>
+<strong>Input file:</strong> associations_before_minimum_observations<br>
+<strong>Evaluated metrics:</strong> Specificity<br></p>
+<div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/PMID_38766054_Reilly/UMIs_per_association.svg" style="width:100%; display:block;"/>
+</div>
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/Max_MPRA_run2/UMIs_per_association.svg" style="width:100%; display:block;"/>
+</div>
+</div>
+<p><strong>Legend:</strong> The number of reads supporting each cCRE-BC pairing <br>
+<strong>Interpretation:</strong> The successful example showcases a robust experiment, where BC-cCRE associations are supported by many reads. In the unsuccessful example, over half of the associations appear only once. <br></p>
+</div>
+<div id="bcs-per-ccre" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> BCs per cCRE<a href="ccre-bc-association-qc.html#bcs-per-ccre" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Goal:</strong> Assess BC replicability <br>
+<strong>Input file:</strong> final_associations, cCRE_fasta <br>
+<strong>Evaluated metrics:</strong> Complexity (multiplicity &amp; uniformity)<br></p>
+<div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/PMID_38766054_Reilly/Barcodes_per_cCRE.svg" style="width:100%; display:block;"/>
+</div>
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/Max_MPRA_run2/Barcodes_per_cCRE.svg" style="width:100%; display:block;"/>
+</div>
+</div>
+<p><strong>Legend:</strong> An empirical cumulative function (eCDF) of BCs per cCRE <br>
+<strong>Interpretation:</strong> The successful example showcases many BCs per cCRE and a low percentage of cCREs with fewer than 10 BCs, suggesting high complexity. The unsuccessful example showcases a problem where most cCREs have few BCs. <br></p>
+</div>
+<div id="retained-ccres" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Retained cCREs<a href="ccre-bc-association-qc.html#retained-ccres" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Goal:</strong> Assess BC replicability <br>
+<strong>Input file:</strong> final_associations, cCRE_fasta<br>
+<strong>Evaluated metrics:</strong> Complexity (multiplicity &amp; uniformity)<br></p>
+<div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/PMID_38766054_Reilly/Retained_cCREs.svg" style="width:100%; display:block;"/>
+</div>
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/Max_MPRA_run2/Retained_cCREs.svg" style="width:100%; display:block;"/>
+</div>
+</div>
+<p><strong>Legend:</strong> Retained cCREs per increasing cutoffs of BC number per cCRE<br>
+<strong>Interpretation:</strong> The successful example showcases a high-complexity experiment, in which most cCREs are retained even at stringent minimum barcode thresholds. The unsuccessful example showcases a low-complexity experiment, in which the majority of cCREs are lost when applying high BC-per-cCRE filters.<br></p>
+</div>
+<div id="ccre-retention-by-sequencing-depth" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> cCRE retention by sequencing depth<a href="ccre-bc-association-qc.html#ccre-retention-by-sequencing-depth" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Goal:</strong> Assess whether sequencing depth is sufficient<br>
+<strong>Input file:</strong> associations_downsampling_path, associations_downsampling_file_name, cCRE_fasta <br>
+<strong>Evaluated metrics:</strong> Complexity (multiplicity &amp; uniformity)<br></p>
+<div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/L3a2_281122/Downsampling_Retained_cCREs.svg" style="width:100%; display:block;"/>
+</div>
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/Max_MPRA_run2/Downsampling_Retained_cCREs.svg" style="width:100%; display:block;"/>
+</div>
+</div>
+<p><strong>Legend:</strong> Sequencing depth vs retained cCREs. Sequencing data is downsampled in order to assess whether we have reached saturation in the percentage of retained cCREs. Then, data is extrapolated to predict whether additional sequencing will help improve the results.<br>
+<strong>Interpretation:</strong> The successful example showcases a high-complexity experiment: additional sequencing is not predicted to improve the percentage of retained cCREs. The unsuccessful example showcases an experiment where sequencing depth was suboptimal: additional sequencing is predicted to improve the percentage of retained cCREs.<br></p>
+</div>
+<div id="bcs-per-ccre-by-sequencing-depth" class="section level2 hasAnchor" number="2.6">
+<h2><span class="header-section-number">2.6</span> BCs per cCRE by sequencing depth<a href="ccre-bc-association-qc.html#bcs-per-ccre-by-sequencing-depth" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Goal:</strong> Assess whether sequencing depth is sufficient <br>
+<strong>Input file:</strong> associations_downsampling_path, associations_downsampling_file_name, cCRE_fasta <br>
+<strong>Evaluated metrics:</strong> Complexity (multiplicity &amp; uniformity)<br></p>
+<div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/Max_MPRA_run2/Downsampling_Barcodes_per_cCRE.svg" style="width:100%; display:block;"/>
+</div>
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/L3a2_281122/Downsampling_Barcodes_per_cCRE.svg" style="width:100%; display:block;"/>
+</div>
+</div>
+<p><strong>Legend:</strong> A box plot of the number of BCs per cCRE (y axis) as a function of the downsampling parameter (x axis), i.e., the fraction of sequencing data used. <br>
+<strong>Interpretation:</strong> In the successful example, sequencing depth was sufficient to capture library complexity. In the unsuccessful example, additional sequencing substantially increases the number of barcodes, indicating that the library has not yet been sequenced to saturation.<br></p>
+</div>
+<div id="pcr-bias---gc" class="section level2 hasAnchor" number="2.7">
+<h2><span class="header-section-number">2.7</span> PCR bias - GC<a href="ccre-bc-association-qc.html#pcr-bias---gc" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Goal:</strong> Assess GC content bias in PCR amplification <br>
+<strong>Input file:</strong> final_associations, cCRE_fasta<br>
+<strong>Evaluated metrics:</strong> Complexity (multiplicity &amp; uniformity)<br></p>
+<div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/PMID_38766054_Reilly/PCR_bias_GC.svg" style="width:100%; display:block;"/>
+</div>
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/Max_MPRA_run2/PCR_bias_GC.svg" style="width:100%; display:block;"/>
+</div>
+</div>
+<p><strong>Legend:</strong> The number of reads (yellow box plots) and cCREs (green line) at various levels of GC content. Data was binned in fixed sizes of 5%. <br>
+<strong>Interpretation:</strong> The successful example showcases a relatively consistent number of reads per GC content, as well as PCR conditions that are optimized for the most common GC content levels (peaks are close to one another). The unsuccessful example showcases both a strong amplification bias and suboptimal PCR conditions for the GC content levels of most cCREs.<br></p>
+</div>
+<div id="pcr-bias---g-stretches" class="section level2 hasAnchor" number="2.8">
+<h2><span class="header-section-number">2.8</span> PCR bias - G-stretches<a href="ccre-bc-association-qc.html#pcr-bias---g-stretches" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Goal:</strong> Assess G-stretches bias in PCR amplification<br>
+<strong>Input file:</strong> final_associations, cCRE_fasta<br>
+<strong>Evaluated metrics:</strong> Complexity (multiplicity &amp; uniformity)<br></p>
+<div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/thylacine_biorxiv_Gallego_Romero/PCR_bias_G-stretches.svg" style="width:100%; display:block;"/>
+</div>
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/humanMPRA_L4a2/PCR_bias_G-stretches.svg" style="width:100%; display:block;"/>
+</div>
+</div>
+<p><strong>Legend:</strong> The number of reads (yellow box plots) and cCREs (green line) at various lengths of G-stretches.<br>
+<strong>Interpretation:</strong> The successful example showcases a relatively consistent number of reads per G-stretch length. The unsuccessful example showcases both a strong amplification bias and suboptimal PCR conditions for the GC content levels of most cCREs (peaks do not overlap).<br></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="input-format.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="activity-qc.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/USERNAME/REPO/edit/BRANCH/11-only_figs_associations.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["_main.pdf", "_main.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+</body>
+
+</html>

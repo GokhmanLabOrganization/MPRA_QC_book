@@ -1,4 +1,4 @@
-a-guide-for-running-the-analyses-scripts
+input-format
 associations
 script
 input
@@ -7,7 +7,7 @@ rna-and-dna-quantification
 script-1
 input-1
 output-1
-associations-qc
+ccre-bc-association-qc
 ccres-per-bc
 reads-per-association
 bcs-per-ccre
