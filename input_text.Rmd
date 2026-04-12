@@ -1,0 +1,255 @@
+**final_associations:** BC - cCRE association file after all filtering. 
+
+
+|barcode  |cCRE |match_count |
+|-------|-------|---------|
+|[str]|[str]|[int64]|
+| BC sequence 1  | cCRE ID 2 | Number of observations (reads) for this BC-cCRE association  |
+| BC sequence 2  | cCRE ID 2 | Number of observations (reads) for this BC-cCRE association  |
+
+
+**associations_before_minimum_observations:** BC - cCRE association file before filtering for a minimal number of unique BC-cCRE observations. Format is identical to final_associations
+
+
+**associations_before_promiscuity:** BC - cCRE association file before filtering out BCs that are associated with multiple cCREs.
+Format is identical to final_associations
+
+
+**associations_downsampling_path:** A path to a folder containing input files for the downsampling analysis. Format of these files is identical to final_associations
+
+
+
+**cCRE_fasta:** Fasta file that includes all cCREs tested
+
+
+
+<div class="table-scroll">
+**activity_df:**  Each row represents a cCRE and includes activity data - statistic and p-value and RNA/DNA counts. This is the key file for the activity chapter 
+
+
+
+|cCRE|DNA_rep_comb|RNA_rep_comb|activity_status|RNA_DNA_ratio_log_rep_comb|activity_pval|activity_statistic|activity_FDR|
+|----|------------|------------|---------------|--------------------------|-------------|------------------|------------|
+|[str]|[float64]|[float64]|[str], Allowed values: 'non_active'/'active'|[float64]|[float64]|[float64]|[float64]|
+|cCRE ID 1|DNA read count across all replicates |RNA read count across all replicates|cCRE activity|log RNA/DNA ratio across all replicates|Statistic score p-value|activity statistic|adjusted p-value after FDR|
+|cCRE ID 2|DNA read count across all replicates |RNA read count across all replicates|cCRE activity|log RNA/DNA ratio across all replicates|Statistic score p-value|activity statistic|adjusted p-value after FDR|
+
+
+</div>
+<div class="table-scroll">
+
+<br><br>
+
+**activity_per_rep:** RNA and DNA read counts data for each cCRE by replicates and combined
+
+
+
+|cCRE|RNA_rep{i}|DNA_rep{i}|RNA_DNA_ratio_log_rep{i}|
+|-----|---------|----------|------------------------|
+|[str]|[object], a list of integers|[object], a list of integers|[object], a list of integers|[object], a list of integers|[object], a list of integers|[object], a list of integers|[float64]|[float64]|[float64]|
+|cCRE ID 1|RNA reads rep {i}|DNA reads rep {i}|RNA/DNA log ratio rep {i}|
+|cCRE ID 2|RNA reads rep {i}|DNA reads rep {i}|RNA/DNA log ratio rep {i}|
+
+
+</div>
+
+
+<br><br>
+
+**cCRE_fasta:** Fasta file that includes all cCREs tested
+
+
+<div class="table-scroll">
+
+<br><br>
+
+**different_std_threshold_analysis:**  DNA and RNA counts after outlier filterings of several degrees of strictness.
+
+
+
+|ratio_log_{outlier_filter}_{rep}  |DNA_{outlier_filter}_sum_{rep}|
+|----------------------------------|------------------------------|
+|[float64]|[float64]|
+| RNA/DNA ratio for each outlier filter parameter - replicate pair |  DNA read count for each outlier filter parameter - replicate pair |
+| RNA/DNA ratio for each outlier filter parameter - replicate pair |  DNA read count for each outlier filter parameter - replicate pair |
+
+</div>
+<div class="table-scroll">
+
+<br><br>
+   
+**screen_df:** Overlap of cCRE library with ENCODE SCREEN database of regulatory elements. Each row represents a cCRE and must have a SCREEN annotation of the following: Distal enhancer like sequence, DNase-only, Proximal enhancer like sequence, Heterochromatin, Promoter like sequence, DNase-H3K4me3. This file can be created using bedtools
+
+
+
+|activity_status  |activity_statistic |class |
+|-------|-------|---------|
+|[str],'non_active'/'active'|[float64]|[str], Allowed values: 'Proximal Enhancer'/'Distal Enhancer'/'Promoter'/'Heterochromatin'/'DNase-only'/'DNase-H3K4me3' |
+| cCRE activity |  cCRE activity statistic | cCRE screen class overlap |
+| cCRE activity |  cCRE activity statistic | cCRE screen class overlap |
+</div>
+<div class="table-scroll">
+
+<br><br>
+
+**tss_df:** Distance of each cCRE from the nearest TSS, each row must include a numeric value that represents the distance. This file can be created using bedtools 
+
+
+
+|activity_status  |activity_statistic |log10_distance |
+|-------|-------|---------|
+|[str], Allowed values: 'non_active'/'active'|[float64]|[float64]|
+| cCRE activity |  cCRE activity statistic | cCRE distance from nearest TSS, log10 |
+| cCRE activity |  cCRE activity statistic | cCRE distance from nearest TSS, log10 |
+
+
+</div>
+<div class="table-scroll">
+
+<br><br>
+
+**AI_df:** Comparison of MPRA activity data with an AI model predictions for the same cCREs
+
+
+|cCRE|exp: MPRA_activity|AI: predicted_activity|
+|----|------------------|----------------------|
+|[str]|[float64]|[float64]|
+| cCRE ID 1 |  Experimental activity statistic  | AI-predicted activity statistic|
+| cCRE ID 2 |  Experimental activity statistic  | AI-predicted activity statistic|
+
+
+</div>
+<div class="table-scroll">
+
+<br><br>
+
+**AI_comparative_df:** Same as above but for differential activity
+
+
+
+|id  |LFC - exp |LFC - AI |
+|-------|-------|---------|
+|[str]|[float64]|[float64]|
+| cCRE ID 1 |  Experimental log fold change derived/ancestral | AI-predicted log fold change derived/ancestral  |
+| cCRE ID 2 |  Experimental log fold change derived/ancestral | AI-predicted log fold change derived/ancestral  |
+</div>
+
+<br><br>
+
+**downsampling_activity_path:** A path for a folder that includes actvitiy_df for each sampling parameter 
+
+<br><br>
+
+**downsampling_ratio_path:** A path for a folder that includes activity_per_rep for each sampling parameter
+
+
+<div class="table-scroll">
+
+<br><br>
+
+**comparative_df:** MPRA comparative results, each row represents a locus 
+
+
+|seq_id |logFC |differentialy_active |differential_activity_FDR|
+|-------|------|---------------------|-------------------------|
+|[str]|[float64]|[bool]|[float64]|
+| cCRE ID 1 | logFC between the derived and ancestral alleles  | differential activity status | p-value after FDR|
+| cCRE ID 2 | logFC between the derived and ancestral alleles  | differential activity status| p-value after FDR|
+
+
+</div>
+<div class="table-scroll">
+
+<br><br>
+ 
+**allelic_pairs_df:** MPRA quantitative data, each row represents a locus and includes data for both alleles of the locus
+
+
+
+|cCRE  |allele1 |allele2 |
+|------|--------|--------|
+|[str]|[float64]|[float64]|
+| cCRE ID 1 | Activity statistic of allele 1  | Activity statistic of allele 2  |
+| cCRE ID 2 | Activity statistic of allele 1 | Activity statistic of allele 2  |
+</div>
+<div class="table-scroll">
+
+<br><br>
+
+**cell_types_df:** MPRA quantitative data, each row represents a cCRE and includes data for two different cell types
+
+
+
+|seq_id  | RNA_DNA_ratio_log_cell1 |RNA_DNA_ratio_log_cell2|
+|-------|-------|---------|
+|[str]|[float64]|[float64]|
+| cCRE ID 1 | RNA/DNA log ratio in cell type 1 | RNA/DNA log ratio in cell type 2  |
+| cCRE ID 2 | RNA/DNA log ratio in cell type 1 | RNA/DNA log ratio in cell type 2  |
+
+
+</div>
+<div class="table-scroll">
+
+<br><br>
+
+**allelic_pairs_replicates_df:** log2 RNA/DNA data for each locus, includes two alleles and their logFC
+
+
+|seq_id|LFC_rep{i}|
+|------|--------|
+|[str]|[float64]|
+|cCRE ID 1|Log fold change derived/ancestral rep{i}|
+|cCRE ID 2|Log fold change derived/ancestral rep{i}|
+
+
+</div>
+
+
+<div class="table-scroll">
+
+<br><br>
+
+**control_df:** control annotation for each cCRE
+
+
+|cCRE|cCRE type|
+|------|--------|
+|[str]|[str], Allowed values: 'positive'/'negative'/'test'|
+|cCRE ID 1|cCRE annotation|
+|cCRE ID 2|cCRE annotation|
+
+
+</div>
+
+<div class="table-scroll">
+
+<br><br>
+
+**reads_by_group:** RNA reads for each cCRE by sample
+
+
+|cCRE|{Sample}|
+|------|--------|
+|[str]|[str]|
+|cCRE ID 1|cCRE RNA reads in {sample}|
+|cCRE ID 2|cCRE RNA reads in {sample}|
+
+
+</div>
+
+
+<div class="table-scroll">
+
+<br><br>
+
+**samples_metadata:** Group annotation per sample 
+
+
+|Sample|Group|
+|------|-----|
+|[str]|[str]|
+|Sample ID 1|Group annotation for sample 1|
+|Sample ID 2|Group annotation for sample 2|
+
+
+</div>
