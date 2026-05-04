@@ -398,7 +398,22 @@
 
 
 
-<img src="external_figures/modern_humanMPRA_Hob/diff_activity_corr_reps_hexbin_w_bar.svg" width="49%" /><img src="external_figures/humanMPRA_L4a2/diff_activity_corr_reps_hexbin_w_bar.svg" width="49%" />
+```{=html}
+<div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/modern_humanMPRA_Hob/diff_activity_corr_reps_hexbin_w_bar.svg" style="width:100%; display:block;"/>
+</div>
+<div style="width:49%;">
+<div style="text-align:center; margin-bottom:6px;">
+<img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
+</div>
+<img src="external_figures/humanMPRA_L4a2/diff_activity_corr_reps_hexbin_w_bar.svg" style="width:100%; display:block;"/>
+</div>
+</div>
+```
 
 **Legend:** Scatter plot of the log2(RNA/DNA) allelic difference values for each cCRE in two replicates. Each data point is a hexagon representing the local density of cCREs. <br>
 **Interpretation:** The successful example showcases concordance in differential activity between repliactes. The unsuccessful example showcases little concordance.<br>
