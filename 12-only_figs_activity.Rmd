@@ -682,10 +682,43 @@ htmltools::tagList(
 **Evaluated metrics:** Reproducibility, Dynamic range <br>
 
 
+```{r echo=FALSE}
+htmltools::tagList(
+  htmltools::tags$div(
+    style = "display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;",
 
-```{r echo=FALSE, fig.show="hold", out.width=c("49%","49%")}
-knitr::include_graphics(c("external_figures/modern_humanMPRA_Hob/diff_activity_corr_reps_hexbin_w_bar.svg",
-                          "external_figures/humanMPRA_L4a2/diff_activity_corr_reps_hexbin_w_bar.svg"))
+    htmltools::tags$div(
+      style = "width:49%;",
+      htmltools::tags$div(
+        style = "text-align:center; margin-bottom:6px;",
+        htmltools::tags$img(
+          src = "external_figures/thumbs_up.svg",
+          style = "width:60px; display:inline-block;"
+        )
+      ),
+      htmltools::tags$img(
+        src = "external_figures/modern_humanMPRA_Hob/diff_activity_corr_reps_hexbin_w_bar.svg",
+        style = "width:100%; display:block;"
+      )
+    ),
+
+    htmltools::tags$div(
+      style = "width:49%;",
+      htmltools::tags$div(
+        style = "text-align:center; margin-bottom:6px;",
+        htmltools::tags$img(
+          src = "external_figures/thumbs_down.svg",
+          style = "width:60px; display:inline-block;"
+        )
+      ),
+      htmltools::tags$img(
+        src =   "external_figures/humanMPRA_L4a2/diff_activity_corr_reps_hexbin_w_bar.svg",
+        style = "width:100%; display:block;"
+      )
+    )
+  )
+)
+
 ```
 
 **Legend:** Scatter plot of the log2(RNA/DNA) allelic difference values for each cCRE in two replicates. Each data point is a hexagon representing the local density of cCREs. <br>

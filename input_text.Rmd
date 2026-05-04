@@ -1,3 +1,10 @@
+## Abbreviations {-}
+-	CRE – cis-regulatory element <br>
+-	cCRE – candidate CRE <br>
+-	BC - barcode <br>
+- logFC – log2(fold-change) between alleles <br>
+
+
 **final_associations:** BC - cCRE association file after all filtering. 
 
 
@@ -24,15 +31,15 @@ Format is identical to final_associations
 
 
 <div class="table-scroll">
-**activity_df:**  Each row represents a cCRE and includes activity data - statistic and p-value and RNA/DNA counts. This is the key file for the activity chapter 
+**activity_df:**  This is the key file for the activity chapter. Each row represents a cCREs and its activity data, including: statistic, P-value, FDR, RNA counts,  DNA counts, and RNA/DNA ratio. 
 
 
 
 |cCRE|DNA_rep_comb|RNA_rep_comb|activity_status|RNA_DNA_ratio_log_rep_comb|activity_pval|activity_statistic|activity_FDR|
 |----|------------|------------|---------------|--------------------------|-------------|------------------|------------|
 |[str]|[float64]|[float64]|[str], Allowed values: 'non_active'/'active'|[float64]|[float64]|[float64]|[float64]|
-|cCRE ID 1|DNA read count across all replicates |RNA read count across all replicates|cCRE activity|log RNA/DNA ratio across all replicates|Statistic score p-value|activity statistic|adjusted p-value after FDR|
-|cCRE ID 2|DNA read count across all replicates |RNA read count across all replicates|cCRE activity|log RNA/DNA ratio across all replicates|Statistic score p-value|activity statistic|adjusted p-value after FDR|
+|cCRE ID 1|DNA read count across all replicates |RNA read count across all replicates|cCRE activity|log2(RNA/DNA) across all replicates|Statistic score p-value|activity statistic|FDR-adjusted P-value|
+|cCRE ID 2|DNA read count across all replicates |RNA read count across all replicates|cCRE activity|log2(RNA/DNA) across all replicates|Statistic score p-value|activity statistic|FDR-adjusted P-value|
 
 
 </div>
@@ -47,8 +54,8 @@ Format is identical to final_associations
 |cCRE|RNA_rep{i}|DNA_rep{i}|RNA_DNA_ratio_log_rep{i}|
 |-----|---------|----------|------------------------|
 |[str]|[object], a list of integers|[object], a list of integers|[object], a list of integers|[object], a list of integers|[object], a list of integers|[object], a list of integers|[float64]|[float64]|[float64]|
-|cCRE ID 1|RNA reads rep {i}|DNA reads rep {i}|RNA/DNA log ratio rep {i}|
-|cCRE ID 2|RNA reads rep {i}|DNA reads rep {i}|RNA/DNA log ratio rep {i}|
+|cCRE ID 1|RNA reads rep {i}|DNA reads rep {i}|log2(RNA/DNA) rep {i}|
+|cCRE ID 2|RNA reads rep {i}|DNA reads rep {i}|log2(RNA/DNA) rep {i}|
 
 
 </div>
@@ -70,15 +77,15 @@ Format is identical to final_associations
 |ratio_log_{outlier_filter}_{rep}  |DNA_{outlier_filter}_sum_{rep}|
 |----------------------------------|------------------------------|
 |[float64]|[float64]|
-| RNA/DNA ratio for each outlier filter parameter - replicate pair |  DNA read count for each outlier filter parameter - replicate pair |
-| RNA/DNA ratio for each outlier filter parameter - replicate pair |  DNA read count for each outlier filter parameter - replicate pair |
+| log2(RNA/DNA) for each outlier filter parameter - replicate pair |  DNA read count for each outlier filter parameter - replicate pair |
+| log2(RNA/DNA) for each outlier filter parameter - replicate pair |  DNA read count for each outlier filter parameter - replicate pair |
 
 </div>
 <div class="table-scroll">
 
 <br><br>
    
-**screen_df:** Overlap of cCRE library with ENCODE SCREEN database of regulatory elements. Each row represents a cCRE and must have a SCREEN annotation of the following: Distal enhancer like sequence, DNase-only, Proximal enhancer like sequence, Heterochromatin, Promoter like sequence, DNase-H3K4me3. This file can be created using bedtools
+**genomic_annotations_df:** Overlap of cCRE library with ENCODE SCREEN database of regulatory elements. Each row represents a cCRE and must have a SCREEN annotation of the following: Distal enhancer like sequence, DNase-only, Proximal enhancer like sequence, Heterochromatin, Promoter like sequence, DNase-H3K4me3. This file can be created using bedtools
 
 
 
@@ -130,8 +137,8 @@ Format is identical to final_associations
 |id  |LFC - exp |LFC - AI |
 |-------|-------|---------|
 |[str]|[float64]|[float64]|
-| cCRE ID 1 |  Experimental log fold change derived/ancestral | AI-predicted log fold change derived/ancestral  |
-| cCRE ID 2 |  Experimental log fold change derived/ancestral | AI-predicted log fold change derived/ancestral  |
+| cCRE ID 1 |  Experimental log fold change allele1/allele2 | AI-predicted log fold change allele1/allele2  |
+| cCRE ID 2 |  Experimental log fold change allele1/allele2 | AI-predicted log fold change allele1/allele2  |
 </div>
 
 <br><br>
@@ -147,14 +154,14 @@ Format is identical to final_associations
 
 <br><br>
 
-**comparative_df:** MPRA comparative results, each row represents a locus 
+**comparative_df:** MPRA comparative results, each row represents a cCRE 
 
 
 |seq_id |logFC |differentialy_active |differential_activity_FDR|
 |-------|------|---------------------|-------------------------|
 |[str]|[float64]|[bool]|[float64]|
-| cCRE ID 1 | logFC between the derived and ancestral alleles  | differential activity status | p-value after FDR|
-| cCRE ID 2 | logFC between the derived and ancestral alleles  | differential activity status| p-value after FDR|
+| cCRE ID 1 | logFC between the allele1 and allele2 alleles  | differential activity status | p-value after FDR|
+| cCRE ID 2 | logFC between the allele1 and allele2 alleles  | differential activity status| p-value after FDR|
 
 
 </div>
@@ -162,7 +169,7 @@ Format is identical to final_associations
 
 <br><br>
  
-**allelic_pairs_df:** MPRA quantitative data, each row represents a locus and includes data for both alleles of the locus
+**allelic_pairs_df:** Activity of each allele, each row represents a cCRE and includes data for both alleles of the cCRE
 
 
 
@@ -176,15 +183,15 @@ Format is identical to final_associations
 
 <br><br>
 
-**cell_types_df:** MPRA quantitative data, each row represents a cCRE and includes data for two different cell types
+**cell_types_df:** Activity of each allele, each row represents a cCRE and includes data for two different cell types
 
 
 
 |seq_id  | RNA_DNA_ratio_log_cell1 |RNA_DNA_ratio_log_cell2|
 |-------|-------|---------|
 |[str]|[float64]|[float64]|
-| cCRE ID 1 | RNA/DNA log ratio in cell type 1 | RNA/DNA log ratio in cell type 2  |
-| cCRE ID 2 | RNA/DNA log ratio in cell type 1 | RNA/DNA log ratio in cell type 2  |
+| cCRE ID 1 | log2(RNA/DNA) in cell type 1 | log2(RNA/DNA) in cell type 2  |
+| cCRE ID 2 | log2(RNA/DNA) in cell type 1 | log2(RNA/DNA) in cell type 2  |
 
 
 </div>
@@ -192,14 +199,14 @@ Format is identical to final_associations
 
 <br><br>
 
-**allelic_pairs_replicates_df:** log2 RNA/DNA data for each locus, includes two alleles and their logFC
+**allelic_pairs_replicates_df:** log2 RNA/DNA data for each cCRE, includes two alleles and their logFC
 
 
 |seq_id|LFC_rep{i}|
 |------|--------|
 |[str]|[float64]|
-|cCRE ID 1|Log fold change derived/ancestral rep{i}|
-|cCRE ID 2|Log fold change derived/ancestral rep{i}|
+|cCRE ID 1|Log fold change allele1/allele2 rep{i}|
+|cCRE ID 2|Log fold change allele1/allele2 rep{i}|
 
 
 </div>
@@ -214,9 +221,9 @@ Format is identical to final_associations
 
 |cCRE|cCRE type|
 |------|--------|
-|[str]|[str], Allowed values: 'positive'/'negative'/'test'|
-|cCRE ID 1|cCRE annotation|
-|cCRE ID 2|cCRE annotation|
+|[str]|[str], Allowed values: 'positive_ctrl'/'negative_ctrl'/'test_cCRE'|
+|cCRE ID 1|control type|
+|cCRE ID 2|control type|
 
 
 </div>
@@ -228,11 +235,11 @@ Format is identical to final_associations
 **reads_by_group:** RNA reads for each cCRE by sample
 
 
-|cCRE|{Sample}|
-|------|--------|
-|[str]|[str]|
-|cCRE ID 1|cCRE RNA reads in {sample}|
-|cCRE ID 2|cCRE RNA reads in {sample}|
+|{Sample}|
+|--------|
+|[str]|
+|cCRE RNA reads in {sample}|
+|cCRE RNA reads in {sample}|
 
 
 </div>
