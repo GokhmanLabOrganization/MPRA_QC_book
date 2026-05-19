@@ -1,15 +1,25 @@
+# Reference guide for MPRA Quality Control Pipeline
+
+- The Bookdown documentation is available at the following link: https://gokhmanlaborganization.github.io/MPRA_QC_book/
+
 ## Abbreviations {-}
--	CRE – cis-regulatory element <br>
--	cCRE – candidate CRE <br>
+-	cCRE – candidate cis-regulatory element <br>
 -	BC - barcode <br>
 - logFC – log2(fold-change) between alleles <br>
+- std - standard deviation 
 
+
+## General files
+
+**cCRE_fasta:** Fasta file that includes all cCREs tested
+
+## BC-cCRE association files
 
 **final_associations:** BC - cCRE association file after all filtering. 
 
 
-|barcode  |cCRE |match_count |
-|-------|-------|---------|
+|barcode|cCRE |match_count |
+|-------|-----|------------|
 |[str]|[str]|[int64]|
 | BC sequence 1  | cCRE ID 2 | Number of observations (reads) for this BC-cCRE association  |
 | BC sequence 2  | cCRE ID 2 | Number of observations (reads) for this BC-cCRE association  |
@@ -26,9 +36,7 @@ Format is identical to final_associations
 
 
 
-**cCRE_fasta:** Fasta file that includes all cCREs tested
-
-
+## RNA and DNA quantification files
 
 <div class="table-scroll">
 **activity_df:**  This is the key file for the activity chapter. Each row represents a cCREs and its activity data, including: statistic, P-value, FDR, RNA counts,  DNA counts, and RNA/DNA ratio. 
@@ -38,8 +46,8 @@ Format is identical to final_associations
 |cCRE|DNA_rep_comb|RNA_rep_comb|activity_status|RNA_DNA_ratio_log_rep_comb|activity_pval|activity_statistic|activity_FDR|
 |----|------------|------------|---------------|--------------------------|-------------|------------------|------------|
 |[str]|[float64]|[float64]|[str], Allowed values: 'non_active'/'active'|[float64]|[float64]|[float64]|[float64]|
-|cCRE ID 1|DNA read count across all replicates |RNA read count across all replicates|cCRE activity|log2(RNA/DNA) across all replicates|Statistic score p-value|activity statistic|FDR-adjusted P-value|
-|cCRE ID 2|DNA read count across all replicates |RNA read count across all replicates|cCRE activity|log2(RNA/DNA) across all replicates|Statistic score p-value|activity statistic|FDR-adjusted P-value|
+|cCRE ID 1|DNA count across all replicates |RNA counts across all replicates|cCRE activity|log2(RNA/DNA) across all replicates|activity p-value|activity statistic|FDR-adjusted P-value|
+|cCRE ID 2|DNA count across all replicates |RNA counts across all replicates|cCRE activity|log2(RNA/DNA) across all replicates|activity p-value|activity statistic|FDR-adjusted P-value|
 
 
 </div>
@@ -47,15 +55,15 @@ Format is identical to final_associations
 
 <br><br>
 
-**activity_per_rep:** RNA and DNA read counts data for each cCRE by replicates and combined
+**activity_per_rep:** RNA and DNA counts data for each cCRE by replicates and combined
 
 
 
 |cCRE|RNA_rep{i}|DNA_rep{i}|RNA_DNA_ratio_log_rep{i}|
 |-----|---------|----------|------------------------|
-|[str]|[object], a list of integers|[object], a list of integers|[object], a list of integers|[object], a list of integers|[object], a list of integers|[object], a list of integers|[float64]|[float64]|[float64]|
-|cCRE ID 1|RNA reads rep {i}|DNA reads rep {i}|log2(RNA/DNA) rep {i}|
-|cCRE ID 2|RNA reads rep {i}|DNA reads rep {i}|log2(RNA/DNA) rep {i}|
+|[str]|[object], a list of integers, comma separated|[object], a list of integers, comma separated|[float64]|
+|cCRE ID 1|RNA counts rep {i}|DNA counts rep {i}|log2(RNA/DNA) rep {i}|
+|cCRE ID 2|RNA counts rep {i}|DNA counts rep {i}|log2(RNA/DNA) rep {i}|
 
 
 </div>
@@ -70,22 +78,22 @@ Format is identical to final_associations
 
 <br><br>
 
-**different_std_threshold_analysis:**  DNA and RNA counts after outlier filterings of several degrees of strictness.
+**different_std_threshold_analysis:**  DNA and RNA counts after outlier filtering at increasing stringency: no filtering, 3 std, and 2 std.
 
 
 
 |ratio_log_{outlier_filter}_{rep}  |DNA_{outlier_filter}_sum_{rep}|
 |----------------------------------|------------------------------|
 |[float64]|[float64]|
-| log2(RNA/DNA) for each outlier filter parameter - replicate pair |  DNA read count for each outlier filter parameter - replicate pair |
-| log2(RNA/DNA) for each outlier filter parameter - replicate pair |  DNA read count for each outlier filter parameter - replicate pair |
+| log2(RNA/DNA) for each outlier filter parameter - replicate pair |  DNA count for each outlier filter parameter - replicate pair |
+| log2(RNA/DNA) for each outlier filter parameter - replicate pair |  DNA count for each outlier filter parameter - replicate pair |
 
 </div>
 <div class="table-scroll">
 
 <br><br>
    
-**genomic_annotations_df:** Overlap of cCRE library with ENCODE SCREEN database of regulatory elements. Each row represents a cCRE and must have a SCREEN annotation of the following: Distal enhancer like sequence, DNase-only, Proximal enhancer like sequence, Heterochromatin, Promoter like sequence, DNase-H3K4me3. This file can be created using bedtools
+**genomic_annotations_df:** Overlap between the cCRE library and a genomic annotation database, such as the ENCODE SCREEN. Each row represents one cCRE and must include a genomic annotation using the values described below. This file can be generated with tools such as bedtools, and users may provide annotations from sources other than ENCODE SCREEN.
 
 
 
@@ -137,8 +145,8 @@ Format is identical to final_associations
 |id  |LFC - exp |LFC - AI |
 |-------|-------|---------|
 |[str]|[float64]|[float64]|
-| cCRE ID 1 |  Experimental log fold change allele1/allele2 | AI-predicted log fold change allele1/allele2  |
-| cCRE ID 2 |  Experimental log fold change allele1/allele2 | AI-predicted log fold change allele1/allele2  |
+| cCRE ID 1 |  Experimental logFC allele1/allele2 | AI-predicted logFC allele1/allele2  |
+| cCRE ID 2 |  Experimental logFC allele1/allele2 | AI-predicted logFC allele1/allele2  |
 </div>
 
 <br><br>
@@ -205,8 +213,8 @@ Format is identical to final_associations
 |seq_id|LFC_rep{i}|
 |------|--------|
 |[str]|[float64]|
-|cCRE ID 1|Log fold change allele1/allele2 rep{i}|
-|cCRE ID 2|Log fold change allele1/allele2 rep{i}|
+|cCRE ID 1|logFC allele1/allele2 rep{i}|
+|cCRE ID 2|logFC allele1/allele2 rep{i}|
 
 
 </div>
@@ -232,14 +240,14 @@ Format is identical to final_associations
 
 <br><br>
 
-**reads_by_group:** RNA reads for each cCRE by sample
+**reads_by_group:** RNA counts for each cCRE by sample. All columns in this file must be numeric.
 
 
 |{Sample}|
 |--------|
-|[str]|
-|cCRE RNA reads in {sample}|
-|cCRE RNA reads in {sample}|
+|[int64]|
+|cCRE RNA counts in {sample}|
+|cCRE RNA counts in {sample}|
 
 
 </div>

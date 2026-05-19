@@ -23,7 +23,6 @@
 <meta name="author" content="Simon Fishilevich, Omer Ronen, Nadav Mishol, Ryder Easterlin, Nitzan Haim, Katharina Lange, Nadav Ahituv, Irene Gallego Romero, Fumitaka Inoue, Martin Kircher, Michael I. Love, Max Schubach, and David Gokhman" />
 
 
-<meta name="date" content="2026-05-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -160,18 +159,18 @@
 <div id="header">
 <h1 class="title">Quality Control Pipeline for Massively Parallel Reporter Assays (MPRAs)</h1>
 <p class="author"><em>Simon Fishilevich, Omer Ronen, Nadav Mishol, Ryder Easterlin, Nitzan Haim, Katharina Lange, Nadav Ahituv, Irene Gallego Romero, Fumitaka Inoue, Martin Kircher, Michael I. Love, Max Schubach, and David Gokhman</em></p>
-<p class="date"><em>2026-05-04</em></p>
 </div>
 <div id="overview" class="section level1 unnumbered hasAnchor">
 <h1>Overview<a href="index.html#overview" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><img src="external_figures/logo.png" width="100%" /></p>
 <p>This pipeline is designed to help investigators evaluate the quality of their MPRA, quickly identify pitfalls, trace them to their source, and mitigate them. The scripts provided help ensure that the resulting MPRA data are suitable for robust statistical analysis and meaningful biological interpretation.
 This Bookdown accompanies our guide for best practices for MPRAs, which outlines recommendations for study design and interpretation [REF TBD]. The manuscript covers all key experimental and analytical steps, including library design, and estimation of activity differential activity. It then describes core problems that often compromise MPRA quality, illustrating how these issues manifest in the data, and offering practical strategies for correction and optimization.
 Because each issue can influence multiple quality metrics, and each metric may be affected by several issues, the relationships form a many-to-many network. The figures presented below map these interdependencies and connect them to recommended diagnostic analyses.</p>
+<p><img src="external_figures/scheme_v2.png" width="100%" /></p>
 <div id="abbreviations" class="section level2 unnumbered hasAnchor">
 <h2>Abbreviations<a href="index.html#abbreviations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
-<li>CRE – cis-regulatory element <br></li>
-<li>cCRE – candidate CRE <br></li>
+<li>cCRE – candidate cis-regulatory element <br></li>
 <li>BC - barcode <br></li>
 <li>logFC – log2(fold-change) between alleles <br></li>
 </ul>
@@ -188,13 +187,13 @@ Because each issue can influence multiple quality metrics, and each metric may b
 </ol></li>
 </ul>
 <div class="small-1pt">
-<p><img src="Fig2.svg" alt="Alt text" />
+<p><img src="external_figures/figure_2_v2.png" width="100%" />
 <strong>Root problems, impacted quality metrics and recommended diagnostic analyses for the sequence-barcode association step. Diagnostic analyses are presented alongside their corresponding manuscript figure and/or Bookdown (BD) reference number</strong></p>
 </div>
 <p><br></p>
 <div class="small-1pt">
-<p><img src="Fig4.svg" alt="Alt text" />
-<strong>Root problems, impacted quality metrics and recommended analyses for the RNA and DNA quantification step.</strong></p>
+<p><img src="external_figures/figure_4_v2.png" width="100%" /></p>
+<p><strong>Root problems, impacted quality metrics and recommended analyses for the RNA and DNA quantification step.</strong></p>
 </div>
 <p><br></p>
 <p>For each analysis, we provide an example of a successful and an unsuccessful dataset to illustrate how they manifest in the analysis.</p>

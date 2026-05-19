@@ -1,11 +1,11 @@
 --- 
 title: "Quality Control Pipeline for Massively Parallel Reporter Assays (MPRAs)"
 author: "Simon Fishilevich, Omer Ronen, Nadav Mishol, Ryder Easterlin, Nitzan Haim, Katharina Lange, Nadav Ahituv, Irene Gallego Romero, Fumitaka Inoue, Martin Kircher, Michael I. Love, Max Schubach, and David Gokhman"
-date: "2026-05-04"
+#date: "2026-05-19"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
-# url: your book url like https://gokhmanlaborganization.github.io/MPRA_QC_book/
+url: https://gokhmanlaborganization.github.io/MPRA_QC_book/
 # cover-image: path to the social sharing image like images/cover.jpg
 description: |
   A bookdown guide containing benchmarked quality-control examples for successful and unsuccessful MPRA experiments.
@@ -13,16 +13,21 @@ link-citations: yes
 github-repo: rstudio/bookdown-demo
 ---
 
+
+
 # Overview {-}
 
+<img src="external_figures/logo.png" width="100%" />
 
 This pipeline is designed to help investigators evaluate the quality of their MPRA, quickly identify pitfalls, trace them to their source, and mitigate them. The scripts provided help ensure that the resulting MPRA data are suitable for robust statistical analysis and meaningful biological interpretation.
 This Bookdown accompanies our guide for best practices for MPRAs, which outlines recommendations for study design and interpretation [REF TBD]. The manuscript covers all key experimental and analytical steps, including library design, and estimation of activity differential activity. It then describes core problems that often compromise MPRA quality, illustrating how these issues manifest in the data, and offering practical strategies for correction and optimization.
 Because each issue can influence multiple quality metrics, and each metric may be affected by several issues, the relationships form a many-to-many network. The figures presented below map these interdependencies and connect them to recommended diagnostic analyses.
 
+<img src="external_figures/scheme_v2.png" width="100%" />
+
 ## Abbreviations {-}
--	CRE – cis-regulatory element <br>
--	cCRE – candidate CRE <br>
+
+-	cCRE – candidate cis-regulatory element <br>
 -	BC - barcode <br>
 - logFC – log2(fold-change) between alleles <br>
 
@@ -35,14 +40,16 @@ The quality control (QC) pipeline is organized into two chapters:
 
 <div class="small-1pt">
 
-![Alt text](Fig2.svg)
+<img src="external_figures/figure_2_v2.png" width="100%" />
 **Root problems, impacted quality metrics and recommended diagnostic analyses for the sequence-barcode association step. Diagnostic analyses are presented alongside their corresponding manuscript figure and/or Bookdown (BD) reference number**
 </div>
 <br>
 
 <div class="small-1pt">
 
-![Alt text](Fig4.svg)
+<img src="external_figures/figure_4_v2.png" width="100%" />
+
+
 **Root problems, impacted quality metrics and recommended analyses for the RNA and DNA quantification step.**
 </div>
 <br>
