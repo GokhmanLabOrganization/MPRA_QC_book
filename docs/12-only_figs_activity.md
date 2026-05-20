@@ -17,13 +17,13 @@
 <div style="text-align:center; margin-bottom:6px;">
 <img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
 </div>
-<img src="external_figures/PMID_38766054_Reilly/retained_cCREs_and_barcodes.svg" style="width:100%; display:block;"/>
+<img src="external_figures/PMID_38766054_Reilly/Retained_cCREs_and_BCs.svg" style="width:100%; display:block;"/>
 </div>
 <div style="width:49%;">
 <div style="text-align:center; margin-bottom:6px;">
 <img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
 </div>
-<img src="external_figures/Max_MPRA_run2/retained_cCREs_and_barcodes.svg" style="width:100%; display:block;"/>
+<img src="external_figures/Max_MPRA_run2/Retained_cCREs_and_BCs.svg" style="width:100%; display:block;"/>
 </div>
 </div>
 ```
@@ -48,13 +48,13 @@
 <div style="text-align:center; margin-bottom:6px;">
 <img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
 </div>
-<img src="external_figures/PMID_38766054_Reilly/GC_content_bias_in_DNA.svg" style="width:100%; display:block;"/>
+<img src="external_figures/PMID_38766054_Reilly/DNA_counts_vs_GC_content.svg" style="width:100%; display:block;"/>
 </div>
 <div style="width:49%;">
 <div style="text-align:center; margin-bottom:6px;">
 <img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
 </div>
-<img src="external_figures/humanMPRA_L1a1_Neurons/GC_content_bias_in_DNA.svg" style="width:100%; display:block;"/>
+<img src="external_figures/humanMPRA_L1a1_Neurons/DNA_counts_vs_GC_content.svg" style="width:100%; display:block;"/>
 </div>
 </div>
 ```
@@ -105,19 +105,19 @@
 <div style="text-align:center; margin-bottom:6px;">
 <img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
 </div>
-<img src="external_figures/PMID_38766054_Reilly/activity_distribution.svg" style="width:100%; display:block;"/>
+<img src="external_figures/PMID_38766054_Reilly/Activity_distribution.svg" style="width:100%; display:block;"/>
 </div>
 <div style="width:32%;">
 <div style="text-align:center; margin-bottom:6px;">
 <img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
 </div>
-<img src="external_figures/humanMPRA_L4a2/activity_distribution.svg" style="width:100%; display:block;"/>
+<img src="external_figures/humanMPRA_L4a2/Activity_distribution.svg" style="width:100%; display:block;"/>
 </div>
 <div style="width:32%;">
 <div style="text-align:center; margin-bottom:6px;">
 <img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
 </div>
-<img src="external_figures/humanMPRA_L1a1_Neurons/activity_distribution.svg" style="width:100%; display:block;"/>
+<img src="external_figures/humanMPRA_L1a1_Neurons/Activity_distribution.svg" style="width:100%; display:block;"/>
 </div>
 </div>
 ```
@@ -198,13 +198,13 @@
 <div style="text-align:center; margin-bottom:6px;">
 <img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
 </div>
-<img src="external_figures/modern_humanMPRA_Hob/Differential_activity_volcano_zoom.svg" style="width:100%; display:block;"/>
+<img src="external_figures/modern_humanMPRA_Hob/Volcano_plot_FC_vs_Pval_zoom.svg" style="width:100%; display:block;"/>
 </div>
 <div style="width:49%;">
 <div style="text-align:center; margin-bottom:6px;">
 <img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
 </div>
-<img src="external_figures/humanMPRA_L1a1_Neurons/Differential_activity_volcano_zoom.svg" style="width:100%; display:block;"/>
+<img src="external_figures/humanMPRA_L1a1_Neurons/Volcano_plot_FC_vs_Pval_zoom.svg" style="width:100%; display:block;"/>
 </div>
 </div>
 ```
@@ -314,13 +314,13 @@
 <div style="text-align:center; margin-bottom:6px;">
 <img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
 </div>
-<img src="external_figures/PMID_38766054_Reilly/cumulative_RNA_reads.svg" style="width:100%; display:block;"/>
+<img src="external_figures/PMID_38766054_Reilly/Cumulative_RNA_reads.svg" style="width:100%; display:block;"/>
 </div>
 <div style="width:49%;">
 <div style="text-align:center; margin-bottom:6px;">
 <img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
 </div>
-<img src="external_figures/d2Osteoblast_spiking_oligos/cumulative_RNA_reads.svg" style="width:100%; display:block;"/>
+<img src="external_figures/d2Osteoblast_spiking_oligos/Cumulative_RNA_reads.svg" style="width:100%; display:block;"/>
 </div>
 </div>
 ```
@@ -344,13 +344,13 @@
 <div style="text-align:center; margin-bottom:6px;">
 <img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
 </div>
-<img src="external_figures/PMID_38766054_Reilly/PCA_similarity_between_samples.svg" style="width:100%; display:block;"/>
+<img src="external_figures/PMID_38766054_Reilly/Sample_clustering.svg" style="width:100%; display:block;"/>
 </div>
 <div style="width:49%;">
 <div style="text-align:center; margin-bottom:6px;">
 <img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
 </div>
-<img src="external_figures/thylacine_biorxiv_Gallego_Romero/PCA_similarity_between_samples.svg" style="width:100%; display:block;"/>
+<img src="external_figures/thylacine_biorxiv_Gallego_Romero/Sample_clustering.svg" style="width:100%; display:block;"/>
 </div>
 </div>
 ```
@@ -373,13 +373,13 @@
 <div style="text-align:center; margin-bottom:6px;">
 <img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
 </div>
-<img src="external_figures/thylacine_biorxiv_Gallego_Romero/RNA_DNA_ratio_correlation_between_replicates_hexbin_w_bar.svg" style="width:100%; display:block;"/>
+<img src="external_figures/thylacine_biorxiv_Gallego_Romero/Correlation_between_replicates_w_bar.svg" style="width:100%; display:block;"/>
 </div>
 <div style="width:49%;">
 <div style="text-align:center; margin-bottom:6px;">
 <img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
 </div>
-<img src="external_figures/humanMPRA_L4a2/RNA_DNA_ratio_correlation_between_replicates_hexbin_w_bar.svg" style="width:100%; display:block;"/>
+<img src="external_figures/humanMPRA_L4a2/Correlation_between_replicates_w_bar.svg" style="width:100%; display:block;"/>
 </div>
 </div>
 ```
@@ -404,13 +404,13 @@
 <div style="text-align:center; margin-bottom:6px;">
 <img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
 </div>
-<img src="external_figures/modern_humanMPRA_Hob/diff_activity_corr_reps_hexbin_w_bar.svg" style="width:100%; display:block;"/>
+<img src="external_figures/modern_humanMPRA_Hob/Correlation_of_differential_activity_between_replicates_w_bar.svg" style="width:100%; display:block;"/>
 </div>
 <div style="width:49%;">
 <div style="text-align:center; margin-bottom:6px;">
 <img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
 </div>
-<img src="external_figures/humanMPRA_L4a2/diff_activity_corr_reps_hexbin_w_bar.svg" style="width:100%; display:block;"/>
+<img src="external_figures/humanMPRA_L4a2/Correlation_of_differential_activity_between_replicates_w_bar.svg" style="width:100%; display:block;"/>
 </div>
 </div>
 ```
@@ -434,7 +434,7 @@
 <div style="text-align:center; margin-bottom:6px;">
 <img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
 </div>
-<img src="external_figures/PMID_38766054_Reilly/Variation_at_various_activity_levels.svg" style="width:100%; display:block;"/>
+<img src="external_figures/PMID_38766054_Reilly/Replicability_by_activity.svg" style="width:100%; display:block;"/>
 </div>
 <div style="width:49%;">
 <div style="text-align:center; margin-bottom:6px;">
@@ -466,13 +466,13 @@
 <div style="text-align:center; margin-bottom:6px;">
 <img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
 </div>
-<img src="external_figures/PMID_38766054_Reilly/RNA_DNA_ratio_correlation_between_replicates_with_controls_hexbin.svg" style="width:100%; display:block;"/>
+<img src="external_figures/PMID_38766054_Reilly/Correlation_between_replicates_controls.svg" style="width:100%; display:block;"/>
 </div>
 <div style="width:49%;">
 <div style="text-align:center; margin-bottom:6px;">
 <img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
 </div>
-<img src="external_figures/Max_MPRA_run2/RNA_DNA_ratio_correlation_between_replicates_with_controls_hexbin.svg" style="width:100%; display:block;"/>
+<img src="external_figures/Max_MPRA_run2/Correlation_between_replicates_controls.svg" style="width:100%; display:block;"/>
 </div>
 </div>
 ```
@@ -497,7 +497,7 @@
 <div style="text-align:center; margin-bottom:6px;">
 <img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
 </div>
-<img src="external_figures/modern_humanMPRA_Hob/allelic_pairs_hexbin_w_bar.svg" style="width:100%; display:block;"/>
+<img src="external_figures/modern_humanMPRA_Hob/Cross_validation_allelic_pairs_w_bar.svg" style="width:100%; display:block;"/>
 </div>
 <div style="width:49%;">
 <div style="text-align:center; margin-bottom:6px;">
@@ -536,7 +536,7 @@
 <div style="text-align:center; margin-bottom:6px;">
 <img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
 </div>
-<img src="external_figures/humanMPRA_L1a1_Neurons/cell_types_hexbin_w_bar.svg" style="width:100%; display:block;"/>
+<img src="external_figures/humanMPRA_L1a1_Neurons/Cross_validation_cell_types_w_bar.svg" style="width:100%; display:block;"/>
 </div>
 </div>
 ```
@@ -552,7 +552,7 @@
 **Input file:** different_std_threshold_analysis<br>
 **Evaluated metrics:** Reproducibility<br>
 
-<img src="external_figures/modern_humanMPRA_Hob/minimizing_noise_hexbin.svg" width="100%" />
+<img src="external_figures/modern_humanMPRA_Hob/Minimizing_noise.svg" width="100%" />
 **Legend:** Each panel shows the correlation between replicates across different threshold of outlier removal (horizontal), and minimum DNA counts per cCRE (vertical). Each data point is a hexagon representing the local density of cCREs.<br>
 **Interpretation:** The examples show an increase in correlations between replicates with increasing DNA cutoffs and outlier BC removal<br>
 
@@ -599,19 +599,19 @@
 <div style="text-align:center; margin-bottom:6px;">
 <img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
 </div>
-<img src="external_figures/PMID_38766054_Reilly/RNA_DNA_ratio_hexbin_w_bar.svg" style="width:100%; display:block;"/>
+<img src="external_figures/PMID_38766054_Reilly/RNA_vs_DNA_w_bar.svg" style="width:100%; display:block;"/>
 </div>
 <div style="width:32%;">
 <div style="text-align:center; margin-bottom:6px;">
 <img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
 </div>
-<img src="external_figures/humanMPRA_L4a2/RNA_DNA_ratio_hexbin_w_bar.svg" style="width:100%; display:block;"/>
+<img src="external_figures/humanMPRA_L4a2/RNA_vs_DNA_w_bar.svg" style="width:100%; display:block;"/>
 </div>
 <div style="width:32%;">
 <div style="text-align:center; margin-bottom:6px;">
 <img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
 </div>
-<img src="external_figures/humanMPRA_L1a1_Neurons/RNA_DNA_ratio_hexbin_w_bar.svg" style="width:100%; display:block;"/>
+<img src="external_figures/humanMPRA_L1a1_Neurons/RNA_vs_DNA_w_bar.svg" style="width:100%; display:block;"/>
 </div>
 </div>
 ```
@@ -636,13 +636,13 @@
 <div style="text-align:center; margin-bottom:6px;">
 <img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
 </div>
-<img src="external_figures/PMID_38766054_Reilly/Control_activity_boxplots.svg" style="width:100%; display:block;"/>
+<img src="external_figures/PMID_38766054_Reilly/Activity_of_controls.svg" style="width:100%; display:block;"/>
 </div>
 <div style="width:49%;">
 <div style="text-align:center; margin-bottom:6px;">
 <img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
 </div>
-<img src="external_figures/Max_MPRA_run2/Control_activity_boxplots.svg" style="width:100%; display:block;"/>
+<img src="external_figures/Max_MPRA_run2/Activity_of_controls.svg" style="width:100%; display:block;"/>
 </div>
 </div>
 ```
@@ -727,13 +727,13 @@
 <div style="text-align:center; margin-bottom:6px;">
 <img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
 </div>
-<img src="external_figures/modern_humanMPRA_Hob/AI_predictions_vs_activity_hexbin_w_bar.svg" style="width:100%; display:block;"/>
+<img src="external_figures/modern_humanMPRA_Hob/AI_predictions_vs_activity_w_bar.svg" style="width:100%; display:block;"/>
 </div>
 <div style="width:49%;">
 <div style="text-align:center; margin-bottom:6px;">
 <img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
 </div>
-<img src="external_figures/humanMPRA_L1a1_Neurons/AI_predictions_vs_activity_hexbin_w_bar.svg" style="width:100%; display:block;"/>
+<img src="external_figures/humanMPRA_L1a1_Neurons/AI_predictions_vs_activity_w_bar.svg" style="width:100%; display:block;"/>
 </div>
 </div>
 ```
@@ -758,13 +758,13 @@
 <div style="text-align:center; margin-bottom:6px;">
 <img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
 </div>
-<img src="external_figures/modern_humanMPRA_Hob/AI_predictions_vs_differential_activity_hexbin_w_bar.svg" style="width:100%; display:block;"/>
+<img src="external_figures/modern_humanMPRA_Hob/AI_predictions_vs_differential_activity_w_bar.svg" style="width:100%; display:block;"/>
 </div>
 <div style="width:49%;">
 <div style="text-align:center; margin-bottom:6px;">
 <img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
 </div>
-<img src="external_figures/humanMPRA_L1a1_Neurons/AI_predictions_vs_differential_activity_hexbin_w_bar.svg" style="width:100%; display:block;"/>
+<img src="external_figures/humanMPRA_L1a1_Neurons/AI_predictions_vs_differential_activity_w_bar.svg" style="width:100%; display:block;"/>
 </div>
 </div>
 ```

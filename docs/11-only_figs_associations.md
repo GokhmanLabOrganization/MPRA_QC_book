@@ -48,13 +48,13 @@
 <div style="text-align:center; margin-bottom:6px;">
 <img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
 </div>
-<img src="external_figures/PMID_38766054_Reilly/UMIs_per_association.svg" style="width:100%; display:block;"/>
+<img src="external_figures/PMID_38766054_Reilly/Reads_per_association.svg" style="width:100%; display:block;"/>
 </div>
 <div style="width:49%;">
 <div style="text-align:center; margin-bottom:6px;">
 <img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
 </div>
-<img src="external_figures/Max_MPRA_run2/UMIs_per_association.svg" style="width:100%; display:block;"/>
+<img src="external_figures/Max_MPRA_run2/Reads_per_association.svg" style="width:100%; display:block;"/>
 </div>
 </div>
 ```
@@ -84,13 +84,13 @@
 <div style="text-align:center; margin-bottom:6px;">
 <img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
 </div>
-<img src="external_figures/PMID_38766054_Reilly/Barcodes_per_cCRE.svg" style="width:100%; display:block;"/>
+<img src="external_figures/PMID_38766054_Reilly/BCs_per_cCRE.svg" style="width:100%; display:block;"/>
 </div>
 <div style="width:49%;">
 <div style="text-align:center; margin-bottom:6px;">
 <img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
 </div>
-<img src="external_figures/Max_MPRA_run2/Barcodes_per_cCRE.svg" style="width:100%; display:block;"/>
+<img src="external_figures/Max_MPRA_run2/BCs_per_cCRE.svg" style="width:100%; display:block;"/>
 </div>
 </div>
 ```
@@ -230,13 +230,13 @@
 <div style="text-align:center; margin-bottom:6px;">
 <img src="external_figures/thumbs_up.svg" style="width:60px; display:inline-block;"/>
 </div>
-<img src="external_figures/thylacine_biorxiv_Gallego_Romero/PCR_bias_G-stretches.svg" style="width:100%; display:block;"/>
+<img src="external_figures/thylacine_biorxiv_Gallego_Romero/PCR_bias_G_stretches.svg" style="width:100%; display:block;"/>
 </div>
 <div style="width:49%;">
 <div style="text-align:center; margin-bottom:6px;">
 <img src="external_figures/thumbs_down.svg" style="width:60px; display:inline-block;"/>
 </div>
-<img src="external_figures/humanMPRA_L4a2/PCR_bias_G-stretches.svg" style="width:100%; display:block;"/>
+<img src="external_figures/humanMPRA_L4a2/PCR_bias_G_stretches.svg" style="width:100%; display:block;"/>
 </div>
 </div>
 ```
