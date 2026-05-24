@@ -27,7 +27,7 @@ This Bookdown accompanies our guide for best practices for MPRAs, which outlines
 Because each issue can influence multiple quality metrics, and each metric may be affected by several issues, the relationships form a many-to-many network. The figures presented below map these interdependencies and connect them to recommended diagnostic analyses.
 
 ```{r echo=FALSE, fig.show="hold", out.width="100%"}
-knitr::include_graphics("external_figures/scheme_v2.png",
+knitr::include_graphics("external_figures/fig_1_scheme_v4.png",
                           )
 ```
 

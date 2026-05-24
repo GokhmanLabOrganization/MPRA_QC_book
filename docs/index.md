@@ -1,7 +1,7 @@
 --- 
 title: "Quality Control Pipeline for Massively Parallel Reporter Assays (MPRAs)"
 author: "Simon Fishilevich, Omer Ronen, Nadav Mishol, Ryder Easterlin, Nitzan Haim, Katharina Lange, Nadav Ahituv, Irene Gallego Romero, Fumitaka Inoue, Martin Kircher, Michael I. Love, Max Schubach, and David Gokhman"
-#date: "2026-05-20"
+#date: "2026-05-24"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -23,7 +23,7 @@ This pipeline is designed to help investigators evaluate the quality of their MP
 This Bookdown accompanies our guide for best practices for MPRAs, which outlines recommendations for study design and interpretation [REF TBD]. The manuscript covers all key experimental and analytical steps, including library design, and estimation of activity differential activity. It then describes core problems that often compromise MPRA quality, illustrating how these issues manifest in the data, and offering practical strategies for correction and optimization.
 Because each issue can influence multiple quality metrics, and each metric may be affected by several issues, the relationships form a many-to-many network. The figures presented below map these interdependencies and connect them to recommended diagnostic analyses.
 
-<img src="external_figures/scheme_v2.png" width="100%" />
+<img src="external_figures/fig_1_scheme_v4.png" width="100%" />
 
 ## Abbreviations {-}
 
