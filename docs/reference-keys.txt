@@ -1,12 +1,4 @@
 input-format
-associations
-script
-input
-output
-rna-and-dna-quantification
-script-1
-input-1
-output-1
 ccre-bc-association-qc
 ccres-per-bc
 reads-per-association
