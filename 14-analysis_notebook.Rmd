@@ -2,9 +2,9 @@
 The QC pipeline is organized into two main chapters: cCRE-BC association, and RNA and DNA quantification.
 Each chapter is accompanied by a dedicated script that allows the user to run all analyses presented in this book.
 
-We provide a description of the input format for the files required to run the pipeline in a separate PDF file. Alongside each analysis, you will find the input files needed in order to run it. 
+A detailed description of the required input file formats is provided in the GitHub pipeline repository: https://github.com/GokhmanLabOrganization/MPRA_QC_analysis/INPUT_FORMATS.MD.
 
-The required input files for each analysis are provided below.
+The required input files for each analysis are listed below.
 
 ```{r echo=FALSE, fig.show="hold", out.width="100%"}
 knitr::include_graphics("external_figures/input_files.png",
