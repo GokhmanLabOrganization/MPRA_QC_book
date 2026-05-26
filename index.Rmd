@@ -34,6 +34,8 @@ knitr::include_graphics("external_figures/fig_1_scheme_v4.png",
                           )
 ```
 
+
+
 ```{r echo=FALSE, fig.show="hold", out.width="100%"}
 knitr::include_graphics("external_figures/papers_per_year.png",
                           )
