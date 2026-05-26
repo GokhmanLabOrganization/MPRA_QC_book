@@ -15,9 +15,15 @@ github-repo: rstudio/bookdown-demo
 
 
 
+
+
+
 # Overview {-}
 
-<img src="external_figures/logo.png" width="100%" />
+<div class="title-logo-block">
+  <img src="external_figures/logo.png" alt="MPRA QC logo">
+</div>
+
 
 This pipeline is designed to help investigators evaluate the quality of their MPRA, quickly identify pitfalls, trace them to their source, and mitigate them. The scripts provided help ensure that the resulting MPRA data are suitable for robust statistical analysis and meaningful biological interpretation.
 This Bookdown accompanies our guide for best practices for MPRAs, which outlines recommendations for study design and interpretation [REF TBD]. The manuscript covers all key experimental and analytical steps, including library design, and estimation of activity differential activity. It then describes core problems that often compromise MPRA quality, illustrating how these issues manifest in the data, and offering practical strategies for correction and optimization.
@@ -44,7 +50,7 @@ The quality control (QC) pipeline is organized into two chapters:
 <div class="small-1pt">
 
 <img src="external_figures/figure_2_v2.png" width="100%" />
-**Root problems, impacted quality metrics and recommended diagnostic analyses for the sequence-barcode association step. Diagnostic analyses are presented alongside their corresponding manuscript figure and/or Bookdown (BD) reference number**
+**Root problems, impacted quality metrics and recommended diagnostic analyses for the sequence-barcode association step.**
 </div>
 <br>
 

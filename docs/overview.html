@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Quality Control Pipeline for Massively Parallel Reporter Assays (MPRAs)</title>
+  <title>Overview | Quality Control Pipeline for Massively Parallel Reporter Assays (MPRAs)</title>
   <meta name="description" content="A bookdown guide containing benchmarked quality-control examples for successful and unsuccessful MPRA experiments." />
   <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Quality Control Pipeline for Massively Parallel Reporter Assays (MPRAs)" />
+  <meta property="og:title" content="Overview | Quality Control Pipeline for Massively Parallel Reporter Assays (MPRAs)" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="A bookdown guide containing benchmarked quality-control examples for successful and unsuccessful MPRA experiments." />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Quality Control Pipeline for Massively Parallel Reporter Assays (MPRAs)" />
+  <meta name="twitter:title" content="Overview | Quality Control Pipeline for Massively Parallel Reporter Assays (MPRAs)" />
   
   <meta name="twitter:description" content="A bookdown guide containing benchmarked quality-control examples for successful and unsuccessful MPRA experiments." />
   
@@ -29,7 +29,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
+<link rel="prev" href="index.html"/>
 <link rel="next" href="ccre-bc-association-qc.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -75,12 +75,13 @@
 <li><a href="./">Quality Control Pipeline for Massively Parallel Reporter Assays (MPRAs)</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Overview</a>
+<li><a href="index.html#section" id="toc-section"></a></li>
+<li class="chapter" data-level="" data-path="overview.html"><a href="overview.html"><i class="fa fa-check"></i>Overview</a>
 <ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#abbreviations"><i class="fa fa-check"></i>Abbreviations</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#usage"><i class="fa fa-check"></i>Usage</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#scripts"><i class="fa fa-check"></i>Scripts</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#input-format"><i class="fa fa-check"></i>Input format</a></li>
+<li class="chapter" data-level="" data-path="overview.html"><a href="overview.html#abbreviations"><i class="fa fa-check"></i>Abbreviations</a></li>
+<li class="chapter" data-level="" data-path="overview.html"><a href="overview.html#usage"><i class="fa fa-check"></i>Usage</a></li>
+<li class="chapter" data-level="" data-path="overview.html"><a href="overview.html#scripts"><i class="fa fa-check"></i>Scripts</a></li>
+<li class="chapter" data-level="" data-path="overview.html"><a href="overview.html#input-format"><i class="fa fa-check"></i>Input format</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="ccre-bc-association-qc.html"><a href="ccre-bc-association-qc.html"><i class="fa fa-check"></i><b>1</b> cCRE-BC association QC</a>
 <ul>
@@ -142,15 +143,8 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Quality Control Pipeline for Massively Parallel Reporter Assays (MPRAs)</h1>
-<p class="author"><em>Simon Fishilevich, Omer Ronen, Nadav Mishol, Ryder Easterlin, Nitzan Haim, Katharina Lange, Nadav Ahituv, Irene Gallego Romero, Fumitaka Inoue, Martin Kircher, Michael I. Love, Max Schubach, and David Gokhman</em></p>
-</div>
 <div id="overview" class="section level1 unnumbered hasAnchor">
-<h1>Overview<a href="index.html#overview" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div class="title-logo-block">
-<p><img src="external_figures/logo.png" alt="MPRA QC logo"></p>
-</div>
+<h1>Overview<a href="overview.html#overview" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>This pipeline is designed to help investigators evaluate the quality of their MPRA, quickly identify pitfalls, trace them to their source, and mitigate them. The scripts provided help ensure that the resulting MPRA data are suitable for robust statistical analysis and meaningful biological interpretation.
 This Bookdown accompanies our guide for best practices for MPRAs, which outlines recommendations for study design and interpretation [REF TBD]. The manuscript covers all key experimental and analytical steps, including library design, and estimation of activity differential activity. It then describes core problems that often compromise MPRA quality, illustrating how these issues manifest in the data, and offering practical strategies for correction and optimization.
 Because each issue can influence multiple quality metrics, and each metric may be affected by several issues, the relationships form a many-to-many network. The figures presented below map these interdependencies and connect them to recommended diagnostic analyses.</p>
@@ -158,7 +152,7 @@ Because each issue can influence multiple quality metrics, and each metric may b
 <p><img src="external_figures/papers_per_year.png" width="100%" />
 <strong>Number of MPRA-related publications per year, illustrating the increasing use of MPRA experiments over time.</strong></p>
 <div id="abbreviations" class="section level2 unnumbered hasAnchor">
-<h2>Abbreviations<a href="index.html#abbreviations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2>Abbreviations<a href="overview.html#abbreviations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>cCRE – candidate cis-regulatory element <br></li>
 <li>BC - barcode <br></li>
@@ -166,7 +160,7 @@ Because each issue can influence multiple quality metrics, and each metric may b
 </ul>
 </div>
 <div id="usage" class="section level2 unnumbered hasAnchor">
-<h2>Usage<a href="index.html#usage" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2>Usage<a href="overview.html#usage" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The quality control (QC) pipeline is organized into two chapters:</p>
 <ul>
 <li><ol style="list-style-type: lower-roman">
@@ -190,11 +184,11 @@ Because each issue can influence multiple quality metrics, and each metric may b
 <p>We welcome questions, feedback, or suggestions. Please feel free to reach out at david.gokhman [at] weizmann.ac.il.</p>
 </div>
 <div id="scripts" class="section level2 unnumbered hasAnchor">
-<h2>Scripts<a href="index.html#scripts" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2>Scripts<a href="overview.html#scripts" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>All of these analyses are integrated into the quality control pipeline described in this resource, with scripts provided here: <a href="https://github.com/GokhmanLabOrganization/MPRA_QC_analysis">GokhmanLabOrganization/MPRA_QC_analysis</a>.</p>
 </div>
 <div id="input-format" class="section level2 unnumbered hasAnchor">
-<h2>Input format<a href="index.html#input-format" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2>Input format<a href="overview.html#input-format" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A detailed description of the required input file formats is provided in the GitHub pipeline repository: https://github.com/GokhmanLabOrganization/MPRA_QC_analysis/INPUT_FORMATS.MD.</p>
 
 </div>
@@ -204,8 +198,8 @@ Because each issue can influence multiple quality metrics, and each metric may b
           </div>
         </div>
       </div>
-
-<a href="ccre-bc-association-qc.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ccre-bc-association-qc.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
