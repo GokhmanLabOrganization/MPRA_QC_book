@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 cCRE-BC association QC | Quality Control Pipeline for Massively Parallel Reporter Assays (MPRAs)</title>
+  <title>Chapter 1 cCRE-BC association QC | Quality Control Pipeline for Massively Parallel Reporter Assays (MPRAs)</title>
   <meta name="description" content="A bookdown guide containing benchmarked quality-control examples for successful and unsuccessful MPRA experiments." />
   <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 cCRE-BC association QC | Quality Control Pipeline for Massively Parallel Reporter Assays (MPRAs)" />
+  <meta property="og:title" content="Chapter 1 cCRE-BC association QC | Quality Control Pipeline for Massively Parallel Reporter Assays (MPRAs)" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="A bookdown guide containing benchmarked quality-control examples for successful and unsuccessful MPRA experiments." />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 cCRE-BC association QC | Quality Control Pipeline for Massively Parallel Reporter Assays (MPRAs)" />
+  <meta name="twitter:title" content="Chapter 1 cCRE-BC association QC | Quality Control Pipeline for Massively Parallel Reporter Assays (MPRAs)" />
   
   <meta name="twitter:description" content="A bookdown guide containing benchmarked quality-control examples for successful and unsuccessful MPRA experiments." />
   
@@ -29,7 +29,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="input-format.html"/>
+<link rel="prev" href="index.html"/>
 <link rel="next" href="activity-qc.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -80,47 +80,47 @@
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#abbreviations"><i class="fa fa-check"></i>Abbreviations</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#usage"><i class="fa fa-check"></i>Usage</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#scripts"><i class="fa fa-check"></i>Scripts</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#input-format"><i class="fa fa-check"></i>Input format</a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="input-format.html"><a href="input-format.html"><i class="fa fa-check"></i><b>1</b> Input format</a></li>
-<li class="chapter" data-level="2" data-path="ccre-bc-association-qc.html"><a href="ccre-bc-association-qc.html"><i class="fa fa-check"></i><b>2</b> cCRE-BC association QC</a>
+<li class="chapter" data-level="1" data-path="ccre-bc-association-qc.html"><a href="ccre-bc-association-qc.html"><i class="fa fa-check"></i><b>1</b> cCRE-BC association QC</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="ccre-bc-association-qc.html"><a href="ccre-bc-association-qc.html#ccres-per-bc"><i class="fa fa-check"></i><b>2.1</b> cCREs per BC</a></li>
-<li class="chapter" data-level="2.2" data-path="ccre-bc-association-qc.html"><a href="ccre-bc-association-qc.html#reads-per-association"><i class="fa fa-check"></i><b>2.2</b> Reads per association</a></li>
-<li class="chapter" data-level="2.3" data-path="ccre-bc-association-qc.html"><a href="ccre-bc-association-qc.html#bcs-per-ccre"><i class="fa fa-check"></i><b>2.3</b> BCs per cCRE</a></li>
-<li class="chapter" data-level="2.4" data-path="ccre-bc-association-qc.html"><a href="ccre-bc-association-qc.html#retained-ccres"><i class="fa fa-check"></i><b>2.4</b> Retained cCREs</a></li>
-<li class="chapter" data-level="2.5" data-path="ccre-bc-association-qc.html"><a href="ccre-bc-association-qc.html#ccre-retention-by-sequencing-depth"><i class="fa fa-check"></i><b>2.5</b> cCRE retention by sequencing depth</a></li>
-<li class="chapter" data-level="2.6" data-path="ccre-bc-association-qc.html"><a href="ccre-bc-association-qc.html#bcs-per-ccre-by-sequencing-depth"><i class="fa fa-check"></i><b>2.6</b> BCs per cCRE by sequencing depth</a></li>
-<li class="chapter" data-level="2.7" data-path="ccre-bc-association-qc.html"><a href="ccre-bc-association-qc.html#pcr-bias---gc"><i class="fa fa-check"></i><b>2.7</b> PCR bias - GC</a></li>
-<li class="chapter" data-level="2.8" data-path="ccre-bc-association-qc.html"><a href="ccre-bc-association-qc.html#pcr-bias---g-stretches"><i class="fa fa-check"></i><b>2.8</b> PCR bias - G-stretches</a></li>
+<li class="chapter" data-level="1.1" data-path="ccre-bc-association-qc.html"><a href="ccre-bc-association-qc.html#ccres-per-bc"><i class="fa fa-check"></i><b>1.1</b> cCREs per BC</a></li>
+<li class="chapter" data-level="1.2" data-path="ccre-bc-association-qc.html"><a href="ccre-bc-association-qc.html#reads-per-association"><i class="fa fa-check"></i><b>1.2</b> Reads per association</a></li>
+<li class="chapter" data-level="1.3" data-path="ccre-bc-association-qc.html"><a href="ccre-bc-association-qc.html#bcs-per-ccre"><i class="fa fa-check"></i><b>1.3</b> BCs per cCRE</a></li>
+<li class="chapter" data-level="1.4" data-path="ccre-bc-association-qc.html"><a href="ccre-bc-association-qc.html#retained-ccres"><i class="fa fa-check"></i><b>1.4</b> Retained cCREs</a></li>
+<li class="chapter" data-level="1.5" data-path="ccre-bc-association-qc.html"><a href="ccre-bc-association-qc.html#ccre-retention-by-sequencing-depth"><i class="fa fa-check"></i><b>1.5</b> cCRE retention by sequencing depth</a></li>
+<li class="chapter" data-level="1.6" data-path="ccre-bc-association-qc.html"><a href="ccre-bc-association-qc.html#bcs-per-ccre-by-sequencing-depth"><i class="fa fa-check"></i><b>1.6</b> BCs per cCRE by sequencing depth</a></li>
+<li class="chapter" data-level="1.7" data-path="ccre-bc-association-qc.html"><a href="ccre-bc-association-qc.html#pcr-bias---gc"><i class="fa fa-check"></i><b>1.7</b> PCR bias - GC</a></li>
+<li class="chapter" data-level="1.8" data-path="ccre-bc-association-qc.html"><a href="ccre-bc-association-qc.html#pcr-bias---g-stretches"><i class="fa fa-check"></i><b>1.8</b> PCR bias - G-stretches</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="activity-qc.html"><a href="activity-qc.html"><i class="fa fa-check"></i><b>3</b> Activity QC</a>
+<li class="chapter" data-level="2" data-path="activity-qc.html"><a href="activity-qc.html"><i class="fa fa-check"></i><b>2</b> Activity QC</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="activity-qc.html"><a href="activity-qc.html#retained-ccres-and-barcodes"><i class="fa fa-check"></i><b>3.1</b> Retained cCREs and barcodes</a></li>
-<li class="chapter" data-level="3.2" data-path="activity-qc.html"><a href="activity-qc.html#dna-counts-vs-gc-content"><i class="fa fa-check"></i><b>3.2</b> DNA counts vs GC content</a></li>
-<li class="chapter" data-level="3.3" data-path="activity-qc.html"><a href="activity-qc.html#activity-statistic-vs-count-ratio"><i class="fa fa-check"></i><b>3.3</b> Activity statistic vs count ratio</a></li>
-<li class="chapter" data-level="3.4" data-path="activity-qc.html"><a href="activity-qc.html#activity-distribution"><i class="fa fa-check"></i><b>3.4</b> Activity distribution</a></li>
-<li class="chapter" data-level="3.5" data-path="activity-qc.html"><a href="activity-qc.html#differential-activity-distribution"><i class="fa fa-check"></i><b>3.5</b> Differential activity distribution</a></li>
-<li class="chapter" data-level="3.6" data-path="activity-qc.html"><a href="activity-qc.html#p-value-distribution"><i class="fa fa-check"></i><b>3.6</b> P-value distribution</a></li>
-<li class="chapter" data-level="3.7" data-path="activity-qc.html"><a href="activity-qc.html#volcano-plot---fc-vs-pval"><i class="fa fa-check"></i><b>3.7</b> Volcano plot - FC vs Pval</a></li>
-<li class="chapter" data-level="3.8" data-path="activity-qc.html"><a href="activity-qc.html#bc-retention-by-dnarna-sequencing-depth"><i class="fa fa-check"></i><b>3.8</b> BC retention by DNA/RNA sequencing depth</a></li>
-<li class="chapter" data-level="3.9" data-path="activity-qc.html"><a href="activity-qc.html#ccre-retention-by-dnarna-sequencing-depth"><i class="fa fa-check"></i><b>3.9</b> cCRE retention by DNA/RNA sequencing depth</a></li>
-<li class="chapter" data-level="3.10" data-path="activity-qc.html"><a href="activity-qc.html#activity-by-sequencing-depth"><i class="fa fa-check"></i><b>3.10</b> Activity by sequencing depth</a></li>
-<li class="chapter" data-level="3.11" data-path="activity-qc.html"><a href="activity-qc.html#cumulative-rna-reads"><i class="fa fa-check"></i><b>3.11</b> Cumulative RNA reads</a></li>
-<li class="chapter" data-level="3.12" data-path="activity-qc.html"><a href="activity-qc.html#sample-clustering"><i class="fa fa-check"></i><b>3.12</b> Sample clustering</a></li>
-<li class="chapter" data-level="3.13" data-path="activity-qc.html"><a href="activity-qc.html#correlation-between-replicates"><i class="fa fa-check"></i><b>3.13</b> Correlation between replicates</a></li>
-<li class="chapter" data-level="3.14" data-path="activity-qc.html"><a href="activity-qc.html#correlation-of-differential-activity-between-replicates"><i class="fa fa-check"></i><b>3.14</b> Correlation of differential activity between replicates</a></li>
-<li class="chapter" data-level="3.15" data-path="activity-qc.html"><a href="activity-qc.html#replicability-by-activity"><i class="fa fa-check"></i><b>3.15</b> Replicability by activity</a></li>
-<li class="chapter" data-level="3.16" data-path="activity-qc.html"><a href="activity-qc.html#correlation-between-replicates-controls"><i class="fa fa-check"></i><b>3.16</b> Correlation between replicates (controls)</a></li>
-<li class="chapter" data-level="3.17" data-path="activity-qc.html"><a href="activity-qc.html#cross-validation-allelic-pairs"><i class="fa fa-check"></i><b>3.17</b> Cross-validation: allelic pairs</a></li>
-<li class="chapter" data-level="3.18" data-path="activity-qc.html"><a href="activity-qc.html#cross-validaiton-cell-types"><i class="fa fa-check"></i><b>3.18</b> Cross-validaiton: cell types</a></li>
-<li class="chapter" data-level="3.19" data-path="activity-qc.html"><a href="activity-qc.html#minimizing-noise"><i class="fa fa-check"></i><b>3.19</b> Minimizing noise</a></li>
-<li class="chapter" data-level="3.20" data-path="activity-qc.html"><a href="activity-qc.html#reproducibility-by-sequencing-depth"><i class="fa fa-check"></i><b>3.20</b> Reproducibility by sequencing depth</a></li>
-<li class="chapter" data-level="3.21" data-path="activity-qc.html"><a href="activity-qc.html#rna-vs-dna"><i class="fa fa-check"></i><b>3.21</b> RNA vs DNA</a></li>
-<li class="chapter" data-level="3.22" data-path="activity-qc.html"><a href="activity-qc.html#activity-of-controls"><i class="fa fa-check"></i><b>3.22</b> Activity of controls</a></li>
-<li class="chapter" data-level="3.23" data-path="activity-qc.html"><a href="activity-qc.html#genomic-annotations"><i class="fa fa-check"></i><b>3.23</b> Genomic annotations</a></li>
-<li class="chapter" data-level="3.24" data-path="activity-qc.html"><a href="activity-qc.html#proximity-to-tss"><i class="fa fa-check"></i><b>3.24</b> Proximity to TSS</a></li>
-<li class="chapter" data-level="3.25" data-path="activity-qc.html"><a href="activity-qc.html#ai-predictions-vs-activity"><i class="fa fa-check"></i><b>3.25</b> AI predictions vs activity</a></li>
-<li class="chapter" data-level="3.26" data-path="activity-qc.html"><a href="activity-qc.html#ai-predictions-vs-differential-activity"><i class="fa fa-check"></i><b>3.26</b> AI predictions vs differential activity</a></li>
+<li class="chapter" data-level="2.1" data-path="activity-qc.html"><a href="activity-qc.html#retained-ccres-and-barcodes"><i class="fa fa-check"></i><b>2.1</b> Retained cCREs and barcodes</a></li>
+<li class="chapter" data-level="2.2" data-path="activity-qc.html"><a href="activity-qc.html#dna-counts-vs-gc-content"><i class="fa fa-check"></i><b>2.2</b> DNA counts vs GC content</a></li>
+<li class="chapter" data-level="2.3" data-path="activity-qc.html"><a href="activity-qc.html#activity-statistic-vs-count-ratio"><i class="fa fa-check"></i><b>2.3</b> Activity statistic vs count ratio</a></li>
+<li class="chapter" data-level="2.4" data-path="activity-qc.html"><a href="activity-qc.html#activity-distribution"><i class="fa fa-check"></i><b>2.4</b> Activity distribution</a></li>
+<li class="chapter" data-level="2.5" data-path="activity-qc.html"><a href="activity-qc.html#differential-activity-distribution"><i class="fa fa-check"></i><b>2.5</b> Differential activity distribution</a></li>
+<li class="chapter" data-level="2.6" data-path="activity-qc.html"><a href="activity-qc.html#p-value-distribution"><i class="fa fa-check"></i><b>2.6</b> P-value distribution</a></li>
+<li class="chapter" data-level="2.7" data-path="activity-qc.html"><a href="activity-qc.html#volcano-plot---fc-vs-pval"><i class="fa fa-check"></i><b>2.7</b> Volcano plot - FC vs Pval</a></li>
+<li class="chapter" data-level="2.8" data-path="activity-qc.html"><a href="activity-qc.html#bc-retention-by-dnarna-sequencing-depth"><i class="fa fa-check"></i><b>2.8</b> BC retention by DNA/RNA sequencing depth</a></li>
+<li class="chapter" data-level="2.9" data-path="activity-qc.html"><a href="activity-qc.html#ccre-retention-by-dnarna-sequencing-depth"><i class="fa fa-check"></i><b>2.9</b> cCRE retention by DNA/RNA sequencing depth</a></li>
+<li class="chapter" data-level="2.10" data-path="activity-qc.html"><a href="activity-qc.html#activity-by-sequencing-depth"><i class="fa fa-check"></i><b>2.10</b> Activity by sequencing depth</a></li>
+<li class="chapter" data-level="2.11" data-path="activity-qc.html"><a href="activity-qc.html#cumulative-rna-reads"><i class="fa fa-check"></i><b>2.11</b> Cumulative RNA reads</a></li>
+<li class="chapter" data-level="2.12" data-path="activity-qc.html"><a href="activity-qc.html#sample-clustering"><i class="fa fa-check"></i><b>2.12</b> Sample clustering</a></li>
+<li class="chapter" data-level="2.13" data-path="activity-qc.html"><a href="activity-qc.html#correlation-between-replicates"><i class="fa fa-check"></i><b>2.13</b> Correlation between replicates</a></li>
+<li class="chapter" data-level="2.14" data-path="activity-qc.html"><a href="activity-qc.html#correlation-of-differential-activity-between-replicates"><i class="fa fa-check"></i><b>2.14</b> Correlation of differential activity between replicates</a></li>
+<li class="chapter" data-level="2.15" data-path="activity-qc.html"><a href="activity-qc.html#replicability-by-activity"><i class="fa fa-check"></i><b>2.15</b> Replicability by activity</a></li>
+<li class="chapter" data-level="2.16" data-path="activity-qc.html"><a href="activity-qc.html#correlation-between-replicates-controls"><i class="fa fa-check"></i><b>2.16</b> Correlation between replicates (controls)</a></li>
+<li class="chapter" data-level="2.17" data-path="activity-qc.html"><a href="activity-qc.html#cross-validation-allelic-pairs"><i class="fa fa-check"></i><b>2.17</b> Cross-validation: allelic pairs</a></li>
+<li class="chapter" data-level="2.18" data-path="activity-qc.html"><a href="activity-qc.html#cross-validaiton-cell-types"><i class="fa fa-check"></i><b>2.18</b> Cross-validaiton: cell types</a></li>
+<li class="chapter" data-level="2.19" data-path="activity-qc.html"><a href="activity-qc.html#minimizing-noise"><i class="fa fa-check"></i><b>2.19</b> Minimizing noise</a></li>
+<li class="chapter" data-level="2.20" data-path="activity-qc.html"><a href="activity-qc.html#reproducibility-by-sequencing-depth"><i class="fa fa-check"></i><b>2.20</b> Reproducibility by sequencing depth</a></li>
+<li class="chapter" data-level="2.21" data-path="activity-qc.html"><a href="activity-qc.html#rna-vs-dna"><i class="fa fa-check"></i><b>2.21</b> RNA vs DNA</a></li>
+<li class="chapter" data-level="2.22" data-path="activity-qc.html"><a href="activity-qc.html#activity-of-controls"><i class="fa fa-check"></i><b>2.22</b> Activity of controls</a></li>
+<li class="chapter" data-level="2.23" data-path="activity-qc.html"><a href="activity-qc.html#genomic-annotations"><i class="fa fa-check"></i><b>2.23</b> Genomic annotations</a></li>
+<li class="chapter" data-level="2.24" data-path="activity-qc.html"><a href="activity-qc.html#proximity-to-tss"><i class="fa fa-check"></i><b>2.24</b> Proximity to TSS</a></li>
+<li class="chapter" data-level="2.25" data-path="activity-qc.html"><a href="activity-qc.html#ai-predictions-vs-activity"><i class="fa fa-check"></i><b>2.25</b> AI predictions vs activity</a></li>
+<li class="chapter" data-level="2.26" data-path="activity-qc.html"><a href="activity-qc.html#ai-predictions-vs-differential-activity"><i class="fa fa-check"></i><b>2.26</b> AI predictions vs differential activity</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -142,12 +142,12 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ccre-bc-association-qc" class="section level1 hasAnchor" number="2">
-<h1><span class="header-section-number">Chapter 2</span> cCRE-BC association QC<a href="ccre-bc-association-qc.html#ccre-bc-association-qc" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="ccres-per-bc" class="section level2 hasAnchor" number="2.1">
-<h2><span class="header-section-number">2.1</span> cCREs per BC<a href="ccre-bc-association-qc.html#ccres-per-bc" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="ccre-bc-association-qc" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Chapter 1</span> cCRE-BC association QC<a href="ccre-bc-association-qc.html#ccre-bc-association-qc" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="ccres-per-bc" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> cCREs per BC<a href="ccre-bc-association-qc.html#ccres-per-bc" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>Goal:</strong> Assess BC promiscuity <br>
-<strong>Input file:</strong> associations_before_promiscuity<br>
+<strong>Input file:</strong> associations_before_promiscuity, cCRE_fasta<br>
 <strong>Evaluated metrics:</strong> Specificity<br></p>
 <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
 <div style="width:49%;">
@@ -166,10 +166,10 @@
 <p><strong>Legend:</strong> A histogram of the number of cCREs per BC <br>
 <strong>Interpretation:</strong> The successful example showcases a highly specific experiment, where most of the BCs are associated with only one cCRE. The unsuccessful example showcases a problem where many BCs are associated with more than one oligo, suggesting a problem in specificity <br></p>
 </div>
-<div id="reads-per-association" class="section level2 hasAnchor" number="2.2">
-<h2><span class="header-section-number">2.2</span> Reads per association<a href="ccre-bc-association-qc.html#reads-per-association" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="reads-per-association" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Reads per association<a href="ccre-bc-association-qc.html#reads-per-association" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>Goal:</strong> Assess confidence in associations <br>
-<strong>Input file:</strong> associations_before_minimum_observations<br>
+<strong>Input file:</strong> associations_before_minimum_observations, cCRE_fasta<br>
 <strong>Evaluated metrics:</strong> Specificity<br></p>
 <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
 <div style="width:49%;">
@@ -188,8 +188,8 @@
 <p><strong>Legend:</strong> The number of reads supporting each cCRE-BC pairing <br>
 <strong>Interpretation:</strong> The successful example showcases a robust experiment, where BC-cCRE associations are supported by many reads. In the unsuccessful example, over half of the associations appear only once. <br></p>
 </div>
-<div id="bcs-per-ccre" class="section level2 hasAnchor" number="2.3">
-<h2><span class="header-section-number">2.3</span> BCs per cCRE<a href="ccre-bc-association-qc.html#bcs-per-ccre" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="bcs-per-ccre" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> BCs per cCRE<a href="ccre-bc-association-qc.html#bcs-per-ccre" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>Goal:</strong> Assess BC replicability <br>
 <strong>Input file:</strong> final_associations, cCRE_fasta <br>
 <strong>Evaluated metrics:</strong> Complexity (multiplicity &amp; uniformity)<br></p>
@@ -210,8 +210,8 @@
 <p><strong>Legend:</strong> An empirical cumulative function (eCDF) of BCs per cCRE <br>
 <strong>Interpretation:</strong> The successful example showcases many BCs per cCRE and a low percentage of cCREs with fewer than 10 BCs, suggesting high complexity. The unsuccessful example showcases a problem where most cCREs have few BCs. <br></p>
 </div>
-<div id="retained-ccres" class="section level2 hasAnchor" number="2.4">
-<h2><span class="header-section-number">2.4</span> Retained cCREs<a href="ccre-bc-association-qc.html#retained-ccres" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="retained-ccres" class="section level2 hasAnchor" number="1.4">
+<h2><span class="header-section-number">1.4</span> Retained cCREs<a href="ccre-bc-association-qc.html#retained-ccres" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>Goal:</strong> Assess BC replicability <br>
 <strong>Input file:</strong> final_associations, cCRE_fasta<br>
 <strong>Evaluated metrics:</strong> Complexity (multiplicity &amp; uniformity)<br></p>
@@ -232,10 +232,10 @@
 <p><strong>Legend:</strong> Retained cCREs per increasing cutoffs of BC number per cCRE<br>
 <strong>Interpretation:</strong> The successful example showcases a high-complexity experiment, in which most cCREs are retained even at stringent minimum barcode thresholds. The unsuccessful example showcases a low-complexity experiment, in which the majority of cCREs are lost when applying high BC-per-cCRE filters.<br></p>
 </div>
-<div id="ccre-retention-by-sequencing-depth" class="section level2 hasAnchor" number="2.5">
-<h2><span class="header-section-number">2.5</span> cCRE retention by sequencing depth<a href="ccre-bc-association-qc.html#ccre-retention-by-sequencing-depth" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="ccre-retention-by-sequencing-depth" class="section level2 hasAnchor" number="1.5">
+<h2><span class="header-section-number">1.5</span> cCRE retention by sequencing depth<a href="ccre-bc-association-qc.html#ccre-retention-by-sequencing-depth" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>Goal:</strong> Assess whether sequencing depth is sufficient<br>
-<strong>Input file:</strong> associations_downsampling_path, associations_downsampling_file_name, cCRE_fasta <br>
+<strong>Input file:</strong> associations_downsampling_path, cCRE_fasta <br>
 <strong>Evaluated metrics:</strong> Complexity (multiplicity &amp; uniformity)<br></p>
 <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; width:100%;">
 <div style="width:49%;">
@@ -254,8 +254,8 @@
 <p><strong>Legend:</strong> Sequencing depth vs retained cCREs. Sequencing data is downsampled in order to assess whether we have reached saturation in the percentage of retained cCREs. Then, data is extrapolated to predict whether additional sequencing will help improve the results.<br>
 <strong>Interpretation:</strong> The successful example showcases a high-complexity experiment: additional sequencing is not predicted to improve the percentage of retained cCREs. The unsuccessful example showcases an experiment where sequencing depth was suboptimal: additional sequencing is predicted to improve the percentage of retained cCREs.<br></p>
 </div>
-<div id="bcs-per-ccre-by-sequencing-depth" class="section level2 hasAnchor" number="2.6">
-<h2><span class="header-section-number">2.6</span> BCs per cCRE by sequencing depth<a href="ccre-bc-association-qc.html#bcs-per-ccre-by-sequencing-depth" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="bcs-per-ccre-by-sequencing-depth" class="section level2 hasAnchor" number="1.6">
+<h2><span class="header-section-number">1.6</span> BCs per cCRE by sequencing depth<a href="ccre-bc-association-qc.html#bcs-per-ccre-by-sequencing-depth" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>Goal:</strong> Assess whether sequencing depth is sufficient <br>
 <strong>Input file:</strong> associations_downsampling_path, associations_downsampling_file_name, cCRE_fasta <br>
 <strong>Evaluated metrics:</strong> Complexity (multiplicity &amp; uniformity)<br></p>
@@ -276,8 +276,8 @@
 <p><strong>Legend:</strong> A box plot of the number of BCs per cCRE (y axis) as a function of the downsampling parameter (x axis), i.e., the fraction of sequencing data used. <br>
 <strong>Interpretation:</strong> In the successful example, sequencing depth was sufficient to capture library complexity. In the unsuccessful example, additional sequencing substantially increases the number of barcodes, indicating that the library has not yet been sequenced to saturation.<br></p>
 </div>
-<div id="pcr-bias---gc" class="section level2 hasAnchor" number="2.7">
-<h2><span class="header-section-number">2.7</span> PCR bias - GC<a href="ccre-bc-association-qc.html#pcr-bias---gc" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="pcr-bias---gc" class="section level2 hasAnchor" number="1.7">
+<h2><span class="header-section-number">1.7</span> PCR bias - GC<a href="ccre-bc-association-qc.html#pcr-bias---gc" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>Goal:</strong> Assess GC content bias in PCR amplification <br>
 <strong>Input file:</strong> final_associations, cCRE_fasta<br>
 <strong>Evaluated metrics:</strong> Complexity (multiplicity &amp; uniformity)<br></p>
@@ -298,8 +298,8 @@
 <p><strong>Legend:</strong> The number of reads (yellow box plots) and cCREs (green line) at various levels of GC content. Data was binned in fixed sizes of 5%. <br>
 <strong>Interpretation:</strong> The successful example showcases a relatively consistent number of reads per GC content, as well as PCR conditions that are optimized for the most common GC content levels (peaks are close to one another). The unsuccessful example showcases both a strong amplification bias and suboptimal PCR conditions for the GC content levels of most cCREs.<br></p>
 </div>
-<div id="pcr-bias---g-stretches" class="section level2 hasAnchor" number="2.8">
-<h2><span class="header-section-number">2.8</span> PCR bias - G-stretches<a href="ccre-bc-association-qc.html#pcr-bias---g-stretches" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="pcr-bias---g-stretches" class="section level2 hasAnchor" number="1.8">
+<h2><span class="header-section-number">1.8</span> PCR bias - G-stretches<a href="ccre-bc-association-qc.html#pcr-bias---g-stretches" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>Goal:</strong> Assess G-stretches bias in PCR amplification<br>
 <strong>Input file:</strong> final_associations, cCRE_fasta<br>
 <strong>Evaluated metrics:</strong> Complexity (multiplicity &amp; uniformity)<br></p>
@@ -327,7 +327,7 @@
           </div>
         </div>
       </div>
-<a href="input-format.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="activity-qc.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

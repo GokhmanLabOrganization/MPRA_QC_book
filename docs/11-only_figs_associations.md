@@ -9,7 +9,7 @@
 
 ## cCREs per BC
 **Goal:** Assess BC promiscuity <br>
-**Input file:** associations_before_promiscuity<br>
+**Input file:** associations_before_promiscuity, cCRE_fasta<br>
 **Evaluated metrics:** Specificity<br>
 
 
@@ -38,7 +38,7 @@
 
 ## Reads per association
 **Goal:** Assess confidence in associations <br>
-**Input file:** associations_before_minimum_observations<br>
+**Input file:** associations_before_minimum_observations, cCRE_fasta<br>
 **Evaluated metrics:** Specificity<br>
 
 
@@ -131,7 +131,7 @@
 
 ## cCRE retention by sequencing depth
 **Goal:** Assess whether sequencing depth is sufficient<br>
-**Input file:** associations_downsampling_path, associations_downsampling_file_name, cCRE_fasta <br>
+**Input file:** associations_downsampling_path, cCRE_fasta <br>
 **Evaluated metrics:** Complexity (multiplicity & uniformity)<br>
 
 
