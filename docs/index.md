@@ -1,7 +1,7 @@
 --- 
 title: "Quality Control Pipeline for Massively Parallel Reporter Assays (MPRAs)"
 author: "Simon Fishilevich, Omer Ronen, Nadav Mishol, Ryder Easterlin, Nitzan Haim, Katharina Lange, Nadav Ahituv, Irene Gallego Romero, Fumitaka Inoue, Martin Kircher, Michael I. Love, Max Schubach, and David Gokhman"
-#date: "2026-05-25"
+#date: "2026-05-26"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -24,6 +24,9 @@ This Bookdown accompanies our guide for best practices for MPRAs, which outlines
 Because each issue can influence multiple quality metrics, and each metric may be affected by several issues, the relationships form a many-to-many network. The figures presented below map these interdependencies and connect them to recommended diagnostic analyses.
 
 <img src="external_figures/fig_1_scheme_v4.png" width="100%" />
+
+<img src="external_figures/papers_per_year.png" width="100%" />
+**Number of MPRA-related publications per year, illustrating the increasing use of MPRA experiments over time.**
 
 ## Abbreviations {-}
 
@@ -64,5 +67,11 @@ All of these analyses are integrated into the quality control pipeline described
 
 
 
+
+
+
+## Input format {-}
+
+A detailed description of the required input file formats is provided in the GitHub pipeline repository: https://github.com/GokhmanLabOrganization/MPRA_QC_analysis/INPUT_FORMATS.MD.
 
 

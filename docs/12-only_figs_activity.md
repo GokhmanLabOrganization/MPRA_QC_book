@@ -38,7 +38,7 @@
 ## DNA counts vs GC content
 
 **Goal:** Assess GC content bias in PCR amplification  <br>
-**Input file:** oligo_fasta, activity_df  <br>
+**Input file:** cCRE_fasta, activity_df  <br>
 **Evaluated metrics:** DNA Complexity <br>
 
 
@@ -334,7 +334,7 @@
 
 ## Sample clustering
 **Goal:** Assess reproducibility between samples <br>
-**Input file:** reads_by_group<br>
+**Input file:** reads_by_group, samples_metadata<br>
 **Evaluated metrics:** Reproducibility<br>
 
 
@@ -425,7 +425,7 @@
 
 ## Replicability by activity
 **Goal:** Assess the correlation in activity between replicates in active vs non-active cCREs <br>
-**Input file:** activity_per_rep<br>
+**Input file:** activity_df, activity_per_rep<br>
 **Evaluated metrics:** Reproducibility <br>
 
 ```{=html}
@@ -456,7 +456,7 @@
 
 ## Correlation between replicates (controls)
 **Goal:** Assess reproducibility between replicates in positive and negative controls <br>
-**Input file:** activity_df<br>
+**Input file:** activity_per_rep, control_df<br>
 **Evaluated metrics:** Reproducibility, Dynamic range<br>
 
 
@@ -549,7 +549,7 @@
 
 ## Minimizing noise 
 **Goal:** Remove outlier barcodes and optimize minimum DNA count threshold to improve reproducibility<br>
-**Input file:** different_std_threshold_analysis<br>
+**Input file:** std_analysis_df<br>
 **Evaluated metrics:** Reproducibility<br>
 
 <img src="external_figures/modern_humanMPRA_Hob/Minimizing_noise.svg" width="100%" />
@@ -626,7 +626,7 @@
 
 ## Activity of controls
 **Goal:** Assess the dynamic range of activity<br>
-**Input file:** activity_df<br>
+**Input file:** activity_df, control_df<br>
 **Evaluated metrics:** Dynamic Range<br>
 
 
@@ -768,8 +768,6 @@
 </div>
 </div>
 ```
-
-
 
 
 **Legend:** Experimentally measured differential activity vs AI-predicted differential activity. Each data point is a hexagon representing the local density of cCREs. <br>
