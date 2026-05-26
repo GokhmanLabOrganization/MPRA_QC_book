@@ -13,11 +13,6 @@ link-citations: yes
 github-repo: rstudio/bookdown-demo
 ---
 
-
-
-
-
-
 # Overview {-}
 
 <div class="title-logo-block">
@@ -30,6 +25,8 @@ This Bookdown accompanies our guide for best practices for MPRAs, which outlines
 Because each issue can influence multiple quality metrics, and each metric may be affected by several issues, the relationships form a many-to-many network. The figures presented below map these interdependencies and connect them to recommended diagnostic analyses.
 
 <img src="external_figures/fig_1_scheme_v4.png" width="100%" />
+
+
 
 <img src="external_figures/papers_per_year.png" width="100%" />
 **Number of MPRA-related publications per year, illustrating the increasing use of MPRA experiments over time.**

@@ -13,11 +13,6 @@ link-citations: yes
 github-repo: rstudio/bookdown-demo
 ---
 
-
-
-
-
-
 # Overview {-}
 
 <div class="title-logo-block">
