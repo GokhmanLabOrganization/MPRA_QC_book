@@ -1,7 +1,11 @@
 --- 
 title: "Quality Control Pipeline for Massively Parallel Reporter Assays (MPRAs)"
-author: "Simon Fishilevich, Omer Ronen, Nadav Mishol, Ryder Easterlin, Nitzan Haim, Katharina Lange, Nadav Ahituv, Irene Gallego Romero, Fumitaka Inoue, Martin Kircher, Michael I. Love, Max Schubach, and David Gokhman"
-#date: "2026-05-26"
+author: |
+  Simon Fishilevich<sup>#</sup>, Omer Ronen<sup>#</sup>, Nadav Mishol<sup>#</sup>, Ryder Easterlin, Nitzan Haim, Katharina Lange, Nadav Ahituv, Irene Gallego Romero, Fumitaka Inoue, Martin Kircher, Michael I. Love, Max Schubach, and David Gokhman<sup>*</sup>
+
+  <sup>#</sup> Contributed equally.  
+  <sup>*</sup> Correspondence to David Gokhman (david.gokhman@weizmann.ac.il).
+#date: "2026-05-27"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -65,8 +69,8 @@ For each analysis, we provide an example of a successful and an unsuccessful dat
 We welcome questions, feedback, or suggestions. Please feel free to reach out at david.gokhman [at] weizmann.ac.il.
 
 
-## Scripts {-}
-All of these analyses are integrated into the quality control pipeline described in this resource, with scripts provided here: [GokhmanLabOrganization/MPRA_QC_analysis](https://github.com/GokhmanLabOrganization/MPRA_QC_analysis).
+## MPRA QC pipeline {-}
+All of the analyses described in the book are integrated into the quality control pipeline provided here: [GokhmanLabOrganization/MPRA_QC_analysis](https://github.com/GokhmanLabOrganization/MPRA_QC_analysis).
 
 
 
