@@ -32,7 +32,7 @@
 
 
 
-**Legend:** A histogram of the number of cCREs per BC <br>
+**Legend:** Histogram of the number of cCREs per BC <br>
 **Interpretation:** The successful example showcases a highly specific experiment, where most of the BCs are associated with only one cCRE. The unsuccessful example showcases a problem where many BCs are associated with more than one oligo, suggesting a problem in specificity <br>
 
 
@@ -63,7 +63,7 @@
 
 
 
-**Legend:** The number of reads supporting each cCRE-BC pairing <br>
+**Legend:** Number of reads supporting each cCRE-BC pairing <br>
 **Interpretation:** The successful example showcases a robust experiment, where BC-cCRE associations are supported by many reads. In the unsuccessful example, over half of the associations  appear only once. <br>
 
 
@@ -181,7 +181,7 @@
 ```
 
 
-**Legend:** A box plot of the number of BCs per cCRE (y axis) as a function of the downsampling parameter (x axis), i.e., the fraction of sequencing data used. <br>
+**Legend:** Box plot of the number of BCs per cCRE (y axis) as a function of the downsampling parameter (x axis), i.e., the fraction of sequencing data used. <br>
 **Interpretation:** In the successful example, sequencing depth was sufficient to capture library complexity. In the unsuccessful example, additional sequencing substantially increases the number of barcodes, indicating that the library has not yet been sequenced to saturation.<br>
 
 
@@ -210,7 +210,7 @@
 </div>
 ```
 
-**Legend:** The number of reads (yellow box plots) and cCREs (green line) at various levels of GC content. Data was binned in fixed sizes of 5%. <br>
+**Legend:** Number of reads (yellow box plots) and cCREs (green line) at various levels of GC content. Data was binned in fixed sizes of 5%. <br>
 **Interpretation:** The successful example showcases a relatively consistent number of reads per GC content, as well as PCR conditions that are optimized for the most common GC content levels (peaks are close to one another). The unsuccessful example showcases both a strong amplification bias and suboptimal PCR conditions for the GC content levels of most cCREs.<br>
 
 
@@ -242,7 +242,7 @@
 ```
 
 
-**Legend:** The number of reads (yellow box plots) and cCREs (green line) at various lengths of G-stretches.<br>
+**Legend:** Number of reads (yellow box plots) and cCREs (green line) at various lengths of G-stretches.<br>
 **Interpretation:** The successful example shows relatively stable read depth across the well-represented G-stretch bins. The unsuccessful example shows substantial G-stretch-associated variation in read depth, suggesting amplification bias and suboptimal PCR conditions.<br>
 
 
