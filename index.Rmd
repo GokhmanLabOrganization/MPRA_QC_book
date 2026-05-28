@@ -33,13 +33,15 @@ knitr::include_graphics("external_figures/fig_1_scheme_v4.png",
                           )
 ```
 
+**PLACEHOLDER FOR FIG1 LEGEND**
 
 
-```{r echo=FALSE, fig.show="hold", out.width="100%"}
+```{r echo=FALSE, fig.show="hold", out.width="50%"}
 knitr::include_graphics("external_figures/papers_per_year.png",
                           )
 ``` 
-**Number of MPRA-related publications per year, illustrating the increasing use of MPRA experiments over time.**
+
+**Results show Pubmed search for the term "massively parallel reporter assay" and its derivatives.**
 
 ## Abbreviations {-}
 
