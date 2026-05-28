@@ -5,7 +5,7 @@ author: |
 
   <sup>#</sup> Contributed equally.  
   <sup>*</sup> Correspondence to David Gokhman (david.gokhman@weizmann.ac.il).
-#date: "2026-05-27"
+#date: "2026-05-28"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -30,10 +30,12 @@ Because each issue can influence multiple quality metrics, and each metric may b
 
 <img src="external_figures/fig_1_scheme_v4.png" width="100%" />
 
+**PLACEHOLDER FOR FIG1 LEGEND**
 
 
-<img src="external_figures/papers_per_year.png" width="100%" />
-**Number of MPRA-related publications per year, illustrating the increasing use of MPRA experiments over time.**
+<img src="external_figures/papers_per_year.png" width="50%" />
+
+**Results show Pubmed search for the term "massively parallel reporter assay" and its derivatives.**
 
 ## Abbreviations {-}
 
