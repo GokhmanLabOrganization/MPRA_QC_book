@@ -271,7 +271,7 @@ htmltools::tagList(
 ```
 
 
-**Legend:** Sequencing depth vs retained cCREs. Sequencing data is downsampled in order to assess whether we have reached saturation in the percentage of retained cCREs. Then, data is extrapolated to predict whether additional sequencing will help improve the results.<br>
+**Legend:** Sequencing depth vs retained cCREs. Sequencing data is downsampled in order to assess whether we have reached saturation in the percentage of retained cCREs. Then, data is extrapolated to predict whether additional sequencing will help improve the results. The Hill model is a saturation function that describes responses approaching a finite maximum. It was fitted to the relationship between sequencing depth and cCRE retention to estimate the maximal achievable coverage and the expected gains from additional sequencing<br>
 **Interpretation:** The successful example showcases a high-complexity experiment: additional sequencing is not predicted to improve the percentage of retained cCREs. The unsuccessful example showcases an experiment where sequencing depth was suboptimal: additional sequencing is predicted to improve the percentage of retained cCREs.<br>
 
 
@@ -323,7 +323,8 @@ htmltools::tagList(
 
 
 **Legend:** Box plot of the number of BCs per cCRE (y axis) as a function of the downsampling parameter (x axis), i.e., the fraction of sequencing data used. <br>
-**Interpretation:** In the successful example, sequencing depth was sufficient to capture library complexity. In the unsuccessful example, additional sequencing substantially increases the number of barcodes, indicating that the library has not yet been sequenced to saturation.<br>
+**Interpretation:** In the successful example, sequencing depth was sufficient to capture library complexity. In the unsuccessful example, additional sequencing substantially increases the number of barcodes, indicating that the library has not yet been sequenced to saturation.
+Note that sequencing errors introduce a nonzero asymptote with a positive slope, reflecting the continued accumulation of spurious barcode sequences as sequencing depth increases. <br>
 
 
 ## PCR bias - GC

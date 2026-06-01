@@ -250,7 +250,7 @@
 <img src="external_figures/Max_MPRA_run2/Downsampling_Retained_cCREs.svg" style="width:100%; display:block;"/>
 </div>
 </div>
-<p><strong>Legend:</strong> Sequencing depth vs retained cCREs. Sequencing data is downsampled in order to assess whether we have reached saturation in the percentage of retained cCREs. Then, data is extrapolated to predict whether additional sequencing will help improve the results.<br>
+<p><strong>Legend:</strong> Sequencing depth vs retained cCREs. Sequencing data is downsampled in order to assess whether we have reached saturation in the percentage of retained cCREs. Then, data is extrapolated to predict whether additional sequencing will help improve the results. The Hill model is a saturation function that describes responses approaching a finite maximum. It was fitted to the relationship between sequencing depth and cCRE retention to estimate the maximal achievable coverage and the expected gains from additional sequencing<br>
 <strong>Interpretation:</strong> The successful example showcases a high-complexity experiment: additional sequencing is not predicted to improve the percentage of retained cCREs. The unsuccessful example showcases an experiment where sequencing depth was suboptimal: additional sequencing is predicted to improve the percentage of retained cCREs.<br></p>
 </div>
 <div id="bcs-per-ccre-by-sequencing-depth" class="section level2 hasAnchor" number="1.6">
@@ -273,7 +273,8 @@
 </div>
 </div>
 <p><strong>Legend:</strong> Box plot of the number of BCs per cCRE (y axis) as a function of the downsampling parameter (x axis), i.e., the fraction of sequencing data used. <br>
-<strong>Interpretation:</strong> In the successful example, sequencing depth was sufficient to capture library complexity. In the unsuccessful example, additional sequencing substantially increases the number of barcodes, indicating that the library has not yet been sequenced to saturation.<br></p>
+<strong>Interpretation:</strong> In the successful example, sequencing depth was sufficient to capture library complexity. In the unsuccessful example, additional sequencing substantially increases the number of barcodes, indicating that the library has not yet been sequenced to saturation.
+Note that sequencing errors introduce a nonzero asymptote with a positive slope, reflecting the continued accumulation of spurious barcode sequences as sequencing depth increases. <br></p>
 </div>
 <div id="pcr-bias---gc" class="section level2 hasAnchor" number="1.7">
 <h2><span class="header-section-number">1.7</span> PCR bias - GC<a href="ccre-bc-association-qc.html#pcr-bias---gc" class="anchor-section" aria-label="Anchor link to header"></a></h2>
