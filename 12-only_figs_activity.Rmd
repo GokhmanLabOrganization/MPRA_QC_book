@@ -1061,7 +1061,7 @@ htmltools::tagList(
 
 
 
-**Legend:** RNA vs. DNA counts for each cCRE, normalized to sequencing depth. Each data point is a hexagon representing the local density of cCREs. <br>
+**Legend:** RNA vs. DNA counts for each cCRE, normalized to sequencing depth. Each data point is a hexagon representing the local density of cCREs. RNA and DNA counts were normalized to library size (counts per million, CPM), and both axes were truncated at 250 for visualization purposes.<br>
 **Interpretation:** The successful example showcases many sequences with high RNA-to-DNA ratios, reflected by points above the diagonal. The 1st unsuccessful example showcases little to no activity, with points clustering along the diagonal, and the 2nd unsuccessful example showcases silencing, reflected by many points falling below the diagonal.<br>
 
 
