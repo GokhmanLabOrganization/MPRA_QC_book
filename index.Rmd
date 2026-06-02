@@ -29,11 +29,11 @@ This Bookdown accompanies our guide for best practices for MPRAs, which outlines
 Because each issue can influence multiple quality metrics, and each metric may be affected by several issues, the relationships form a many-to-many network. The figures presented below map these interdependencies and connect them to recommended diagnostic analyses.
 
 ```{r echo=FALSE, fig.show="hold", out.width="100%"}
-knitr::include_graphics("external_figures/fig_1_scheme_v4.png",
+knitr::include_graphics("external_figures/fig_1_scheme_v5.png",
                           )
 ```
 
-**PLACEHOLDER FOR FIG1 LEGEND**
+**Schematic overview of the MPRA workflow, from library design, through experimental implementation, cCRE–barcode associations, quantification of activity and differential activity, to quality control (QC)**
 
 
 ```{r echo=FALSE, fig.show="hold", out.width="50%"}
@@ -59,7 +59,7 @@ The quality control (QC) pipeline is organized into two chapters:
 <div class="small-1pt">
 
 ```{r echo=FALSE, fig.show="hold", out.width="100%"}
-knitr::include_graphics("external_figures/figure_2_v2.png",
+knitr::include_graphics("external_figures/fig2.png",
                           )
 ```
 **Root problems, impacted quality metrics and recommended diagnostic analyses for the sequence-barcode association step.**
@@ -69,7 +69,7 @@ knitr::include_graphics("external_figures/figure_2_v2.png",
 <div class="small-1pt">
 
 ```{r echo=FALSE, fig.show="hold", out.width="100%"}
-knitr::include_graphics("external_figures/figure_4_v2.png",
+knitr::include_graphics("external_figures/fig4.png",
                           )
 ```
 

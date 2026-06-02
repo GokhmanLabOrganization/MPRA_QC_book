@@ -5,7 +5,7 @@ author: |
 
   <sup>#</sup> Contributed equally.  
   <sup>*</sup> Correspondence to David Gokhman (david.gokhman@weizmann.ac.il).
-#date: "2026-06-01"
+#date: "2026-06-02"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -28,9 +28,9 @@ This pipeline is designed to help investigators evaluate the quality of their MP
 This Bookdown accompanies our guide for best practices for MPRAs, which outlines recommendations for study design and interpretation [REF TBD]. The manuscript covers all key experimental and analytical steps, including library design, and estimation of activity differential activity. It then describes core problems that often compromise MPRA quality, illustrating how these issues manifest in the data, and offering practical strategies for correction and optimization.
 Because each issue can influence multiple quality metrics, and each metric may be affected by several issues, the relationships form a many-to-many network. The figures presented below map these interdependencies and connect them to recommended diagnostic analyses.
 
-<img src="external_figures/fig_1_scheme_v4.png" width="100%" />
+<img src="external_figures/fig_1_scheme_v5.png" width="100%" />
 
-**PLACEHOLDER FOR FIG1 LEGEND**
+**Schematic overview of the MPRA workflow, from library design, through experimental implementation, cCRE–barcode associations, quantification of activity and differential activity, to quality control (QC)**
 
 
 <img src="external_figures/papers_per_year.png" width="50%" />
@@ -52,14 +52,14 @@ The quality control (QC) pipeline is organized into two chapters:
 
 <div class="small-1pt">
 
-<img src="external_figures/figure_2_v2.png" width="100%" />
+<img src="external_figures/fig2.png" width="100%" />
 **Root problems, impacted quality metrics and recommended diagnostic analyses for the sequence-barcode association step.**
 </div>
 <br>
 
 <div class="small-1pt">
 
-<img src="external_figures/figure_4_v2.png" width="100%" />
+<img src="external_figures/fig4.png" width="100%" />
 
 
 **Root problems, impacted quality metrics and recommended analyses for the RNA and DNA quantification step.**
