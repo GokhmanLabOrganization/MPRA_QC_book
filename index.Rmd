@@ -98,6 +98,6 @@ knitr::write_bib(c(
 
 ## Input format {-}
 
-A detailed description of the required input file formats is provided in the GitHub pipeline repository: https://github.com/GokhmanLabOrganization/MPRA_QC_analysis/INPUT_FORMATS.MD.
+A detailed description of the required input file formats is provided in the GitHub pipeline repository: [GokhmanLabOrganization/MPRA_QC_analysis/INPUT_FORMATS.md](https://github.com/GokhmanLabOrganization/MPRA_QC_analysis/blob/main/INPUT_FORMATS.md).
 
 
