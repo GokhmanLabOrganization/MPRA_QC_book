@@ -5,7 +5,7 @@ author: |
 
   <sup>#</sup> Contributed equally.  
   <sup>*</sup> Correspondence to David Gokhman (david.gokhman@weizmann.ac.il).
-#date: "2026-06-02"
+#date: "2026-06-04"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -81,6 +81,6 @@ All of the analyses described in the book are integrated into the quality contro
 
 ## Input format {-}
 
-A detailed description of the required input file formats is provided in the GitHub pipeline repository: https://github.com/GokhmanLabOrganization/MPRA_QC_analysis/INPUT_FORMATS.MD.
+A detailed description of the required input file formats is provided in the GitHub pipeline repository: [GokhmanLabOrganization/MPRA_QC_analysis/INPUT_FORMATS.md](https://github.com/GokhmanLabOrganization/MPRA_QC_analysis/blob/main/INPUT_FORMATS.md).
 
 
