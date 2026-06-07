@@ -5,7 +5,7 @@ author: |
 
   <sup>#</sup> Contributed equally.  
   <sup>*</sup> Correspondence to David Gokhman (david.gokhman@weizmann.ac.il).
-#date: "2026-06-04"
+#date: "2026-06-07"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -48,7 +48,9 @@ Because each issue can influence multiple quality metrics, and each metric may b
 The quality control (QC) pipeline is organized into two chapters:
 
 - (i) QC of the association step between candidate cis-regulatory elements (cCREs) and barcodes (BCs) 
-- (ii) QC of the RNA and DNA quantification step  
+- (ii) QC of the RNA and DNA quantification step 
+
+**Our pipeline will undergo regular updates and enhancements. **
 
 <div class="small-1pt">
 
@@ -72,7 +74,8 @@ We welcome questions, feedback, or suggestions. Please feel free to reach out at
 
 
 ## MPRA QC pipeline {-}
-All of the analyses described in the book are integrated into the quality control pipeline provided here: [GokhmanLabOrganization/MPRA_QC_analysis](https://github.com/GokhmanLabOrganization/MPRA_QC_analysis).
+All of the analyses described in the book are integrated into the quality-control pipeline provided in this GitHub repository: [GokhmanLabOrganization/MPRA_QC_analysis](https://github.com/GokhmanLabOrganization/MPRA_QC_analysis).
+
 
 
 
