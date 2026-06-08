@@ -8,13 +8,13 @@ bcs-per-ccre-by-sequencing-depth
 pcr-bias---gc
 pcr-bias---g-stretches
 activity-qc
-retained-ccres-and-barcodes
+retained-ccres-and-bcs
 dna-counts-vs-gc-content
 activity-statistic-vs-count-ratio
 activity-distribution
 differential-activity-distribution
 p-value-distribution
-volcano-plot---fc-vs-pval
+volcano-plot---fc-vs-p-value
 bc-retention-by-dnarna-sequencing-depth
 ccre-retention-by-dnarna-sequencing-depth
 activity-by-sequencing-depth
