@@ -5,7 +5,7 @@ author: |
 
   <sup>#</sup> Contributed equally.  
   <sup>*</sup> Correspondence to David Gokhman (david.gokhman@weizmann.ac.il).
-#date: "2026-07-20"
+#date: "2026-07-22"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -69,6 +69,7 @@ The quality control (QC) pipeline is organized into two chapters:
 <br>
 
 For each analysis, we provide an example of a successful and an unsuccessful dataset to illustrate how they manifest in the analysis.
+Importantly, no single analysis captures every aspect of a quality metric, and no universal threshold defines satisfactory performance. We provide an interpretation section, highlighting the successful and unsuccessful aspects of each analysis, but these should be read in light of your specific MPRA design and experimental objectives.
 
 We welcome questions, feedback, or suggestions. Please feel free to reach out at david.gokhman [at] weizmann.ac.il.
 
