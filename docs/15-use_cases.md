@@ -1,0 +1,68 @@
+# Examples of QC Failure Diagnosis
+
+The following sections describe failure patterns observed in the quality control analyses and provide guidance for tracing them to their potential root causes.
+
+## Scenario 1: RNA vs DNA (2.21) failure
+
+A common failure signature is often detected in the **RNA vs DNA (2.21)** analysis, in which most cCREs cluster along the normalized RNA = DNA diagonal, indicating that few sequences have RNA abundance greater than expected based on their DNA abundance.
+
+This pattern indicates a narrow dynamic range, but it does not in itself identify the underlying cause. Possible root problems include:
+
+1. Failure in RNA transcription or quantification
+2. Cell identity error
+3. The tested cCRE library contains few active elements
+
+The next diagnostic step is to examine the separation between positive and negative controls using the **Activity of controls (2.22)** analysis.
+
+- If positive and negative controls show little to no separation, this points to a likely assay-wide failure in RNA transcription or quantification.
+- If positive controls are active but the test cCREs are not, the assay likely generated a valid activity readout, and the narrow dynamic range probably reflects the biological composition of the test library: the tested cCRE library contains few active elements. In this case, the pattern reflects the library's biological composition rather than a technical failure.
+- If broadly active positive controls behave as expected but cell-type-specific positive controls do not, the result may indicate a cell identity error.
+
+## Scenario 2: BCs per cCRE (1.3) failure
+
+A common failure signature in the association step is often observed in the **BCs per cCRE (1.3)** analysis, in which many cCREs are linked to too few BCs.
+
+This pattern indicates reduced library complexity, but does not in itself reveal the underlying cause. Possible root problems include:
+
+1. Synthesis, cloning, and PCR biases
+2. Small pool of unique BCs
+3. Sequencing or alignment errors
+4. Overly stringent computational filters
+
+The next diagnostic step is to examine sequencing depth using the **BCs per cCRE by sequencing depth (1.6)** analysis and the **cCRE retention by sequencing depth (1.5)** analysis.
+
+- If the number of retained cCREs or BCs per cCRE continues to increase with additional sequencing, the issue likely can be solved by additional sequencing.
+- If the curve has already plateaued, additional sequencing is unlikely to improve complexity, suggesting that the loss of complexity occurred before sequencing or during computational processing.
+
+Additional diagnostics should then be used to distinguish among the possible causes:
+
+- **Synthesis, cloning, and PCR biases:** Examine cCRE sequence features, such as GC content, using the **PCR bias - GC (1.7)** analysis. Bias-driven underrepresentation of specific sequence classes can reduce cCRE-BC library complexity.
+- **Small pool of unique BCs:** Use the **cCREs per BC (1.1)** analysis to identify excessive BC promiscuity, which reduces effective library complexity by decreasing BC specificity.
+- **Overly stringent computational filters:** Compare the number of retained cCREs before and after filtering using **Retained cCREs (1.4)**.
+- **Sequencing or alignment errors:** Evaluate standard quality measures, including sequencing depth, mapping quality, and the number of independent observations supporting cCRE-BC associations using the **Reads per association (1.2)** analysis.
+
+## Scenario 3: Poor correlation between replicates (2.13)
+
+Another common failure signature is often observed in the **Correlation between replicates (2.13)** analysis, in which RNA-to-DNA ratios show low concordance across replicates.
+
+Although this pattern may indicate reduced reproducibility, it can also result from a narrow dynamic range: when true activity varies little among cCREs, measurement noise constitutes a larger fraction of the observed variation and consequently reduces the correlation between replicates.
+
+To determine whether the poor correlation is attributable to a narrow dynamic range, the next diagnostic step is to examine:
+
+- **RNA vs DNA (2.21)**
+- **Activity distribution (2.4)**
+- **Activity of controls (2.22)**
+
+A clear high-activity tail, together with good separation between positive and negative controls, indicates that the experiment likely has sufficient dynamic range.
+
+In this case, poor replicate correlation is more likely to reflect a root problem connected to reproducibility rather than dynamic range, such as:
+
+1. Insufficient constructs or DNA reads
+2. Batch effects
+3. Jackpotting of transcripts
+
+These possible causes can be evaluated as follows:
+
+- **Insufficient constructs or DNA reads:** Examine **Retained cCREs and BCs (2.1)**, **BC retention by DNA/RNA sequencing depth (2.8)**, and **cCRE retention by DNA/RNA sequencing depth (2.9)**.
+- **Jackpotting of transcripts:** Examine whether RNA reads are dominated by a small number of highly active cCREs using the **Cumulative RNA reads (2.11)** analysis.
+- **Batch effects:** If insufficient constructs or DNA reads and jackpotting are ruled out, batch effects become a leading possibility. Evaluate whether replicate differences align with experimental or technical variables.
