@@ -34,3 +34,7 @@ genomic-annotations
 proximity-to-tss
 ai-predictions-vs-activity
 ai-predictions-vs-differential-activity
+examples-of-qc-failure-diagnosis
+scenario-1-rna-vs-dna-2.21-failure
+scenario-2-bcs-per-ccre-1.3-failure
+scenario-3-poor-correlation-between-replicates-2.13
