@@ -763,7 +763,7 @@ htmltools::tagList(
         )
       ),
       htmltools::tags$img(
-        src =   "external_figures/humanMPRA_L1a1_Neurons/Variation_at_various_activity_levels.svg",
+        src =   "external_figures/humanMPRA_L1a1_Neurons/Replicability_by_activity.svg",
         style = "width:100%; display:block;"
       )
     )
